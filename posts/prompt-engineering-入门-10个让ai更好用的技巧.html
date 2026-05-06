@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prompt Engineering 入门：10个让AI更好用的技巧 - AI 编程实验室</title>
   <meta name="description" content="Prompt Engineering 入门：10个让AI更好用的技巧 - 详细教程与实战指南">
-  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
   <header class="header">
     <div class="container">
-      <a href="/" class="logo">AI 编程实验室</a>
+      <a href="../" class="logo">AI 编程实验室</a>
       <nav>
-        <a href="/">首页</a>
-        <a href="/products.html">教程产品</a>
+        <a href="../">首页</a>
+        <a href="../products.html">教程产品</a>
       </nav>
     </div>
   </header>
@@ -29,35 +29,84 @@
         </div>
       </header>
       <div class="post-content">
-        <p><h2>为什么需要了解Prompt Engineering 入门：10个让AI更好用的技巧？</h2></p><p>在当今快速发展的技术领域，掌握新工具和新技术是每个开发者的必修课。Prompt Engineering 入门：10个让AI更好用的技巧 正是一个值得深入学习的主题。</p><p><h2>核心概念</h2></p><p>首先，让我们明确几个关键概念：</p><p><h3>什么是核心原理？</h3></p><p>任何技术都有其底层逻辑。理解这些原理能帮助我们更好地应用它。</p><p><pre><code class="language-python"># 这是一个示例代码
-def hello_tech():
-    """展示核心概念的简单示例"""
-    print("学习新技术从基础开始")
-    
-hello_tech()</code></pre></p><p><h3>实际应用场景</h3></p><p>这项技术在实际项目中有广泛的应用：</p><p><li><strong>场景一</strong>：提升开发效率</li>
-<li><strong>场景二</strong>：解决复杂问题</li>
-<li><strong>场景三</strong>：优化现有流程</li></p><p><h2>实战演练</h2></p><p>让我们通过一个实际项目来巩固学习：</p><p><pre><code class="language-python"># 实战示例
-import time</p><p>def main():
-    print("🚀 开始学习 Prompt Engineering 入门：10个让AI更好用的技巧")
-    print("📅 学习日期: 2026-05-06")
-    
-    steps = [
-        "了解基本概念",
-        "搭建开发环境",
-        "动手写第一个示例",
-        "深入理解原理"
-    ]
-    
-    for i, step in enumerate(steps, 1):
-        print(f"Step {i}: {step}")
-        time.sleep(0.5)
-    
-    print("🎉 完成！继续前进！")</p><p>if __name__ == "__main__":
-    main()</code></pre></p><p><h2>进阶技巧</h2></p><p>掌握了基础后，可以探索以下进阶方向：</p><p><ul><li><strong>优化性能</strong>：寻找更高效的实现方式</li>
-<li><strong>与其他工具结合</strong>：构建更强大的工作流</li>
-<li><strong>贡献开源</strong>：参与社区建设</li>
+        <p><h1>Prompt Engineering 入门：10个让AI更好用的技巧</h1></p><p>你费尽心思写了一个prompt，AI却答非所问？这不是AI笨，而是你没有掌握正确的提问方式。Prompt Engineering（提示工程）就是教你如何用精准的语言，让AI输出你想要的结果。本文分享10个经过实战验证的技巧，帮你从"AI对话小白"变成"提示词高手"。</p><p><h2>一、基础结构：让AI听懂你的指令</h2></p><p><h3>1. 明确角色 + 任务 + 输出格式</h3>
+最基础的prompt结构包含三个要素：你是谁、要做什么、结果长什么样。</p><p><strong>错误示例：</strong>
+<pre><code class="language-">帮我写一段代码。</code></pre></p><p><strong>正确示例：</strong>
+<pre><code class="language-markdown">你是一位资深Python开发者。请编写一个函数，读取CSV文件并统计每列的平均值。输出格式为：函数定义 + 注释说明 + 使用示例。</code></pre></p><p><strong>技巧2：使用分隔符明确边界</strong>
+当prompt包含多段内容时，用分隔符让AI清晰区分指令和材料。</p><p><pre><code class="language-">请分析以下销售数据（用</code></pre>括起来的部分），生成一份周报摘要：
+<pre><code class="language-">日期,销售额,新客户数
+2024-01-01,50000,12
+2024-01-02,62000,15</code></pre>
+要求：用三句话总结趋势，突出增长点和风险点。
+<pre><code class="language-">## 二、进阶技巧：控制AI的思考过程</p><p><h3>3. 分步指令（Chain-of-Thought）</h3>
+复杂任务让AI"先思考再回答"，能显著提升准确性。</p><p><strong>不好的prompt：</strong></code></pre>
+计算 15 * 8 + 32 / 4 的结果。
+<pre><code class="language-"><strong>好的prompt：</strong></code></pre>
+逐步计算以下表达式，每一步都写出中间结果：
+表达式：15 * 8 + 32 / 4
+步骤1：先算乘法 15 * 8 = 120
+步骤2：再算除法 32 / 4 = 8
+步骤3：最后加法 120 + 8 = 128
+最终答案：128
+<pre><code class="language-">### 4. 少样本学习（Few-shot Learning）
+给AI提供2-3个示例，让它模仿你的模式。</code></pre>
+请将以下中文句子翻译成英文，并保留原句的情感色彩。</p><p>示例1：
+中文：这个产品太棒了，我超级喜欢！
+英文：This product is amazing, I absolutely love it!</p><p>示例2：
+中文：天气糟透了，让人心情低落。
+英文：The weather is terrible, it's bringing me down.</p><p>现在翻译：
+中文：你做得不错，但还有提升空间。
+英文：
+<pre><code class="language-">### 5. 设定约束条件
+限制AI的输出范围，防止跑题或过度发挥。</code></pre>
+你是一位技术面试官。请针对"Python装饰器"知识点，生成3道面试题。
+约束条件：
+<ul><li>每题不超过50字</li>
+<li>必须包含代码示例</li>
+<li>难度为中级</li>
+<li>不涉及类装饰器</li>
+</ul><pre><code class="language-">## 三、实战场景：解决真实问题</p><p><h3>6. 代码调试助手</code></pre></h3>
+你是一位经验丰富的后端工程师。以下代码在运行时报错：TypeError: 'int' object is not iterable
+请：
+<li>指出错误原因</li>
+<li>给出修复后的代码</li>
+<li>解释两种常见的触发场景</li></p><p>代码：
+def calculate_sum(numbers):
+    total = 0
+    for num in numbers:
+        total += num
+    return total</p><p>result = calculate_sum(5)
+<pre><code class="language-">### 7. 文档生成器</code></pre>
+请根据以下API接口定义，生成完整的API文档（Markdown格式）：</p><p>接口：POST /api/users
+参数：
+<ul><li>name (string, 必填): 用户名</li>
+<li>email (string, 必填): 邮箱</li>
+<li>age (int, 可选): 年龄</li>
 </ul>
-<h2>总结</h2></p><p>Prompt Engineering 入门：10个让AI更好用的技巧 是一个值得投入时间学习的主题。通过本文的学习，你应该已经掌握了基础知识，并能够开始自己的实践。记住，技术学习是一个持续的过程，保持好奇心和实践热情是最重要的。</p><p><em>本文由 AI 编程实验室自动生成，如有不足欢迎指正。</em></p>
+要求：
+<ul><li>包含请求示例（JSON格式）</li>
+<li>包含成功/失败响应示例</li>
+<li>包含错误码说明</li>
+<li>语言风格：简洁专业</li>
+</ul><pre><code class="language-">### 8. 代码审查员</code></pre>
+请审查以下Python代码，按优先级列出3个改进点：</p><p>def get_data(id):
+    db = connect()
+    data = db.query("SELECT * FROM users WHERE id="+id)
+    return data</p><p>改进点格式：[严重程度] 问题描述 -> 建议修改
+<pre><code class="language-">### 9. 测试用例生成器</code></pre>
+为以下函数生成单元测试用例（pytest风格），覆盖正常输入、边界值和异常情况：</p><p>def divide(a, b):
+    if b == 0:
+        raise ValueError("��数不能为0")
+    return a / b
+<pre><code class="language-">### 10. 代码解释器</code></pre>
+用通俗易懂的语言解释以下代码的功能，假设读者懂基础编程但没接触过机器学习：</p><p>from sklearn.ensemble import RandomForestClassifier
+model = RandomForestClassifier(n_estimators=100)
+model.fit(X_train, y_train)
+predictions = model.predict(X_test)
+```</p><p><h2>总结</h2></p><p>Prompt Engineering的核心不是"魔法咒语"，而是<strong>清晰的沟通</strong>。记住三个原则：
+<li><strong>结构化</strong>：用角色、任务、格式三要素搭建框架</li>
+<li><strong>示例化</strong>：用少样本学习让AI理解你的意图</li>
+<li><strong>约束化</strong>：用限制条件控制输出质量</li></p><p>下次写prompt时，先问自己三个问题：AI知道它扮演什么角色吗？任务描述是否足够具体？输出格式是否明确？按照这个思路，你会发现AI突然变得"聪明"了。</p>
       </div>
     </article>
   </main>
