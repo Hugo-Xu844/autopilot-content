@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Agent 入门：智能体是什么？ - AI 编程实验室</title>
+  <meta name="description" content="深入浅出讲解 AI Agent 的概念、原理与实战应用">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a href="/" class="logo">AI 编程实验室</a>
+      <nav>
+        <a href="/">首页</a>
+        <a href="/products.html">教程产品</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <article class="post-full">
+      <header class="post-header">
+        <h1>AI Agent 入门：智能体是什么？</h1>
+        <div class="post-meta">
+          <span class="date">📅 2026-05-06</span>
+          <span class="category">📂 AI入门教程</span>
+          <div class="tags"><span class="tag">AI入门教程</span> <span class="tag">AI</span> <span class="tag">大模型</span> <span class="tag">Agent</span></div>
+        </div>
+      </header>
+      <div class="post-content">
+        <p><h2>为什么 Agent 是 AI 的下一个风口？</h2></p><p>2025 年以来，AI 领域最热的关键词已经不是「大模型」本身，而是 <strong>AI Agent（智能体）</strong>。</p><p>简单来说，大模型像是一个<strong>聪明的大脑</strong>——它能理解问题、生成回答，但它不会主动做事。而 Agent 就是给这个大脑装上了<strong>手和脚</strong>，让它能主动规划、调用工具、执行任务。</p><p><h2>什么是 AI Agent？</h2></p><p>AI Agent 是一个<strong>能自主感知环境、做出决策并执行行动的智能系统</strong>。它不仅仅是被动回答问题，而是：</p><p><ul><li><strong>理解目标</strong>：知道你要达成什么</li>
+<li><strong>制定计划</strong>：把大目标拆成小步骤</li>
+<li><strong>调用工具</strong>：搜索、计算、写代码、操作应用</li>
+<li><strong>迭代改进</strong>：根据结果自我修正</li>
+</ul>
+<h3>一个类比</h3></p><p>传统 ChatGPT 像一个<strong>知识渊博的顾问</strong>——你问他问题，他给出答案。</p><p>AI Agent 像一个<strong>靠谱的实习生</strong>——你交给他一个任务，他会自己想办法完成，遇到问题还会回来问你。</p><p><h2>Agent 的四大核心能力</h2></p><p><pre><code class="language-">┌─────────────┐    ┌─────────────┐
+│  感知能力    │    │  规划能力   │
+│  (Perception)│    │ (Planning)  │
+└──────┬──────┘    └──────┬──────┘
+       │                  │
+       ▼                  ▼
+┌─────────────────────────────┐
+│        记忆系统             │
+│    (短期记忆 + 长期记忆)    │
+└─────────────────────────────┘
+       │                  │
+       ▼                  ▼
+┌─────────────┐    ┌─────────────┐
+│  工具调用    │    │  行动执行   │
+│  (Tool Use) │    │ (Execution) │
+└─────────────┘    └─────────────┘</code></pre></p><p><h3>1. 感知能力</h3></p><p>Agent 能「看到」和「听到」周围的环境。这可以是：
+<ul><li>读取你上传的文件</li>
+<li>解析网页内容</li>
+<li>理解对话上下文</li>
+<li>查看数据库记录</li>
+</ul>
+<h3>2. 规划能力</h3></p><p>这是 Agent 最核心的能力。给定一个目标，它会：</p><p><pre><code class="language-python"># 简化版 Agent 规划示例
+task = "调研2025年最好的AI编程工具并写一份报告"</p><p>plan = [
+    {"step": 1, "action": "搜索", "target": "2025 AI编程工具排行榜"},
+    {"step": 2, "action": "分析", "target": "对比各工具的优缺点"},
+    {"step": 3, "action": "写作", "target": "生成对比报告"},
+]</p><p><h1>Agent 会按步骤执行，每步完成后自动判断下一步</code></pre></h1></p><p><h3>3. 工具调用</h3></p><p>Agent 可以调用各种工具来完成任务：</p><p><pre><code class="language-python">class AgentTools:
+    def search_web(self, query: str) -&gt; list:
+        """搜索网络信息"""
+        pass
+    
+    def execute_code(self, code: str) -&gt; str:
+        """运行代码并返回结果"""
+        pass
+    
+    def read_file(self, path: str) -&gt; str:
+        """读取文件内容"""
+        pass
+    
+    def call_api(self, url: str, params: dict) -&gt; dict:
+        """调用外部 API"""
+        pass</code></pre></p><p><h3>4. 记忆系统</h3></p><p>Agent 需要记住三件事：
+<ul><li><strong>短期记忆</strong>：当前对话中的上下文</li>
+<li><strong>长期记忆</strong>：跨会话的知识积累</li>
+<li><strong>工作记忆</strong>：当前正在处理的任务状态</li>
+</ul>
+<h2>实战：用 Python 写一个简单 Agent</h2></p><p>下面是一个最简单的 Agent 实现，它能搜索并总结信息：</p><p><pre><code class="language-python">import json
+from typing import List, Dict</p><p>class SimpleAgent:
+    def __init__(self, name: str):
+        self.name = name
+        self.memory = []
+    
+    def think(self, task: str) -&gt; List[Dict]:
+        """根据任务制定计划"""
+        print(f"🤔 {self.name} 正在思考如何: {task}")
+        
+        # 简单规则引擎
+        if "搜索" in task or "调研" in task:
+            return [
+                {"action": "search", "params": task},
+                {"action": "analyze", "params": "整理结果"},
+                {"action": "summarize", "params": "生成报告"}
+            ]
+        elif "代码" in task or "编程" in task:
+            return [
+                {"action": "write_code", "params": task},
+                {"action": "test", "params": "验证代码"},
+                {"action": "fix_bugs", "params": "修复问题"}
+            ]
+        else:
+            return [{"action": "ask_user", "params": "我不确定怎么处理这个任务"}]
+    
+    def execute(self, plan: List[Dict]) -&gt; str:
+        """执行计划"""
+        results = []
+        for step in plan:
+            print(f"  → 执行: {step['action']}")
+            # 模拟执行
+            result = f"已完成 {step['action']} 操作"
+            results.append(result)
+            self.memory.append(result)
+        return "\n".join(results)
+    
+    def run(self, task: str):
+        """主入口"""
+        print(f"\n🚀 Agent {self.name} 开始工作")
+        plan = self.think(task)
+        result = self.execute(plan)
+        print(f"✅ 完成！\n{result}")
+        
+        return result</p><p><h1>使用示例</h1>
+agent = SimpleAgent("助手小A")
+agent.run("搜索近期AI编程工具的新动态")</code></pre></p><p>运行结果：
+<pre><code class="language-">🚀 Agent 助手小A 开始工作
+🤔 助手小A 正在思考如何: 搜索近期AI编程工具的新动态
+  → 执行: search
+  → 执行: analyze  
+  → 执行: summarize
+✅ 完成！
+已完成 search 操作
+已完成 analyze 操作
+已完成 summarize 操作</code></pre></p><p><h2>Agent 框架推荐</h2></p><p>如果你想真正上手开发 Agent，推荐这些框架：</p><p>| 框架 | 特点 | 适合场景 |
+|------|------|---------|
+| <strong>LangChain</strong> | 生态最丰富，文档完善 | 通用 Agent 开发 |
+| <strong>AutoGPT</strong> | 自主性最强，全自动 | 复杂任务自动化 |
+| <strong>CrewAI</strong> | 多 Agent 协作 | 团队式任务 |
+| <strong>OpenAI Assistants</strong> | 官方支持，稳定 | 快速原型 |</p><p><h2>总结</h2></p><p>AI Agent 正在从概念走向普及。理解 Agent 的四个核心能力——<strong>感知、规划、工具调用、记忆</strong>——是掌握这项技术的关键。</p><p>下一步建议：
+<li>动手用 Python 实现一个简单的 Agent</li>
+<li>尝试接入搜索 API，让 Agent 能获取实时信息</li>
+<li>探索 LangChain 等框架，构建更复杂的 Agent 系统</li></p><p>记住：Agent 不是要取代人类，而是要成为你的<strong>得力助手</strong>。善用 Agent，你的效率会翻倍。</p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>AI 编程实验室 &copy; 2026 | 用 ❤️ 和 AI 生成</p>
+    </div>
+  </footer>
+</body>
+</html>
