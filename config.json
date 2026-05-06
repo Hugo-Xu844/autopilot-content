@@ -1,0 +1,53 @@
+{
+  "site": {
+    "title": "AI 编程实验室",
+    "description": "AI 技术教程、编程实战、工具分享",
+    "baseUrl": "https://你的用户名.github.io/autopilot-content",
+    "language": "zh-CN"
+  },
+  "content": {
+    "niche": "tech-ai",
+    "outputDir": "content/posts",
+    "dailyPostCount": 2,
+    "categories": [
+      "AI入门教程",
+      "Python编程",
+      "AI工具评测",
+      "编程实战",
+      "Prompt工程",
+      "效率工具"
+    ]
+  },
+  "generation": {
+    "model": {
+      "provider": "deepseek",
+      "endpoint": "https://api.deepseek.com/v1/chat/completions",
+      "apiKey": "sk-ccc715c9527449b1b15c4c36a5592d8b",
+      "modelName": "deepseek-chat"
+    },
+    "localModel": {
+      "provider": "ollama",
+      "endpoint": "http://localhost:11434/api/generate",
+      "modelName": "qwen3:4b"
+    },
+    "useLocal": false,
+    "maxTokens": 2048,
+    "language": "zh-CN"
+  },
+  "deploy": {
+    "type": "github-pages",
+    "repoUrl": "https://github.com/Hugo-Xu844/autopilot-content.git",
+    "branch": "gh-pages",
+    "autoDeploy": true
+  },
+  "schedule": {
+    "enabled": true,
+    "generateTime": "08:00",
+    "deployTime": "08:30"
+  },
+  "products": {
+    "outputDir": "content/products",
+    "autoCompile": true,
+    "compileIntervalDays": 7
+  }
+}

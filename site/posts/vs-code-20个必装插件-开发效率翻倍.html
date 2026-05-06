@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VS Code 20个必装插件，开发效率翻倍 - AI 编程实验室</title>
+  <meta name="description" content="VS Code 20个必装插件，开发效率翻倍 - 详细教程与实战指南">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a href="../" class="logo">AI 编程实验室</a>
+      <nav>
+        <a href="../">首页</a>
+        <a href="../products.html">教程产品</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <article class="post-full">
+      <header class="post-header">
+        <h1>VS Code 20个必装插件，开发效率翻倍</h1>
+        <div class="post-meta">
+          <span class="date">📅 2026-05-06</span>
+          <span class="category">📂 效率工具</span>
+          <div class="tags"><span class="tag">效率工具</span> <span class="tag">VS Code</span></div>
+        </div>
+      </header>
+      <div class="post-content">
+        <p><h1>VS Code 20个必装插件，开发效率翻倍</h1></p><p>写代码时频繁切换窗口、手动格式化代码、调试时反复加<code>console.log</code>？这些痛点是时候终结了。本文精选20款VS Code插件，覆盖编码、调试、协作和界面优化四大场景，帮你把开发效率拉满。</p><p><h2>一、编码加速器：让写代码像开挂</h2></p><p><h3>1. Prettier - Code formatter</h3>
+自动格式化代码，团队协作时统一风格。安装后只需在项目根目录创建<code>.prettierrc</code>：</p><p><pre><code class="language-json">{
+  "semi": false,
+  "singleQuote": true,
+  "tabWidth": 2
+}</code></pre></p><p>然后开启“保存时格式化”：在VS Code设置中搜索<code>editor.formatOnSave</code>，勾选即可。</p><p><h3>2. ESLint</h3>
+代码质量守护者，实时检测语法错误和风格问题。配合Prettier使用，先在项目安装：</p><p><pre><code class="language-bash">npm install eslint prettier eslint-config-prettier -D</code></pre></p><p>然后在<code>.eslintrc.js</code>中配置：</p><p><pre><code class="language-js">module.exports = {
+  extends: ['eslint:recommended', 'prettier'],
+  rules: {
+    'no-unused-vars': 'warn',
+    'no-console': 'off'
+  }
+};</code></pre></p><p><strong>场景</strong>：团队新成员提交的代码经常有未定义变量，ESLint在保存时自动标红，省去Code Review的琐碎纠错。</p><p><h3>3. Path Intellisense</h3>
+智能路径补全，再也不用手动输入<code>../../utils/</code>。输入<code>./</code>或<code>../</code>时自动弹出文件列表，支持<code>@</code>别名映射。</p><p><h3>4. GitLens — Git supercharged</h3>
+在每一行代码旁显示最后修改者、提交时间和commit message。右键还能快速查看文件的完整修改历史。</p><p><strong>场景</strong>：排查“这行代码是谁改的”时，不需要打开终端敲<code>git blame</code>，鼠标悬停即可看到。</p><p><h3>5. Error Lens</h3>
+错误信息直接显示在代码行尾，不用再把鼠标移到波浪线上查看提示。红色波浪线+文字说明，一眼定位问题。</p><p><h2>二、调试与测试：告别console.log</h2></p><p><h3>6. Debugger for Chrome / JavaScript Debugger</h3>
+直接在VS Code里打断点调试前端代码。按<code>F5</code>启动，选择“Chrome”环境，配置<code>launch.json</code>：</p><p><pre><code class="language-json">{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "pwa-chrome",
+      "request": "launch",
+      "name": "Launch Chrome against localhost",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}"
+    }
+  ]
+}</code></pre></p><p><strong>场景</strong>：调试复杂的状态逻辑时，在<code>useEffect</code>里打上断点，逐行执行查看变量变化，比<code>console.log</code>高效10倍。</p><p><h3>7. Jest</h3>
+运行和调试Jest测试用例的专用插件。自动发现测试文件，在测试代码行旁��示运行按钮。支持单用例执行、断点调试。</p><p><h3>8. REST Client</h3>
+替代Postman，在VS Code里直接发送HTTP请求。创建<code>.http</code>文件：</p><p><pre><code class="language-">### 获取用户列表
+GET https://api.example.com/users
+Authorization: Bearer {{token}}</p><p><h3>创建用户</h3>
+POST https://api.example.com/users
+Content-Type: application/json</p><p>{
+  "name": "张三",
+  "email": "zhangsan@example.com"
+}</code></pre></p><p>点击“Send Request”，结果直接显示在右侧面板，支持环境变量和请求历史。</p><p><h2>三、协作与项目管理：团队效率倍增器</h2></p><p><h3>9. Live Share</h3>
+实时协作编辑代码，类似Google Docs的协同体验。点击侧边栏的Live Share图标，生成分享链接，队友加入后能同时编辑、跟踪光标位置、共享终端。</p><p><strong>场景</strong>：远程Pair Programming时，不用再截图或录屏，直接共享编辑器，双方都能运行代码。</p><p><h3>10. GitHub Pull Requests and Issues</h3>
+在VS Code内完成PR的创建、审查和合并。打开GitHub面板，查看PR列表，添加评论，甚至直接修改代码并提交。</p><p><h3>11. TODO Highlight</h3>
+高亮代码中的<code>TODO</code>、<code>FIXME</code>、<code>HACK</code>等注释。在设置中自定义关键词：</p><p><pre><code class="language-json">"todohighlight.keywords": [
+  {
+    "text": "TODO",
+    "color": "#ff6600",
+    "backgroundColor": "#fff3cd"
+  },
+  {
+    "text": "FIXME",
+    "color": "#ff0000",
+    "backgroundColor": "#f8d7da"
+  }
+]</code></pre></p><p><strong>场景</strong>：在大型项目中快速定位遗留问题，双击TODO注释直接跳到代码位置。</p><p><h3>12. Project Manager</h3>
+管理多个项目，一键切换。按<code>Ctrl+Shift+P</code>，输入“Project Manager: Save Project”，保存当前工作区。之后通过侧边栏快速打开。</p><p><h2>四、界面与体验优化：让编辑器更顺手</h2></p><p><h3>13. Material Icon Theme</h3>
+为文件和文件夹提供精美的图标，一眼识别文件类型。安装后在设置中搜索<code>workbench.iconTheme</code>，选择<code>material-icon-theme</code>。</p><p><h3>14. Bracket Pair Colorizer 2</h3>
+给不同层级的括号着色，嵌套代码结构一目了然。支持圆括号、方括号、花括号等。</p><p><strong>场景</strong>：处理React组件的多层回调时，括号匹配不再眼花缭乱。</p><p><h3>15. Indent-Rainbow</h3>
+缩进级别用彩虹色区分，快速定位缩进错误。在设置中调整颜色：</p><p><pre><code class="language-json">"indentRainbow.colors": [
+  "rgba(255,255,64,0.07)",
+  "rgba(127,255,127,0.07)",
+  "rgba(255,127,255,0.07)",
+  "rgba(79,236,236,0.07)"
+]</code></pre></p><p><h3>16. Code Runner</h3>
+一键运行代码片段，支持40+种语言。选中代码后按<code>Ctrl+Alt+N</code>，结果输出在OUTPUT面板。适合快速测试小逻辑。</p><p><h3>17. Better Comments</h3>
+让注释更清晰：红色表示警告，绿色表示提示，蓝色表示TODO。在注释前添加特定标记：</p><p><ul><li><code>// !</code> 红色警告</li>
+<li><code>// ?</code> 蓝色疑问</li>
+<li><code>// *</code> 绿色高亮</li>
+<li><code>// TODO</code> 橙色待办</li>
+</ul>
+<h3>18. Markdown Preview Enhanced</h3>
+实时预览Markdown文件，支持图表、数学公式、目录生成。写技术文档时，按<code>Ctrl+K V</code>打开侧边预览。</p><p><h3>19. Remote - SSH</h3>
+远程连接服务器开发，本地编辑远程代码。配置<code>~/.ssh/config</code>后，在VS Code中点击“Remote Explorer”选择服务器，就像在本地开发一样流畅。</p><p><strong>场景</strong>：开发部署在Linux服务器上的后端服务时，不需要在服务器上装图形界面，本地用VS Code就能编辑、调试。</p><p><h3>20. Settings Sync</h3>
+同步所有设置、插件、快捷键到GitHub Gist。换电脑时一键恢复，告别手动配置。按<code>Shift+Alt+U</code>上传，<code>Shift+Alt+D</code>下载。</p><p><h2>总结</h2></p><p>这20个插件覆盖了编码、调试、协作和界面四大维度，没有一个是“花架子”。安装后建议花10分钟配置关键设置（如Prettier的保存时格式化、ESLint的规则），然后立刻在项目中体验效果。你会发现，过去需要手动完成的重复操作，现在都被自动化了。开发效率翻倍，从这20个插件开始。</p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>AI 编程实验室 &copy; 2026 | 用 ❤️ 和 AI 生成</p>
+    </div>
+  </footer>
+</body>
+</html>

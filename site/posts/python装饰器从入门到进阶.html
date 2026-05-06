@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python装饰器从入门到进阶 - AI 编程实验室</title>
+  <meta name="description" content="Python装饰器从入门到进阶 - 详细教程与实战指南">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a href="../" class="logo">AI 编程实验室</a>
+      <nav>
+        <a href="../">首页</a>
+        <a href="../products.html">教程产品</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <article class="post-full">
+      <header class="post-header">
+        <h1>Python装饰器从入门到进阶</h1>
+        <div class="post-meta">
+          <span class="date">📅 2026-05-06</span>
+          <span class="category">📂 Python编程</span>
+          <div class="tags"><span class="tag">Python编程</span> <span class="tag">Python</span></div>
+        </div>
+      </header>
+      <div class="post-content">
+        <p><h1>Python装饰器从入门到进阶</h1></p><p>装饰器是Python中一个强大而优雅的特性，它允许你在不修改原函数代码的情况下，动态地给函数添加新的功能。本文将带你从基础语法到高级应用，彻底掌握装饰器的使用。</p><p><h2>一、理解装饰器的核心概念</h2></p><p>装饰器本质上是一个接收函数作为参数并返回新函数的高阶函数。让我们从最简单的例子开始：</p><p><pre><code class="language-python">def my_decorator(func):
+    def wrapper():
+        print("在函数执行前做一些事情")
+        func()
+        print("在函数执行后做一些事情")
+    return wrapper</p><p>@my_decorator
+def say_hello():
+    print("Hello!")</p><p>say_hello()</code></pre></p><p>输出：
+<pre><code class="language-">在函数执行前做一些事情
+Hello!
+在函数执行后做一些事情</code></pre></p><p><code>@my_decorator</code> 语法糖等价于 <code>say_hello = my_decorator(say_hello)</code>。<code>wrapper</code>函数包裹了原函数，在调用前后添加了额外逻辑。</p><p><h2>二、处理带参数的函数</h2></p><p>上面的装饰器只能处理无参函数。为了让装饰器通用，我们需要使用<code><em>args</code>和<code></em>*kwargs</code>：</p><p><pre><code class="language-python">def timer_decorator(func):
+    def wrapper(<em>args, </em>*kwargs):
+        import time
+        start = time.time()
+        result = func(<em>args, </em>*kwargs)
+        end = time.time()
+        print(f"{func.__name__} 执行耗时: {end - start:.4f}秒")
+        return result
+    return wrapper</p><p>@timer_decorator
+def calculate_sum(n):
+    return sum(range(n))</p><p>@timer_decorator
+def greet(name, greeting="Hello"):
+    print(f"{greeting}, {name}!")</p><p>result = calculate_sum(1000000)
+print(f"计算结果: {result}")
+greet("Alice", "Hi")</code></pre></p><p>这个装饰器可以测量任意函数的执行时间，并保持原函数的返回值。</p><p><h2>三、保留原函数的元信息</h2></p><p>使用<code>functools.wraps</code>可以保留被装饰函数的名称、文档字符串等元信息：</p><p><pre><code class="language-python">from functools import wraps</p><p>def log_decorator(func):
+    @wraps(func)
+    def wrapper(<em>args, </em>*kwargs):
+        print(f"调用函数: {func.__name__}")
+        print(f"参数: {args}, {kwargs}")
+        result = func(<em>args, </em>*kwargs)
+        print(f"返回值: {result}")
+        return result
+    return wrapper</p><p>@log_decorator
+def add(a, b):
+    """计算两个数的和"""
+    return a + b</p><p>print(f"函数名: {add.__name__}")
+print(f"文档: {add.__doc__}")
+add(3, 5)</code></pre></p><p>没有<code>@wraps</code>时，<code>add.__name__</code>会变成<code>wrapper</code>，这会导致调试困难。</p><p><h2>四、带参数的装饰器</h2></p><p>有时我们需要给装饰器传递参数，比如设置日志级别。这需要再嵌套一层函数：</p><p><pre><code class="language-python">def repeat(times):
+    def decorator(func):
+        @wraps(func)
+        def wrapper(<em>args, </em>*kwargs):
+            for _ in range(times):
+                result = func(<em>args, </em>*kwargs)
+            return result
+        return wrapper
+    return decorator</p><p>@repeat(times=3)
+def say_hi():
+    print("Hi!")</p><p>say_hi()</code></pre></p><p>这里的<code>repeat(times=3)</code>先调用返回<code>decorator</code>函数，然后<code>@decorator</code>再应用于<code>say_hi</code>。</p><p><h2>五、实际应用场景</h2></p><p><h3>1. 权限验证</h3>
+<pre><code class="language-python">def require_auth(role):
+    def decorator(func):
+        @wraps(func)
+        def wrapper(user, <em>args, </em>*kwargs):
+            if user.get("role") != role:
+                raise PermissionError(f"需要{role}权限")
+            return func(user, <em>args, </em>*kwargs)
+        return wrapper
+    return decorator</p><p>@require_auth("admin")
+def delete_user(user, user_id):
+    print(f"用户 {user_id} 已被删除")</p><p><h1>测试</h1>
+admin_user = {"name": "Admin", "role": "admin"}
+normal_user = {"name": "User", "role": "user"}</p><p>delete_user(admin_user, 123)  # 正常执行
+<h1>delete_user(normal_user, 123)  # 抛出PermissionError</code></pre></h1></p><p><h3>2. 缓存计算结果</h3>
+<pre><code class="language-python">def cache_result(func):
+    cache = {}
+    @wraps(func)
+    def wrapper(*args):
+        if args in cache:
+            print(f"使用缓存: {args}")
+            return cache[args]
+        result = func(*args)
+        cache[args] = result
+        return result
+    return wrapper</p><p>@cache_result
+def fibonacci(n):
+    if n &lt;= 1:
+        return n
+    return fibonacci(n-1) + fibonacci(n-2)</p><p>print(fibonacci(10))  # 第一次计算
+print(fibonacci(10))  # 直接从缓存获取</code></pre></p><p><h3>3. 重试机制</h3>
+<pre><code class="language-python">import time</p><p>def retry(max_attempts=3, delay=1):
+    def decorator(func):
+        @wraps(func)
+        def wrapper(<em>args, </em>*kwargs):
+            for attempt in range(max_attempts):
+                try:
+                    return func(<em>args, </em>*kwargs)
+                except Exception as e:
+                    if attempt == max_attempts - 1:
+                        raise
+                    print(f"第{attempt + 1}次失败，{delay}秒后重试...")
+                    time.sleep(delay)
+        return wrapper
+    return decorator</p><p>@retry(max_attempts=3, delay=0.5)
+def unstable_network_call():
+    import random
+    if random.random() &lt; 0.7:
+        raise ConnectionError("网络异常")
+    return "成功获取数据"</p><p>print(unstable_network_call())</code></pre></p><p><h2>六、多个装饰器的组合</h2></p><p>当多个装饰器叠加时，执行顺序���从下往上（离函数最近的先执行）：</p><p><pre><code class="language-python">@timer_decorator
+@log_decorator
+def complex_function(x, y):
+    return x ** y</p><p>complex_function(2, 10)</code></pre></p><p>这相当于 <code>complex_function = timer_decorator(log_decorator(complex_function))</code>，先执行<code>log_decorator</code>，再执行<code>timer_decorator</code>。</p><p><h2>总结</h2></p><p>装饰器是Python中实现AOP（面向切面编程）的优雅方式。核心要点：</p><p><li><strong>基本结构</strong>：装饰器是接收函数返回函数的高阶函数</li>
+<li><strong>参数传递</strong>：使用<code><em>args, </em>*kwargs</code>保持通用性</li>
+<li><strong>元信息保留</strong>：始终使用<code>@wraps</code>装饰wrapper函数</li>
+<li><strong>带参数装饰器</strong>：需要三层嵌套函数</li>
+<li><strong>实际应用</strong>：日志、权限、缓存、重试等场景非常实用</li></p><p>掌握装饰器后，你会发现代码复用性和可维护性都得到了显著提升。</p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>AI 编程实验室 &copy; 2026 | 用 ❤️ 和 AI 生成</p>
+    </div>
+  </footer>
+</body>
+</html>
