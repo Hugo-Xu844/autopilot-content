@@ -3,82 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prompt璁捐妯″紡锛氳AI杈撳嚭鏇寸簿鍑?- AI 缂栫▼瀹為獙瀹?/title>
-  <meta name="description" content="Prompt璁捐妯″紡锛氳AI杈撳嚭鏇寸簿鍑?- 璇︾粏鏁欑▼涓庡疄鎴樻寚鍗?>
-  <link rel="stylesheet" href="../assets/style.css">
+  <title>Prompt设计模式：让AI输出更精准 - AI 编程实验室</title>
+  <meta name="description" content="Prompt设计模式：让AI输出更精准 - 详细教程与实战指南">
+  <link rel="stylesheet" href="assets/style.css">
 </head>
-
 <body>
   <div id="reading-progress"></div>
   <header class="header">
     <div class="container">
-      <a href="../" class="logo">AI 缂栫▼瀹為獙瀹?/a>
-      <nav>
-        <a href="../">棣栭〉</a>
-        <a href="../products.html">鏁欑▼浜у搧</a>
-      </nav>
-        <button id="theme-toggle" class="theme-toggle" aria-label="切换深色/浅色模式">🌙</button>
+      <a href="../" class="logo">AI 编程实验室</a>
+      <div class="header-actions">
+        <nav>
+          <a href="../">首页</a>
+          <a href="../categories.html">分类</a>
+          <a href="../products.html">教程产品</a>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" aria-label="切换深色/浅色模式">&#127769;</button>
       </div>
     </div>
   </header>
-
   <main class="container">
     <article class="post-full">
       <header class="post-header">
-        <h1>Prompt璁捐妯″紡锛氳AI杈撳嚭鏇寸簿鍑?/h1>
+        <h1>Prompt设计模式：让AI输出更精准</h1>
         <div class="post-meta">
-          <span class="date">馃搮 2026-05-06</span>
-          <span class="category">馃搨 Prompt宸ョ▼</span>
-          <div class="tags"><span class="tag">Prompt宸ョ▼</span> <span class="tag">AI</span></div>
+          <span class="date">📅 2026-05-06</span>
+          <span class="category">📂 Prompt工程</span>
+          <span class="reading-time">📖 阅读约 3 分钟</span>
+          <div class="tags"><span class="tag">Prompt工程</span> <span class="tag">AI</span></div>
         </div>
       </header>
       <div class="post-content">
-        <p><h1>Prompt璁捐妯″紡锛氳AI杈撳嚭鏇寸簿鍑?/h1></p><p>姣忔鍜孉I瀵硅瘽锛屾渶璁╀汉鎶撶媯鐨勮帿杩囦簬鈥滅瓟闈炴墍闂€濄€傚叾瀹烇紝闂寰€寰€鍑哄湪鎻愮ず璇嶏紙Prompt锛夌殑璁捐涓娿€傛湰鏂囧皢鍒嗕韩鍑犵瀹炵敤鐨凱rompt璁捐妯″紡锛屽府鍔╁紑鍙戣€呯敤缁撴瀯鍖栥€佸彲澶嶇敤鐨勬柟寮忥紝璁〢I杈撳嚭鏇寸鍚堥鏈熴€?/p><p>---</p><p><h2>1. 瑙掕壊鎵紨妯″紡锛氱粰AI涓€涓韩浠?/h2></p><p>璁〢I鎵紨鐗瑰畾瑙掕壊锛岃兘鏋佸ぇ鏀瑰杽杈撳嚭璐ㄩ噺銆傝鑹叉彁渚涗簡涓婁笅鏂囨鏋跺拰鐩爣瀵煎悜銆?/p><p><strong>鍩虹鍐欐硶锛堜笉鎺ㄨ崘锛夛細</strong>
-<pre><code class="language-">甯垜鍐欎竴涓狿ython鍑芥暟锛屾鏌ョ礌鏁般€?/code></pre></p><p><strong>瑙掕壊妯″紡鍐欐硶锛?/strong>
-<pre><code class="language-">浣犳槸涓€涓祫娣盤ython寮€鍙戣€咃紝鎿呴暱缂栧啓楂樻€ц兘绠楁硶銆?璇峰疄鐜颁竴涓?code>is_prime(n)</code>鍑芥暟锛岃姹傦細
-<ul><li>鏃堕棿澶嶆潅搴﹀敖鍙兘浣?/li>
-<li>鍖呭惈璇︾粏娉ㄩ噴</li>
-<li>鎻愪緵娴嬭瘯鐢ㄤ緥</code></pre></li>
+        <p><h1>Prompt设计模式：让AI输出更精准</h1></p><p>每次和AI对话，最让人抓狂的莫过于“答非所问”。其实，问题往往出在提示词（Prompt）的设计上。本文将分享几种实用的Prompt设计模式，帮助开发者用结构化、可复用的方式，让AI输出更符合预期。</p><p>---</p><p><h2>1. 角色扮演模式：给AI一个身份</h2></p><p>让AI扮演特定角色，能极大改善输出质量。角色提供了上下文框架和目标导向。</p><p><strong>基础写法（不推荐）：</strong>
+<pre><code class="language-">帮我写一个Python函数，检查素数。</code></pre></p><p><strong>角色模式写法：</strong>
+<pre><code class="language-">你是一个资深Python开发者，擅长编写高性能算法。
+请实现一个<code>is_prime(n)</code>函数，要求：
+<ul><li>时间复杂度尽可能低</li>
+<li>包含详细注释</li>
+<li>提供测试用例</code></pre></li>
 </ul>
-<strong>鏁堟灉瀵规瘮锛?/strong> 鍚庤€呬細杈撳嚭鏇翠笓涓氥€佹洿瀹屾暣鐨勪唬鐮侊紝鍖呭惈杈圭晫澶勭悊鍜屾€ц兘浼樺寲銆?/p><p><strong>瀹為檯鍦烘櫙锛?/strong> 璁〢I鎵紨鈥滀唬鐮佸鏌ュ憳鈥濆鏌ヤ綘鐨勪唬鐮侊紝鎴栨壆婕斺€滈潰璇曞畼鈥濆嚭鎶€鏈銆?/p><p>---</p><p><h2>2. 绀轰緥椹卞姩妯″紡锛欶ew-shot Learning</h2></p><p>AI鍦ㄩ浂鏍锋湰涓嬭〃鐜颁笉绋冲畾锛屼絾缁欏嚭鍑犱釜绀轰緥鍚庯紝妯″紡璇嗗埆鑳藉姏浼氬ぇ骞呮彁鍗囥€?/p><p><strong>缁撴瀯锛?/strong> 杈撳叆1 鈫?杈撳嚭1 鈫?杈撳叆2 鈫?杈撳嚭2 鈫?鏂拌緭鍏?鈫?鏈熷緟AI鎺ㄧ悊杈撳嚭</p><p><strong>绀轰緥锛堟彁鍙朖SON鏁版嵁锛夛細</strong>
-<pre><code class="language-">璇峰皢浠ヤ笅鎻忚堪杞负JSON鏍煎紡锛?/p><p>鎻忚堪锛氬紶涓夛紝28宀侊紝鍚庣宸ョ▼甯?杈撳嚭锛歿"name": "寮犱笁", "age": 28, "role": "鍚庣宸ョ▼甯?}</p><p>鎻忚堪锛氭潕鍥涳紝35宀侊紝浜у搧缁忕悊
-杈撳嚭锛歿"name": "鏉庡洓", "age": 35, "role": "浜у搧缁忕悊"}</p><p>鎻忚堪锛氱帇浜旓紝42宀侊紝DevOps宸ョ▼甯?杈撳嚭锛?/code></pre></p><p><strong>鏈€浣冲疄璺碉細</strong> 鎻愪緵2-3涓ず渚嬪嵆鍙紝杩囧鍙嶈€屼細鍒嗘暎娉ㄦ剰鍔涖€傜ず渚嬭瑕嗙洊杈圭晫鎯呭喌銆?/p><p>---</p><p><h2>3. 妯℃澘濉厖妯″紡锛氱粨鏋勫寲鎸囦护</h2></p><p>鐢ㄦā鏉跨害鏉熻緭鍑烘牸寮忥紝鐗瑰埆閫傚悎鐢熸垚鎶ュ憡銆佷唬鐮佹敞閲婃垨API鏂囨。銆?/p><p><strong>涓嶆帹鑽愮殑鍐欐硶锛?/strong>
-<pre><code class="language-">瑙ｉ噴涓€涓婻eact鐨剈seEffect銆?/code></pre></p><p><strong>妯℃澘妯″紡鍐欐硶锛?/strong>
-<pre><code class="language-">璇锋寜浠ヤ笅妯℃澘瑙ｉ噴React Hook锛歶seEffect</p><p>銆愬姛鑳芥杩般€戯細锛堜竴鍙ヨ瘽璇存槑鐢ㄩ€旓級
-銆愪娇鐢ㄥ満鏅€戯細锛堝垪涓?-3涓吀鍨嬪満鏅級
-銆愪唬鐮佺ず渚嬨€戯細锛堜竴涓畬鏁寸殑鏈€灏忕ず渚嬶紝鍖呭惈import锛?銆愭敞鎰忎簨椤广€戯細锛堝垪鍑轰緷璧栨暟缁勩€佹竻鐞嗗嚱鏁扮瓑鍏抽敭鐐癸級
-銆愬父瑙侀敊璇€戯細锛堝垪涓?-2涓槗閿欑偣鍙婅В鍐虫柟妗堬級</code></pre></p><p><strong>浼樺娍锛?/strong> 杈撳嚭缁撴瀯鍥哄畾锛屼究浜庡悗缁В鏋愭垨鐩存帴宓屽叆鏂囨。銆傚紑鍙戣€呭彲浠ヨ交鏉锯€滃鍒剁矘璐粹€濅娇鐢ㄣ€?/p><p><strong>杩涢樁鎶€宸э細</strong> 鍦ㄦā鏉夸腑浣跨敤鍙橀噺鍗犱綅绗︼紝濡?code>{hook_name}</code>锛屽疄鐜版壒閲忕敓鎴愩€?/p><p>---</p><p><h2>4. 閾惧紡鎺ㄧ悊妯″紡锛氳AI鍏堟€濊€冨啀鍥炵瓟</h2></p><p>瀵逛簬澶嶆潅闂锛岀洿鎺ヨ姹傜瓟妗堝鏄撳嚭閿欍€傚紩瀵糀I鍒嗘鎺ㄧ悊锛屾晥鏋滄樉钁楁彁鍗囥€?/p><p><strong>鐩存帴鎻愰棶锛?/strong>
-<pre><code class="language-">杩欐浠ｇ爜鐨勬椂闂村鏉傚害鏄灏戯紵
+<strong>效果对比：</strong> 后者会输出更专业、更完整的代码，包含边界处理和性能优化。</p><p><strong>实际场景：</strong> 让AI扮演“代码审查员”审查你的代码，或扮演“面试官”出技术题。</p><p>---</p><p><h2>2. 示例驱动模式：Few-shot Learning</h2></p><p>AI在零样本下表现不稳定，但给出几个示例后，模式识别能力会大幅提升。</p><p><strong>结构：</strong> 输入1 → 输出1 → 输入2 → 输出2 → 新输入 → 期待AI推理输出</p><p><strong>示例（提取JSON数据）：</strong>
+<pre><code class="language-">请将以下描述转为JSON格式：</p><p>描述：张三，28岁，后端工程师
+输出：{"name": "张三", "age": 28, "role": "后端工程师"}</p><p>描述：李四，35岁，产品经理
+输出：{"name": "李四", "age": 35, "role": "产品经理"}</p><p>描述：王五，42岁，DevOps工程师
+输出：</code></pre></p><p><strong>最佳实践：</strong> 提供2-3个示例即可，过多反而会分散注意力。示例要覆盖边界情况。</p><p>---</p><p><h2>3. 模板填充模式：结构化指令</h2></p><p>用模板约束输出格式，特别适合生成报告、代码注释或API文档。</p><p><strong>不推荐的写法：</strong>
+<pre><code class="language-">解释一下React的useEffect。</code></pre></p><p><strong>模板模式写法：</strong>
+<pre><code class="language-">请按以下模板解释React Hook：useEffect</p><p>【功能概述】：（一句话说明用途）
+【使用场景】：（列举2-3个典型场景）
+【代码示例】：（一个完整的最小示例，包含import）
+【注意事项】：（列出依赖数组、清理函数等关键点）
+【常见错误】：（列举1-2个易错点及解决方案）</code></pre></p><p><strong>优势：</strong> 输出结构固定，便于后续解析或直接嵌入文档。开发者可以轻松“复制粘贴”使用。</p><p><strong>进阶技巧：</strong> 在模板中使用变量占位符，如<code>{hook_name}</code>，实现批量生成。</p><p>---</p><p><h2>4. 链式推理模式：让AI先思考再回答</h2></p><p>对于复杂问题，直接要求答案容易出错。引导AI分步推理，效果显著提升。</p><p><strong>直接提问：</strong>
+<pre><code class="language-">这段代码的时间复杂度是多少？
 for i in range(n):
     for j in range(i, n):
-        print(i, j)</code></pre></p><p><strong>閾惧紡鎺ㄧ悊鍐欐硶锛?/strong>
-<pre><code class="language-">鍒嗘瀽浠ヤ笅浠ｇ爜鐨勬椂闂村鏉傚害銆傝鎸夋楠ゆ帹鐞嗭細</p><p><li>澶栧眰寰幆鎵ц娆℃暟鏄紵</li>
-<li>鍐呭眰寰幆鎵ц娆℃暟鏄紵</li>
-<li>鎬绘墽琛屾鏁板叕寮忔槸锛?/li>
-<li>鏈€缁堢殑鏃堕棿澶嶆潅搴︽槸锛?/li></p><p>浠ｇ爜锛?for i in range(n):
+        print(i, j)</code></pre></p><p><strong>链式推理写法：</strong>
+<pre><code class="language-">分析以下代码的时间复杂度。请按步骤推理：</p><p><li>外层循环执行次数是？</li>
+<li>内层循环执行次数是？</li>
+<li>总执行次数公式是？</li>
+<li>最终的时间复杂度是？</li></p><p>代码：
+for i in range(n):
     for j in range(i, n):
-        print(i, j)</code></pre></p><p><strong>鏁堟灉锛?/strong> AI浼氬厛璁＄畻鍏蜂綋娆℃暟锛坣 + (n-1) + ... + 1 = n(n+1)/2锛夛紝鐒跺悗鎺ㄥ鍑篛(n虏)銆傛帹鐞嗚繃绋嬪噺灏戜簡鈥滆挋绛旀鈥濈殑姒傜巼銆?/p><p><strong>閫傜敤鍦烘櫙锛?/strong> 绠楁硶鍒嗘瀽銆佹暟瀛﹁绠椼€侀€昏緫鎺ㄧ悊銆佽皟璇曞鏉侭ug銆?/p><p>---</p><p><h2>5. 绾︽潫闄愬畾妯″紡锛氳缃竟鐣屽拰瑙勫垯</h2></p><p>AI缁忓父鈥滃彂鏁ｂ€濓紝鐢ㄧ害鏉熸潯浠舵帶鍒惰緭鍑鸿寖鍥淬€?/p><p><strong>甯歌绾︽潫绫诲瀷锛?/strong>
-<ul><li><strong>闀垮害绾︽潫锛?/strong> 闄愬埗鍦?00瀛椾互鍐?/li>
-<li><strong>鏍煎紡绾︽潫锛?/strong> 鍙繑鍥濲SON锛屼笉瑕佸叾浠栨枃瀛?/li>
-<li><strong>鐭ヨ瘑绾︽潫锛?/strong> 鍙熀浜庝互涓嬫枃妗ｅ洖绛?/li>
-<li><strong>鍚﹀畾绾︽潫锛?/strong> 涓嶈鎻愬強浠讳綍绗笁鏂瑰簱</li>
+        print(i, j)</code></pre></p><p><strong>效果：</strong> AI会先计算具体次数（n + (n-1) + ... + 1 = n(n+1)/2），然后推导出O(n²)。推理过程减少了“蒙答案”的概率。</p><p><strong>适用场景：</strong> 算法分析、数学计算、逻辑推理、调试复杂Bug。</p><p>---</p><p><h2>5. 约束限定模式：设置边界和规则</h2></p><p>AI经常“发散”，用约束条件控制输出范围。</p><p><strong>常见约束类型：</strong>
+<ul><li><strong>长度约束：</strong> 限制在100字以内</li>
+<li><strong>格式约束：</strong> 只返回JSON，不要其他文字</li>
+<li><strong>知识约束：</strong> 只基于以下文档回答</li>
+<li><strong>否定约束：</strong> 不要提及任何第三方库</li>
 </ul>
-<strong>绀轰緥锛堝彧杩斿洖JSON锛夛細</strong>
-<pre><code class="language-">鍒嗘瀽浠ヤ笅锟斤拷鎴峰弽棣堢殑鎯呮劅鍊惧悜銆傚彧杩斿洖JSON锛屼笉瑕佷换浣曡В閲娿€?/p><p>鍙嶉锛氳繖涓柊鐗堟湰鍔犺浇閫熷害澶參浜嗭紝浣撻獙寰堝樊銆?杈撳嚭锛歿"sentiment": "negative", "score": 0.2, "keywords": ["鎱?, "宸?]}</p><p>鍙嶉锛歎I璁捐寰堟紓浜紝鍔熻兘涔熷緢瀹炵敤锛屼絾甯屾湜澧炲姞澶滈棿妯″紡銆?杈撳嚭锛?/code></pre></p><p><strong>娉ㄦ剰锛?/strong> 绾︽潫瑕佸叿浣撱€佸彲楠岃瘉銆傛ā绯婄殑鈥滃啓鐭竴鐐光€濅笉濡傗€滈檺鍒跺湪50瀛椾互鍐呪€濄€?/p><p>---</p><p><h2>鎬荤粨</h2></p><p>鏈枃浠嬬粛浜?绉嶅疄鐢ㄧ殑Prompt璁捐妯″紡锛?/p><p><li><strong>瑙掕壊鎵紨妯″紡</strong> - 缁橝I韬唤锛屾彁鍗囦笓涓氬害</li>
-<li><strong>绀轰緥椹卞姩妯″紡</strong> - 鐢‵ew-shot寮曞杈撳嚭鏍煎紡</li>
-<li><strong>妯℃澘濉厖妯″紡</strong> - 缁撴瀯鍖栨寚浠わ紝杈撳嚭鍙帶</li>
-<li><strong>閾惧紡鎺ㄧ悊妯″紡</strong> - 鍒嗘鎬濊€冿紝鍑忓皯閿欒</li>
-<li><strong>绾︽潫闄愬畾妯″紡</strong> - 璁剧疆杈圭晫锛岄槻姝㈠彂鏁?/li></p><p>杩欎簺妯″紡鍙互缁勫悎浣跨敤銆傛瘮濡傗€滆鑹?妯℃澘+绾︽潫鈥濅笁鍚堜竴锛岃兘璁〢I鍦ㄦ寚瀹氳鑹蹭笅锛屾寜鍥哄畾妯℃澘杈撳嚭鍙楅檺鍐呭锛岀簿鍑嗗害澶у箙鎻愬崌銆?/p><p>涓嬫鍐橮rompt鏃讹紝涓嶅Θ鍏堟€濊€冿細鎴戦渶瑕丄I鎵紨浠€涔堣鑹诧紵杈撳嚭鏍煎紡鏄€庢牱鐨勶紵鏈夊摢浜涜竟鐣屾潯浠讹紵鎯虫竻妤氳繖浜涳紝AI灏变笉鍐嶆槸鈥滅巹瀛﹀伐鍏封€濓紝鑰屾槸浣犵殑楂樻晥鍔╂墜銆?/p>
+<strong>示例（只返回JSON）：</strong>
+<pre><code class="language-">分析以下��户反馈的情感倾向。只返回JSON，不要任何解释。</p><p>反馈：这个新版本加载速度太慢了，体验很差。
+输出：{"sentiment": "negative", "score": 0.2, "keywords": ["慢", "差"]}</p><p>反馈：UI设计很漂亮，功能也很实用，但希望增加夜间模式。
+输出：</code></pre></p><p><strong>注意：</strong> 约束要具体、可验证。模糊的“写短一点”不如“限制在50字以内”。</p><p>---</p><p><h2>总结</h2></p><p>本文介绍了5种实用的Prompt设计模式：</p><p><li><strong>角色扮演模式</strong> - 给AI身份，提升专业度</li>
+<li><strong>示例驱动模式</strong> - 用Few-shot引导输出格式</li>
+<li><strong>模板填充模式</strong> - 结构化指令，输出可控</li>
+<li><strong>链式推理模式</strong> - 分步思考，减少错误</li>
+<li><strong>约束限定模式</strong> - 设置边界，防止发散</li></p><p>这些模式可以组合使用。比如“角色+模板+约束”三合一，能让AI在指定角色下，按固定模板输出受限内容，精准度大幅提升。</p><p>下次写Prompt时，不妨先思考：我需要AI扮演什么角色？输出格式是怎样的？有哪些边界条件？想清楚这些，AI就不再是“玄学工具”，而是你的高效助手。</p>
       </div>
+      
+  <div class="related-posts">
+    <h3>📌 相关文章</h3>
+    <div class="related-grid">
+      
+      <a href="系统提示词设计-定制ai助手行为.html" class="related-card">
+        <h4>系统提示词设计：定制AI助手行为</h4>
+        <span class="date">📅 2026-05-06</span>
+      </a>
+    </div>
+  </div>
     </article>
   </main>
-
   <footer class="footer">
     <div class="container">
-      <p>AI 缂栫▼瀹為獙瀹?&copy; 2026 | 鐢?鉂わ笍 鍜?AI 鐢熸垚</p>
+      <p>AI 编程实验室 &copy; 2026 | 用 &#10084;&#65039; 和 AI 生成</p>
     </div>
   </footer>
-  <button id="back-to-top" aria-label="回到顶部">↑</button>
+
+  <button id="back-to-top" aria-label="回到顶部">&uarr;</button>
+
   <script src="../assets/app.js"></script>
 </body>
 </html>

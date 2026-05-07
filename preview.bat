@@ -4,12 +4,18 @@ echo ============================================
 echo  AI 编程实验室 - 本地预览
 echo ============================================
 echo.
-echo 🔍 在浏览器打开: http://localhost:8080
-echo.
 
 cd /d "%~dp0"
 
-:: 用 Python 启动简易 HTTP 服务器
-python -m http.server 8080 --directory site
+:: 检查是否已有程序占用8080
+netstat -ano | findstr ":8080.*LISTENING" >nul
+if %errorlevel% equ 0 (
+    echo ⚠️  端口 8080 已被占用，尝试用 8081 端口
+    python -m http.server 8081 --directory site
+) else (
+    echo 🌐 请打开浏览器访问: http://localhost:8080
+    echo.
+    python -m http.server 8080 --directory site
+)
 
 pause
