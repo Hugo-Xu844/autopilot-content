@@ -3,76 +3,97 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>缁堢缇庡寲鎸囧崡锛歐indows Terminal + Oh My Posh - AI 缂栫▼瀹為獙瀹?/title>
-  <meta name="description" content="缁堢缇庡寲鎸囧崡锛歐indows Terminal + Oh My Posh - 璇︾粏鏁欑▼涓庡疄鎴樻寚鍗?>
-  <link rel="stylesheet" href="../assets/style.css">
+  <title>终端美化指南：Windows Terminal + Oh My Posh - AI 编程实验室</title>
+  <meta name="description" content="终端美化指南：Windows Terminal + Oh My Posh - 详细教程与实战指南">
+  <link rel="stylesheet" href="assets/style.css">
 </head>
-
 <body>
   <div id="reading-progress"></div>
   <header class="header">
     <div class="container">
-      <a href="../" class="logo">AI 缂栫▼瀹為獙瀹?/a>
-      <nav>
-        <a href="../">棣栭〉</a>
-        <a href="../products.html">鏁欑▼浜у搧</a>
-      </nav>
-        <button id="theme-toggle" class="theme-toggle" aria-label="切换深色/浅色模式">🌙</button>
+      <a href="../" class="logo">AI 编程实验室</a>
+      <div class="header-actions">
+        <nav>
+          <a href="../">首页</a>
+          <a href="../categories.html">分类</a>
+          <a href="../products.html">教程产品</a>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" aria-label="切换深色/浅色模式">&#127769;</button>
       </div>
     </div>
   </header>
-
   <main class="container">
     <article class="post-full">
       <header class="post-header">
-        <h1>缁堢缇庡寲鎸囧崡锛歐indows Terminal + Oh My Posh</h1>
+        <h1>终端美化指南：Windows Terminal + Oh My Posh</h1>
         <div class="post-meta">
-          <span class="date">馃搮 2026-05-06</span>
-          <span class="category">馃搨 鏁堢巼宸ュ叿</span>
-          <div class="tags"><span class="tag">鏁堢巼宸ュ叿</span></div>
+          <span class="date">📅 2026-05-06</span>
+          <span class="category">📂 效率工具</span>
+          <span class="reading-time">📖 阅读约 4 分钟</span>
+          <div class="tags"><span class="tag">效率工具</span></div>
         </div>
       </header>
       <div class="post-content">
-        <p><h1>缁堢缇庡寲鎸囧崡锛歐indows Terminal + Oh My Posh</h1></p><p>姣忓ぉ闈㈠榛戝簳鐧藉瓧鐨勯粯璁ょ粓绔紝浣犳槸鍚︿篃鎰熷埌瀹＄編鐤插姵锛熶竴涓編瑙備笖淇℃伅涓板瘜鐨勭粓绔笉浠呰兘鎻愬崌缂栫爜蹇冩儏锛岃繕鑳借 Git 鐘舵€併€佸懡浠ゆ墽琛屾椂闂寸瓑鍏抽敭淇℃伅涓€鐩簡鐒躲€傛湰鏂囧皢甯︿綘涓€姝ユ鎶?Windows 缁堢鎵撻€犳垚鏃㈠ソ鐪嬪張瀹炵敤鐨勫紑鍙戝埄鍣ㄣ€?/p><p><h2>1. 瀹夎 Windows Terminal</h2></p><p>濡傛灉浣犺繕鍦ㄧ敤鑰佹棫鐨?cmd 鎴?PowerShell 鎺у埗鍙帮紝绗竴姝ュ氨鏄崌绾у埌 Windows Terminal銆傚畠鏀寔澶氭爣绛鹃〉銆丟PU 鍔犻€熸覆鏌擄紝浠ュ強涓板瘜鐨勪釜鎬у寲閰嶇疆銆?/p><p><strong>瀹夎鏂瑰紡锛堜换閫夊叾涓€锛夛細</strong>
-<ul><li>Microsoft Store锛氭悳绱?"Windows Terminal" 鐩存帴瀹夎</li>
-<li>winget 鍛戒护锛?code>winget install Microsoft.WindowsTerminal</code></li>
+        <p><h1>终端美化指南：Windows Terminal + Oh My Posh</h1></p><p>每天面对黑底白字的默认终端，你是否也感到审美疲劳？一个美观且信息丰富的终端不仅能提升编码心情，还能让 Git 状态、命令执行时间等关键信息一目了然。本文将带你一步步把 Windows 终端打造成既好看又实用的开发利器。</p><p><h2>1. 安装 Windows Terminal</h2></p><p>如果你还在用老旧的 cmd 或 PowerShell 控制台，第一步就是升级到 Windows Terminal。它支持多标签页、GPU 加速渲染，以及丰富的个性化配置。</p><p><strong>安装方式（任选其一）：</strong>
+<ul><li>Microsoft Store：搜索 "Windows Terminal" 直接安装</li>
+<li>winget 命令：<code>winget install Microsoft.WindowsTerminal</code></li>
 </ul>
-瀹夎鍚庯紝寤鸿灏?Windows Terminal 璁句负榛樿缁堢搴旂敤銆傛墦寮€璁剧疆 鈫?鍚姩 鈫?榛樿缁堢搴旂敤绋嬪簭锛岄€夋嫨 "Windows Terminal"銆?/p><p><h2>2. 瀹夎 Nerd Fonts 瀛椾綋</h2></p><p>瑕佽 Oh My Posh 鏄剧ず婕備寒鐨勫浘鏍囷紝蹇呴』鍏堝畨瑁呬竴娆炬敮鎸佸浘鏍囧瓧浣撶殑 Nerd Font銆傛帹鑽?<strong>MesloLGM Nerd Font</strong>锛屽畠鐨勮繛瀛楁晥鏋滃拰鍥炬爣鏀寔閮藉緢鍑鸿壊銆?/p><p><strong>涓嬭浇涓庡畨瑁咃細</strong>
-<li>鍓嶅線 <a href="https://www.nerdfonts.com/font-downloads" target="_blank">Nerd Fonts 瀹樼綉</a> 涓嬭浇 Meslo 瀛椾綋鍖?/li>
-<li>锟斤拷鍘嬪悗锛屽叏閫夋墍鏈?<code>.ttf</code> 鏂囦欢锛屽彸閿€夋嫨 "涓烘墍鏈夌敤鎴峰畨瑁?</li>
-<li>鎵撳紑 Windows Terminal 璁剧疆锛屽湪閰嶇疆鏂囦欢 鈫?PowerShell 鈫?澶栬涓紝灏嗗瓧浣撴敼涓?"MesloLGM Nerd Font"</li></p><p>> 灏忔妧宸э細濡傛灉瀛椾綋鍒楄〃閲屾壘涓嶅埌锛岄噸鍚?Windows Terminal 鍗冲彲銆?/p><p><h2>3. 瀹夎 Oh My Posh</h2></p><p>Oh My Posh 鏄竴涓法骞冲彴鐨勭粓绔彁绀虹缇庡寲宸ュ叿锛屾敮鎸佽嚜瀹氫箟涓婚銆佹樉绀?Git 鍒嗘敮銆丳ython 铏氭嫙鐜銆佸懡浠ゆ墽琛屾椂闂寸瓑銆?/p><p><strong>閫氳繃 winget 瀹夎锛堟帹鑽愶級锛?/strong>
-<pre><code class="language-powershell">winget install JanDeDobbeleer.OhMyPosh</code></pre></p><p><strong>鎴栭€氳繃 PowerShell Gallery 瀹夎锛?/strong>
-<pre><code class="language-powershell">Install-Module oh-my-posh -Scope CurrentUser</code></pre></p><p>瀹夎瀹屾垚鍚庯紝鍒濆鍖?Oh My Posh銆傚湪 PowerShell 閰嶇疆鏂囦欢涓坊鍔犱互涓嬪唴瀹癸細</p><p><pre><code class="language-powershell"># 缂栬緫 $PROFILE
-notepad $PROFILE</p><p><h1>濡傛灉鎻愮ず鏂囦欢涓嶅瓨鍦紝鍏堝垱寤猴細</h1>
-New-Item -Path $PROFILE -Type File -Force</code></pre></p><p>鍦ㄩ厤缃枃浠朵腑鍔犲叆锛?<pre><code class="language-powershell">oh-my-posh init pwsh | Invoke-Expression</code></pre></p><p>淇濆瓨鍚庨噸鏂板姞杞介厤缃細<code>. $PROFILE</code></p><p><h2>4. 閫夋嫨涓庨厤缃富棰?/h2></p><p>Oh My Posh 鍐呯疆浜?100+ 涓婚锛屾墽琛屼互涓嬪懡浠ゅ彲浠ラ瑙堟墍鏈変富棰橈細</p><p><pre><code class="language-powershell">Get-PoshThemes</code></pre></p><p>閫夋嫨涓€涓綘鍠滄鐨勪富棰橈紙渚嬪 <code>powerlevel10k_lean</code>锛夛紝鐒跺悗姘镐箙鍚敤锛?/p><p><pre><code class="language-powershell"># 鍦?$PROFILE 涓慨鏀?oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/powerlevel10k_lean.omp.json" | Invoke-Expression</code></pre></p><p><strong>鑷畾涔変富棰?/strong>锛氬鏋滀綘瀵圭幇鏈変富棰樹笉婊℃剰锛屽彲浠ュ鍒朵竴浠戒富棰樻枃浠惰繘琛屼慨鏀广€備富棰樻枃浠舵槸 JSON 鏍煎紡锛屼綘鍙互璋冩暣棰滆壊銆佹樉绀哄摢浜涙ā鍧楋紙濡?Git銆佹椂闂淬€丳ython 鐗堟湰绛夛級銆備緥濡傦紝鍒涘缓涓€涓嚜瀹氫箟涓婚锛?/p><p><pre><code class="language-powershell"># 澶嶅埗榛樿涓婚
-cp "$env:POSH_THEMES_PATH/powerlevel10k_lean.omp.json" "$env:POSH_THEMES_PATH/mytheme.omp.json"</p><p><h1>鐢?VSCode 缂栬緫</h1>
-code "$env:POSH_THEMES_PATH/mytheme.omp.json"</code></pre></p><p>鍦?JSON 涓紝<code>"blocks"</code> 鏁扮粍瀹氫箟浜嗘彁绀虹鐨勭粨鏋勶紝<code>"segments"</code> 瀹氫箟浜嗗悇涓俊鎭ā鍧椼€備綘鍙互鍒犻櫎涓嶉渶瑕佺殑妯″潡锛屾垨璋冩暣 <code>"style"</code> 灞炴€ф敼鍙樻樉绀烘牱寮忋€?/p><p><h2>5. 缇庡寲 Windows Terminal 閰嶈壊</h2></p><p>鏈€鍚庝竴姝ワ紝鎼厤涓€濂楄垝閫傜殑閰嶈壊鏂规銆傛帹鑽?<strong>Catppuccin</strong> 鎴?<strong>Dracula</strong> 閰嶈壊銆?/p><p><strong>浠?Catppuccin 涓轰緥锛?/strong>
-<li>涓嬭浇 <a href="https://github.com/catppuccin/windows-terminal/blob/main/themes/catppuccin-macchiato.json" target="_blank">catppuccin.json</a></li>
-<li>鍦?Windows Terminal 璁剧疆 鈫?閰嶈壊鏂规 鈫?娣诲姞锛屽鍏ヨ JSON 鏂囦欢</li>
-<li>鍦ㄩ厤缃枃浠?鈫?PowerShell 鈫?澶栬涓紝閫夋嫨 "Catppuccin Macchiato"</li></p><p><strong>瀹屾暣鏁堟灉绀轰緥锛?/strong>
-<pre><code class="language-powershell"># 鏈€缁?$PROFILE 鍐咃拷锟?oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/mytheme.omp.json" | Invoke-Expression</p><p><h1>璁剧疆鍒悕锛堝彲閫夛級</h1>
+安装后，建议将 Windows Terminal 设为默认终端应用。打开设置 → 启动 → 默认终端应用程序，选择 "Windows Terminal"。</p><p><h2>2. 安装 Nerd Fonts 字体</h2></p><p>要让 Oh My Posh 显示漂亮的图标，必须先安装一款支持图标字体的 Nerd Font。推荐 <strong>MesloLGM Nerd Font</strong>，它的连字效果和图标支持都很出色。</p><p><strong>下载与安装：</strong>
+<li>前往 <a href="https://www.nerdfonts.com/font-downloads" target="_blank">Nerd Fonts 官网</a> 下载 Meslo 字体包</li>
+<li>��压后，全选所有 <code>.ttf</code> 文件，右键选择 "为所有用户安装"</li>
+<li>打开 Windows Terminal 设置，在配置文件 → PowerShell → 外观中，将字体改为 "MesloLGM Nerd Font"</li></p><p>> 小技巧：如果字体列表里找不到，重启 Windows Terminal 即可。</p><p><h2>3. 安装 Oh My Posh</h2></p><p>Oh My Posh 是一个跨平台的终端提示符美化工具，支持自定义主题、显示 Git 分支、Python 虚拟环境、命令执行时间等。</p><p><strong>通过 winget 安装（推荐）：</strong>
+<pre><code class="language-powershell">winget install JanDeDobbeleer.OhMyPosh</code></pre></p><p><strong>或通过 PowerShell Gallery 安装：</strong>
+<pre><code class="language-powershell">Install-Module oh-my-posh -Scope CurrentUser</code></pre></p><p>安装完成后，初始化 Oh My Posh。在 PowerShell 配置文件中添加以下内容：</p><p><pre><code class="language-powershell"># 编辑 $PROFILE
+notepad $PROFILE</p><p><h1>如果提示文件不存在，先创建：</h1>
+New-Item -Path $PROFILE -Type File -Force</code></pre></p><p>在配置文件中加入：
+<pre><code class="language-powershell">oh-my-posh init pwsh | Invoke-Expression</code></pre></p><p>保存后重新加载配置：<code>. $PROFILE</code></p><p><h2>4. 选择与配置主题</h2></p><p>Oh My Posh 内置了 100+ 主题，执行以下命令可以预览所有主题：</p><p><pre><code class="language-powershell">Get-PoshThemes</code></pre></p><p>选择一个你喜欢的主题（例如 <code>powerlevel10k_lean</code>），然后永久启用：</p><p><pre><code class="language-powershell"># 在 $PROFILE 中修改
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/powerlevel10k_lean.omp.json" | Invoke-Expression</code></pre></p><p><strong>自定义主题</strong>：如果你对现有主题不满意，可以复制一份主题文件进行修改。主题文件是 JSON 格式，你可以调整颜色、显示哪些模块（如 Git、时间、Python 版本等）。例如，创建一个自定义主题：</p><p><pre><code class="language-powershell"># 复制默认主题
+cp "$env:POSH_THEMES_PATH/powerlevel10k_lean.omp.json" "$env:POSH_THEMES_PATH/mytheme.omp.json"</p><p><h1>用 VSCode 编辑</h1>
+code "$env:POSH_THEMES_PATH/mytheme.omp.json"</code></pre></p><p>在 JSON 中，<code>"blocks"</code> 数组定义了提示符的结构，<code>"segments"</code> 定义了各个信息模块。你可以删除不需要的模块，或调整 <code>"style"</code> 属性改变显示样式。</p><p><h2>5. 美化 Windows Terminal 配色</h2></p><p>最后一步，搭配一套舒适的配色方案。推荐 <strong>Catppuccin</strong> 或 <strong>Dracula</strong> 配色。</p><p><strong>以 Catppuccin 为例：</strong>
+<li>下载 <a href="https://github.com/catppuccin/windows-terminal/blob/main/themes/catppuccin-macchiato.json" target="_blank">catppuccin.json</a></li>
+<li>在 Windows Terminal 设置 → 配色方案 → 添加，导入该 JSON 文件</li>
+<li>在配置文件 → PowerShell → 外观中，选择 "Catppuccin Macchiato"</li></p><p><strong>完整效果示例：</strong>
+<pre><code class="language-powershell"># 最终 $PROFILE 内��
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/mytheme.omp.json" | Invoke-Expression</p><p><h1>设置别名（可选）</h1>
 Set-Alias ll ls
-Set-Alias g git</code></pre></p><p>閲嶅惎 Windows Terminal锛屼綘搴旇鑳界湅鍒帮細
-<ul><li>宸︿晶鏄剧ず褰撳墠鐩綍鍜?Git 鍒嗘敮</li>
-<li>鍙充晶鏄剧ず鍛戒护鎵ц鏃堕棿鍜?Python 鐗堟湰</li>
-<li>婕備寒鐨勫僵鑹插浘鏍囧拰娓呮櫚鐨勪俊鎭眰绾?/li>
+Set-Alias g git</code></pre></p><p>重启 Windows Terminal，你应该能看到：
+<ul><li>左侧显示当前目录和 Git 分支</li>
+<li>右侧显示命令执行时间和 Python 版本</li>
+<li>漂亮的彩色图标和清晰的信息层级</li>
 </ul>
-<h2>鎬荤粨</h2></p><p>閫氳繃浠ヤ笂浜旀锛屼綘灏嗘嫢鏈変竴涓棦缇庤鍙堥珮鏁堢殑寮€鍙戠粓绔細
-<li><strong>Windows Terminal</strong> 鎻愪緵鐜颁唬鍖栫殑缁堢浣撻獙</li>
-<li><strong>Nerd Fonts</strong> 纭繚鍥炬爣姝ｅ父鏄剧ず</li>
-<li><strong>Oh My Posh</strong> 鎻愪緵涓板瘜鐨勪富棰樺拰鑷畾涔夎兘鍔?/li>
-<li><strong>涓€у寲涓婚</strong> 璁╀綘鎸夐渶璋冩暣淇℃伅灞曠ず</li>
-<li><strong>閰嶈壊鏂规</strong> 鎻愬崌瑙嗚鑸掗€傚害</li></p><p>鐜板湪锛屾墦寮€浣犵殑缁堢锛屼韩鍙楃紪鐮佺殑姣忎竴鍒诲惂锛?/p>
+<h2>总结</h2></p><p>通过以上五步，你将拥有一个既美观又高效的开发终端：
+<li><strong>Windows Terminal</strong> 提供现代化的终端体验</li>
+<li><strong>Nerd Fonts</strong> 确保图标正常显示</li>
+<li><strong>Oh My Posh</strong> 提供丰富的主题和自定义能力</li>
+<li><strong>个性化主题</strong> 让你按需调整信息展示</li>
+<li><strong>配色方案</strong> 提升视觉舒适度</li></p><p>现在，打开你的终端，享受编码的每一刻吧！</p>
       </div>
+      
+  <div class="related-posts">
+    <h3>📌 相关文章</h3>
+    <div class="related-grid">
+      
+      <a href="vs-code-20个必装插件-开发效率翻倍.html" class="related-card">
+        <h4>VS Code 20个必装插件，开发效率翻倍</h4>
+        <span class="date">📅 2026-05-06</span>
+      </a>
+
+      <a href="obsidian-打造你的第二大脑.html" class="related-card">
+        <h4>Obsidian：打造你的第二大脑</h4>
+        <span class="date">📅 2026-05-06</span>
+      </a>
+    </div>
+  </div>
     </article>
   </main>
-
   <footer class="footer">
     <div class="container">
-      <p>AI 缂栫▼瀹為獙瀹?&copy; 2026 | 鐢?鉂わ笍 鍜?AI 鐢熸垚</p>
+      <p>AI 编程实验室 &copy; 2026 | 用 &#10084;&#65039; 和 AI 生成</p>
     </div>
   </footer>
-  <button id="back-to-top" aria-label="回到顶部">↑</button>
+
+  <button id="back-to-top" aria-label="回到顶部">&uarr;</button>
+
   <script src="../assets/app.js"></script>
 </body>
 </html>

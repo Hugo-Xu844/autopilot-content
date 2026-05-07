@@ -3,72 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Python瑁呴グ鍣ㄤ粠鍏ラ棬鍒拌繘闃?- AI 缂栫▼瀹為獙瀹?/title>
-  <meta name="description" content="Python瑁呴グ鍣ㄤ粠鍏ラ棬鍒拌繘闃?- 璇︾粏鏁欑▼涓庡疄鎴樻寚鍗?>
-  <link rel="stylesheet" href="../assets/style.css">
+  <title>Python装饰器从入门到进阶 - AI 编程实验室</title>
+  <meta name="description" content="Python装饰器从入门到进阶 - 详细教程与实战指南">
+  <link rel="stylesheet" href="assets/style.css">
 </head>
-
 <body>
   <div id="reading-progress"></div>
   <header class="header">
     <div class="container">
-      <a href="../" class="logo">AI 缂栫▼瀹為獙瀹?/a>
-      <nav>
-        <a href="../">棣栭〉</a>
-        <a href="../products.html">鏁欑▼浜у搧</a>
-      </nav>
-        <button id="theme-toggle" class="theme-toggle" aria-label="切换深色/浅色模式">🌙</button>
+      <a href="../" class="logo">AI 编程实验室</a>
+      <div class="header-actions">
+        <nav>
+          <a href="../">首页</a>
+          <a href="../categories.html">分类</a>
+          <a href="../products.html">教程产品</a>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" aria-label="切换深色/浅色模式">&#127769;</button>
       </div>
     </div>
   </header>
-
   <main class="container">
     <article class="post-full">
       <header class="post-header">
-        <h1>Python瑁呴グ鍣ㄤ粠鍏ラ棬鍒拌繘闃?/h1>
+        <h1>Python装饰器从入门到进阶</h1>
         <div class="post-meta">
-          <span class="date">馃搮 2026-05-06</span>
-          <span class="category">馃搨 Python缂栫▼</span>
-          <div class="tags"><span class="tag">Python缂栫▼</span> <span class="tag">Python</span></div>
+          <span class="date">📅 2026-05-06</span>
+          <span class="category">📂 Python编程</span>
+          <span class="reading-time">📖 阅读约 2 分钟</span>
+          <div class="tags"><span class="tag">Python编程</span> <span class="tag">Python</span></div>
         </div>
       </header>
       <div class="post-content">
-        <p><h1>Python瑁呴グ鍣ㄤ粠鍏ラ棬鍒拌繘闃?/h1></p><p>瑁呴グ鍣ㄦ槸Python涓竴涓己澶ц€屼紭闆呯殑鐗规€э紝瀹冨厑璁镐綘鍦ㄤ笉淇敼鍘熷嚱鏁颁唬鐮佺殑鎯呭喌涓嬶紝鍔ㄦ€佸湴缁欏嚱鏁版坊鍔犳柊鐨勫姛鑳姐€傛湰鏂囧皢甯︿綘浠庡熀纭€璇硶鍒伴珮绾у簲鐢紝褰诲簳鎺屾彙瑁呴グ鍣ㄧ殑浣跨敤銆?/p><p><h2>涓€銆佺悊瑙ｈ楗板櫒鐨勬牳蹇冩蹇?/h2></p><p>瑁呴グ鍣ㄦ湰璐ㄤ笂鏄竴涓帴鏀跺嚱鏁颁綔涓哄弬鏁板苟杩斿洖鏂板嚱鏁扮殑楂橀樁鍑芥暟銆傝鎴戜滑浠庢渶绠€鍗曠殑渚嬪瓙寮€濮嬶細</p><p><pre><code class="language-python">def my_decorator(func):
+        <p><h1>Python装饰器从入门到进阶</h1></p><p>装饰器是Python中一个强大而优雅的特性，它允许你在不修改原函数代码的情况下，动态地给函数添加新的功能。本文将带你从基础语法到高级应用，彻底掌握装饰器的使用。</p><p><h2>一、理解装饰器的核心概念</h2></p><p>装饰器本质上是一个接收函数作为参数并返回新函数的高阶函数。让我们从最简单的例子开始：</p><p><pre><code class="language-python">def my_decorator(func):
     def wrapper():
-        print("鍦ㄥ嚱鏁版墽琛屽墠鍋氫竴浜涗簨鎯?)
+        print("在函数执行前做一些事情")
         func()
-        print("鍦ㄥ嚱鏁版墽琛屽悗鍋氫竴浜涗簨鎯?)
+        print("在函数执行后做一些事情")
     return wrapper</p><p>@my_decorator
 def say_hello():
-    print("Hello!")</p><p>say_hello()</code></pre></p><p>杈撳嚭锛?<pre><code class="language-">鍦ㄥ嚱鏁版墽琛屽墠鍋氫竴浜涗簨鎯?Hello!
-鍦ㄥ嚱鏁版墽琛屽悗鍋氫竴浜涗簨鎯?/code></pre></p><p><code>@my_decorator</code> 璇硶绯栫瓑浠蜂簬 <code>say_hello = my_decorator(say_hello)</code>銆?code>wrapper</code>鍑芥暟鍖呰９浜嗗師鍑芥暟锛屽湪璋冪敤鍓嶅悗娣诲姞浜嗛澶栭€昏緫銆?/p><p><h2>浜屻€佸鐞嗗甫鍙傛暟鐨勫嚱鏁?/h2></p><p>涓婇潰鐨勮楗板櫒鍙兘澶勭悊鏃犲弬鍑芥暟銆備负浜嗚瑁呴グ鍣ㄩ€氱敤锛屾垜浠渶瑕佷娇鐢?code><em>args</code>鍜?code></em>*kwargs</code>锛?/p><p><pre><code class="language-python">def timer_decorator(func):
+    print("Hello!")</p><p>say_hello()</code></pre></p><p>输出：
+<pre><code class="language-">在函数执行前做一些事情
+Hello!
+在函数执行后做一些事情</code></pre></p><p><code>@my_decorator</code> 语法糖等价于 <code>say_hello = my_decorator(say_hello)</code>。<code>wrapper</code>函数包裹了原函数，在调用前后添加了额外逻辑。</p><p><h2>二、处理带参数的函数</h2></p><p>上面的装饰器只能处理无参函数。为了让装饰器通用，我们需要使用<code><em>args</code>和<code></em>*kwargs</code>：</p><p><pre><code class="language-python">def timer_decorator(func):
     def wrapper(<em>args, </em>*kwargs):
         import time
         start = time.time()
         result = func(<em>args, </em>*kwargs)
         end = time.time()
-        print(f"{func.__name__} 鎵ц鑰楁椂: {end - start:.4f}绉?)
+        print(f"{func.__name__} 执行耗时: {end - start:.4f}秒")
         return result
     return wrapper</p><p>@timer_decorator
 def calculate_sum(n):
     return sum(range(n))</p><p>@timer_decorator
 def greet(name, greeting="Hello"):
     print(f"{greeting}, {name}!")</p><p>result = calculate_sum(1000000)
-print(f"璁＄畻缁撴灉: {result}")
-greet("Alice", "Hi")</code></pre></p><p>杩欎釜瑁呴グ鍣ㄥ彲浠ユ祴閲忎换鎰忓嚱鏁扮殑鎵ц鏃堕棿锛屽苟淇濇寔鍘熷嚱鏁扮殑杩斿洖鍊笺€?/p><p><h2>涓夈€佷繚鐣欏師鍑芥暟鐨勫厓淇℃伅</h2></p><p>浣跨敤<code>functools.wraps</code>鍙互淇濈暀琚楗板嚱鏁扮殑鍚嶇О銆佹枃妗ｅ瓧绗︿覆绛夊厓淇℃伅锛?/p><p><pre><code class="language-python">from functools import wraps</p><p>def log_decorator(func):
+print(f"计算结果: {result}")
+greet("Alice", "Hi")</code></pre></p><p>这个装饰器可以测量任意函数的执行时间，并保持原函数的返回值。</p><p><h2>三、保留原函数的元信息</h2></p><p>使用<code>functools.wraps</code>可以保留被装饰函数的名称、文档字符串等元信息：</p><p><pre><code class="language-python">from functools import wraps</p><p>def log_decorator(func):
     @wraps(func)
     def wrapper(<em>args, </em>*kwargs):
-        print(f"璋冪敤鍑芥暟: {func.__name__}")
-        print(f"鍙傛暟: {args}, {kwargs}")
+        print(f"调用函数: {func.__name__}")
+        print(f"参数: {args}, {kwargs}")
         result = func(<em>args, </em>*kwargs)
-        print(f"杩斿洖鍊? {result}")
+        print(f"返回值: {result}")
         return result
     return wrapper</p><p>@log_decorator
 def add(a, b):
-    """璁＄畻涓や釜鏁扮殑鍜?""
-    return a + b</p><p>print(f"鍑芥暟鍚? {add.__name__}")
-print(f"鏂囨。: {add.__doc__}")
-add(3, 5)</code></pre></p><p>娌℃湁<code>@wraps</code>鏃讹紝<code>add.__name__</code>浼氬彉鎴?code>wrapper</code>锛岃繖浼氬鑷磋皟璇曞洶闅俱€?/p><p><h2>鍥涖€佸甫鍙傛暟鐨勮楗板櫒</h2></p><p>鏈夋椂鎴戜滑闇€瑕佺粰瑁呴グ鍣ㄤ紶閫掑弬鏁帮紝姣斿璁剧疆鏃ュ織绾у埆銆傝繖闇€瑕佸啀宓屽涓€灞傚嚱鏁帮細</p><p><pre><code class="language-python">def repeat(times):
+    """计算两个数的和"""
+    return a + b</p><p>print(f"函数名: {add.__name__}")
+print(f"文档: {add.__doc__}")
+add(3, 5)</code></pre></p><p>没有<code>@wraps</code>时，<code>add.__name__</code>会变成<code>wrapper</code>，这会导致调试困难。</p><p><h2>四、带参数的装饰器</h2></p><p>有时我们需要给装饰器传递参数，比如设置日志级别。这需要再嵌套一层函数：</p><p><pre><code class="language-python">def repeat(times):
     def decorator(func):
         @wraps(func)
         def wrapper(<em>args, </em>*kwargs):
@@ -78,27 +81,27 @@ add(3, 5)</code></pre></p><p>娌℃湁<code>@wraps</code>鏃讹紝<code>add.__na
         return wrapper
     return decorator</p><p>@repeat(times=3)
 def say_hi():
-    print("Hi!")</p><p>say_hi()</code></pre></p><p>杩欓噷鐨?code>repeat(times=3)</code>鍏堣皟鐢ㄨ繑鍥?code>decorator</code>鍑芥暟锛岀劧鍚?code>@decorator</code>鍐嶅簲鐢ㄤ簬<code>say_hi</code>銆?/p><p><h2>浜斻€佸疄闄呭簲鐢ㄥ満鏅?/h2></p><p><h3>1. 鏉冮檺楠岃瘉</h3>
+    print("Hi!")</p><p>say_hi()</code></pre></p><p>这里的<code>repeat(times=3)</code>先调用返回<code>decorator</code>函数，然后<code>@decorator</code>再应用于<code>say_hi</code>。</p><p><h2>五、实际应用场景</h2></p><p><h3>1. 权限验证</h3>
 <pre><code class="language-python">def require_auth(role):
     def decorator(func):
         @wraps(func)
         def wrapper(user, <em>args, </em>*kwargs):
             if user.get("role") != role:
-                raise PermissionError(f"闇€瑕亄role}鏉冮檺")
+                raise PermissionError(f"需要{role}权限")
             return func(user, <em>args, </em>*kwargs)
         return wrapper
     return decorator</p><p>@require_auth("admin")
 def delete_user(user, user_id):
-    print(f"鐢ㄦ埛 {user_id} 宸茶鍒犻櫎")</p><p><h1>娴嬭瘯</h1>
+    print(f"用户 {user_id} 已被删除")</p><p><h1>测试</h1>
 admin_user = {"name": "Admin", "role": "admin"}
-normal_user = {"name": "User", "role": "user"}</p><p>delete_user(admin_user, 123)  # 姝ｅ父鎵ц
-<h1>delete_user(normal_user, 123)  # 鎶涘嚭PermissionError</code></pre></h1></p><p><h3>2. 缂撳瓨璁＄畻缁撴灉</h3>
+normal_user = {"name": "User", "role": "user"}</p><p>delete_user(admin_user, 123)  # 正常执行
+<h1>delete_user(normal_user, 123)  # 抛出PermissionError</code></pre></h1></p><p><h3>2. 缓存计算结果</h3>
 <pre><code class="language-python">def cache_result(func):
     cache = {}
     @wraps(func)
     def wrapper(*args):
         if args in cache:
-            print(f"浣跨敤缂撳瓨: {args}")
+            print(f"使用缓存: {args}")
             return cache[args]
         result = func(*args)
         cache[args] = result
@@ -107,7 +110,8 @@ normal_user = {"name": "User", "role": "user"}</p><p>delete_user(admin_user, 123
 def fibonacci(n):
     if n &lt;= 1:
         return n
-    return fibonacci(n-1) + fibonacci(n-2)</p><p>print(fibonacci(10))  # 绗竴娆¤绠?print(fibonacci(10))  # 鐩存帴浠庣紦瀛樿幏鍙?/code></pre></p><p><h3>3. 閲嶈瘯鏈哄埗</h3>
+    return fibonacci(n-1) + fibonacci(n-2)</p><p>print(fibonacci(10))  # 第一次计算
+print(fibonacci(10))  # 直接从缓存获取</code></pre></p><p><h3>3. 重试机制</h3>
 <pre><code class="language-python">import time</p><p>def retry(max_attempts=3, delay=1):
     def decorator(func):
         @wraps(func)
@@ -118,32 +122,49 @@ def fibonacci(n):
                 except Exception as e:
                     if attempt == max_attempts - 1:
                         raise
-                    print(f"绗瑊attempt + 1}娆″け璐ワ紝{delay}绉掑悗閲嶈瘯...")
+                    print(f"第{attempt + 1}次失败，{delay}秒后重试...")
                     time.sleep(delay)
         return wrapper
     return decorator</p><p>@retry(max_attempts=3, delay=0.5)
 def unstable_network_call():
     import random
     if random.random() &lt; 0.7:
-        raise ConnectionError("缃戠粶寮傚父")
-    return "鎴愬姛鑾峰彇鏁版嵁"</p><p>print(unstable_network_call())</code></pre></p><p><h2>鍏€佸涓楗板櫒鐨勭粍鍚?/h2></p><p>褰撳涓楗板櫒鍙犲姞鏃讹紝鎵ц椤哄簭锟斤拷锟戒粠涓嬪線涓婏紙绂诲嚱鏁版渶杩戠殑鍏堟墽琛岋級锛?/p><p><pre><code class="language-python">@timer_decorator
+        raise ConnectionError("网络异常")
+    return "成功获取数据"</p><p>print(unstable_network_call())</code></pre></p><p><h2>六、多个装饰器的组合</h2></p><p>当多个装饰器叠加时，执行顺序���从下往上（离函数最近的先执行）：</p><p><pre><code class="language-python">@timer_decorator
 @log_decorator
 def complex_function(x, y):
-    return x ** y</p><p>complex_function(2, 10)</code></pre></p><p>杩欑浉褰撲簬 <code>complex_function = timer_decorator(log_decorator(complex_function))</code>锛屽厛鎵ц<code>log_decorator</code>锛屽啀鎵ц<code>timer_decorator</code>銆?/p><p><h2>鎬荤粨</h2></p><p>瑁呴グ鍣ㄦ槸Python涓疄鐜癆OP锛堥潰鍚戝垏闈㈢紪绋嬶級鐨勪紭闆呮柟寮忋€傛牳蹇冭鐐癸細</p><p><li><strong>鍩烘湰缁撴瀯</strong>锛氳楗板櫒鏄帴鏀跺嚱鏁拌繑鍥炲嚱鏁扮殑楂橀樁鍑芥暟</li>
-<li><strong>鍙傛暟浼犻€?/strong>锛氫娇鐢?code><em>args, </em>*kwargs</code>淇濇寔閫氱敤鎬?/li>
-<li><strong>鍏冧俊鎭繚鐣?/strong>锛氬缁堜娇鐢?code>@wraps</code>瑁呴グwrapper鍑芥暟</li>
-<li><strong>甯﹀弬鏁拌楗板櫒</strong>锛氶渶瑕佷笁灞傚祵濂楀嚱鏁?/li>
-<li><strong>瀹為檯搴旂敤</strong>锛氭棩蹇椼€佹潈闄愩€佺紦瀛樸€侀噸璇曠瓑鍦烘櫙闈炲父瀹炵敤</li></p><p>鎺屾彙瑁呴グ鍣ㄥ悗锛屼綘浼氬彂鐜颁唬鐮佸鐢ㄦ€у拰鍙淮鎶ゆ€ч兘寰楀埌浜嗘樉钁楁彁鍗囥€?/p>
+    return x ** y</p><p>complex_function(2, 10)</code></pre></p><p>这相当于 <code>complex_function = timer_decorator(log_decorator(complex_function))</code>，先执行<code>log_decorator</code>，再执行<code>timer_decorator</code>。</p><p><h2>总结</h2></p><p>装饰器是Python中实现AOP（面向切面编程）的优雅方式。核心要点：</p><p><li><strong>基本结构</strong>：装饰器是接收函数返回函数的高阶函数</li>
+<li><strong>参数传递</strong>：使用<code><em>args, </em>*kwargs</code>保持通用性</li>
+<li><strong>元信息保留</strong>：始终使用<code>@wraps</code>装饰wrapper函数</li>
+<li><strong>带参数装饰器</strong>：需要三层嵌套函数</li>
+<li><strong>实际应用</strong>：日志、权限、缓存、重试等场景非常实用</li></p><p>掌握装饰器后，你会发现代码复用性和可维护性都得到了显著提升。</p>
       </div>
+      
+  <div class="related-posts">
+    <h3>📌 相关文章</h3>
+    <div class="related-grid">
+      
+      <a href="python生成器与迭代器-高效处理大数据.html" class="related-card">
+        <h4>Python生成器与迭代器：高效处理大数据</h4>
+        <span class="date">📅 2026-05-06</span>
+      </a>
+
+      <a href="python异步编程-asyncio实战.html" class="related-card">
+        <h4>Python异步编程：asyncio实战</h4>
+        <span class="date">📅 2026-05-06</span>
+      </a>
+    </div>
+  </div>
     </article>
   </main>
-
   <footer class="footer">
     <div class="container">
-      <p>AI 缂栫▼瀹為獙瀹?&copy; 2026 | 鐢?鉂わ笍 鍜?AI 鐢熸垚</p>
+      <p>AI 编程实验室 &copy; 2026 | 用 &#10084;&#65039; 和 AI 生成</p>
     </div>
   </footer>
-  <button id="back-to-top" aria-label="回到顶部">↑</button>
+
+  <button id="back-to-top" aria-label="回到顶部">&uarr;</button>
+
   <script src="../assets/app.js"></script>
 </body>
 </html>

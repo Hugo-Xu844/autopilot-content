@@ -6,11 +6,8 @@
   <title>教程产品 - AI 编程实验室</title>
   <meta name="description" content="精选编程与 AI 教程合集，PDF 电子书，助你快速提升技能">
   <link rel="stylesheet" href="assets/style.css">
-  <link rel="stylesheet" href="assets/app.js">
 </head>
 <body>
-
-  <!-- Reading Progress Bar -->
   <div id="reading-progress"></div>
 
   <header class="header">
@@ -19,17 +16,16 @@
       <div class="header-actions">
         <nav>
           <a href=".">首页</a>
+          <a href="categories.html">分类</a>
           <a href="products.html" class="active">教程产品</a>
         </nav>
-        <button id="theme-toggle" class="theme-toggle" aria-label="切换深色/浅色模式">🌙</button>
+        <button id="theme-toggle" class="theme-toggle" aria-label="切换深色/浅色模式">&#127769;</button>
       </div>
     </div>
   </header>
-
   <main class="container">
     <h1 class="page-title">📚 教程产品</h1>
     <p class="page-subtitle">精心整理的编程与 AI 教程合集，PDF 电子书格式，助你系统化学习。</p>
-
     <div class="products-grid">
       
     <div class="product-card">
@@ -38,7 +34,7 @@
       </a>
       <div class="product-card-body">
         <h3>AI 入门完全指南</h3>
-        <p>大语言模型、机器学习、Prompt工程 — AI 时代必备知识手册，从零开始掌握 AI 核心概念。</p>
+        <p>大语言模型、机器学习、Prompt工程 — AI 时代必备知识手册。</p>
         <div class="product-card-footer">
           <span class="price">¥19.9</span>
           <span class="articles-count">📄 5 篇文章</span>
@@ -48,32 +44,17 @@
     </div>
 
     <div class="product-card">
-      <a href="products/python-basics.html" class="product-card-cover">
-        <img src="assets/covers/python-basics.svg" alt="Python 编程入门到精通" loading="lazy">
+      <a href="products/ai-tools.html" class="product-card-cover">
+        <img src="assets/covers/ai-tools.svg" alt="2025 AI 工具评测大全" loading="lazy">
       </a>
       <div class="product-card-body">
-        <h3>Python 编程入门到精通</h3>
-        <p>掌握 Python 异步编程、生成器、装饰器等进阶技能，写出更高效优雅的代码。</p>
+        <h3>2025 AI 工具评测大全</h3>
+        <p>最实用的 AI 工具评测与对比，帮你选出最适合的工具。</p>
         <div class="product-card-footer">
-          <span class="price">¥19.9</span>
-          <span class="articles-count">📄 3 篇文章</span>
-        </div>
-        <a href="products/python-basics.html" class="product-btn" style="margin-top:16px">查看详情 →</a>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <a href="products/prompt-master.html" class="product-card-cover">
-        <img src="assets/covers/prompt-master.svg" alt="Prompt 工程大师课" loading="lazy">
-      </a>
-      <div class="product-card-body">
-        <h3>Prompt 工程大师课</h3>
-        <p>系统学习 Prompt 设计模式与系统提示词设计，让 AI 输出精准可控。</p>
-        <div class="product-card-footer">
-          <span class="price">¥14.9</span>
+          <span class="price">¥9.9</span>
           <span class="articles-count">📄 2 篇文章</span>
         </div>
-        <a href="products/prompt-master.html" class="product-btn" style="margin-top:16px">查看详情 →</a>
+        <a href="products/ai-tools.html" class="product-btn" style="margin-top:16px">查看详情 →</a>
       </div>
     </div>
 
@@ -83,7 +64,7 @@
       </a>
       <div class="product-card-body">
         <h3>编程实战项目合集</h3>
-        <p>从 Docker 容器化到 Python CLI 工具，5 个实战项目带你巩固编程技能。</p>
+        <p>从命令行工具到 Web 应用，一步步带你完成实战项目。</p>
         <div class="product-card-footer">
           <span class="price">¥29.9</span>
           <span class="articles-count">📄 5 篇文章</span>
@@ -93,31 +74,43 @@
     </div>
 
     <div class="product-card">
-      <a href="products/ai-tools.html" class="product-card-cover">
-        <img src="assets/covers/ai-tools.svg" alt="2025 AI 工具评测大全" loading="lazy">
+      <a href="products/prompt-master.html" class="product-card-cover">
+        <img src="assets/covers/prompt-master.svg" alt="Prompt 工程大师课" loading="lazy">
       </a>
       <div class="product-card-body">
-        <h3>2025 AI 工具评测大全</h3>
-        <p>Claude vs GPT-4 深度对比 + 本地部署大模型教程，帮你选出最适合的 AI 工具。</p>
+        <h3>Prompt 工程大师课</h3>
+        <p>系统学习 Prompt 设计，让 AI 输出你想要的结果。</p>
         <div class="product-card-footer">
-          <span class="price">¥9.9</span>
+          <span class="price">¥14.9</span>
           <span class="articles-count">📄 2 篇文章</span>
         </div>
-        <a href="products/ai-tools.html" class="product-btn" style="margin-top:16px">查看详情 →</a>
+        <a href="products/prompt-master.html" class="product-btn" style="margin-top:16px">查看详情 →</a>
       </div>
     </div>
 
+    <div class="product-card">
+      <a href="products/python-basics.html" class="product-card-cover">
+        <img src="assets/covers/python-basics.svg" alt="Python 编程入门到精通" loading="lazy">
+      </a>
+      <div class="product-card-body">
+        <h3>Python 编程入门到精通</h3>
+        <p>从零开始的 Python 学习指南，涵盖基础语法、实战项目、最佳实践。</p>
+        <div class="product-card-footer">
+          <span class="price">¥19.9</span>
+          <span class="articles-count">📄 3 篇文章</span>
+        </div>
+        <a href="products/python-basics.html" class="product-btn" style="margin-top:16px">查看详情 →</a>
+      </div>
+    </div>
     </div>
   </main>
-
   <footer class="footer">
     <div class="container">
-      <p>AI 编程实验室 &copy; 2026 | 用 ❤️ 和 AI 生成</p>
+      <p>AI 编程实验室 &copy; 2026 | 用 &#10084;&#65039; 和 AI 生成</p>
     </div>
   </footer>
 
-  <!-- Back to Top -->
-  <button id="back-to-top" aria-label="回到顶部">↑</button>
+  <button id="back-to-top" aria-label="回到顶部">&uarr;</button>
 
   <script src="assets/app.js"></script>
 </body>
