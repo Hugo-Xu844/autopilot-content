@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>编程实战项目合集</title>
+<style>
+@page {
+    size: A5;
+    margin: 2cm 1.8cm;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 11pt;
+    line-height: 1.8;
+    color: #1a1a2e;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.cover {
+    text-align: center;
+    padding: 120px 0 60px;
+    page-break-after: always;
+}
+.cover h1 {
+    font-size: 26pt;
+    font-weight: 800;
+    color: #6366f1;
+    margin-bottom: 16px;
+}
+.cover .price {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 32px;
+    background: #6366f1;
+    color: white;
+    border-radius: 8px;
+    font-size: 16pt;
+    font-weight: 700;
+}
+.cover .meta {
+    margin-top: 40px;
+    color: #94a3b8;
+    font-size: 9pt;
+}
+.toc { page-break-after: always; margin-bottom: 40px; }
+.toc h2 {
+    font-size: 14pt;
+    color: #6366f1;
+    border-bottom: 2px solid #6366f1;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+}
+h1 { font-size: 18pt; margin: 40px 0 16px; color: #1a1a2e; page-break-before: always; }
+h1:first-of-type { page-break-before: avoid; }
+h2 { font-size: 14pt; margin: 28px 0 12px; color: #334155; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px; }
+h3 { font-size: 12pt; margin: 20px 0 10px; color: #475569; }
+p { margin-bottom: 10px; }
+ul, ol { margin: 8px 0 12px 20px; }
+li { margin-bottom: 4px; }
+code {
+    background: #f1f5f9;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 9pt;
+    font-family: Consolas, monospace;
+    color: #4f46e5;
+}
+pre {
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: 14px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 14px 0;
+    font-size: 8.5pt;
+    line-height: 1.5;
+    font-family: Consolas, monospace;
+}
+pre code { background: none; padding: 0; color: inherit; }
+table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 9.5pt; }
+th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid #e2e8f0; }
+th { background: #eef2ff; color: #4f46e5; font-weight: 600; }
+blockquote {
+    border-left: 4px solid #6366f1;
+    padding: 10px 16px;
+    margin: 14px 0;
+    background: #f8f9ff;
+    color: #64748b;
+}
+hr { margin: 30px 0; border: none; border-top: 1px solid #e2e8f0; }
+.footer-page { 
+    text-align: center; padding: 100px 0; color: #94a3b8; font-size: 10pt;
+    page-break-before: always;
+}
+@media print {
+    body { padding: 0; }
+}
+</style>
+</head>
+<body>
+
+<div class="cover">
+    <h1>编程实战项目合集</h1>
+    <p style="color:#64748b;font-size:11pt;margin-top:8px;">精选教程合集</p>
+    <div class="price">¥29.9</div>
+    <p class="meta">生成日期: 2026年05月06日<br>32 篇精选文章</p>
+</div>
+
+<div class="toc"><h2>📖 目录</h2><p style="padding:3px 0;border-bottom:1px dotted #eee">1. 📖 目录</p><p style="padding:3px 0;border-bottom:1px dotted #eee">2. 1. 为什么需要 Docker？</p><p style="padding:3px 0;border-bottom:1px dotted #eee">3. 2. 准备工作：安装 Docker</p><p style="padding:3px 0;border-bottom:1px dotted #eee">4. 3. 编写一个极简的 Node.js 应用</p><p style="padding:3px 0;border-bottom:1px dotted #eee">5. 4. 编写 Dockerfile：描述你的容器</p><p style="padding:3px 0;border-bottom:1px dotted #eee">6. 5. 构建并运行你的第一个容器</p><p style="padding:3px 0;border-bottom:1px dotted #eee">7. 6. 实际场景：为什么这样写才是最佳实践？</p><p style="padding:3px 0;border-bottom:1px dotted #eee">8. 总结</p><p style="padding:3px 0;border-bottom:1px dotted #eee">9. 1. 理解异步编程的核心：协程与事件循环</p><p style="padding:3px 0;border-bottom:1px dotted #eee">10. 2. 实际场景：异步HTTP请求</p><p style="padding:3px 0;border-bottom:1px dotted #eee">11. 3. 控制并发：限制同时进行的任务数</p><p style="padding:3px 0;border-bottom:1px dotted #eee">12. 4. 超���处理与错误恢复</p><p style="padding:3px 0;border-bottom:1px dotted #eee">13. 5. 异步与同步代码的桥接</p><p style="padding:3px 0;border-bottom:1px dotted #eee">14. 总结</p><p style="padding:3px 0;border-bottom:1px dotted #eee">15. 一、迭代器：数据流的生产者</p><p style="padding:3px 0;border-bottom:1px dotted #eee">16. 二、生成���：迭代器的优雅实现</p><p style="padding:3px 0;border-bottom:1px dotted #eee">17. 三、实战：处理大文件</p><p style="padding:3px 0;border-bottom:1px dotted #eee">18. 四、生成器的进阶用法</p><p style="padding:3px 0;border-bottom:1px dotted #eee">19. 五、性能对比与选择建议</p><p style="padding:3px 0;border-bottom:1px dotted #eee">20. 总结</p></div>
+
+<div class="content">
+<h1>编程实战项目合集</h1>
+<blockquote>
+<p>从命令行工具到 Web 应用，一步步带你完成实战项目。</p>
+</blockquote>
+<hr />
+<h2>📖 目录</h2>
+<ol>
+<li>Docker入门：容器化你的第一个应用 (2026-05-06)</li>
+<li>Python异步编程：asyncio实战 (2026-05-06)</li>
+<li>Python生成器与迭代器：高效处理大数据 (2026-05-06)</li>
+<li>Python装饰器从入门到进阶 (2026-05-06)</li>
+<li>用Python写一个命令行工具：argparse实战 (2026-05-06)</li>
+</ol>
+<hr />
+<hr />
+<p>============================================================</p>
+<h1>第 1 章：Docker入门：容器化你的第一个应用</h1>
+<h1>Docker入门：容器化你的第一个应用</h1>
+<p>当你新加入一个团队，或者换了一台开发机器，最头疼的事莫过于“在我电脑上明明能跑”——环境不一致、依赖缺失、系统版本差异……Docker 正是为了解决这个痛点而生。本文将通过一个简单的 Node.js Web 应用，带你从零开始体验容器化的完整流程。</p>
+<h2>1. 为什么需要 Docker？</h2>
+<p>传统开发中，应用运行依赖操作系统、运行时、库文件、环境变量等。哪怕只是从开发机部署到测试服务器，都可能在“环境配置”这一步翻车。</p>
+<p>Docker 的核心思路是<strong>将应用及其所有依赖打包成一个标准化的“容器”</strong>，这个容器可以在任何安装了 Docker 的机器上以相同方式运行。相当于给你的应用造了一个“移动小房子”，无论搬到哪台机器，里面的环境都一模一样。</p>
+<h2>2. 准备工作：安装 Docker</h2>
+<p>在开始之前，请确保你的机器已经安装了 Docker。</p>
+<p><strong>macOS / Windows</strong>：下载 <a href="https://www.docker.com/products/docker-desktop">Docker Desktop</a> 并安装。
+<strong>Linux（Ubuntu为例）</strong>：</p>
+<div class="codehilite"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>docker.io
+sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>docker
+sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>docker
+</code></pre></div>
+
+<p>安装完成后，在终端运行 <code>docker --version</code> 确认安装成功。</p>
+<h2>3. 编写一个极简的 Node.js 应用</h2>
+<p>我们在一个空目录下创建两个文件。</p>
+<p><strong>app.js</strong>（一个简单的 HTTP 服务）：</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">http</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3000</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">((</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">res</span><span class="p">.</span><span class="nx">statusCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">200</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">res</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">(</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;text/plain&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s1">&#39;Hello, Docker!\n&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">server</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">port</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Server running at http://localhost:</span><span class="si">${</span><span class="nx">port</span><span class="si">}</span><span class="sb">/`</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+
+<p><strong>package.json</strong>（定义依赖，这里没有额外依赖，但需要声明入口）：</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;docker-demo&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;main&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;app.js&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;scripts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;start&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;node app.js&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>现在运行 <code>node app.js</code>，访问 <code>http://localhost:3000</code> 可以看到 "Hello, Docker!"。接下来我们把它装进 Docker 容器。</p>
+<h2>4. 编写 Dockerfile：描述你的容器</h2>
+<p>在项目根目录创建一个名为 <code>Dockerfile</code> 的文件（注意没有扩展名）：</p>
+<div class="codehilite"><pre><span></span><code><span class="c"># 使用官方 Node.js 镜像作为基础</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">node:18-alpine</span>
+
+<span class="c"># 设置容器内的工作目录</span>
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+
+<span class="c"># 将 package.json 复制到工作目录</span>
+<span class="k">COPY</span><span class="w"> </span>package.json<span class="w"> </span>.
+
+<span class="c"># 安装依赖（这里没有依赖，但保留此步骤）</span>
+<span class="k">RUN</span><span class="w"> </span>npm<span class="w"> </span>install
+
+<span class="c"># 将���目所有文件复制到容器</span>
+<span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>.
+
+<span class="c"># 暴露容器内的端口 3000</span>
+<span class="k">EXPOSE</span><span class="w"> </span><span class="s">3000</span>
+
+<span class="c"># 容器启动时执行的命令</span>
+<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;npm&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;start&quot;</span><span class="p">]</span>
+</code></pre></div>
+
+<p><strong>关键指令解释</strong>：
+- <code>FROM</code>：指定基础镜像。<code>node:18-alpine</code> 是精简版 Node.js 镜像，体积小。
+- <code>WORKDIR</code>：设置容器内的工作目录，后续命令都在此目录执行。
+- <code>COPY</code>：将宿主机文件复制到容器内。
+- <code>RUN</code>：在容器构建过程中执行命令（如安装依赖）。
+- <code>EXPOSE</code>：声明容器运行时监听的端口（仅作文档说明，不实际映射）。
+- <code>CMD</code>：容器启动时默认执行的命令。</p>
+<h2>5. 构建并运行你的第一个容器</h2>
+<h3>5.1 构建镜像</h3>
+<p>在项目根目录执行：</p>
+<div class="codehilite"><pre><span></span><code>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>my-node-app<span class="w"> </span>.
+</code></pre></div>
+
+<ul>
+<li><code>-t my-node-app</code>：给镜像打上标签（名字），方便识别。</li>
+<li><code>.</code>：指定构建上下文为当前目录。</li>
+</ul>
+<p>构建成功后，运行 <code>docker images</code> 可以看到名为 <code>my-node-app</code> 的镜像。</p>
+<h3>5.2 运行容器</h3>
+<div class="codehilite"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:3000<span class="w"> </span>--name<span class="w"> </span>my-app<span class="w"> </span>my-node-app
+</code></pre></div>
+
+<ul>
+<li><code>-d</code>：后台运行（detached）。</li>
+<li><code>-p 8080:3000</code>：将宿主机的 8080 端口映射到容器内的 3000 端口。</li>
+<li><code>--name my-app</code>：给容器起个名字。</li>
+</ul>
+<p>现在访问 <code>http://localhost:8080</code>，你应该能看到 "Hello, Docker!"。</p>
+<h3>5.3 常用容器操作</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># 查看运行中的容器</span>
+docker<span class="w"> </span>ps
+
+<span class="c1"># 查看所有容器（包括停止的）</span>
+docker<span class="w"> </span>ps<span class="w"> </span>-a
+
+<span class="c1"># 停止容器</span>
+docker<span class="w"> </span>stop<span class="w"> </span>my-app
+
+<span class="c1"># 启动已停止的容器</span>
+docker<span class="w"> </span>start<span class="w"> </span>my-app
+
+<span class="c1"># 查看容器日志</span>
+docker<span class="w"> </span>logs<span class="w"> </span>my-app
+
+<span class="c1"># 删除容器（需先停止）</span>
+docker<span class="w"> </span>rm<span class="w"> </span>my-app
+
+<span class="c1"># 删除镜像</span>
+docker<span class="w"> </span>rmi<span class="w"> </span>my-node-app
+</code></pre></div>
+
+<h2>6. 实际场景：为什么这样写才是最佳实践？</h2>
+<p>你可能会问：为什么要把 <code>package.json</code> 和源代码分开两次 <code>COPY</code>？这背后是 Docker 构建缓存的优化策略。</p>
+<p>Docker 构建镜像时，每一行指令都会产生一个缓存层。当修改了源代码（<code>app.js</code>），但 <code>package.json</code> 没变时，Docker 会复用 <code>COPY package.json .</code> 和 <code>RUN npm install</code> 的缓存，只重新执行后续步骤。这能大幅缩短构建时间，尤其是在项目依赖较多时。</p>
+<p><strong>反例</strong>：如果写成 <code>COPY . .</code> 放在 <code>RUN npm install</code> 前面，那么每次修改任何文件都会导致整个安装依赖的步骤重新执行。</p>
+<h2>总结</h2>
+<p>通过本文，你完成了 Docker 的第一次实战：
+1. 理解容器化解决环境一致性问题。
+2. 编写了一个简单的 Node.js 应用。
+3. 用 <code>Dockerfile</code> 描述应用如何打包。
+4. 构建镜像并运行容器，验证服务正常。</p>
+<p>接下来你可以尝试：将同一个镜像部署到另一台机器（只需安装 Docker），或者使用 <code>docker-compose</code> 编排多个容器（如 Web + 数据库）。容器化的世界，才刚刚开始。</p>
+<p>============================================================</p>
+<h1>第 2 章：Python异步编程：asyncio实战</h1>
+<h1>Python异步编程：asyncio实战</h1>
+<p>在开发网络爬虫、Web服务或需要处理大量I/O操作的应用时，你是否遇到过程序卡在等待响应上，导致整体性能低下？Python的<code>asyncio</code>库正是解决这类问题的利器。本文将带你从零掌握asyncio的核心用法，并通过实战案例提升代码执行效率。</p>
+<h2>1. 理解异步编程的核心：协程与事件循环</h2>
+<p>异步编程的核心是<strong>协程</strong>（Coroutine）和<strong>事件循环</strong>（Event Loop）。协程是可以暂停执行并让出控制权的函数，事件循环则负责调度这些协程。</p>
+<h3>基础示例：定义和运行协程</h3>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
+    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># 模拟I/O等待</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Goodbye, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="c1"># 创建协程对象，但不会立即执行</span>
+    <span class="n">task1</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="n">greet</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">))</span>
+    <span class="n">task2</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="n">greet</span><span class="p">(</span><span class="s2">&quot;Bob&quot;</span><span class="p">))</span>
+
+    <span class="c1"># 等待所有任务完成</span>
+    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="n">task1</span><span class="p">,</span> <span class="n">task2</span><span class="p">)</span>
+
+<span class="c1"># 运行事件循环</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</code></pre></div>
+
+<p><strong>关键点</strong>：
+- <code>async def</code> 定义协程函数
+- <code>await</code> 挂起当前协程，等待另一个协程完成
+- <code>asyncio.run()</code> 是Python 3.7+推荐的启动入口</p>
+<p>运行上述代码，你会看到两个问候语几乎同时输出，而不是顺序执行——这就是异步的魅力。</p>
+<h2>2. 实际场景：异步HTTP请求</h2>
+<p>网络请求是最常见的I/O密集型操作。我们使用<code>aiohttp</code>库来实现异步HTTP请求。</p>
+<h3>安装依赖</h3>
+<div class="codehilite"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>aiohttp
+</code></pre></div>
+
+<h3>实战：批量抓取网页标题</h3>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">import</span> <span class="nn">aiohttp</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">fetch_title</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">url</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">async</span> <span class="k">with</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">response</span><span class="p">:</span>
+            <span class="n">html</span> <span class="o">=</span> <span class="k">await</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
+            <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">string</span> <span class="k">if</span> <span class="n">soup</span><span class="o">.</span><span class="n">title</span> <span class="k">else</span> <span class="s2">&quot;No title&quot;</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">title</span><span class="p">[:</span><span class="mi">50</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">title</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error fetching </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">urls</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;https://www.python.org&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;https://www.github.com&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;https://stackoverflow.com&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;https://www.reddit.com&quot;</span>
+    <span class="p">]</span>
+
+    <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="o">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="c1"># 创建所有抓取任务</span>
+        <span class="n">tasks</span> <span class="o">=</span> <span class="p">[</span><span class="n">fetch_title</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span> <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span><span class="p">]</span>
+        <span class="c1"># 并发执行</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">tasks</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;成功抓取 </span><span class="si">{</span><span class="nb">sum</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">results</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">urls</span><span class="p">)</span><span class="si">}</span><span class="s2"> 个页面&quot;</span><span class="p">)</span>
+
+<span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</code></pre></div>
+
+<p><strong>性能对比</strong>：如果使用同步方式，4个请求需要至少4秒（假设每个请求1秒）；而异步方式只需约1秒，效率提升明显。</p>
+<h2>3. 控制并发：限制同时进行的任务数</h2>
+<p>直接使用<code>asyncio.gather</code>会一次性发起所有任务，可能导致目标服务器过载或被封IP。我们需要限制并发数。</p>
+<h3>使用信号量控制并发</h3>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">import</span> <span class="nn">aiohttp</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">fetch_url</span><span class="p">(</span><span class="n">semaphore</span><span class="p">,</span> <span class="n">session</span><span class="p">,</span> <span class="n">url</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">semaphore</span><span class="p">:</span>  <span class="c1"># 获取信号量</span>
+        <span class="k">async</span> <span class="k">with</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">response</span><span class="p">:</span>
+            <span class="k">return</span> <span class="k">await</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">urls</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;https://httpbin.org/delay/</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)]</span>  <span class="c1"># 模拟10个慢请求</span>
+
+    <span class="c1"># 限制最多3个并发</span>
+    <span class="n">semaphore</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">Semaphore</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="o">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="n">tasks</span> <span class="o">=</span> <span class="p">[</span><span class="n">fetch_url</span><span class="p">(</span><span class="n">semaphore</span><span class="p">,</span> <span class="n">session</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span> <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span><span class="p">]</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">tasks</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;完成 </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">results</span><span class="p">)</span><span class="si">}</span><span class="s2"> 个请求&quot;</span><span class="p">)</span>
+
+<span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</code></pre></div>
+
+<p><strong>信号量工作原理</strong>：同时最多允许3个协程进入<code>async with semaphore</code>块，其他协程会排队等待。</p>
+<h2>4. 超���处理与错误恢复</h2>
+<p>在实际应用中，网络请求可能超时或失败。我们需要优雅地处理这些异常。</p>
+<h3>带超时的任务管理</h3>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">import</span> <span class="nn">aiohttp</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">fetch_with_timeout</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">async</span> <span class="k">with</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">timeout</span><span class="p">(</span><span class="n">timeout</span><span class="p">):</span>  <span class="c1"># Python 3.11+ 语法</span>
+            <span class="k">async</span> <span class="k">with</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">response</span><span class="p">:</span>
+                <span class="k">return</span> <span class="k">await</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
+    <span class="k">except</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">TimeoutError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2"> 请求超时&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2"> 请求失败: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+<span class="c1"># 对于Python 3.10及以下版本，使用asyncio.wait_for</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">fetch_with_timeout_legacy</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">async</span> <span class="k">with</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">response</span><span class="p">:</span>
+            <span class="c1"># 限制读取操作的时间</span>
+            <span class="k">return</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">wait_for</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">(),</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">TimeoutError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2"> 请求超时&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+</code></pre></div>
+
+<p><strong>实战建议</strong>：为每个任务设置合理的超时时间，避免单个慢请求拖垮整个程序。</p>
+<h2>5. 异步与同步代码的桥接</h2>
+<p>有时我们需要在异步代码中调用同步的第三方库。使用<code>loop.run_in_executor</code>可以将同步任务交给线程池执行。</p>
+<h3>混合使用示例</h3>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">def</span> <span class="nf">sync_blocking_task</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;模拟一个耗时的CPU操作&quot;&quot;&quot;</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>  <span class="c1"># 注意：这里使用time.sleep模拟阻塞</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;完成耗时</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">秒的任务&quot;</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_running_loop</span><span class="p">()</span>
+
+    <span class="c1"># 将同步任务提交到默认线程池</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">loop</span><span class="o">.</span><span class="n">run_in_executor</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">sync_blocking_task</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+    <span class="c1"># 也可以指定线程池</span>
+    <span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ThreadPoolExecutor</span>
+    <span class="k">with</span> <span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="p">[</span>
+            <span class="n">loop</span><span class="o">.</span><span class="n">run_in_executor</span><span class="p">(</span><span class="n">pool</span><span class="p">,</span> <span class="n">sync_blocking_task</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+        <span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+
+<span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</code></pre></div>
+
+<p><strong>注意</strong>：<code>run_in_executor</code>适用于CPU密集型或阻塞的同步代码，但不要滥用——异步的核心优势是处理I/O等待。</p>
+<h2>总结</h2>
+<p>本文带你走过了asyncio实战的四个关键环节：
+1. <strong>协程与事件循环</strong>：理解<code>async/await</code>语法和<code>asyncio.run</code>入口
+2. <strong>异步HTTP请求</strong>：使用<code>aiohttp</code>实现并发网络请求
+3. <strong>并发控制</strong>：用<code>Semaphore</code>限制同时执行的任务数
+4. <strong>错误处理</strong>：添加超时和异常处理机制</p>
+<p>记住，异步编程不是银弹——它最适合I/O密集型任务（网络请求、文件读写、数据库操作），对于CPU密集型计算（图像处理、加密解密），请考虑使用多进程或多线程。现在，打开你的编辑器，将学到的技术应用到下一个项目中吧！</p>
+<p>============================================================</p>
+<h1>第 3 章：Python生成器与迭代器：高效处理大数据</h1>
+<h1>Python生成器与迭代器：高效处理大数据</h1>
+<p>当你的Python程序需要处理数百万行日志、超大CSV文件或无限数据流时，直接使用列表存储所有数据往往会耗尽内存，甚至导致程序崩溃。生成器与迭代器正是解决这类问题的利器——它们通过<strong>惰性计算</strong>方式，只在需要时生成数据，从而大幅降低内存占用。</p>
+<h2>一、迭代器：数据流的生产者</h2>
+<p>任何实现了<code>__iter__()</code>和<code>__next__()</code>方法的对象都是迭代器。它像一个“数据管道”，每次调用<code>next()</code>才吐出下一个元素。</p>
+<h3>基础示例：手动实现迭代器</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Counter</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current</span> <span class="o">=</span> <span class="n">start</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">end</span> <span class="o">=</span> <span class="n">end</span>
+
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">current</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">end</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">StopIteration</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">current</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">value</span>
+
+<span class="c1"># 使用迭代器</span>
+<span class="n">counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">counter</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>  <span class="c1"># 输出: 1 2 3 4</span>
+</code></pre></div>
+
+<p><strong>关键点</strong>：<code>for</code>循环本质上是不断调用<code>next()</code>直到捕获<code>StopIteration</code>异常。</p>
+<h2>二、生成���：迭代器的优雅实现</h2>
+<p>生成器是Python提供的一种更简洁的迭代器创建方式。用<code>yield</code>关键字替代<code>return</code>，函数就变成了生成器函数。</p>
+<h3>对比：列表 vs 生成器</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># 列表方式（一次性生成所有数据）</span>
+<span class="k">def</span> <span class="nf">get_squares_list</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+
+<span class="c1"># 生成器方式（按需生成）</span>
+<span class="k">def</span> <span class="nf">get_squares_gen</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="c1"># 测试内存占用</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">squares_list</span> <span class="o">=</span> <span class="n">get_squares_list</span><span class="p">(</span><span class="mi">100000</span><span class="p">)</span>
+<span class="n">squares_gen</span> <span class="o">=</span> <span class="n">get_squares_gen</span><span class="p">(</span><span class="mi">100000</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;列表大小: </span><span class="si">{</span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">squares_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> bytes&quot;</span><span class="p">)</span>  <span class="c1"># 约824456</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;生成器大小: </span><span class="si">{</span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">squares_gen</span><span class="p">)</span><span class="si">}</span><span class="s2"> bytes&quot;</span><span class="p">)</span>  <span class="c1"># 约112</span>
+</code></pre></div>
+
+<p><strong>实际效果</strong>：生成器对象无论生成多少数据，自身大小恒定，而列表会随着数据量线性增长。</p>
+<h3>生成器表达式：一行代码搞定</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># 列表推导式</span>
+<span class="n">list_comp</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">*</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)]</span>
+
+<span class="c1"># 生成器表达式（只需将方括号改为圆括号）</span>
+<span class="n">gen_expr</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">gen_expr</span><span class="p">))</span>  <span class="c1"># &lt;class &#39;generator&#39;&gt;</span>
+</code></pre></div>
+
+<h2>三、实战：处理大文件</h2>
+<p>假设有一个10GB的日志文件<code>access.log</code>，我们需要统计每个IP的访问次数。</p>
+<h3>错误做法（内存爆炸）</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">parse_log_bad</span><span class="p">(</span><span class="n">filepath</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>  <span class="c1"># 一次性加载全部内容到内存</span>
+    <span class="n">ip_counts</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+        <span class="n">ip</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">ip_counts</span><span class="p">[</span><span class="n">ip</span><span class="p">]</span> <span class="o">=</span> <span class="n">ip_counts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">ip</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">ip_counts</span>
+</code></pre></div>
+
+<h3>正确做法（流式处理）</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">parse_log_good</span><span class="p">(</span><span class="n">filepath</span><span class="p">):</span>
+    <span class="n">ip_counts</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>  <span class="c1"># 文件对象本身就是迭代器，逐行读取</span>
+            <span class="n">ip</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">ip_counts</span><span class="p">[</span><span class="n">ip</span><span class="p">]</span> <span class="o">=</span> <span class="n">ip_counts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">ip</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">ip_counts</span>
+
+<span class="c1"># 或者使用生成器函数封装读取逻辑</span>
+<span class="k">def</span> <span class="nf">read_lines</span><span class="p">(</span><span class="n">filepath</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+<span class="c1"># 使用生成器处理</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">read_lines</span><span class="p">(</span><span class="s2">&quot;huge_log.txt&quot;</span><span class="p">):</span>
+    <span class="n">process</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>  <span class="c1"># 逐行处理，内存占用极低</span>
+</code></pre></div>
+
+<p><strong>原理</strong>：<code>open()</code>返回的文件对象是一个迭代器，<code>for line in f</code>不会将整个文件读入内存，而是每次读取一行。</p>
+<h2>四、生成器的进阶用法</h2>
+<h3>1. 无限序列生成</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">fibonacci</span><span class="p">():</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>  <span class="c1"># 无限循环</span>
+        <span class="k">yield</span> <span class="n">a</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="c1"># 只取前10个</span>
+<span class="n">fib</span> <span class="o">=</span> <span class="n">fibonacci</span><span class="p">()</span>
+<span class="n">first_10</span> <span class="o">=</span> <span class="p">[</span><span class="nb">next</span><span class="p">(</span><span class="n">fib</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">first_10</span><span class="p">)</span>  <span class="c1"># [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]</span>
+</code></pre></div>
+
+<h3>2. 生��器管道（数据流水线）</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># 构建处理管道</span>
+<span class="k">def</span> <span class="nf">read_data</span><span class="p">(</span><span class="n">filepath</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">filter_empty</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">item</span><span class="p">:</span>  <span class="c1"># 过滤空行</span>
+            <span class="k">yield</span> <span class="n">item</span>
+
+<span class="k">def</span> <span class="nf">to_uppercase</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">item</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+
+<span class="c1"># 串联管道</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">to_uppercase</span><span class="p">(</span><span class="n">filter_empty</span><span class="p">(</span><span class="n">read_data</span><span class="p">(</span><span class="s2">&quot;data.txt&quot;</span><span class="p">)))</span>
+<span class="k">for</span> <span class="n">processed_line</span> <span class="ow">in</span> <span class="n">pipeline</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">processed_line</span><span class="p">)</span>
+</code></pre></div>
+
+<h3>3. 使用<code>yield from</code>简化嵌套生成器</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">chain</span><span class="p">(</span><span class="o">*</span><span class="n">iterables</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">it</span> <span class="ow">in</span> <span class="n">iterables</span><span class="p">:</span>
+        <span class="k">yield from</span> <span class="n">it</span>  <span class="c1"># 委托给子迭代器</span>
+
+<span class="c1"># 合并多个列表</span>
+<span class="n">combined</span> <span class="o">=</span> <span class="n">chain</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="s2">&quot;abc&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">combined</span><span class="p">))</span>  <span class="c1"># [1, 2, 3, &#39;a&#39;, &#39;b&#39;, &#39;c&#39;, 4, 5]</span>
+</code></pre></div>
+
+<h2>五、性能对比与选择建议</h2>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>推荐方式</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据量 &lt; 1000条</td>
+<td>列表</td>
+<td>简单直观，访问速度快</td>
+</tr>
+<tr>
+<td>数据量 &gt; 10000条</td>
+<td>生成器/迭代器</td>
+<td>内存占用低，避免OOM</td>
+</tr>
+<tr>
+<td>需要多次遍历</td>
+<td>列表/重新创建生成器</td>
+<td>生成器只能遍历一次</td>
+</tr>
+<tr>
+<td>无限数据流</td>
+<td>生成器</td>
+<td>无法用列表表示无限序列</td>
+</tr>
+</tbody>
+</table>
+<p><strong>测试代码</strong>：比较列表和生成器的性能</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
+
+<span class="c1"># 列表方式</span>
+<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">result</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10_000_000</span><span class="p">)])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;列表耗时: </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">s&quot;</span><span class="p">)</span>
+
+<span class="c1"># 生成器方式</span>
+<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">result</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10_000_000</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;生成器耗时: </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">s&quot;</span><span class="p">)</span>
+<span class="c1"># 两者耗时相近，但生成器内存占用几乎为0</span>
+</code></pre></div>
+
+<h2>总结</h2>
+<ul>
+<li><strong>迭代器</strong>是实现了<code>__iter__</code>和<code>__next__</code>的对象，支持惰性计算</li>
+<li><strong>生成器</strong>是用<code>yield</code>创建的迭代器，更简洁易用</li>
+<li>处理大文件、无限序列时，优先使用生成器</li>
+<li>生成器表达式是列表推导式的内存友好版本</li>
+<li>通过<code>yield from</code>可以轻松构建数据管道</li>
+</ul>
+<p>掌握生成器和迭代器，你的Python程序就能以极低的内存开销处理海量数据——这正是Python在数据处理领域广受欢迎的重要原因之一。</p>
+<p>============================================================</p>
+<h1>第 4 章：Python装饰器从入门到进阶</h1>
+<h1>Python装饰器从入门到进阶</h1>
+<p>装饰器是Python中一个强大而优雅的特性，它允许你在不修改原函数代码的情况下，动态地给函数添加新的功能。本文将带你从基础语法到高级应用，彻底掌握装饰器的使用。</p>
+<h2>一、理解装饰器的核心概念</h2>
+<p>装饰器本质上是一个接收函数作为参数并返回新函数的高阶函数。让我们从最简单的例子开始：</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">my_decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;在函数执行前做一些事情&quot;</span><span class="p">)</span>
+        <span class="n">func</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;在函数执行后做一些事情&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nd">@my_decorator</span>
+<span class="k">def</span> <span class="nf">say_hello</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello!&quot;</span><span class="p">)</span>
+
+<span class="n">say_hello</span><span class="p">()</span>
+</code></pre></div>
+
+<p>输出：</p>
+<div class="codehilite"><pre><span></span><code>在函数执行前做一些事情
+Hello!
+在函数执行后做一些事情
+</code></pre></div>
+
+<p><code>@my_decorator</code> 语法糖等价于 <code>say_hello = my_decorator(say_hello)</code>。<code>wrapper</code>函数包裹了原函数，在调用前后添加了额外逻辑。</p>
+<h2>二、处理带参数的函数</h2>
+<p>上面的装饰器只能处理无参函数。为了让装饰器通用，我们需要使用<code>*args</code>和<code>**kwargs</code>：</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">timer_decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="kn">import</span> <span class="nn">time</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> 执行耗时: </span><span class="si">{</span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">秒&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nd">@timer_decorator</span>
+<span class="k">def</span> <span class="nf">calculate_sum</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+
+<span class="nd">@timer_decorator</span>
+<span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">greeting</span><span class="o">=</span><span class="s2">&quot;Hello&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">greeting</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">calculate_sum</span><span class="p">(</span><span class="mi">1000000</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;计算结果: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">greet</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Hi&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>这个装饰器可以测量任意函数的执行时间，并保持原函数的返回值。</p>
+<h2>三、保留原函数的元信息</h2>
+<p>使用<code>functools.wraps</code>可以保留被装饰函数的名称、文档字符串等元信息：</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">wraps</span>
+
+<span class="k">def</span> <span class="nf">log_decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;调用函数: </span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;参数: </span><span class="si">{</span><span class="n">args</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">kwargs</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;返回值: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nd">@log_decorator</span>
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;计算两个数的和&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;函数名: </span><span class="si">{</span><span class="n">add</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;文档: </span><span class="si">{</span><span class="n">add</span><span class="o">.</span><span class="vm">__doc__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">add</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
+
+<p>没有<code>@wraps</code>时，<code>add.__name__</code>会变成<code>wrapper</code>，这会导致调试困难。</p>
+<h2>四、带参数的装饰器</h2>
+<p>有时我们需要给装饰器传递参数，比如设置日志级别。这需要再嵌套一层函数：</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">repeat</span><span class="p">(</span><span class="n">times</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+        <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">times</span><span class="p">):</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">result</span>
+        <span class="k">return</span> <span class="n">wrapper</span>
+    <span class="k">return</span> <span class="n">decorator</span>
+
+<span class="nd">@repeat</span><span class="p">(</span><span class="n">times</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">say_hi</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hi!&quot;</span><span class="p">)</span>
+
+<span class="n">say_hi</span><span class="p">()</span>
+</code></pre></div>
+
+<p>这里的<code>repeat(times=3)</code>先调用返回<code>decorator</code>函数，然后<code>@decorator</code>再应用于<code>say_hi</code>。</p>
+<h2>五、实际应用场景</h2>
+<h3>1. 权限验证</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">require_auth</span><span class="p">(</span><span class="n">role</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+        <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">user</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;role&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="n">role</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">PermissionError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;需要</span><span class="si">{</span><span class="n">role</span><span class="si">}</span><span class="s2">权限&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">wrapper</span>
+    <span class="k">return</span> <span class="n">decorator</span>
+
+<span class="nd">@require_auth</span><span class="p">(</span><span class="s2">&quot;admin&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">delete_user</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">user_id</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;用户 </span><span class="si">{</span><span class="n">user_id</span><span class="si">}</span><span class="s2"> 已被删除&quot;</span><span class="p">)</span>
+
+<span class="c1"># 测试</span>
+<span class="n">admin_user</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Admin&quot;</span><span class="p">,</span> <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;admin&quot;</span><span class="p">}</span>
+<span class="n">normal_user</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;User&quot;</span><span class="p">,</span> <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">}</span>
+
+<span class="n">delete_user</span><span class="p">(</span><span class="n">admin_user</span><span class="p">,</span> <span class="mi">123</span><span class="p">)</span>  <span class="c1"># 正常执行</span>
+<span class="c1"># delete_user(normal_user, 123)  # 抛出PermissionError</span>
+</code></pre></div>
+
+<h3>2. 缓存计算结果</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">cache_result</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="n">cache</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">args</span> <span class="ow">in</span> <span class="n">cache</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;使用缓存: </span><span class="si">{</span><span class="n">args</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">cache</span><span class="p">[</span><span class="n">args</span><span class="p">]</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+        <span class="n">cache</span><span class="p">[</span><span class="n">args</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span>
+        <span class="k">return</span> <span class="n">result</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nd">@cache_result</span>
+<span class="k">def</span> <span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span>
+    <span class="k">return</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">fibonacci</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>  <span class="c1"># 第一次计算</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fibonacci</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>  <span class="c1"># 直接从缓存获取</span>
+</code></pre></div>
+
+<h3>3. 重试机制</h3>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">def</span> <span class="nf">retry</span><span class="p">(</span><span class="n">max_attempts</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+        <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">attempt</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_attempts</span><span class="p">):</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">attempt</span> <span class="o">==</span> <span class="n">max_attempts</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+                        <span class="k">raise</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;第</span><span class="si">{</span><span class="n">attempt</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">次失败，</span><span class="si">{</span><span class="n">delay</span><span class="si">}</span><span class="s2">秒后重试...&quot;</span><span class="p">)</span>
+                    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">delay</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">wrapper</span>
+    <span class="k">return</span> <span class="n">decorator</span>
+
+<span class="nd">@retry</span><span class="p">(</span><span class="n">max_attempts</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">unstable_network_call</span><span class="p">():</span>
+    <span class="kn">import</span> <span class="nn">random</span>
+    <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">0.7</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ConnectionError</span><span class="p">(</span><span class="s2">&quot;网络异常&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s2">&quot;成功获取数据&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">unstable_network_call</span><span class="p">())</span>
+</code></pre></div>
+
+<h2>六、多个装饰器的组合</h2>
+<p>当多个装饰器叠加时，执行顺序���从下往上（离函数最近的先执行）：</p>
+<div class="codehilite"><pre><span></span><code><span class="nd">@timer_decorator</span>
+<span class="nd">@log_decorator</span>
+<span class="k">def</span> <span class="nf">complex_function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">**</span> <span class="n">y</span>
+
+<span class="n">complex_function</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</code></pre></div>
+
+<p>这相当于 <code>complex_function = timer_decorator(log_decorator(complex_function))</code>，先执行<code>log_decorator</code>，再执行<code>timer_decorator</code>。</p>
+<h2>总结</h2>
+<p>装饰器是Python中实现AOP（面向切面编程）的优雅方式。核心要点：</p>
+<ol>
+<li><strong>基本结构</strong>：装饰器是接收函数返回函数的高阶函数</li>
+<li><strong>参数传递</strong>：使用<code>*args, **kwargs</code>保持通用性</li>
+<li><strong>元信息保留</strong>：始终使用<code>@wraps</code>装饰wrapper函数</li>
+<li><strong>带参数装饰器</strong>：需要三层嵌套函数</li>
+<li><strong>实际应用</strong>：日志、权限、缓存、重试等场景非常实用</li>
+</ol>
+<p>掌握装饰器后，你会发现代码复用性和可维护性都得到了显著提升。</p>
+<p>============================================================</p>
+<h1>第 5 章：用Python写一个命令行工具：argparse实战</h1>
+<h1>用Python写一个命令行工具：argparse实战</h1>
+<p>你是否写过这样的脚本：每次运行都要手动修改代码里的文件路径、参数数值？或者想给同事提供一个易用的工具，却不知道怎么处理命令行参数？Python标准库中的<code>argparse</code>模块正是解决这些问题的利器。本文将通过三个实战场景，带你掌握argparse的核心用法。</p>
+<h2>基础入门：从零搭建参数解析框架</h2>
+<p>首先，我们用最简单的例子认识argparse的工作流程。假设我们要写一个文件处理工具，需要接收文件名和操作模式。</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">argparse</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;文件处理工具&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;filename&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;要处理的文件名&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--mode&#39;</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;read&#39;</span><span class="p">,</span> <span class="s1">&#39;write&#39;</span><span class="p">],</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;read&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;操作模式：read或write&#39;</span><span class="p">)</span>
+
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;处理文件：</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">filename</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;操作模式：</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">mode</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+
+<p>运行效果：</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>python<span class="w"> </span>file_tool.py<span class="w"> </span>data.txt<span class="w"> </span>--mode<span class="w"> </span>write
+处理文件：data.txt
+操作模式：write
+</code></pre></div>
+
+<p>关键点解析：
+- <code>add_argument()</code>的第一个参数是参数名，不带<code>--</code>的是位置参数（必须提供），带<code>--</code>的是可选参数
+- <code>choices</code>限制参数值范围，<code>default</code>设置默认值
+- <code>help</code>为每个参数添加说明，运行<code>python file_tool.py -h</code>时会自动生成帮助信息</p>
+<h2>进阶实战：构建多功能计算器</h2>
+<p>现在我们来做一个更实用的例子：一个支持加、减、乘、除的计算器，可以处理任意数量的数字，还能选择输出格式。</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">argparse</span>
+
+<span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">operation</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">operation</span> <span class="o">==</span> <span class="s1">&#39;add&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">operation</span> <span class="o">==</span> <span class="s1">&#39;sub&#39;</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+            <span class="n">result</span> <span class="o">-=</span> <span class="n">n</span>
+        <span class="k">return</span> <span class="n">result</span>
+    <span class="k">elif</span> <span class="n">operation</span> <span class="o">==</span> <span class="s1">&#39;mul&#39;</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">*=</span> <span class="n">n</span>
+        <span class="k">return</span> <span class="n">result</span>
+    <span class="k">elif</span> <span class="n">operation</span> <span class="o">==</span> <span class="s1">&#39;div&#39;</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+            <span class="n">result</span> <span class="o">/=</span> <span class="n">n</span>
+        <span class="k">return</span> <span class="n">result</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;多功能计算器&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;numbers&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;要计算的数字，至少两个&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-o&#39;</span><span class="p">,</span> <span class="s1">&#39;--operation&#39;</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;add&#39;</span><span class="p">,</span> <span class="s1">&#39;sub&#39;</span><span class="p">,</span> <span class="s1">&#39;mul&#39;</span><span class="p">,</span> <span class="s1">&#39;div&#39;</span><span class="p">],</span>
+                        <span class="n">default</span><span class="o">=</span><span class="s1">&#39;add&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;运算类型&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--precision&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;结果保留小数位数&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-v&#39;</span><span class="p">,</span> <span class="s1">&#39;--verbose&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;显示详细计算过程&#39;</span><span class="p">)</span>
+
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">numbers</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;至少需要两个数字&#39;</span><span class="p">)</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="n">calculate</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">numbers</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">operation</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">verbose</span><span class="p">:</span>
+        <span class="n">op_symbols</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;add&#39;</span><span class="p">:</span> <span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="s1">&#39;sub&#39;</span><span class="p">:</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;mul&#39;</span><span class="p">:</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s1">&#39;div&#39;</span><span class="p">:</span> <span class="s1">&#39;/&#39;</span><span class="p">}</span>
+        <span class="n">expression</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39; </span><span class="si">{</span><span class="n">op_symbols</span><span class="p">[</span><span class="n">args</span><span class="o">.</span><span class="n">operation</span><span class="p">]</span><span class="si">}</span><span class="s1"> &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">numbers</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;计算表达式：</span><span class="si">{</span><span class="n">expression</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;运算类型：</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">operation</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;结果：</span><span class="si">{</span><span class="n">result</span><span class="si">:</span><span class="s1">.</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">precision</span><span class="si">}</span><span class="s1">f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+
+<p>运行示例：</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>python<span class="w"> </span>calculator.py<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">3</span><span class="w"> </span>-o<span class="w"> </span>sub<span class="w"> </span>--precision<span class="w"> </span><span class="m">3</span><span class="w"> </span>-v
+计算表达式：10<span class="w"> </span>-<span class="w"> </span><span class="m">5</span><span class="w"> </span>-<span class="w"> </span><span class="m">3</span>
+运算类型：sub
+结果：2.000
+</code></pre></div>
+
+<p>新技能点：
+- <code>nargs='+'</code>表示接受一个或多个参数，<code>type=float</code>自动转换类型
+- <code>action='store_true'</code>创建布尔开关，指定<code>-v</code>时值为True
+- <code>--precision</code>展示如何定义整数参数</p>
+<h2>实战技巧：子命令与配置文件</h2>
+<p>当你的工具功��逐渐增多时，可以使用子命令来组织。下面是一个数据处理工具，包含<code>convert</code>和<code>analyze</code>两个子命令。</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="k">def</span> <span class="nf">handle_convert</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;转换文件：</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">input</span><span class="si">}</span><span class="s1"> -&gt; </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">output</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;编码：</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">encoding</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">pretty</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;启用美化输出&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">handle_analyze</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;分析文件：</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">input</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;统计指标：</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">metrics</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">quiet</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;静默模式&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;数据处理工具&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--config&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;配置文件路径&#39;</span><span class="p">)</span>
+
+    <span class="n">subparsers</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_subparsers</span><span class="p">(</span><span class="n">dest</span><span class="o">=</span><span class="s1">&#39;command&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;可用命令&#39;</span><span class="p">)</span>
+
+    <span class="c1"># convert 子命令</span>
+    <span class="n">convert_parser</span> <span class="o">=</span> <span class="n">subparsers</span><span class="o">.</span><span class="n">add_parser</span><span class="p">(</span><span class="s1">&#39;convert&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;文件格式转换&#39;</span><span class="p">)</span>
+    <span class="n">convert_parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;输入文件&#39;</span><span class="p">)</span>
+    <span class="n">convert_parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;output&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;输出文件&#39;</span><span class="p">)</span>
+    <span class="n">convert_parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--encoding&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;文件编码&#39;</span><span class="p">)</span>
+    <span class="n">convert_parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--pretty&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;美化输出&#39;</span><span class="p">)</span>
+
+    <span class="c1"># analyze 子命令</span>
+    <span class="n">analyze_parser</span> <span class="o">=</span> <span class="n">subparsers</span><span class="o">.</span><span class="n">add_parser</span><span class="p">(</span><span class="s1">&#39;analyze&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;数据分析&#39;</span><span class="p">)</span>
+    <span class="n">analyze_parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;输入文件&#39;</span><span class="p">)</span>
+    <span class="n">analyze_parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--metrics&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> 
+                                <span class="n">choices</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">],</span>
+                                <span class="n">default</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">],</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;统计指标&#39;</span><span class="p">)</span>
+    <span class="n">analyze_parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--quiet&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;减少输出&#39;</span><span class="p">)</span>
+
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+    <span class="c1"># 支持从配置文件读取参数</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">config</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">config</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">config</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">config</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="nb">setattr</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">command</span> <span class="o">==</span> <span class="s1">&#39;convert&#39;</span><span class="p">:</span>
+        <span class="n">handle_convert</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">args</span><span class="o">.</span><span class="n">command</span> <span class="o">==</span> <span class="s1">&#39;analyze&#39;</span><span class="p">:</span>
+        <span class="n">handle_analyze</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">print_help</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+
+<p>运行效果：</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>python<span class="w"> </span>data_tool.py<span class="w"> </span>convert<span class="w"> </span>input.csv<span class="w"> </span>output.json<span class="w"> </span>--pretty
+转换文件：input.csv<span class="w"> </span>-&gt;<span class="w"> </span>output.json
+编码：utf-8
+启用美化输出
+
+$<span class="w"> </span>python<span class="w"> </span>data_tool.py<span class="w"> </span>analyze<span class="w"> </span>data.csv<span class="w"> </span>--metrics<span class="w"> </span>mean<span class="w"> </span>max
+分析文件：data.csv
+统计指标：<span class="o">[</span><span class="s1">&#39;mean&#39;</span>,<span class="w"> </span><span class="s1">&#39;max&#39;</span><span class="o">]</span>
+</code></pre></div>
+
+<p>高级特性：
+- <code>add_subparsers()</code>创建子命令体系，<code>dest='command'</code>用于判断用户输入了哪个子命令
+- 支持从JSON配置文件加载参数，方便批量使用
+- 不同子命令可以有完全不同的参数集合</p>
+<h2>总结</h2>
+<p>通过三个实战案例，我们掌握了argparse的核心用法：
+1. <strong>基础用法</strong>：位置参数、可选参数、类型转换、参数验证
+2. <strong>进阶技巧</strong>：多值参数、布尔开关、自定义错误提示
+3. <strong>高级应用</strong>：子命令体系、配置文件支持</p>
+<p>argparse的强大之处在于：它自动生成帮助信息、处理错误输入、支持类型转换，让开发者可以专注于业务逻辑。下次当你需要给脚本添加命令行参数时，不妨试试argparse，让你的工具更加专业易用。</p>
+<hr />
+<h2>📌 关于本产品</h2>
+<ul>
+<li>文章数：5 篇</li>
+<li>生成时间：2026-05-06T05:47:06.492Z</li>
+</ul>
+</div>
+
+<div class="footer-page">
+    <p>— END —</p>
+    <p style="margin-top:12px;font-size:9pt;color:#94a3b8;">
+        更多教程: https://hugo-xu844.github.io/autopilot-content/
+    </p>
+</div>
+
+</body>
+</html>

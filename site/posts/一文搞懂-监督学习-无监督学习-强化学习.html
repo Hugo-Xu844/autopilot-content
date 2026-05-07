@@ -3,105 +3,109 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>一文搞懂：监督学习、无监督学习、强化学习 - AI 编程实验室</title>
-  <meta name="description" content="一文搞懂：监督学习、无监督学习、强化学习 - 详细教程与实战指南">
+  <title>涓€鏂囨悶鎳傦細鐩戠潱瀛︿範銆佹棤鐩戠潱瀛︿範銆佸己鍖栧涔?- AI 缂栫▼瀹為獙瀹?/title>
+  <meta name="description" content="涓€鏂囨悶鎳傦細鐩戠潱瀛︿範銆佹棤鐩戠潱瀛︿範銆佸己鍖栧涔?- 璇︾粏鏁欑▼涓庡疄鎴樻寚鍗?>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
+
 <body>
+  <div id="reading-progress"></div>
   <header class="header">
     <div class="container">
-      <a href="../" class="logo">AI 编程实验室</a>
+      <a href="../" class="logo">AI 缂栫▼瀹為獙瀹?/a>
       <nav>
-        <a href="../">首页</a>
-        <a href="../products.html">教程产品</a>
+        <a href="../">棣栭〉</a>
+        <a href="../products.html">鏁欑▼浜у搧</a>
       </nav>
+        <button id="theme-toggle" class="theme-toggle" aria-label="切换深色/浅色模式">🌙</button>
+      </div>
     </div>
   </header>
 
   <main class="container">
     <article class="post-full">
       <header class="post-header">
-        <h1>一文搞懂：监督学习、无监督学习、强化学习</h1>
+        <h1>涓€鏂囨悶鎳傦細鐩戠潱瀛︿範銆佹棤鐩戠潱瀛︿範銆佸己鍖栧涔?/h1>
         <div class="post-meta">
-          <span class="date">📅 2026-05-06</span>
-          <span class="category">📂 AI入门教程</span>
-          <div class="tags"><span class="tag">AI入门教程</span></div>
+          <span class="date">馃搮 2026-05-06</span>
+          <span class="category">馃搨 AI鍏ラ棬鏁欑▼</span>
+          <div class="tags"><span class="tag">AI鍏ラ棬鏁欑▼</span></div>
         </div>
       </header>
       <div class="post-content">
-        <p><h1>一文搞懂：监督学习、无监督学习、强化学习</h1></p><p>机器学习三大流派常让初学者困惑：它们到底有什么区别？各自适合什么场景？本文用代码和实战案例，帮你彻底理清这三个核心概念。</p><p><h2>1. 监督学习：有老师带，学打分</h2></p><p><strong>核心逻辑</strong>：给模型“标准答案”（标签），让它学会从输入到输出的映射。</p><p>想象一个阅卷老师：你给TA一堆试卷（输入）和对应的分数（标签），TA学会后，新来的试卷就能自动打分。</p><p><h3>实战：用Scikit-learn预测房价</h3></p><p><pre><code class="language-python">from sklearn.linear_model import LinearRegression
+        <p><h1>涓€鏂囨悶鎳傦細鐩戠潱瀛︿範銆佹棤鐩戠潱瀛︿範銆佸己鍖栧涔?/h1></p><p>鏈哄櫒瀛︿範涓夊ぇ娴佹淳甯歌鍒濆鑰呭洶鎯戯細瀹冧滑鍒板簳鏈変粈涔堝尯鍒紵鍚勮嚜閫傚悎浠€涔堝満鏅紵鏈枃鐢ㄤ唬鐮佸拰瀹炴垬妗堜緥锛屽府浣犲交搴曠悊娓呰繖涓変釜鏍稿績姒傚康銆?/p><p><h2>1. 鐩戠潱瀛︿範锛氭湁鑰佸笀甯︼紝瀛︽墦鍒?/h2></p><p><strong>鏍稿績閫昏緫</strong>锛氱粰妯″瀷鈥滄爣鍑嗙瓟妗堚€濓紙鏍囩锛夛紝璁╁畠瀛︿細浠庤緭鍏ュ埌杈撳嚭鐨勬槧灏勩€?/p><p>鎯宠薄涓€涓槄鍗疯€佸笀锛氫綘缁橳A涓€鍫嗚瘯鍗凤紙杈撳叆锛夊拰瀵瑰簲鐨勫垎鏁帮紙鏍囩锛夛紝TA瀛︿細鍚庯紝鏂版潵鐨勮瘯鍗峰氨鑳借嚜鍔ㄦ墦鍒嗐€?/p><p><h3>瀹炴垬锛氱敤Scikit-learn棰勬祴鎴夸环</h3></p><p><pre><code class="language-python">from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
-import numpy as np</p><p><h1>模拟数据：房屋面积（平方米）和价格（万元）</h1>
+import numpy as np</p><p><h1>妯℃嫙鏁版嵁锛氭埧灞嬮潰绉紙骞虫柟绫筹級鍜屼环鏍硷紙涓囧厓锛?/h1>
 X = np.array([[50], [80], [100], [120], [150]])
-y = np.array([150, 240, 300, 360, 450])</p><p><h1>分割训练集和测试集</h1>
+y = np.array([150, 240, 300, 360, 450])</p><p><h1>鍒嗗壊璁粌闆嗗拰娴嬭瘯闆?/h1>
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42
-)</p><p><h1>训练模型</h1>
+)</p><p><h1>璁粌妯″瀷</h1>
 model = LinearRegression()
-model.fit(X_train, y_train)</p><p><h1>预测新房子价格</h1>
+model.fit(X_train, y_train)</p><p><h1>棰勬祴鏂版埧瀛愪环鏍?/h1>
 new_house = np.array([[95]])
 predicted_price = model.predict(new_house)
-print(f"95平米房子���测价格：{predicted_price[0]:.1f}万元")</code></pre></p><p><strong>典型应用</strong>：垃圾邮件分类（标签：是/否）、图像识别（标签：猫/狗）、股票涨跌预测。</p><p><h2>2. 无监督学习：自学成才，找规律</h2></p><p><strong>核心逻辑</strong>：只有输入数据，没有标签。模型自己发现数据中的隐藏结构。</p><p>就像给你一堆形状各异的积木，没人告诉你分类标准，但你会自然地把相似的放在一起。</p><p><h3>实战：用K-Means做客户分群</h3></p><p><pre><code class="language-python">from sklearn.cluster import KMeans
-import numpy as np</p><p><h1>模拟用户数据：每周购物次数、平均消费金额（元）</h1>
+print(f"95骞崇背鎴垮瓙锟斤拷锟芥祴浠锋牸锛歿predicted_price[0]:.1f}涓囧厓")</code></pre></p><p><strong>鍏稿瀷搴旂敤</strong>锛氬瀮鍦鹃偖浠跺垎绫伙紙鏍囩锛氭槸/鍚︼級銆佸浘鍍忚瘑鍒紙鏍囩锛氱尗/鐙楋級銆佽偂绁ㄦ定璺岄娴嬨€?/p><p><h2>2. 鏃犵洃鐫ｅ涔狅細鑷鎴愭墠锛屾壘瑙勫緥</h2></p><p><strong>鏍稿績閫昏緫</strong>锛氬彧鏈夎緭鍏ユ暟鎹紝娌℃湁鏍囩銆傛ā鍨嬭嚜宸卞彂鐜版暟鎹腑鐨勯殣钘忕粨鏋勩€?/p><p>灏卞儚缁欎綘涓€鍫嗗舰鐘跺悇寮傜殑绉湪锛屾病浜哄憡璇変綘鍒嗙被鏍囧噯锛屼絾浣犱細鑷劧鍦版妸鐩镐技鐨勬斁鍦ㄤ竴璧枫€?/p><p><h3>瀹炴垬锛氱敤K-Means鍋氬鎴峰垎缇?/h3></p><p><pre><code class="language-python">from sklearn.cluster import KMeans
+import numpy as np</p><p><h1>妯℃嫙鐢ㄦ埛鏁版嵁锛氭瘡鍛ㄨ喘鐗╂鏁般€佸钩鍧囨秷璐归噾棰濓紙鍏冿級</h1>
 user_data = np.array([
     [3, 200], [1, 50], [5, 500], 
     [2, 100], [4, 400], [1, 30],
     [6, 600], [2, 80], [3, 300]
-])</p><p><h1>分成3个客户群体</h1>
+])</p><p><h1>鍒嗘垚3涓鎴风兢浣?/h1>
 kmeans = KMeans(n_clusters=3, random_state=42)
-kmeans.fit(user_data)</p><p><h1>查看每个用户的所属群体</h1>
+kmeans.fit(user_data)</p><p><h1>鏌ョ湅姣忎釜鐢ㄦ埛鐨勬墍灞炵兢浣?/h1>
 for i, label in enumerate(kmeans.labels_):
-    print(f"用户{i+1}：群体{label}")</p><p><h1>获取群体中心点</h1>
+    print(f"鐢ㄦ埛{i+1}锛氱兢浣搟label}")</p><p><h1>鑾峰彇缇や綋涓績鐐?/h1>
 centers = kmeans.cluster_centers_
-print(f"\n群体中心点：\n{centers}")</code></pre></p><p><strong>典型应用</strong>：用户画像分群、异常检测（找出离群点）、新闻主题聚类。</p><p><h2>3. 强化学习：试错中进化</h2></p><p><strong>核心逻辑</strong>：智能体（Agent）在环境（Environment）中行动，通过奖励（Reward）信号学习最优策略。</p><p>就像训练一只小狗���做对动作给零食（正奖励），做错就无视（负奖励），慢慢它就学会坐下、趴下。</p><p><h3>实战：用Q-Learning走迷宫</h3></p><p><pre><code class="language-python">import numpy as np</p><p><h1>简单迷宫：0-终点，1-障碍，2-起点</h1>
+print(f"\n缇や綋涓績鐐癸細\n{centers}")</code></pre></p><p><strong>鍏稿瀷搴旂敤</strong>锛氱敤鎴风敾鍍忓垎缇ゃ€佸紓甯告娴嬶紙鎵惧嚭绂荤兢鐐癸級銆佹柊闂讳富棰樿仛绫汇€?/p><p><h2>3. 寮哄寲瀛︿範锛氳瘯閿欎腑杩涘寲</h2></p><p><strong>鏍稿績閫昏緫</strong>锛氭櫤鑳戒綋锛圓gent锛夊湪鐜锛圗nvironment锛変腑琛屽姩锛岄€氳繃濂栧姳锛圧eward锛変俊鍙峰涔犳渶浼樼瓥鐣ャ€?/p><p>灏卞儚璁粌涓€鍙皬鐙楋拷锟斤拷鍋氬鍔ㄤ綔缁欓浂椋燂紙姝ｅ鍔憋級锛屽仛閿欏氨鏃犺锛堣礋濂栧姳锛夛紝鎱㈡參瀹冨氨瀛︿細鍧愪笅銆佽洞涓嬨€?/p><p><h3>瀹炴垬锛氱敤Q-Learning璧拌糠瀹?/h3></p><p><pre><code class="language-python">import numpy as np</p><p><h1>绠€鍗曡糠瀹細0-缁堢偣锛?-闅滅锛?-璧风偣</h1>
 maze = np.array([
     [2, 0, 0, 0],
     [1, 1, 0, 1],
     [0, 0, 0, 0],
     [0, 1, 1, 0]
-])</p><p><h1>Q表：状态(位置) x 动作(上右下左)</h1>
+])</p><p><h1>Q琛細鐘舵€?浣嶇疆) x 鍔ㄤ綔(涓婂彸涓嬪乏)</h1>
 Q = np.zeros((16, 4))
 learning_rate = 0.8
 discount = 0.95
-episodes = 1000</p><p><h1>训练</h1>
+episodes = 1000</p><p><h1>璁粌</h1>
 for _ in range(episodes):
-    state = 0  # 起点位置
-    while state != 3:  # 未到达终点
-        # epsilon-greedy策略
+    state = 0  # 璧风偣浣嶇疆
+    while state != 3:  # 鏈埌杈剧粓鐐?        # epsilon-greedy绛栫暐
         if np.random.random() &lt; 0.1:
             action = np.random.randint(4)
         else:
             action = np.argmax(Q[state])
         
-        # 执行动作，获得下一状态和奖励
-        next_state = state + 1  # 简化：向右移动
+        # 鎵ц鍔ㄤ綔锛岃幏寰椾笅涓€鐘舵€佸拰濂栧姳
+        next_state = state + 1  # 绠€鍖栵細鍚戝彸绉诲姩
         reward = 1 if next_state == 3 else 0
         
-        # 更新Q值
-        Q[state, action] = (1 - learning_rate) * Q[state, action] + \
+        # 鏇存柊Q鍊?        Q[state, action] = (1 - learning_rate) * Q[state, action] + \
                           learning_rate <em> (reward + discount </em> np.max(Q[next_state]))
-        state = next_state</p><p>print("训练完成！Q表已收敛")</code></pre></p><p><strong>典型应用</strong>：游戏AI（AlphaGo）、机器人控制、自动驾驶决策。</p><p><h2>4. 三者的核心区别对比</h2></p><p>| 维度 | 监督学习 | 无监督学习 | 强化学习 |
+        state = next_state</p><p>print("璁粌瀹屾垚锛丵琛ㄥ凡鏀舵暃")</code></pre></p><p><strong>鍏稿瀷搴旂敤</strong>锛氭父鎴廇I锛圓lphaGo锛夈€佹満鍣ㄤ汉鎺у埗銆佽嚜鍔ㄩ┚椹跺喅绛栥€?/p><p><h2>4. 涓夎€呯殑鏍稿績鍖哄埆瀵规瘮</h2></p><p>| 缁村害 | 鐩戠潱瀛︿範 | 鏃犵洃鐫ｅ涔?| 寮哄寲瀛︿範 |
 |------|---------|-----------|---------|
-| 数据需求 | 需要标签 | 无需标签 | 需要环境反馈 |
-| 目标 | 预测/分类 | 发现结构 | 最大化累积奖励 |
-| 反馈方式 | 即时（标签） | 无反馈 | 延迟（奖励） |
-| 典型算法 | 决策树、SVM、神经网络 | K-Means、PCA、DBSCAN | Q-Learning、DQN、PPO |</p><p><h2>5. 如何选择适合的方法？</h2></p><p><ul><li><strong>有大量标注数据？</strong> → 监督学习（分类或回归）</li>
-<li><strong>数据无标签，想探索规律？</strong> → 无监督学习（聚类或降维）</li>
-<li><strong>需要做序列决策，有环境交互？</strong> → 强化学习（游戏、机器人）</li>
+| 鏁版嵁闇€姹?| 闇€瑕佹爣绛?| 鏃犻渶鏍囩 | 闇€瑕佺幆澧冨弽棣?|
+| 鐩爣 | 棰勬祴/鍒嗙被 | 鍙戠幇缁撴瀯 | 鏈€澶у寲绱Н濂栧姳 |
+| 鍙嶉鏂瑰紡 | 鍗虫椂锛堟爣绛撅級 | 鏃犲弽棣?| 寤惰繜锛堝鍔憋級 |
+| 鍏稿瀷绠楁硶 | 鍐崇瓥鏍戙€丼VM銆佺缁忕綉缁?| K-Means銆丳CA銆丏BSCAN | Q-Learning銆丏QN銆丳PO |</p><p><h2>5. 濡備綍閫夋嫨閫傚悎鐨勬柟娉曪紵</h2></p><p><ul><li><strong>鏈夊ぇ閲忔爣娉ㄦ暟鎹紵</strong> 鈫?鐩戠潱瀛︿範锛堝垎绫绘垨鍥炲綊锛?/li>
+<li><strong>鏁版嵁鏃犳爣绛撅紝鎯虫帰绱㈣寰嬶紵</strong> 鈫?鏃犵洃鐫ｅ涔狅紙鑱氱被鎴栭檷缁达級</li>
+<li><strong>闇€瑕佸仛搴忓垪鍐崇瓥锛屾湁鐜浜や簰锛?/strong> 鈫?寮哄寲瀛︿範锛堟父鎴忋€佹満鍣ㄤ汉锛?/li>
 </ul>
-<strong>混合使用更强大</strong>：比如先用无监督学习做客户分群，再对每个群体用监督学习做流失预测。</p><p><h2>总结</h2></p><p><ul><li><strong>监督学习</strong>：有标准答案，适合预测和分类</li>
-<li><strong>无监督学习</strong>：无答案，适合探索数据内在结构</li>
-<li><strong>强化学习</strong>：通过试错学习，适合决策和控制任务</li>
+<strong>娣峰悎浣跨敤鏇村己澶?/strong>锛氭瘮濡傚厛鐢ㄦ棤鐩戠潱瀛︿範鍋氬鎴峰垎缇わ紝鍐嶅姣忎釜缇や綋鐢ㄧ洃鐫ｅ涔犲仛娴佸け棰勬祴銆?/p><p><h2>鎬荤粨</h2></p><p><ul><li><strong>鐩戠潱瀛︿範</strong>锛氭湁鏍囧噯绛旀锛岄€傚悎棰勬祴鍜屽垎绫?/li>
+<li><strong>鏃犵洃鐫ｅ涔?/strong>锛氭棤绛旀锛岄€傚悎鎺㈢储鏁版嵁鍐呭湪缁撴瀯</li>
+<li><strong>寮哄寲瀛︿範</strong>锛氶€氳繃璇曢敊瀛︿範锛岄€傚悎鍐崇瓥鍜屾帶鍒朵换鍔?/li>
 </ul>
-掌握这三类方法，你就拥有了解决绝大多数机器学习问题的工具箱。实际项目中，往往是多种方法组合使用，关键是根据业务场景选择最合适的工具。</p>
+鎺屾彙杩欎笁绫绘柟娉曪紝浣犲氨鎷ユ湁浜嗚В鍐崇粷澶у鏁版満鍣ㄥ涔犻棶棰樼殑宸ュ叿绠便€傚疄闄呴」鐩腑锛屽線寰€鏄绉嶆柟娉曠粍鍚堜娇鐢紝鍏抽敭鏄牴鎹笟鍔″満鏅€夋嫨鏈€鍚堥€傜殑宸ュ叿銆?/p>
       </div>
     </article>
   </main>
 
   <footer class="footer">
     <div class="container">
-      <p>AI 编程实验室 &copy; 2026 | 用 ❤️ 和 AI 生成</p>
+      <p>AI 缂栫▼瀹為獙瀹?&copy; 2026 | 鐢?鉂わ笍 鍜?AI 鐢熸垚</p>
     </div>
   </footer>
+  <button id="back-to-top" aria-label="回到顶部">↑</button>
+  <script src="../assets/app.js"></script>
 </body>
 </html>

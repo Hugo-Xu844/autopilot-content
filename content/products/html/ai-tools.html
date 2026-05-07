@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>2025 AI工具评测大全</title>
+<style>
+@page {
+    size: A5;
+    margin: 2cm 1.8cm;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 11pt;
+    line-height: 1.8;
+    color: #1a1a2e;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.cover {
+    text-align: center;
+    padding: 120px 0 60px;
+    page-break-after: always;
+}
+.cover h1 {
+    font-size: 26pt;
+    font-weight: 800;
+    color: #6366f1;
+    margin-bottom: 16px;
+}
+.cover .price {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 32px;
+    background: #6366f1;
+    color: white;
+    border-radius: 8px;
+    font-size: 16pt;
+    font-weight: 700;
+}
+.cover .meta {
+    margin-top: 40px;
+    color: #94a3b8;
+    font-size: 9pt;
+}
+.toc { page-break-after: always; margin-bottom: 40px; }
+.toc h2 {
+    font-size: 14pt;
+    color: #6366f1;
+    border-bottom: 2px solid #6366f1;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+}
+h1 { font-size: 18pt; margin: 40px 0 16px; color: #1a1a2e; page-break-before: always; }
+h1:first-of-type { page-break-before: avoid; }
+h2 { font-size: 14pt; margin: 28px 0 12px; color: #334155; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px; }
+h3 { font-size: 12pt; margin: 20px 0 10px; color: #475569; }
+p { margin-bottom: 10px; }
+ul, ol { margin: 8px 0 12px 20px; }
+li { margin-bottom: 4px; }
+code {
+    background: #f1f5f9;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 9pt;
+    font-family: Consolas, monospace;
+    color: #4f46e5;
+}
+pre {
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: 14px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 14px 0;
+    font-size: 8.5pt;
+    line-height: 1.5;
+    font-family: Consolas, monospace;
+}
+pre code { background: none; padding: 0; color: inherit; }
+table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 9.5pt; }
+th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid #e2e8f0; }
+th { background: #eef2ff; color: #4f46e5; font-weight: 600; }
+blockquote {
+    border-left: 4px solid #6366f1;
+    padding: 10px 16px;
+    margin: 14px 0;
+    background: #f8f9ff;
+    color: #64748b;
+}
+hr { margin: 30px 0; border: none; border-top: 1px solid #e2e8f0; }
+.footer-page { 
+    text-align: center; padding: 100px 0; color: #94a3b8; font-size: 10pt;
+    page-break-before: always;
+}
+@media print {
+    body { padding: 0; }
+}
+</style>
+</head>
+<body>
+
+<div class="cover">
+    <h1>2025 AI工具评测大全</h1>
+    <p style="color:#64748b;font-size:11pt;margin-top:8px;">精选教程合集</p>
+    <div class="price">¥9.9</div>
+    <p class="meta">生成日期: 2026年05月06日<br>12 篇精选文章</p>
+</div>
+
+<div class="toc"><h2>📖 目录</h2><p style="padding:3px 0;border-bottom:1px dotted #eee">1. 📖 目录</p><p style="padding:3px 0;border-bottom:1px dotted #eee">2. 一、代码生成能力：谁更“懂”需求？</p><p style="padding:3px 0;border-bottom:1px dotted #eee">3. 二、代码调试能力：谁更“火眼金睛”？</p><p style="padding:3px 0;border-bottom:1px dotted #eee">4. 三、架构设计能力：谁更“高瞻远瞩”？</p><p style="padding:3px 0;border-bottom:1px dotted #eee">5. 四、综合建议：如何选择？</p><p style="padding:3px 0;border-bottom:1px dotted #eee">6. 总结</p><p style="padding:3px 0;border-bottom:1px dotted #eee">7. 一、Ollama：一键运行本地大模型</p><p style="padding:3px 0;border-bottom:1px dotted #eee">8. 二、OpenWebUI：打造类ChatGPT界面</p><p style="padding:3px 0;border-bottom:1px dotted #eee">9. 三、实际应用场景与优化</p><p style="padding:3px 0;border-bottom:1px dotted #eee">10. 四、常见问题排查</p><p style="padding:3px 0;border-bottom:1px dotted #eee">11. 总结</p><p style="padding:3px 0;border-bottom:1px dotted #eee">12. 📌 关于本产品</p></div>
+
+<div class="content">
+<h1>2025 AI 工具评测大全</h1>
+<blockquote>
+<p>最实用的 AI 工具评测与对比，帮你选出最适合的工具。</p>
+</blockquote>
+<hr />
+<h2>📖 目录</h2>
+<ol>
+<li>Claude vs GPT-4：谁更适合写代码？ (2026-05-06)</li>
+<li>本地部署大模型指南：Ollama + OpenWebUI (2026-05-06)</li>
+</ol>
+<hr />
+<hr />
+<p>============================================================</p>
+<h1>第 1 章：Claude vs GPT-4：谁更适合写代码？</h1>
+<h1>Claude vs GPT-4：谁更适合写代码？</h1>
+<p>在日常开发中，AI 编程助手已经成为不可或缺的工具。Claude 和 GPT-4 是目前最受关注的两大模型，但它们在代码生成、调试和架构设计上的表现到底谁更胜一筹？本文将通过实际代码示例和场景对比，帮你找到最适合自己的编程搭档。</p>
+<h2>一、代码生成能力：谁更“懂”需求？</h2>
+<h3>场景：生成一个 Python 斐波那契数列生成器</h3>
+<p><strong>GPT-4 的回复：</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>
+    <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">fib</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="n">fib</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fib</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">fib</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">fib</span>
+
+<span class="c1"># 使用示例</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fibonacci</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>  <span class="c1"># [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]</span>
+</code></pre></div>
+
+<p><strong>Claude 的回复：</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">lru_cache</span>
+
+<span class="nd">@lru_cache</span><span class="p">(</span><span class="n">maxsize</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;n must be non-negative&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span>
+    <span class="k">return</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">fibonacci_sequence</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">fibonacci</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">count</span><span class="p">)]</span>
+
+<span class="c1"># 使用示例</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fibonacci_sequence</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>  <span class="c1"># [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]</span>
+</code></pre></div>
+
+<p><strong>对比分析：</strong>
+- GPT-4 倾向于给出最直接、最易理解的实现，适合快速原型开发
+- Claude 会考虑性能优化和异常处理，适合生产级别代码</p>
+<p><strong>建议：</strong> 初学者或需要快速验证想法时用 GPT-4；写健壮性代码时用 Claude。</p>
+<h2>二、代码调试能力：谁更“火眼金睛”？</h2>
+<h3>场景：修复一个常见的异步 bug</h3>
+<p><strong>有问题的代码：</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">fetchData</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;https://api.example.com/data&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">json</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span><span class="w">  </span><span class="c1">// 忘记 await</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">json</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>GPT-4 的调试回复：</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="err">问题：</span><span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="w"> </span><span class="err">是异步方法，缺少</span><span class="w"> </span><span class="n">await</span>
+<span class="err">修复：</span><span class="k">const</span><span class="w"> </span><span class="n">json</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">await</span><span class="w"> </span><span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">();</span>
+<span class="err">同时建议添加</span><span class="w"> </span><span class="n">try</span><span class="o">-</span><span class="n">catch</span><span class="w"> </span><span class="err">处理网络错误</span>
+</code></pre></div>
+
+<p><strong>Claude 的调试回复：</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="err">问题分析：</span>
+<span class="mf">1.</span><span class="w"> </span><span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="w"> </span><span class="err">返回</span><span class="w"> </span><span class="n">Promise</span><span class="err">，未</span><span class="w"> </span><span class="n">await</span><span class="w"> </span><span class="err">会导致返回</span><span class="w"> </span><span class="n">Promise</span><span class="w"> </span><span class="err">而非数据</span>
+<span class="mf">2.</span><span class="w"> </span><span class="err">缺少错误处理，网络异常会抛出未捕获异常</span>
+<span class="mf">3.</span><span class="w"> </span><span class="err">建议使用</span><span class="w"> </span><span class="n">async</span><span class="o">/</span><span class="n">await</span><span class="w"> </span><span class="err">链式调用</span>
+
+<span class="err">推荐修复版本：</span>
+<span class="n">async</span><span class="w"> </span><span class="n">function</span><span class="w"> </span><span class="n">fetchData</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">await</span><span class="w"> </span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;https://api.example.com/data&#39;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">response</span><span class="o">.</span><span class="n">ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">throw</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">Error</span><span class="p">(</span><span class="err">`</span><span class="n">HTTP</span><span class="w"> </span><span class="n">error</span><span class="o">!</span><span class="w"> </span><span class="n">status</span><span class="p">:</span><span class="w"> </span><span class="o">$</span><span class="p">{</span><span class="n">response</span><span class="o">.</span><span class="n">status</span><span class="p">}</span><span class="err">`</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">json</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">await</span><span class="w"> </span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">();</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">json</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">catch</span><span class="w"> </span><span class="p">(</span><span class="n">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;Fetch failed:&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">error</span><span class="p">);</span>
+<span class="w">        </span><span class="n">throw</span><span class="w"> </span><span class="n">error</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>实际体验：</strong> Claude 在调试时更像一位资深代码审查员，会指出潜在问题并给出完整解决方案；GPT-4 则更直接，适合快速定位明显错误。</p>
+<h2>三、架构设计能力：谁更“高瞻远瞩”？</h2>
+<h3>场景：设计一个简单的用户认证中间件（Node.js + Express）</h3>
+<p><strong>GPT-4 的设计思路：</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">jwt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;jsonwebtoken&#39;</span><span class="p">);</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">authMiddleware</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">,</span><span class="w"> </span><span class="nx">next</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">authorization</span><span class="o">?</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)[</span><span class="mf">1</span><span class="p">];</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">token</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">401</span><span class="p">).</span><span class="nx">json</span><span class="p">({</span><span class="w"> </span><span class="nx">error</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;No token provided&#39;</span><span class="w"> </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">decoded</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">jwt</span><span class="p">.</span><span class="nx">verify</span><span class="p">(</span><span class="nx">token</span><span class="p">,</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">JWT_SECRET</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">req</span><span class="p">.</span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">decoded</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">next</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">403</span><span class="p">).</span><span class="nx">json</span><span class="p">({</span><span class="w"> </span><span class="nx">error</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Invalid token&#39;</span><span class="w"> </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>Claude 的设计思路：</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">jwt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;jsonwebtoken&#39;</span><span class="p">);</span>
+
+<span class="kd">class</span><span class="w"> </span><span class="nx">AuthMiddleware</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">secret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">options</span><span class="p">.</span><span class="nx">secret</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">JWT_SECRET</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">tokenExtractor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">options</span><span class="p">.</span><span class="nx">tokenExtractor</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">defaultTokenExtractor</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nx">defaultTokenExtractor</span><span class="p">(</span><span class="nx">req</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">authHeader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">authorization</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">authHeader</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="nx">authHeader</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s1">&#39;Bearer &#39;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">authHeader</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)[</span><span class="mf">1</span><span class="p">];</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nx">authenticate</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">,</span><span class="w"> </span><span class="nx">next</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">tokenExtractor</span><span class="p">(</span><span class="nx">req</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">token</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">401</span><span class="p">).</span><span class="nx">json</span><span class="p">({</span>
+<span class="w">                </span><span class="nx">error</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Authentication required&#39;</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">code</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;AUTH_REQUIRED&#39;</span>
+<span class="w">            </span><span class="p">});</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">decoded</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">jwt</span><span class="p">.</span><span class="nx">verify</span><span class="p">(</span><span class="nx">token</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">secret</span><span class="p">);</span>
+<span class="w">            </span><span class="nx">req</span><span class="p">.</span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">decoded</span><span class="p">;</span>
+<span class="w">            </span><span class="nx">next</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;TokenExpiredError&#39;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">401</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">403</span><span class="p">;</span>
+<span class="w">            </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="nx">status</span><span class="p">).</span><span class="nx">json</span><span class="p">({</span>
+<span class="w">                </span><span class="nx">error</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Invalid or expired token&#39;</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">code</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;INVALID_TOKEN&#39;</span>
+<span class="w">            </span><span class="p">});</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// 使用示例</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">auth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">AuthMiddleware</span><span class="p">({</span><span class="w"> </span><span class="nx">secret</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;my-secret&#39;</span><span class="w"> </span><span class="p">});</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;/api/protected&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">auth</span><span class="p">.</span><span class="nx">authenticate</span><span class="p">);</span>
+</code></pre></div>
+
+<p><strong>关键差异：</strong>
+- GPT-4 提供的是“最小可行方案”，适合快速实现功能
+- Claude 会考虑扩展性、配置化和错误分类，适合长期维护的项目</p>
+<h2>四、综合建议：如何选择？</h2>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>推荐模型</th>
+<th>理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>快速原型开发</td>
+<td>GPT-4</td>
+<td>生成速度快，代码简洁直接</td>
+</tr>
+<tr>
+<td>生产级代码</td>
+<td>Claude</td>
+<td>考虑全面，包含错误处理和优化</td>
+</tr>
+<tr>
+<td>代码调试</td>
+<td>Claude</td>
+<td>分析更深入，给出完整修复方案</td>
+</tr>
+<tr>
+<td>学习新框架</td>
+<td>GPT-4</td>
+<td>示例简单清晰，易于理解</td>
+</tr>
+<tr>
+<td>复杂系统设计</td>
+<td>Claude</td>
+<td>架构更合理，扩展性更好</td>
+</tr>
+</tbody>
+</table>
+<h2>总结</h2>
+<ul>
+<li><strong>GPT-4</strong> 像一位“快枪手”程序员，擅长快速输出可运行的代码，适合开发初期和学习阶段。</li>
+<li><strong>Claude</strong> 更像一位“架构师”，注重代码质量、可维护性和边界情况，适合生产环境和复杂项目。</li>
+<li><strong>最佳实践</strong>：将两者结合使用——用 GPT-4 快速搭建框架，用 Claude 进行代码审查和优化。</li>
+</ul>
+<p>最终，选择哪个模型取决于你的具体需求。如果是写一次性的脚本，GPT-4 更高效；如果是构建长期维护的项目，Claude 更可靠。不妨两个都试试，找到最适合你工作流的组合。</p>
+<p>============================================================</p>
+<h1>第 2 章：本地部署大模型指南：Ollama + OpenWebUI</h1>
+<h1>本地部署大模型指南：Ollama + OpenWebUI</h1>
+<p>还在为调用GPT API的延迟和费用头疼？又担心数据隐私？本文将带你用Ollama和OpenWebUI，在本地部署一套堪比ChatGPT的AI对话系统——完全免费、离线可用、数据100%私有。</p>
+<h2>一、Ollama：一键运行本地大模型</h2>
+<p>Ollama是最流行的本地模型运行工具，支持Llama、Mistral、Qwen等主流模型。它的核心优势是“开箱即用”——无需配置GPU驱动、Python环境，一条命令就能跑起大模型。</p>
+<h3>安装Ollama</h3>
+<p><strong>macOS/Linux：</strong></p>
+<div class="codehilite"><pre><span></span><code>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://ollama.com/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+</code></pre></div>
+
+<p><strong>Windows：</strong> 从官网下载安装包，双击安装。</p>
+<p>验证安装：</p>
+<div class="codehilite"><pre><span></span><code>ollama<span class="w"> </span>--version
+</code></pre></div>
+
+<h3>下载并运行模型</h3>
+<p>以阿里Qwen2.5（7B参数，中文优秀）为例：</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># 下载模型（首次运行自动下载）</span>
+ollama<span class="w"> </span>run<span class="w"> </span>qwen2.5:7b
+
+<span class="c1"># 或使用轻量版（适合8GB内存）</span>
+ollama<span class="w"> </span>run<span class="w"> </span>qwen2.5:3b
+</code></pre></div>
+
+<p>稍等片刻，终端就会出现对话界面。输入问题即可获得回答——完全离线，响应速度取决于你的显卡。</p>
+<p><strong>常用模型推荐：</strong>
+- <code>llama3.2:3b</code> — 英文通用，轻量级
+- <code>qwen2.5:7b</code> — 中文最强，推荐首选
+- <code>mistral:7b</code> — 平衡性能与资源</p>
+<h2>二、OpenWebUI：打造类ChatGPT界面</h2>
+<p>Ollama自带的终端交互体验较差。OpenWebUI提供了一个美观的Web界面，支持对话管理、Markdown渲染、文件上传等功能。</p>
+<h3>一键部署</h3>
+<p>确保已安装Docker，然后：</p>
+<div class="codehilite"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> </span><span class="m">3000</span>:8080<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-v<span class="w"> </span>open-webui:/app/backend/data<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--name<span class="w"> </span>open-webui<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--restart<span class="w"> </span>always<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ghcr.io/open-webui/open-webui:main
+</code></pre></div>
+
+<p>打开浏览器访问 <code>http://localhost:3000</code>，注册一个本地账号即可进入。</p>
+<h3>连接Ollama</h3>
+<p>进入OpenWebUI后，需要配置模型后端：
+1. 点击右上角头像 → <strong>设置</strong> → <strong>管理员设置</strong>
+2. 在 <strong>连接</strong> 中填入Ollama地址：<code>http://host.docker.internal:11434</code>（Windows/Mac）或 <code>http://localhost:11434</code>（Linux）
+3. 保存后，刷新页面即可在模型列表中看到已下载的模型</p>
+<p><strong>小技巧：</strong> 如果连接失败，检查Ollama是否允许外部访问：</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># 设置环境变量</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">OLLAMA_HOST</span><span class="o">=</span><span class="m">0</span>.0.0.0
+ollama<span class="w"> </span>serve
+</code></pre></div>
+
+<h2>三、实际应用场景与优化</h2>
+<h3>场景1：代码助手</h3>
+<p>在OpenWebUI中选择qwen2.5模型，输入：</p>
+<div class="codehilite"><pre><span></span><code>用Python写一个爬虫，抓取Hacker News首页的标题和链接，要求使用requests和BeautifulSoup。
+</code></pre></div>
+
+<p>模型会生成完整代码，并支持一键复制。对于代码调试、算法解释等场景，本地模型表现稳定。</p>
+<h3>场景2：本地知识库</h3>
+<p>OpenWebUI支持上传PDF、Word、TXT文件。上传技术文档后，模型能基于文档内容回答问题。</p>
+<p><strong>性能调优建议：</strong></p>
+<table>
+<thead>
+<tr>
+<th>内存大小</th>
+<th>推荐模型</th>
+<th>启动参数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8GB</td>
+<td>qwen2.5:3b</td>
+<td>默认</td>
+</tr>
+<tr>
+<td>16GB</td>
+<td>qwen2.5:7b</td>
+<td><code>OLLAMA_NUM_PARALLEL=1</code></td>
+</tr>
+<tr>
+<td>32GB+</td>
+<td>llama3.1:8b</td>
+<td><code>OLLAMA_KEEP_ALIVE=24h</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>加速技巧：</strong> 在启动Ollama前设置环境变量：</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># 使用GPU加速（NVIDIA）</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">OLLAMA_CUDA</span><span class="o">=</span><span class="m">1</span>
+
+<span class="c1"># 设置模型缓存时间</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">OLLAMA_KEEP_ALIVE</span><span class="o">=</span>5m
+</code></pre></div>
+
+<h2>四、常见问题排查</h2>
+<p><strong>Q：模型回答速度很慢？</strong>
+A：检查是否使用CPU推理。建议NVIDIA显卡用户安装CUDA驱动，AMD用户可通过ROCm加速。</p>
+<p><strong>Q：OpenWebUI无法连接Ollama？</strong>
+A：确保Ollama在运行，并检查防火墙是否放行11434端口。Docker用户注意网络模式。</p>
+<p><strong>Q：显存不足怎么办？</strong>
+A：使用量化版本模型（如<code>qwen2.5:7b-q4_0</code>），或在Ollama启动时限制GPU层数：</p>
+<div class="codehilite"><pre><span></span><code>ollama<span class="w"> </span>run<span class="w"> </span>qwen2.5:7b<span class="w"> </span>--num-gpu-layers<span class="w"> </span><span class="m">20</span>
+</code></pre></div>
+
+<h2>总结</h2>
+<p>通过Ollama + OpenWebUI，你可以在本地快速搭建一个功能完整的AI对话系统。���个过程只需三步：
+1. 安装Ollama并下载模型
+2. 用Docker部署OpenWebUI
+3. 配置连接，开始使用</p>
+<p>这套方案适合对数据隐私有要求的团队、需要离线办公的场景，或是希望深度定制AI助手的开发者。虽然模型能力不及GPT-4，但对于日常编程辅助、文档分析、内容生成等任务，本地模型已经足够胜任。现在就去试试吧！</p>
+<hr />
+<h2>📌 关于本产品</h2>
+<ul>
+<li>文章数：2 篇</li>
+<li>生成时间：2026-05-06T05:47:06.490Z</li>
+</ul>
+</div>
+
+<div class="footer-page">
+    <p>— END —</p>
+    <p style="margin-top:12px;font-size:9pt;color:#94a3b8;">
+        更多教程: https://hugo-xu844.github.io/autopilot-content/
+    </p>
+</div>
+
+</body>
+</html>

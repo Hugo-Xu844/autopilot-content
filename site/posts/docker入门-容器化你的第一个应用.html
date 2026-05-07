@@ -3,38 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Docker入门：容器化你的第一个应用 - AI 编程实验室</title>
-  <meta name="description" content="Docker入门：容器化你的第一个应用 - 详细教程与实战指南">
+  <title>Docker鍏ラ棬锛氬鍣ㄥ寲浣犵殑绗竴涓簲鐢?- AI 缂栫▼瀹為獙瀹?/title>
+  <meta name="description" content="Docker鍏ラ棬锛氬鍣ㄥ寲浣犵殑绗竴涓簲鐢?- 璇︾粏鏁欑▼涓庡疄鎴樻寚鍗?>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
+
 <body>
+  <div id="reading-progress"></div>
   <header class="header">
     <div class="container">
-      <a href="../" class="logo">AI 编程实验室</a>
+      <a href="../" class="logo">AI 缂栫▼瀹為獙瀹?/a>
       <nav>
-        <a href="../">首页</a>
-        <a href="../products.html">教程产品</a>
+        <a href="../">棣栭〉</a>
+        <a href="../products.html">鏁欑▼浜у搧</a>
       </nav>
+        <button id="theme-toggle" class="theme-toggle" aria-label="切换深色/浅色模式">🌙</button>
+      </div>
     </div>
   </header>
 
   <main class="container">
     <article class="post-full">
       <header class="post-header">
-        <h1>Docker入门：容器化你的第一个应用</h1>
+        <h1>Docker鍏ラ棬锛氬鍣ㄥ寲浣犵殑绗竴涓簲鐢?/h1>
         <div class="post-meta">
-          <span class="date">📅 2026-05-06</span>
-          <span class="category">📂 编程实战</span>
-          <div class="tags"><span class="tag">编程实战</span> <span class="tag">Docker</span></div>
+          <span class="date">馃搮 2026-05-06</span>
+          <span class="category">馃搨 缂栫▼瀹炴垬</span>
+          <div class="tags"><span class="tag">缂栫▼瀹炴垬</span> <span class="tag">Docker</span></div>
         </div>
       </header>
       <div class="post-content">
-        <p><h1>Docker入门：容器化你的第一个应用</h1></p><p>当你新加入一个团队，或者换了一台开发机器，最头疼的事莫过于“在我电脑上明明能跑”——环境不一致、依赖缺失、系统版本差异……Docker 正是为了解决这个痛点而生。本文将通过一个简单的 Node.js Web 应用，带你从零开始体验容器化的完整流程。</p><p><h2>1. 为什么需要 Docker？</h2></p><p>传统开发中，应用运行依赖操作系统、运行时、库文件、环境变量等。哪怕只是从开发机部署到测试服务器，都可能在“环境配置”这一步翻车。</p><p>Docker 的核心思路是<strong>将应用及其所有依赖打包成一个标准化的“容器”</strong>，这个容器可以在任何安装了 Docker 的机器上以相同方式运行。相当于给你的应用造了一个“移动小房子”，无论搬到哪台机器，里面的环境都一模一样。</p><p><h2>2. 准备工作：安装 Docker</h2></p><p>在开始之前，请确保你的机器已经安装了 Docker。</p><p><strong>macOS / Windows</strong>：下载 <a href="https://www.docker.com/products/docker-desktop" target="_blank">Docker Desktop</a> 并安装。
-<strong>Linux（Ubuntu为例）</strong>：
-<pre><code class="language-bash">sudo apt update
+        <p><h1>Docker鍏ラ棬锛氬鍣ㄥ寲浣犵殑绗竴涓簲鐢?/h1></p><p>褰撲綘鏂板姞鍏ヤ竴涓洟闃燂紝鎴栬€呮崲浜嗕竴鍙板紑鍙戞満鍣紝鏈€澶寸柤鐨勪簨鑾繃浜庘€滃湪鎴戠數鑴戜笂鏄庢槑鑳借窇鈥濃€斺€旂幆澧冧笉涓€鑷淬€佷緷璧栫己澶便€佺郴缁熺増鏈樊寮傗€︹€ocker 姝ｆ槸涓轰簡瑙ｅ喅杩欎釜鐥涚偣鑰岀敓銆傛湰鏂囧皢閫氳繃涓€涓畝鍗曠殑 Node.js Web 搴旂敤锛屽甫浣犱粠闆跺紑濮嬩綋楠屽鍣ㄥ寲鐨勫畬鏁存祦绋嬨€?/p><p><h2>1. 涓轰粈涔堥渶瑕?Docker锛?/h2></p><p>浼犵粺寮€鍙戜腑锛屽簲鐢ㄨ繍琛屼緷璧栨搷浣滅郴缁熴€佽繍琛屾椂銆佸簱鏂囦欢銆佺幆澧冨彉閲忕瓑銆傚摢鎬曞彧鏄粠寮€鍙戞満閮ㄧ讲鍒版祴璇曟湇鍔″櫒锛岄兘鍙兘鍦ㄢ€滅幆澧冮厤缃€濊繖涓€姝ョ炕杞︺€?/p><p>Docker 鐨勬牳蹇冩€濊矾鏄?strong>灏嗗簲鐢ㄥ強鍏舵墍鏈変緷璧栨墦鍖呮垚涓€涓爣鍑嗗寲鐨勨€滃鍣ㄢ€?/strong>锛岃繖涓鍣ㄥ彲浠ュ湪浠讳綍瀹夎浜?Docker 鐨勬満鍣ㄤ笂浠ョ浉鍚屾柟寮忚繍琛屻€傜浉褰撲簬缁欎綘鐨勫簲鐢ㄩ€犱簡涓€涓€滅Щ鍔ㄥ皬鎴垮瓙鈥濓紝鏃犺鎼埌鍝彴鏈哄櫒锛岄噷闈㈢殑鐜閮戒竴妯′竴鏍枫€?/p><p><h2>2. 鍑嗗宸ヤ綔锛氬畨瑁?Docker</h2></p><p>鍦ㄥ紑濮嬩箣鍓嶏紝璇风‘淇濅綘鐨勬満鍣ㄥ凡缁忓畨瑁呬簡 Docker銆?/p><p><strong>macOS / Windows</strong>锛氫笅杞?<a href="https://www.docker.com/products/docker-desktop" target="_blank">Docker Desktop</a> 骞跺畨瑁呫€?<strong>Linux锛圲buntu涓轰緥锛?/strong>锛?<pre><code class="language-bash">sudo apt update
 sudo apt install docker.io
 sudo systemctl start docker
-sudo systemctl enable docker</code></pre></p><p>安装完成后，在终端运行 <code>docker --version</code> 确认安装成功。</p><p><h2>3. 编写一个极简的 Node.js 应用</h2></p><p>我们在一个空目录下创建两个文件。</p><p><strong>app.js</strong>（一个简单的 HTTP 服务）：
+sudo systemctl enable docker</code></pre></p><p>瀹夎瀹屾垚鍚庯紝鍦ㄧ粓绔繍琛?<code>docker --version</code> 纭瀹夎鎴愬姛銆?/p><p><h2>3. 缂栧啓涓€涓瀬绠€鐨?Node.js 搴旂敤</h2></p><p>鎴戜滑鍦ㄤ竴涓┖鐩綍涓嬪垱寤轰袱涓枃浠躲€?/p><p><strong>app.js</strong>锛堜竴涓畝鍗曠殑 HTTP 鏈嶅姟锛夛細
 <pre><code class="language-javascript">const http = require('http');
 const port = 3000;</p><p>const server = http.createServer((req, res) =&gt; {
   res.statusCode = 200;
@@ -42,57 +44,56 @@ const port = 3000;</p><p>const server = http.createServer((req, res) =&gt; {
   res.end('Hello, Docker!\n');
 });</p><p>server.listen(port, () =&gt; {
   console.log(<code>Server running at http://localhost:${port}/</code>);
-});</code></pre></p><p><strong>package.json</strong>（定义依赖，这里没有额外依赖，但需要声明入口）：
-<pre><code class="language-json">{
+});</code></pre></p><p><strong>package.json</strong>锛堝畾涔変緷璧栵紝杩欓噷娌℃湁棰濆渚濊禆锛屼絾闇€瑕佸０鏄庡叆鍙ｏ級锛?<pre><code class="language-json">{
   "name": "docker-demo",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
   }
-}</code></pre></p><p>现在运行 <code>node app.js</code>，访问 <code>http://localhost:3000</code> 可以看到 "Hello, Docker!"。接下来我们把它装进 Docker 容器。</p><p><h2>4. 编写 Dockerfile：描述你的容器</h2></p><p>在项目根目录创建一个名为 <code>Dockerfile</code> 的文件（注意没有扩展名）：</p><p><pre><code class="language-dockerfile"># 使用官方 Node.js 镜像作为基础
-FROM node:18-alpine</p><p><h1>设置容器内的工作目录</h1>
-WORKDIR /app</p><p><h1>将 package.json 复制到工作目录</h1>
-COPY package.json .</p><p><h1>安装依赖（这里没有依赖，但保留此步骤）</h1>
-RUN npm install</p><p><h1>将���目所有文件复制到容器</h1>
-COPY . .</p><p><h1>暴露容器内的端口 3000</h1>
-EXPOSE 3000</p><p><h1>容器启动时执行的命令</h1>
-CMD ["npm", "start"]</code></pre></p><p><strong>关键指令解释</strong>：
-<ul><li><code>FROM</code>：指定基础镜像。<code>node:18-alpine</code> 是精简版 Node.js 镜像，体积小。</li>
-<li><code>WORKDIR</code>：设置容器内的工作目录，后续命令都在此目录执行。</li>
-<li><code>COPY</code>：将宿主机文件复制到容器内。</li>
-<li><code>RUN</code>：在容器构建过程中执行命令（如安装依赖）。</li>
-<li><code>EXPOSE</code>：声明容器运行时监听的端口（仅作文档说明，不实际映射）。</li>
-<li><code>CMD</code>：容器启动时默认执行的命令。</li>
+}</code></pre></p><p>鐜板湪杩愯 <code>node app.js</code>锛岃闂?<code>http://localhost:3000</code> 鍙互鐪嬪埌 "Hello, Docker!"銆傛帴涓嬫潵鎴戜滑鎶婂畠瑁呰繘 Docker 瀹瑰櫒銆?/p><p><h2>4. 缂栧啓 Dockerfile锛氭弿杩颁綘鐨勫鍣?/h2></p><p>鍦ㄩ」鐩牴鐩綍鍒涘缓涓€涓悕涓?<code>Dockerfile</code> 鐨勬枃浠讹紙娉ㄦ剰娌℃湁鎵╁睍鍚嶏級锛?/p><p><pre><code class="language-dockerfile"># 浣跨敤瀹樻柟 Node.js 闀滃儚浣滀负鍩虹
+FROM node:18-alpine</p><p><h1>璁剧疆瀹瑰櫒鍐呯殑宸ヤ綔鐩綍</h1>
+WORKDIR /app</p><p><h1>灏?package.json 澶嶅埗鍒板伐浣滅洰褰?/h1>
+COPY package.json .</p><p><h1>瀹夎渚濊禆锛堣繖閲屾病鏈変緷璧栵紝浣嗕繚鐣欐姝ラ锛?/h1>
+RUN npm install</p><p><h1>灏嗭拷锟斤拷鐩墍鏈夋枃浠跺鍒跺埌瀹瑰櫒</h1>
+COPY . .</p><p><h1>鏆撮湶瀹瑰櫒鍐呯殑绔彛 3000</h1>
+EXPOSE 3000</p><p><h1>瀹瑰櫒鍚姩鏃舵墽琛岀殑鍛戒护</h1>
+CMD ["npm", "start"]</code></pre></p><p><strong>鍏抽敭鎸囦护瑙ｉ噴</strong>锛?<ul><li><code>FROM</code>锛氭寚瀹氬熀纭€闀滃儚銆?code>node:18-alpine</code> 鏄簿绠€鐗?Node.js 闀滃儚锛屼綋绉皬銆?/li>
+<li><code>WORKDIR</code>锛氳缃鍣ㄥ唴鐨勫伐浣滅洰褰曪紝鍚庣画鍛戒护閮藉湪姝ょ洰褰曟墽琛屻€?/li>
+<li><code>COPY</code>锛氬皢瀹夸富鏈烘枃浠跺鍒跺埌瀹瑰櫒鍐呫€?/li>
+<li><code>RUN</code>锛氬湪瀹瑰櫒鏋勫缓杩囩▼涓墽琛屽懡浠わ紙濡傚畨瑁呬緷璧栵級銆?/li>
+<li><code>EXPOSE</code>锛氬０鏄庡鍣ㄨ繍琛屾椂鐩戝惉鐨勭鍙ｏ紙浠呬綔鏂囨。璇存槑锛屼笉瀹為檯鏄犲皠锛夈€?/li>
+<li><code>CMD</code>锛氬鍣ㄥ惎鍔ㄦ椂榛樿鎵ц鐨勫懡浠ゃ€?/li>
 </ul>
-<h2>5. 构建并运行你的第一个容器</h2></p><p><h3>5.1 构建镜像</h3></p><p>在项目根目录执行：
-<pre><code class="language-bash">docker build -t my-node-app .</code></pre></p><p><ul><li><code>-t my-node-app</code>：给镜像打上标签（名字），方便识别。</li>
-<li><code>.</code>：指定构建上下文为当前目录。</li>
+<h2>5. 鏋勫缓骞惰繍琛屼綘鐨勭涓€涓鍣?/h2></p><p><h3>5.1 鏋勫缓闀滃儚</h3></p><p>鍦ㄩ」鐩牴鐩綍鎵ц锛?<pre><code class="language-bash">docker build -t my-node-app .</code></pre></p><p><ul><li><code>-t my-node-app</code>锛氱粰闀滃儚鎵撲笂鏍囩锛堝悕瀛楋級锛屾柟渚胯瘑鍒€?/li>
+<li><code>.</code>锛氭寚瀹氭瀯寤轰笂涓嬫枃涓哄綋鍓嶇洰褰曘€?/li>
 </ul>
-构建成功后，运行 <code>docker images</code> 可以看到名为 <code>my-node-app</code> 的镜像。</p><p><h3>5.2 运行容器</h3></p><p><pre><code class="language-bash">docker run -d -p 8080:3000 --name my-app my-node-app</code></pre></p><p><ul><li><code>-d</code>：后台运行（detached）。</li>
-<li><code>-p 8080:3000</code>：将宿主机的 8080 端口映射到容器内的 3000 端口。</li>
-<li><code>--name my-app</code>：给容器起个名字。</li>
+鏋勫缓鎴愬姛鍚庯紝杩愯 <code>docker images</code> 鍙互鐪嬪埌鍚嶄负 <code>my-node-app</code> 鐨勯暅鍍忋€?/p><p><h3>5.2 杩愯瀹瑰櫒</h3></p><p><pre><code class="language-bash">docker run -d -p 8080:3000 --name my-app my-node-app</code></pre></p><p><ul><li><code>-d</code>锛氬悗鍙拌繍琛岋紙detached锛夈€?/li>
+<li><code>-p 8080:3000</code>锛氬皢瀹夸富鏈虹殑 8080 绔彛鏄犲皠鍒板鍣ㄥ唴鐨?3000 绔彛銆?/li>
+<li><code>--name my-app</code>锛氱粰瀹瑰櫒璧蜂釜鍚嶅瓧銆?/li>
 </ul>
-现在访问 <code>http://localhost:8080</code>，你应该能看到 "Hello, Docker!"。</p><p><h3>5.3 常用容器操作</h3></p><p><pre><code class="language-bash"># 查看运行中的容器
-docker ps</p><p><h1>查看所有容器（包括停止的）</h1>
-docker ps -a</p><p><h1>停止容器</h1>
-docker stop my-app</p><p><h1>启动已停止的容器</h1>
-docker start my-app</p><p><h1>查看容器日志</h1>
-docker logs my-app</p><p><h1>删除容器（需先停止）</h1>
-docker rm my-app</p><p><h1>删除镜像</h1>
-docker rmi my-node-app</code></pre></p><p><h2>6. 实际场景：为什么这样写才是最佳实践？</h2></p><p>你可能会问：为什么要把 <code>package.json</code> 和源代码分开两次 <code>COPY</code>？这背后是 Docker 构建缓存的优化策略。</p><p>Docker 构建镜像时，每一行指令都会产生一个缓存层。当修改了源代码（<code>app.js</code>），但 <code>package.json</code> 没变时，Docker 会复用 <code>COPY package.json .</code> 和 <code>RUN npm install</code> 的缓存，只重新执行后续步骤。这能大幅缩短构建时间，尤其是在项目依赖较多时。</p><p><strong>反例</strong>：如果写成 <code>COPY . .</code> 放在 <code>RUN npm install</code> 前面，那么每次修改任何文件都会导致整个安装依赖的步骤重新执行。</p><p><h2>总结</h2></p><p>通过本文，你完成了 Docker 的第一次实战：
-<li>理解容器化解决环境一致性问题。</li>
-<li>编写了一个简单的 Node.js 应用。</li>
-<li>用 <code>Dockerfile</code> 描述应用如何打包。</li>
-<li>构建镜像并运行容器，验证服务正常。</li></p><p>接下来你可以尝试：将同一个镜像部署到另一台机器（只需安装 Docker），或者使用 <code>docker-compose</code> 编排多个容器（如 Web + 数据库）。容器化的世界，才刚刚开始。</p>
+鐜板湪璁块棶 <code>http://localhost:8080</code>锛屼綘搴旇鑳界湅鍒?"Hello, Docker!"銆?/p><p><h3>5.3 甯哥敤瀹瑰櫒鎿嶄綔</h3></p><p><pre><code class="language-bash"># 鏌ョ湅杩愯涓殑瀹瑰櫒
+docker ps</p><p><h1>鏌ョ湅鎵€鏈夊鍣紙鍖呮嫭鍋滄鐨勶級</h1>
+docker ps -a</p><p><h1>鍋滄瀹瑰櫒</h1>
+docker stop my-app</p><p><h1>鍚姩宸插仠姝㈢殑瀹瑰櫒</h1>
+docker start my-app</p><p><h1>鏌ョ湅瀹瑰櫒鏃ュ織</h1>
+docker logs my-app</p><p><h1>鍒犻櫎瀹瑰櫒锛堥渶鍏堝仠姝級</h1>
+docker rm my-app</p><p><h1>鍒犻櫎闀滃儚</h1>
+docker rmi my-node-app</code></pre></p><p><h2>6. 瀹為檯鍦烘櫙锛氫负浠€涔堣繖鏍峰啓鎵嶆槸鏈€浣冲疄璺碉紵</h2></p><p>浣犲彲鑳戒細闂細涓轰粈涔堣鎶?<code>package.json</code> 鍜屾簮浠ｇ爜鍒嗗紑涓ゆ <code>COPY</code>锛熻繖鑳屽悗鏄?Docker 鏋勫缓缂撳瓨鐨勪紭鍖栫瓥鐣ャ€?/p><p>Docker 鏋勫缓闀滃儚鏃讹紝姣忎竴琛屾寚浠ら兘浼氫骇鐢熶竴涓紦瀛樺眰銆傚綋淇敼浜嗘簮浠ｇ爜锛?code>app.js</code>锛夛紝浣?<code>package.json</code> 娌″彉鏃讹紝Docker 浼氬鐢?<code>COPY package.json .</code> 鍜?<code>RUN npm install</code> 鐨勭紦瀛橈紝鍙噸鏂版墽琛屽悗缁楠ゃ€傝繖鑳藉ぇ骞呯缉鐭瀯寤烘椂闂达紝灏ゅ叾鏄湪椤圭洰渚濊禆杈冨鏃躲€?/p><p><strong>鍙嶄緥</strong>锛氬鏋滃啓鎴?<code>COPY . .</code> 鏀惧湪 <code>RUN npm install</code> 鍓嶉潰锛岄偅涔堟瘡娆′慨鏀逛换浣曟枃浠堕兘浼氬鑷存暣涓畨瑁呬緷璧栫殑姝ラ閲嶆柊鎵ц銆?/p><p><h2>鎬荤粨</h2></p><p>閫氳繃鏈枃锛屼綘瀹屾垚浜?Docker 鐨勭涓€娆″疄鎴橈細
+<li>鐞嗚В瀹瑰櫒鍖栬В鍐崇幆澧冧竴鑷存€ч棶棰樸€?/li>
+<li>缂栧啓浜嗕竴涓畝鍗曠殑 Node.js 搴旂敤銆?/li>
+<li>鐢?<code>Dockerfile</code> 鎻忚堪搴旂敤濡備綍鎵撳寘銆?/li>
+<li>鏋勫缓闀滃儚骞惰繍琛屽鍣紝楠岃瘉鏈嶅姟姝ｅ父銆?/li></p><p>鎺ヤ笅鏉ヤ綘鍙互灏濊瘯锛氬皢鍚屼竴涓暅鍍忛儴缃插埌鍙︿竴鍙版満鍣紙鍙渶瀹夎 Docker锛夛紝鎴栬€呬娇鐢?<code>docker-compose</code> 缂栨帓澶氫釜瀹瑰櫒锛堝 Web + 鏁版嵁搴擄級銆傚鍣ㄥ寲鐨勪笘鐣岋紝鎵嶅垰鍒氬紑濮嬨€?/p>
       </div>
     </article>
   </main>
 
   <footer class="footer">
     <div class="container">
-      <p>AI 编程实验室 &copy; 2026 | 用 ❤️ 和 AI 生成</p>
+      <p>AI 缂栫▼瀹為獙瀹?&copy; 2026 | 鐢?鉂わ笍 鍜?AI 鐢熸垚</p>
     </div>
   </footer>
+  <button id="back-to-top" aria-label="回到顶部">↑</button>
+  <script src="../assets/app.js"></script>
 </body>
 </html>

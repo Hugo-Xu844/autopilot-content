@@ -143,7 +143,7 @@ ${toc}
 
 ---
 
-**声明：** 本内容由 AI 编程实验室自动整理生成，仅供参考学习。
+**版权声明：** 版权所有，未经授权禁止转载。
 
 ---
 
@@ -153,7 +153,7 @@ ${content}
 
 ## 📌 关于本产品
 
-- 来源：AI 编程实验室
+- 更多教程：https://hugo-xu844.github.io/autopilot-content/
 - 文章数：${posts.length} 篇
 - 生成时间：${new Date().toISOString()}
 

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1536" width="1024" height="1536">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0e27"/>
+      <stop offset="50%" stop-color="#1a1040"/>
+      <stop offset="100%" stop-color="#0d1b3e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  <rect width="1024" height="1536" fill="url(#bg)"/>
+  <circle cx="512" cy="300" r="400" fill="#818cf8" opacity="0.08"/>
+  <circle cx="850" cy="200" r="180" fill="none" stroke="#6366f1" stroke-width="1" opacity="0.12"/>
+  <circle cx="200" cy="1200" r="250" fill="none" stroke="#06b6d4" stroke-width="1" opacity="0.12"/>
+  <g opacity="0.2">
+    <circle cx="150" cy="250" r="4" fill="#818cf8"/>
+    <circle cx="300" cy="180" r="3" fill="#06b6d4"/>
+    <circle cx="250" cy="350" r="3" fill="#818cf8"/>
+    <circle cx="400" cy="220" r="4" fill="#06b6d4"/>
+    <line x1="150" y1="250" x2="300" y2="180" stroke="#818cf8" stroke-width="0.5"/>
+    <line x1="150" y1="250" x2="250" y2="350" stroke="#818cf8" stroke-width="0.5"/>
+    <line x1="300" y1="180" x2="400" y2="220" stroke="#06b6d4" stroke-width="0.5"/>
+    <circle cx="780" cy="300" r="4" fill="#06b6d4"/>
+    <circle cx="880" cy="250" r="3" fill="#818cf8"/>
+    <line x1="780" y1="300" x2="880" y2="250" stroke="#06b6d4" stroke-width="0.5"/>
+  </g>
+  <g transform="translate(512, 580)">
+    <circle cx="0" cy="-100" r="32" fill="none" stroke="url(#accent)" stroke-width="3"/>
+    <text x="0" y="-88" text-anchor="middle" fill="url(#accent)" font-family="Arial,sans-serif" font-size="32" font-weight="bold">AI</text>
+    <text x="0" y="10" text-anchor="middle" fill="#ffffff" font-family="PingFang SC,Microsoft YaHei,sans-serif" font-size="66" font-weight="900" filter="url(#shadow)">AI 入门完全指南</text>
+    <text x="0" y="80" text-anchor="middle" fill="#94a3b8" font-family="PingFang SC,Microsoft YaHei,sans-serif" font-size="28">零基础读懂大模型 Prompt 机器学习</text>
+  </g>
+  <line x1="312" y1="700" x2="712" y2="700" stroke="url(#accent)" stroke-width="2" opacity="0.6"/>
+  <g transform="translate(512, 780)" font-family="PingFang SC,Microsoft YaHei,sans-serif" font-size="22" fill="#cbd5e1" text-anchor="middle">
+    <text x="0" y="0">- Prompt Engineering 10个让AI更好用的技巧</text>
+    <text x="0" y="45">- 监督学习 无监督学习 强化学习</text>
+    <text x="0" y="90">- 大语言模型零基础入门</text>
+    <text x="0" y="135">- 系统提示词设计实战</text>
+  </g>
+  <g transform="translate(512, 1380)" font-family="PingFang SC,Microsoft YaHei,sans-serif" text-anchor="middle">
+    <rect x="-100" y="-18" width="200" height="36" rx="18" fill="url(#accent)" opacity="0.9"/>
+    <text x="0" y="6" fill="#ffffff" font-size="20" font-weight="bold">5 篇精华文章</text>
+  </g>
+  <rect x="40" y="40" width="80" height="3" rx="1.5" fill="url(#accent)" opacity="0.5"/>
+  <rect x="40" y="40" width="3" height="80" rx="1.5" fill="url(#accent)" opacity="0.5"/>
+  <rect x="904" y="40" width="80" height="3" rx="1.5" fill="url(#accent)" opacity="0.5"/>
+  <rect x="981" y="40" width="3" height="80" rx="1.5" fill="url(#accent)" opacity="0.5"/>
+  <rect x="40" y="1456" width="80" height="3" rx="1.5" fill="url(#accent)" opacity="0.5"/>
+  <rect x="40" y="1413" width="3" height="80" rx="1.5" fill="url(#accent)" opacity="0.5"/>
+</svg>

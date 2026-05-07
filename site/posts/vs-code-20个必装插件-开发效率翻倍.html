@@ -3,49 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VS Code 20个必装插件，开发效率翻倍 - AI 编程实验室</title>
-  <meta name="description" content="VS Code 20个必装插件，开发效率翻倍 - 详细教程与实战指南">
+  <title>VS Code 20涓繀瑁呮彃浠讹紝寮€鍙戞晥鐜囩炕鍊?- AI 缂栫▼瀹為獙瀹?/title>
+  <meta name="description" content="VS Code 20涓繀瑁呮彃浠讹紝寮€鍙戞晥鐜囩炕鍊?- 璇︾粏鏁欑▼涓庡疄鎴樻寚鍗?>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
+
 <body>
+  <div id="reading-progress"></div>
   <header class="header">
     <div class="container">
-      <a href="../" class="logo">AI 编程实验室</a>
+      <a href="../" class="logo">AI 缂栫▼瀹為獙瀹?/a>
       <nav>
-        <a href="../">首页</a>
-        <a href="../products.html">教程产品</a>
+        <a href="../">棣栭〉</a>
+        <a href="../products.html">鏁欑▼浜у搧</a>
       </nav>
+        <button id="theme-toggle" class="theme-toggle" aria-label="切换深色/浅色模式">🌙</button>
+      </div>
     </div>
   </header>
 
   <main class="container">
     <article class="post-full">
       <header class="post-header">
-        <h1>VS Code 20个必装插件，开发效率翻倍</h1>
+        <h1>VS Code 20涓繀瑁呮彃浠讹紝寮€鍙戞晥鐜囩炕鍊?/h1>
         <div class="post-meta">
-          <span class="date">📅 2026-05-06</span>
-          <span class="category">📂 效率工具</span>
-          <div class="tags"><span class="tag">效率工具</span> <span class="tag">VS Code</span></div>
+          <span class="date">馃搮 2026-05-06</span>
+          <span class="category">馃搨 鏁堢巼宸ュ叿</span>
+          <div class="tags"><span class="tag">鏁堢巼宸ュ叿</span> <span class="tag">VS Code</span></div>
         </div>
       </header>
       <div class="post-content">
-        <p><h1>VS Code 20个必装插件，开发效率翻倍</h1></p><p>写代码时频繁切换窗口、手动格式化代码、调试时反复加<code>console.log</code>？这些痛点是时候终结了。本文精选20款VS Code插件，覆盖编码、调试、协作和界面优化四大场景，帮你把开发效率拉满。</p><p><h2>一、编码加速器：让写代码像开挂</h2></p><p><h3>1. Prettier - Code formatter</h3>
-自动格式化代码，团队协作时统一风格。安装后只需在项目根目录创建<code>.prettierrc</code>：</p><p><pre><code class="language-json">{
+        <p><h1>VS Code 20涓繀瑁呮彃浠讹紝寮€鍙戞晥鐜囩炕鍊?/h1></p><p>鍐欎唬鐮佹椂棰戠箒鍒囨崲绐楀彛銆佹墜鍔ㄦ牸寮忓寲浠ｇ爜銆佽皟璇曟椂鍙嶅鍔?code>console.log</code>锛熻繖浜涚棝鐐规槸鏃跺€欑粓缁撲簡銆傛湰鏂囩簿閫?0娆綱S Code鎻掍欢锛岃鐩栫紪鐮併€佽皟璇曘€佸崗浣滃拰鐣岄潰浼樺寲鍥涘ぇ鍦烘櫙锛屽府浣犳妸寮€鍙戞晥鐜囨媺婊°€?/p><p><h2>涓€銆佺紪鐮佸姞閫熷櫒锛氳鍐欎唬鐮佸儚寮€鎸?/h2></p><p><h3>1. Prettier - Code formatter</h3>
+鑷姩鏍煎紡鍖栦唬鐮侊紝鍥㈤槦鍗忎綔鏃剁粺涓€椋庢牸銆傚畨瑁呭悗鍙渶鍦ㄩ」鐩牴鐩綍鍒涘缓<code>.prettierrc</code>锛?/p><p><pre><code class="language-json">{
   "semi": false,
   "singleQuote": true,
   "tabWidth": 2
-}</code></pre></p><p>然后开启“保存时格式化”：在VS Code设置中搜索<code>editor.formatOnSave</code>，勾选即可。</p><p><h3>2. ESLint</h3>
-代码质量守护者，实时检测语法错误和风格问题。配合Prettier使用，先在项目安装：</p><p><pre><code class="language-bash">npm install eslint prettier eslint-config-prettier -D</code></pre></p><p>然后在<code>.eslintrc.js</code>中配置：</p><p><pre><code class="language-js">module.exports = {
+}</code></pre></p><p>鐒跺悗寮€鍚€滀繚瀛樻椂鏍煎紡鍖栤€濓細鍦╒S Code璁剧疆涓悳绱?code>editor.formatOnSave</code>锛屽嬀閫夊嵆鍙€?/p><p><h3>2. ESLint</h3>
+浠ｇ爜璐ㄩ噺瀹堟姢鑰咃紝瀹炴椂妫€娴嬭娉曢敊璇拰椋庢牸闂銆傞厤鍚圥rettier浣跨敤锛屽厛鍦ㄩ」鐩畨瑁咃細</p><p><pre><code class="language-bash">npm install eslint prettier eslint-config-prettier -D</code></pre></p><p>鐒跺悗鍦?code>.eslintrc.js</code>涓厤缃細</p><p><pre><code class="language-js">module.exports = {
   extends: ['eslint:recommended', 'prettier'],
   rules: {
     'no-unused-vars': 'warn',
     'no-console': 'off'
   }
-};</code></pre></p><p><strong>场景</strong>：团队新成员提交的代码经常有未定义变量，ESLint在保存时自动标红，省去Code Review的琐碎纠错。</p><p><h3>3. Path Intellisense</h3>
-智能路径补全，再也不用手动输入<code>../../utils/</code>。输入<code>./</code>或<code>../</code>时自动弹出文件列表，支持<code>@</code>别名映射。</p><p><h3>4. GitLens — Git supercharged</h3>
-在每一行代码旁显示最后修改者、提交时间和commit message。右键还能快速查看文件的完整修改历史。</p><p><strong>场景</strong>：排查“这行代码是谁改的”时，不需要打开终端敲<code>git blame</code>，鼠标悬停即可看到。</p><p><h3>5. Error Lens</h3>
-错误信息直接显示在代码行尾，不用再把鼠标移到波浪线上查看提示。红色波浪线+文字说明，一眼定位问题。</p><p><h2>二、调试与测试：告别console.log</h2></p><p><h3>6. Debugger for Chrome / JavaScript Debugger</h3>
-直接在VS Code里打断点调试前端代码。按<code>F5</code>启动，选择“Chrome”环境，配置<code>launch.json</code>：</p><p><pre><code class="language-json">{
+};</code></pre></p><p><strong>鍦烘櫙</strong>锛氬洟闃熸柊鎴愬憳鎻愪氦鐨勪唬鐮佺粡甯告湁鏈畾涔夊彉閲忥紝ESLint鍦ㄤ繚瀛樻椂鑷姩鏍囩孩锛岀渷鍘籆ode Review鐨勭悙纰庣籂閿欍€?/p><p><h3>3. Path Intellisense</h3>
+鏅鸿兘璺緞琛ュ叏锛屽啀涔熶笉鐢ㄦ墜鍔ㄨ緭鍏?code>../../utils/</code>銆傝緭鍏?code>./</code>鎴?code>../</code>鏃惰嚜鍔ㄥ脊鍑烘枃浠跺垪琛紝鏀寔<code>@</code>鍒悕鏄犲皠銆?/p><p><h3>4. GitLens 鈥?Git supercharged</h3>
+鍦ㄦ瘡涓€琛屼唬鐮佹梺鏄剧ず鏈€鍚庝慨鏀硅€呫€佹彁浜ゆ椂闂村拰commit message銆傚彸閿繕鑳藉揩閫熸煡鐪嬫枃浠剁殑瀹屾暣淇敼鍘嗗彶銆?/p><p><strong>鍦烘櫙</strong>锛氭帓鏌モ€滆繖琛屼唬鐮佹槸璋佹敼鐨勨€濇椂锛屼笉闇€瑕佹墦寮€缁堢鏁?code>git blame</code>锛岄紶鏍囨偓鍋滃嵆鍙湅鍒般€?/p><p><h3>5. Error Lens</h3>
+閿欒淇℃伅鐩存帴鏄剧ず鍦ㄤ唬鐮佽灏撅紝涓嶇敤鍐嶆妸榧犳爣绉诲埌娉㈡氮绾夸笂鏌ョ湅鎻愮ず銆傜孩鑹叉尝娴嚎+鏂囧瓧璇存槑锛屼竴鐪煎畾浣嶉棶棰樸€?/p><p><h2>浜屻€佽皟璇曚笌娴嬭瘯锛氬憡鍒玞onsole.log</h2></p><p><h3>6. Debugger for Chrome / JavaScript Debugger</h3>
+鐩存帴鍦╒S Code閲屾墦鏂偣璋冭瘯鍓嶇浠ｇ爜銆傛寜<code>F5</code>鍚姩锛岄€夋嫨鈥淐hrome鈥濈幆澧冿紝閰嶇疆<code>launch.json</code>锛?/p><p><pre><code class="language-json">{
   "version": "0.2.0",
   "configurations": [
     {
@@ -56,19 +60,19 @@
       "webRoot": "${workspaceFolder}"
     }
   ]
-}</code></pre></p><p><strong>场景</strong>：调试复杂的状态逻辑时，在<code>useEffect</code>里打上断点，逐行执行查看变量变化，比<code>console.log</code>高效10倍。</p><p><h3>7. Jest</h3>
-运行和调试Jest测试用例的专用插件。自动发现测试文件，在测试代码行旁��示运行按钮。支持单用例执行、断点调试。</p><p><h3>8. REST Client</h3>
-替代Postman，在VS Code里直接发送HTTP请求。创建<code>.http</code>文件：</p><p><pre><code class="language-">### 获取用户列表
+}</code></pre></p><p><strong>鍦烘櫙</strong>锛氳皟璇曞鏉傜殑鐘舵€侀€昏緫鏃讹紝鍦?code>useEffect</code>閲屾墦涓婃柇鐐癸紝閫愯鎵ц鏌ョ湅鍙橀噺鍙樺寲锛屾瘮<code>console.log</code>楂樻晥10鍊嶃€?/p><p><h3>7. Jest</h3>
+杩愯鍜岃皟璇旿est娴嬭瘯鐢ㄤ緥鐨勪笓鐢ㄦ彃浠躲€傝嚜鍔ㄥ彂鐜版祴璇曟枃浠讹紝鍦ㄦ祴璇曚唬鐮佽鏃侊拷锟界ず杩愯鎸夐挳銆傛敮鎸佸崟鐢ㄤ緥鎵ц銆佹柇鐐硅皟璇曘€?/p><p><h3>8. REST Client</h3>
+鏇夸唬Postman锛屽湪VS Code閲岀洿鎺ュ彂閫丠TTP璇锋眰銆傚垱寤?code>.http</code>鏂囦欢锛?/p><p><pre><code class="language-">### 鑾峰彇鐢ㄦ埛鍒楄〃
 GET https://api.example.com/users
-Authorization: Bearer {{token}}</p><p><h3>创建用户</h3>
+Authorization: Bearer {{token}}</p><p><h3>鍒涘缓鐢ㄦ埛</h3>
 POST https://api.example.com/users
 Content-Type: application/json</p><p>{
-  "name": "张三",
+  "name": "寮犱笁",
   "email": "zhangsan@example.com"
-}</code></pre></p><p>点击“Send Request”，结果直接显示在右侧面板，支持环境变量和请求历史。</p><p><h2>三、协作与项目管理：团队效率倍增器</h2></p><p><h3>9. Live Share</h3>
-实时协作编辑代码，类似Google Docs的协同体验。点击侧边栏的Live Share图标，生成分享链接，队友加入后能同时编辑、跟踪光标位置、共享终端。</p><p><strong>场景</strong>：远程Pair Programming时，不用再截图或录屏，直接共享编辑器，双方都能运行代码。</p><p><h3>10. GitHub Pull Requests and Issues</h3>
-在VS Code内完成PR的创建、审查和合并。打开GitHub面板，查看PR列表，添加评论，甚至直接修改代码并提交。</p><p><h3>11. TODO Highlight</h3>
-高亮代码中的<code>TODO</code>、<code>FIXME</code>、<code>HACK</code>等注释。在设置中自定义关键词：</p><p><pre><code class="language-json">"todohighlight.keywords": [
+}</code></pre></p><p>鐐瑰嚮鈥淪end Request鈥濓紝缁撴灉鐩存帴鏄剧ず鍦ㄥ彸渚ч潰鏉匡紝鏀寔鐜鍙橀噺鍜岃姹傚巻鍙层€?/p><p><h2>涓夈€佸崗浣滀笌椤圭洰绠＄悊锛氬洟闃熸晥鐜囧€嶅鍣?/h2></p><p><h3>9. Live Share</h3>
+瀹炴椂鍗忎綔缂栬緫浠ｇ爜锛岀被浼糋oogle Docs鐨勫崗鍚屼綋楠屻€傜偣鍑讳晶杈规爮鐨凩ive Share鍥炬爣锛岀敓鎴愬垎浜摼鎺ワ紝闃熷弸鍔犲叆鍚庤兘鍚屾椂缂栬緫銆佽窡韪厜鏍囦綅缃€佸叡浜粓绔€?/p><p><strong>鍦烘櫙</strong>锛氳繙绋婸air Programming鏃讹紝涓嶇敤鍐嶆埅鍥炬垨褰曞睆锛岀洿鎺ュ叡浜紪杈戝櫒锛屽弻鏂归兘鑳借繍琛屼唬鐮併€?/p><p><h3>10. GitHub Pull Requests and Issues</h3>
+鍦╒S Code鍐呭畬鎴怭R鐨勫垱寤恒€佸鏌ュ拰鍚堝苟銆傛墦寮€GitHub闈㈡澘锛屾煡鐪婸R鍒楄〃锛屾坊鍔犺瘎璁猴紝鐢氳嚦鐩存帴淇敼浠ｇ爜骞舵彁浜ゃ€?/p><p><h3>11. TODO Highlight</h3>
+楂樹寒浠ｇ爜涓殑<code>TODO</code>銆?code>FIXME</code>銆?code>HACK</code>绛夋敞閲娿€傚湪璁剧疆涓嚜瀹氫箟鍏抽敭璇嶏細</p><p><pre><code class="language-json">"todohighlight.keywords": [
   {
     "text": "TODO",
     "color": "#ff6600",
@@ -79,34 +83,36 @@ Content-Type: application/json</p><p>{
     "color": "#ff0000",
     "backgroundColor": "#f8d7da"
   }
-]</code></pre></p><p><strong>场景</strong>：在大型项目中快速定位遗留问题，双击TODO注释直接跳到代码位置。</p><p><h3>12. Project Manager</h3>
-管理多个项目，一键切换。按<code>Ctrl+Shift+P</code>，输入“Project Manager: Save Project”，保存当前工作区。之后通过侧边栏快速打开。</p><p><h2>四、界面与体验优化：让编辑器更顺手</h2></p><p><h3>13. Material Icon Theme</h3>
-为文件和文件夹提供精美的图标，一眼识别文件类型。安装后在设置中搜索<code>workbench.iconTheme</code>，选择<code>material-icon-theme</code>。</p><p><h3>14. Bracket Pair Colorizer 2</h3>
-给不同层级的括号着色，嵌套代码结构一目了然。支持圆括号、方括号、花括号等。</p><p><strong>场景</strong>：处理React组件的多层回调时，括号匹配不再眼花缭乱。</p><p><h3>15. Indent-Rainbow</h3>
-缩进级别用彩虹色区分，快速定位缩进错误。在设置中调整颜色：</p><p><pre><code class="language-json">"indentRainbow.colors": [
+]</code></pre></p><p><strong>鍦烘櫙</strong>锛氬湪澶у瀷椤圭洰涓揩閫熷畾浣嶉仐鐣欓棶棰橈紝鍙屽嚮TODO娉ㄩ噴鐩存帴璺冲埌浠ｇ爜浣嶇疆銆?/p><p><h3>12. Project Manager</h3>
+绠＄悊澶氫釜椤圭洰锛屼竴閿垏鎹€傛寜<code>Ctrl+Shift+P</code>锛岃緭鍏モ€淧roject Manager: Save Project鈥濓紝淇濆瓨褰撳墠宸ヤ綔鍖恒€備箣鍚庨€氳繃渚ц竟鏍忓揩閫熸墦寮€銆?/p><p><h2>鍥涖€佺晫闈笌浣撻獙浼樺寲锛氳缂栬緫鍣ㄦ洿椤烘墜</h2></p><p><h3>13. Material Icon Theme</h3>
+涓烘枃浠跺拰鏂囦欢澶规彁渚涚簿缇庣殑鍥炬爣锛屼竴鐪艰瘑鍒枃浠剁被鍨嬨€傚畨瑁呭悗鍦ㄨ缃腑鎼滅储<code>workbench.iconTheme</code>锛岄€夋嫨<code>material-icon-theme</code>銆?/p><p><h3>14. Bracket Pair Colorizer 2</h3>
+缁欎笉鍚屽眰绾х殑鎷彿鐫€鑹诧紝宓屽浠ｇ爜缁撴瀯涓€鐩簡鐒躲€傛敮鎸佸渾鎷彿銆佹柟鎷彿銆佽姳鎷彿绛夈€?/p><p><strong>鍦烘櫙</strong>锛氬鐞哛eact缁勪欢鐨勫灞傚洖璋冩椂锛屾嫭鍙峰尮閰嶄笉鍐嶇溂鑺辩辑涔便€?/p><p><h3>15. Indent-Rainbow</h3>
+缂╄繘绾у埆鐢ㄥ僵铏硅壊鍖哄垎锛屽揩閫熷畾浣嶇缉杩涢敊璇€傚湪璁剧疆涓皟鏁撮鑹诧細</p><p><pre><code class="language-json">"indentRainbow.colors": [
   "rgba(255,255,64,0.07)",
   "rgba(127,255,127,0.07)",
   "rgba(255,127,255,0.07)",
   "rgba(79,236,236,0.07)"
 ]</code></pre></p><p><h3>16. Code Runner</h3>
-一键运行代码片段，支持40+种语言。选中代码后按<code>Ctrl+Alt+N</code>，结果输出在OUTPUT面板。适合快速测试小逻辑。</p><p><h3>17. Better Comments</h3>
-让注释更清晰：红色表示警告，绿色表示提示，蓝色表示TODO。在注释前添加特定标记：</p><p><ul><li><code>// !</code> 红色警告</li>
-<li><code>// ?</code> 蓝色疑问</li>
-<li><code>// *</code> 绿色高亮</li>
-<li><code>// TODO</code> 橙色待办</li>
+涓€閿繍琛屼唬鐮佺墖娈碉紝鏀寔40+绉嶈瑷€銆傞€変腑浠ｇ爜鍚庢寜<code>Ctrl+Alt+N</code>锛岀粨鏋滆緭鍑哄湪OUTPUT闈㈡澘銆傞€傚悎蹇€熸祴璇曞皬閫昏緫銆?/p><p><h3>17. Better Comments</h3>
+璁╂敞閲婃洿娓呮櫚锛氱孩鑹茶〃绀鸿鍛婏紝缁胯壊琛ㄧず鎻愮ず锛岃摑鑹茶〃绀篢ODO銆傚湪娉ㄩ噴鍓嶆坊鍔犵壒瀹氭爣璁帮細</p><p><ul><li><code>// !</code> 绾㈣壊璀﹀憡</li>
+<li><code>// ?</code> 钃濊壊鐤戦棶</li>
+<li><code>// *</code> 缁胯壊楂樹寒</li>
+<li><code>// TODO</code> 姗欒壊寰呭姙</li>
 </ul>
 <h3>18. Markdown Preview Enhanced</h3>
-实时预览Markdown文件，支持图表、数学公式、目录生成。写技术文档时，按<code>Ctrl+K V</code>打开侧边预览。</p><p><h3>19. Remote - SSH</h3>
-远程连接服务器开发，本地编辑远程代码。配置<code>~/.ssh/config</code>后，在VS Code中点击“Remote Explorer”选择服务器，就像在本地开发一样流畅。</p><p><strong>场景</strong>：开发部署在Linux服务器上的后端服务时，不需要在服务器上装图形界面，本地用VS Code就能编辑、调试。</p><p><h3>20. Settings Sync</h3>
-同步所有设置、插件、快捷键到GitHub Gist。换电脑时一键恢复，告别手动配置。按<code>Shift+Alt+U</code>上传，<code>Shift+Alt+D</code>下载。</p><p><h2>总结</h2></p><p>这20个插件覆盖了编码、调试、协作和界面四大维度，没有一个是“花架子”。安装后建议花10分钟配置关键设置（如Prettier的保存时格式化、ESLint的规则），然后立刻在项目中体验效果。你会发现，过去需要手动完成的重复操作，现在都被自动化了。开发效率翻倍，从这20个插件开始。</p>
+瀹炴椂棰勮Markdown鏂囦欢锛屾敮鎸佸浘琛ㄣ€佹暟瀛﹀叕寮忋€佺洰褰曠敓鎴愩€傚啓鎶€鏈枃妗ｆ椂锛屾寜<code>Ctrl+K V</code>鎵撳紑渚ц竟棰勮銆?/p><p><h3>19. Remote - SSH</h3>
+杩滅▼杩炴帴鏈嶅姟鍣ㄥ紑鍙戯紝鏈湴缂栬緫杩滅▼浠ｇ爜銆傞厤缃?code>~/.ssh/config</code>鍚庯紝鍦╒S Code涓偣鍑烩€淩emote Explorer鈥濋€夋嫨鏈嶅姟鍣紝灏卞儚鍦ㄦ湰鍦板紑鍙戜竴鏍锋祦鐣呫€?/p><p><strong>鍦烘櫙</strong>锛氬紑鍙戦儴缃插湪Linux鏈嶅姟鍣ㄤ笂鐨勫悗绔湇鍔℃椂锛屼笉闇€瑕佸湪鏈嶅姟鍣ㄤ笂瑁呭浘褰㈢晫闈紝鏈湴鐢╒S Code灏辫兘缂栬緫銆佽皟璇曘€?/p><p><h3>20. Settings Sync</h3>
+鍚屾鎵€鏈夎缃€佹彃浠躲€佸揩鎹烽敭鍒癎itHub Gist銆傛崲鐢佃剳鏃朵竴閿仮澶嶏紝鍛婂埆鎵嬪姩閰嶇疆銆傛寜<code>Shift+Alt+U</code>涓婁紶锛?code>Shift+Alt+D</code>涓嬭浇銆?/p><p><h2>鎬荤粨</h2></p><p>杩?0涓彃浠惰鐩栦簡缂栫爜銆佽皟璇曘€佸崗浣滃拰鐣岄潰鍥涘ぇ缁村害锛屾病鏈変竴涓槸鈥滆姳鏋跺瓙鈥濄€傚畨瑁呭悗寤鸿鑺?0鍒嗛挓閰嶇疆鍏抽敭璁剧疆锛堝Prettier鐨勪繚瀛樻椂鏍煎紡鍖栥€丒SLint鐨勮鍒欙級锛岀劧鍚庣珛鍒诲湪椤圭洰涓綋楠屾晥鏋溿€備綘浼氬彂鐜帮紝杩囧幓闇€瑕佹墜鍔ㄥ畬鎴愮殑閲嶅鎿嶄綔锛岀幇鍦ㄩ兘琚嚜鍔ㄥ寲浜嗐€傚紑鍙戞晥鐜囩炕鍊嶏紝浠庤繖20涓彃浠跺紑濮嬨€?/p>
       </div>
     </article>
   </main>
 
   <footer class="footer">
     <div class="container">
-      <p>AI 编程实验室 &copy; 2026 | 用 ❤️ 和 AI 生成</p>
+      <p>AI 缂栫▼瀹為獙瀹?&copy; 2026 | 鐢?鉂わ笍 鍜?AI 鐢熸垚</p>
     </div>
   </footer>
+  <button id="back-to-top" aria-label="回到顶部">↑</button>
+  <script src="../assets/app.js"></script>
 </body>
 </html>
