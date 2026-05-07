@@ -6,7 +6,59 @@
   <title>Python 编程入门到精通 - AI 编程实验室</title>
   <meta name="description" content="Python 编程入门到精通 — 异步编程、生成器、装饰器实战 PDF 电子书">
   <link rel="stylesheet" href="../assets/style.css">
-</head>
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-box {
+      background: var(--bg-card, #fff);
+      border-radius: 20px;
+      max-width: 480px;
+      width: 100%;
+      padding: 40px;
+      position: relative;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+    .modal-close {
+      position: absolute;
+      top: 16px; right: 16px;
+      background: none; border: none;
+      font-size: 24px; cursor: pointer;
+      color: var(--text-light, #999);
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .modal-close:hover { background: var(--border, #eee); }
+    .modal-box h2 { font-size: 1.4rem; margin-bottom: 8px; }
+    .modal-box .price-tag { font-size: 2rem; font-weight: 800; color: var(--primary, #6366f1); margin: 16px 0; }
+    .modal-box .pay-note { color: var(--text-secondary, #666); font-size: 0.92rem; margin-bottom: 20px; }
+    .qr-grid { display: flex; gap: 20px; justify-content: center; margin-bottom: 20px; }
+    .qr-placeholder {
+      width: 160px; height: 160px;
+      border-radius: 12px;
+      border: 2px dashed var(--border, #ddd);
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 8px;
+      font-size: 0.85rem; color: var(--text-light, #999);
+    }
+    .qr-item .qr-label { margin-top: 8px; font-size: 0.85rem; font-weight: 600; }
+    .modal-box .after-pay {
+      background: var(--primary-light, #eef2ff);
+      border-radius: 12px; padding: 16px;
+      font-size: 0.88rem; line-height: 1.7;
+    }
+  </style></head>
 <body>
   <div id="reading-progress"></div>
   <header class="header">
@@ -51,12 +103,43 @@
           <li>面试前想巩固 Python 高阶知识点的同学</li>
           <li>想写出更高效 Python 代码的工程师</li>
         </ul>
-        <a href="#" class="product-btn" style="margin-top:32px;padding:14px 32px;font-size:1.05rem">购买下载（¥19.9）</a>
+        <button onclick="document.getElementById('payModal').classList.add('active')" class="product-btn" style="margin-top:32px;padding:14px 32px;font-size:1.05rem;border:none;cursor:pointer">立即购买 ¥19.9</button>
       </div>
     </div>
   </main>
   <footer class="footer"><div class="container"><p>AI 编程实验室 &copy; 2026 | 用 ❤️ 和 AI 生成</p></div></footer>
   <button id="back-to-top" aria-label="回到顶部">↑</button>
   <script src="../assets/app.js"></script>
-</body>
+
+  <!-- Payment Modal -->
+  <div id="payModal" class="modal-overlay">
+    <div class="modal-box">
+      <button class="modal-close" onclick="document.getElementById('payModal').classList.remove('active')">&times;</button>
+      <h2>Python 编程入门到精通</h2>
+      <div class="price-tag">¥19.9</div>
+      <p class="pay-note">请使用微信或支付宝扫描下方二维码付款</p>
+      <div class="qr-grid">
+        <div class="qr-item">
+          <img src="../assets/covers/IMG_4143.JPG" alt="微信支付" style="width:160px;height:160px;border-radius:12px;border:2px solid var(--border,#ddd);object-fit:cover">
+          <div class="qr-label">微信支付</div>
+        </div>
+        <div class="qr-item">
+          <img src="../assets/covers/IMG_4144.JPG" alt="支付宝" style="width:160px;height:160px;border-radius:12px;border:2px solid var(--border,#ddd);object-fit:cover">
+          <div class="qr-label">支付宝</div>
+        </div>
+      </div>
+      <div class="after-pay">
+        <strong>&#9989; 付款后请截图</strong>，通过以下方式发送，我会把 PDF 发给你：<br>
+        &#128231; 邮箱：2668387342@qq.com<br>
+        &#128172; 微信：Wain021106<br>
+        &#9200; 通常 24 小时内回复
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('payModal').addEventListener('click', function(e) {
+      if (e.target === this) this.classList.remove('active');
+    });
+  </script></body>
 </html>
