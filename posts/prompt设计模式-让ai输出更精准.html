@@ -34,49 +34,135 @@
         </div>
       </header>
       <div class="post-content">
-        <p><h1>Prompt设计模式：让AI输出更精准</h1></p><p>每次和AI对话，最让人抓狂的莫过于“答非所问”。其实，问题往往出在提示词（Prompt）的设计上。本文将分享几种实用的Prompt设计模式，帮助开发者用结构化、可复用的方式，让AI输出更符合预期。</p><p>---</p><p><h2>1. 角色扮演模式：给AI一个身份</h2></p><p>让AI扮演特定角色，能极大改善输出质量。角色提供了上下文框架和目标导向。</p><p><strong>基础写法（不推荐）：</strong>
-<pre><code class="language-">帮我写一个Python函数，检查素数。</code></pre></p><p><strong>角色模式写法：</strong>
+        <h1>Prompt设计模式：让AI输出更精准</h1>
+
+<p>每次和AI对话，最让人抓狂的莫过于“答非所问”。其实，问题往往出在提示词（Prompt）的设计上。本文将分享几种实用的Prompt设计模式，帮助开发者用结构化、可复用的方式，让AI输出更符合预期。</p>
+
+<p>---</p>
+
+<h2>1. 角色扮演模式：给AI一个身份</h2>
+
+<p>让AI扮演特定角色，能极大改善输出质量。角色提供了上下文框架和目标导向。</p>
+
+<strong>基础写法（不推荐）：</strong>
+<pre><code class="language-">帮我写一个Python函数，检查素数。</code></pre>
+
+<strong>角色模式写法：</strong>
 <pre><code class="language-">你是一个资深Python开发者，擅长编写高性能算法。
 请实现一个<code>is_prime(n)</code>函数，要求：
 <ul><li>时间复杂度尽可能低</li>
 <li>包含详细注释</li>
 <li>提供测试用例</code></pre></li>
 </ul>
-<strong>效果对比：</strong> 后者会输出更专业、更完整的代码，包含边界处理和性能优化。</p><p><strong>实际场景：</strong> 让AI扮演“代码审查员”审查你的代码，或扮演“面试官”出技术题。</p><p>---</p><p><h2>2. 示例驱动模式：Few-shot Learning</h2></p><p>AI在零样本下表现不稳定，但给出几个示例后，模式识别能力会大幅提升。</p><p><strong>结构：</strong> 输入1 → 输出1 → 输入2 → 输出2 → 新输入 → 期待AI推理输出</p><p><strong>示例（提取JSON数据）：</strong>
-<pre><code class="language-">请将以下描述转为JSON格式：</p><p>描述：张三，28岁，后端工程师
-输出：{"name": "张三", "age": 28, "role": "后端工程师"}</p><p>描述：李四，35岁，产品经理
-输出：{"name": "李四", "age": 35, "role": "产品经理"}</p><p>描述：王五，42岁，DevOps工程师
-输出：</code></pre></p><p><strong>最佳实践：</strong> 提供2-3个示例即可，过多反而会分散注意力。示例要覆盖边界情况。</p><p>---</p><p><h2>3. 模板填充模式：结构化指令</h2></p><p>用模板约束输出格式，特别适合生成报告、代码注释或API文档。</p><p><strong>不推荐的写法：</strong>
-<pre><code class="language-">解释一下React的useEffect。</code></pre></p><p><strong>模板模式写法：</strong>
-<pre><code class="language-">请按以下模板解释React Hook：useEffect</p><p>【功能概述】：（一句话说明用途）
+<strong>效果对比：</strong> 后者会输出更专业、更完整的代码，包含边界处理和性能优化。
+
+<p><strong>实际场景：</strong> 让AI扮演“代码审查员”审查你的代码，或扮演“面试官”出技术题。</p>
+
+<p>---</p>
+
+<h2>2. 示例驱动模式：Few-shot Learning</h2>
+
+<p>AI在零样本下表现不稳定，但给出几个示例后，模式识别能力会大幅提升。</p>
+
+<p><strong>结构：</strong> 输入1 → 输出1 → 输入2 → 输出2 → 新输入 → 期待AI推理输出</p>
+
+<p><strong>示例（提取JSON数据）：</strong><br><pre><code class="language-">请将以下描述转为JSON格式：</p>
+
+<p>描述：张三，28岁，后端工程师<br>输出：{"name": "张三", "age": 28, "role": "后端工程师"}</p>
+
+<p>描述：李四，35岁，产品经理<br>输出：{"name": "李四", "age": 35, "role": "产品经理"}</p>
+
+描述：王五，42岁，DevOps工程师
+输出：</code></pre>
+
+<p><strong>最佳实践：</strong> 提供2-3个示例即可，过多反而会分散注意力。示例要覆盖边界情况。</p>
+
+<p>---</p>
+
+<h2>3. 模板填充模式：结构化指令</h2>
+
+<p>用模板约束输出格式，特别适合生成报告、代码注释或API文档。</p>
+
+<strong>不推荐的写法：</strong>
+<pre><code class="language-">解释一下React的useEffect。</code></pre>
+
+<p><strong>模板模式写法：</strong><br><pre><code class="language-">请按以下模板解释React Hook：useEffect</p>
+
+【功能概述】：（一句话说明用途）
 【使用场景】：（列举2-3个典型场景）
 【代码示例】：（一个完整的最小示例，包含import）
 【注意事项】：（列出依赖数组、清理函数等关键点）
-【常见错误】：（列举1-2个易错点及解决方案）</code></pre></p><p><strong>优势：</strong> 输出结构固定，便于后续解析或直接嵌入文档。开发者可以轻松“复制粘贴”使用。</p><p><strong>进阶技巧：</strong> 在模板中使用变量占位符，如<code>{hook_name}</code>，实现批量生成。</p><p>---</p><p><h2>4. 链式推理模式：让AI先思考再回答</h2></p><p>对于复杂问题，直接要求答案容易出错。引导AI分步推理，效果显著提升。</p><p><strong>直接提问：</strong>
+【常见错误】：（列举1-2个易错点及解决方案）</code></pre>
+
+<p><strong>优势：</strong> 输出结构固定，便于后续解析或直接嵌入文档。开发者可以轻松“复制粘贴”使用。</p>
+
+<p><strong>进阶技巧：</strong> 在模板中使用变量占位符，如<code>{hook_name}</code>，实现批量生成。</p>
+
+<p>---</p>
+
+<h2>4. 链式推理模式：让AI先思考再回答</h2>
+
+<p>对于复杂问题，直接要求答案容易出错。引导AI分步推理，效果显著提升。</p>
+
+<strong>直接提问：</strong>
 <pre><code class="language-">这段代码的时间复杂度是多少？
 for i in range(n):
     for j in range(i, n):
-        print(i, j)</code></pre></p><p><strong>链式推理写法：</strong>
-<pre><code class="language-">分析以下代码的时间复杂度。请按步骤推理：</p><p><li>外层循环执行次数是？</li>
+        print(i, j)</code></pre>
+
+<p><strong>链式推理写法：</strong><br><pre><code class="language-">分析以下代码的时间复杂度。请按步骤推理：</p>
+
+<li>外层循环执行次数是？</li>
 <li>内层循环执行次数是？</li>
 <li>总执行次数公式是？</li>
-<li>最终的时间复杂度是？</li></p><p>代码：
+<li>最终的时间复杂度是？</li>
+
+代码：
 for i in range(n):
     for j in range(i, n):
-        print(i, j)</code></pre></p><p><strong>效果：</strong> AI会先计算具体次数（n + (n-1) + ... + 1 = n(n+1)/2），然后推导出O(n²)。推理过程减少了“蒙答案”的概率。</p><p><strong>适用场景：</strong> 算法分析、数学计算、逻辑推理、调试复杂Bug。</p><p>---</p><p><h2>5. 约束限定模式：设置边界和规则</h2></p><p>AI经常“发散”，用约束条件控制输出范围。</p><p><strong>常见约束类型：</strong>
+        print(i, j)</code></pre>
+
+<p><strong>效果：</strong> AI会先计算具体次数（n + (n-1) + ... + 1 = n(n+1)/2），然后推导出O(n²)。推理过程减少了“蒙答案”的概率。</p>
+
+<p><strong>适用场景：</strong> 算法分析、数学计算、逻辑推理、调试复杂Bug。</p>
+
+<p>---</p>
+
+<h2>5. 约束限定模式：设置边界和规则</h2>
+
+<p>AI经常“发散”，用约束条件控制输出范围。</p>
+
+<strong>常见约束类型：</strong>
 <ul><li><strong>长度约束：</strong> 限制在100字以内</li>
 <li><strong>格式约束：</strong> 只返回JSON，不要其他文字</li>
 <li><strong>知识约束：</strong> 只基于以下文档回答</li>
 <li><strong>否定约束：</strong> 不要提及任何第三方库</li>
 </ul>
 <strong>示例（只返回JSON）：</strong>
-<pre><code class="language-">分析以下��户反馈的情感倾向。只返回JSON，不要任何解释。</p><p>反馈：这个新版本加载速度太慢了，体验很差。
-输出：{"sentiment": "negative", "score": 0.2, "keywords": ["慢", "差"]}</p><p>反馈：UI设计很漂亮，功能也很实用，但希望增加夜间模式。
-输出：</code></pre></p><p><strong>注意：</strong> 约束要具体、可验证。模糊的“写短一点”不如“限制在50字以内”。</p><p>---</p><p><h2>总结</h2></p><p>本文介绍了5种实用的Prompt设计模式：</p><p><li><strong>角色扮演模式</strong> - 给AI身份，提升专业度</li>
+<pre><code class="language-">分析以下��户反馈的情感倾向。只返回JSON，不要任何解释。
+
+<p>反馈：这个新版本加载速度太慢了，体验很差。<br>输出：{"sentiment": "negative", "score": 0.2, "keywords": ["慢", "差"]}</p>
+
+反馈：UI设计很漂亮，功能也很实用，但希望增加夜间模式。
+输出：</code></pre>
+
+<p><strong>注意：</strong> 约束要具体、可验证。模糊的“写短一点”不如“限制在50字以内”。</p>
+
+<p>---</p>
+
+<h2>总结</h2>
+
+<p>本文介绍了5种实用的Prompt设计模式：</p>
+
+<li><strong>角色扮演模式</strong> - 给AI身份，提升专业度</li>
 <li><strong>示例驱动模式</strong> - 用Few-shot引导输出格式</li>
 <li><strong>模板填充模式</strong> - 结构化指令，输出可控</li>
 <li><strong>链式推理模式</strong> - 分步思考，减少错误</li>
-<li><strong>约束限定模式</strong> - 设置边界，防止发散</li></p><p>这些模式可以组合使用。比如“角色+模板+约束”三合一，能让AI在指定角色下，按固定模板输出受限内容，精准度大幅提升。</p><p>下次写Prompt时，不妨先思考：我需要AI扮演什么角色？输出格式是怎样的？有哪些边界条件？想清楚这些，AI就不再是“玄学工具”，而是你的高效助手。</p>
+<li><strong>约束限定模式</strong> - 设置边界，防止发散</li>
+
+<p>这些模式可以组合使用。比如“角色+模板+约束”三合一，能让AI在指定角色下，按固定模板输出受限内容，精准度大幅提升。</p>
+
+<p>下次写Prompt时，不妨先思考：我需要AI扮演什么角色？输出格式是怎样的？有哪些边界条件？想清楚这些，AI就不再是“玄学工具”，而是你的高效助手。</p>
       </div>
       
   <div class="related-posts">

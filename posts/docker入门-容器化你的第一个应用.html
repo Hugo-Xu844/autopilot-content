@@ -34,20 +34,42 @@
         </div>
       </header>
       <div class="post-content">
-        <p><h1>Docker入门：容器化你的第一个应用</h1></p><p>当你新加入一个团队，或者换了一台开发机器，最头疼的事莫过于“在我电脑上明明能跑”——环境不一致、依赖缺失、系统版本差异……Docker 正是为了解决这个痛点而生。本文将通过一个简单的 Node.js Web 应用，带你从零开始体验容器化的完整流程。</p><p><h2>1. 为什么需要 Docker？</h2></p><p>传统开发中，应用运行依赖操作系统、运行时、库文件、环境变量等。哪怕只是从开发机部署到测试服务器，都可能在“环境配置”这一步翻车。</p><p>Docker 的核心思路是<strong>将应用及其所有依赖打包成一个标准化的“容器”</strong>，这个容器可以在任何安装了 Docker 的机器上以相同方式运行。相当于给你的应用造了一个“移动小房子”，无论搬到哪台机器，里面的环境都一模一样。</p><p><h2>2. 准备工作：安装 Docker</h2></p><p>在开始之前，请确保你的机器已经安装了 Docker。</p><p><strong>macOS / Windows</strong>：下载 <a href="https://www.docker.com/products/docker-desktop" target="_blank">Docker Desktop</a> 并安装。
+        <h1>Docker入门：容器化你的第一个应用</h1>
+
+<p>当你新加入一个团队，或者换了一台开发机器，最头疼的事莫过于“在我电脑上明明能跑”——环境不一致、依赖缺失、系统版本差异……Docker 正是为了解决这个痛点而生。本文将通过一个简单的 Node.js Web 应用，带你从零开始体验容器化的完整流程。</p>
+
+<h2>1. 为什么需要 Docker？</h2>
+
+<p>传统开发中，应用运行依赖操作系统、运行时、库文件、环境变量等。哪怕只是从开发机部署到测试服务器，都可能在“环境配置”这一步翻车。</p>
+
+<p>Docker 的核心思路是<strong>将应用及其所有依赖打包成一个标准化的“容器”</strong>，这个容器可以在任何安装了 Docker 的机器上以相同方式运行。相当于给你的应用造了一个“移动小房子”，无论搬到哪台机器，里面的环境都一模一样。</p>
+
+<h2>2. 准备工作：安装 Docker</h2>
+
+<p>在开始之前，请确保你的机器已经安装了 Docker。</p>
+
+<strong>macOS / Windows</strong>：下载 <a href="https://www.docker.com/products/docker-desktop" target="_blank">Docker Desktop</a> 并安装。
 <strong>Linux（Ubuntu为例）</strong>：
 <pre><code class="language-bash">sudo apt update
 sudo apt install docker.io
 sudo systemctl start docker
-sudo systemctl enable docker</code></pre></p><p>安装完成后，在终端运行 <code>docker --version</code> 确认安装成功。</p><p><h2>3. 编写一个极简的 Node.js 应用</h2></p><p>我们在一个空目录下创建两个文件。</p><p><strong>app.js</strong>（一个简单的 HTTP 服务）：
-<pre><code class="language-javascript">const http = require('http');
-const port = 3000;</p><p>const server = http.createServer((req, res) =&gt; {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello, Docker!\n');
-});</p><p>server.listen(port, () =&gt; {
+sudo systemctl enable docker</code></pre>
+
+<p>安装完成后，在终端运行 <code>docker --version</code> 确认安装成功。</p>
+
+<h2>3. 编写一个极简的 Node.js 应用</h2>
+
+<p>我们在一个空目录下创建两个文件。</p>
+
+<p><strong>app.js</strong>（一个简单的 HTTP 服务）：<br><pre><code class="language-javascript">const http = require('http');<br>const port = 3000;</p>
+
+<p>const server = http.createServer((req, res) =&gt; {<br>  res.statusCode = 200;<br>  res.setHeader('Content-Type', 'text/plain');<br>  res.end('Hello, Docker!\n');<br>});</p>
+
+server.listen(port, () =&gt; {
   console.log(<code>Server running at http://localhost:${port}/</code>);
-});</code></pre></p><p><strong>package.json</strong>（定义依赖，这里没有额外依赖，但需要声明入口）：
+});</code></pre>
+
+<strong>package.json</strong>（定义依赖，这里没有额外依赖，但需要声明入口）：
 <pre><code class="language-json">{
   "name": "docker-demo",
   "version": "1.0.0",
@@ -55,14 +77,36 @@ const port = 3000;</p><p>const server = http.createServer((req, res) =&gt; {
   "scripts": {
     "start": "node app.js"
   }
-}</code></pre></p><p>现在运行 <code>node app.js</code>，访问 <code>http://localhost:3000</code> 可以看到 "Hello, Docker!"。接下来我们把它装进 Docker 容器。</p><p><h2>4. 编写 Dockerfile：描述你的容器</h2></p><p>在项目根目录创建一个名为 <code>Dockerfile</code> 的文件（注意没有扩展名）：</p><p><pre><code class="language-dockerfile"># 使用官方 Node.js 镜像作为基础
-FROM node:18-alpine</p><p><h1>设置容器内的工作目录</h1>
-WORKDIR /app</p><p><h1>将 package.json 复制到工作目录</h1>
-COPY package.json .</p><p><h1>安装依赖（这里没有依赖，但保留此步骤）</h1>
-RUN npm install</p><p><h1>将���目所有文件复制到容器</h1>
-COPY . .</p><p><h1>暴露容器内的端口 3000</h1>
-EXPOSE 3000</p><p><h1>容器启动时执行的命令</h1>
-CMD ["npm", "start"]</code></pre></p><p><strong>关键指令解释</strong>：
+}</code></pre>
+
+<p>现在运行 <code>node app.js</code>，访问 <code>http://localhost:3000</code> 可以看到 "Hello, Docker!"。接下来我们把它装进 Docker 容器。</p>
+
+<h2>4. 编写 Dockerfile：描述你的容器</h2>
+
+<p>在项目根目录创建一个名为 <code>Dockerfile</code> 的文件（注意没有扩展名）：</p>
+
+<pre><code class="language-dockerfile"># 使用官方 Node.js 镜像作为基础
+FROM node:18-alpine
+
+<h1>设置容器内的工作目录</h1>
+WORKDIR /app
+
+<h1>将 package.json 复制到工作目录</h1>
+COPY package.json .
+
+<h1>安装依赖（这里没有依赖，但保留此步骤）</h1>
+RUN npm install
+
+<h1>将���目所有文件复制到容器</h1>
+COPY . .
+
+<h1>暴露容器内的端口 3000</h1>
+EXPOSE 3000
+
+<h1>容器启动时执行的命令</h1>
+CMD ["npm", "start"]</code></pre>
+
+<strong>关键指令解释</strong>：
 <ul><li><code>FROM</code>：指定基础镜像。<code>node:18-alpine</code> 是精简版 Node.js 镜像，体积小。</li>
 <li><code>WORKDIR</code>：设置容器内的工作目录，后续命令都在此目录执行。</li>
 <li><code>COPY</code>：将宿主机文件复制到容器内。</li>
@@ -70,26 +114,64 @@ CMD ["npm", "start"]</code></pre></p><p><strong>关键指令解释</strong>：
 <li><code>EXPOSE</code>：声明容器运行时监听的端口（仅作文档说明，不实际映射）。</li>
 <li><code>CMD</code>：容器启动时默认执行的命令。</li>
 </ul>
-<h2>5. 构建并运行你的第一个容器</h2></p><p><h3>5.1 构建镜像</h3></p><p>在项目根目录执行：
-<pre><code class="language-bash">docker build -t my-node-app .</code></pre></p><p><ul><li><code>-t my-node-app</code>：给镜像打上标签（名字），方便识别。</li>
+<h2>5. 构建并运行你的第一个容器</h2>
+
+<h3>5.1 构建镜像</h3>
+
+在项目根目录执行：
+<pre><code class="language-bash">docker build -t my-node-app .</code></pre>
+
+<ul><li><code>-t my-node-app</code>：给镜像打上标签（名字），方便识别。</li>
 <li><code>.</code>：指定构建上下文为当前目录。</li>
 </ul>
-构建成功后，运行 <code>docker images</code> 可以看到名为 <code>my-node-app</code> 的镜像。</p><p><h3>5.2 运行容器</h3></p><p><pre><code class="language-bash">docker run -d -p 8080:3000 --name my-app my-node-app</code></pre></p><p><ul><li><code>-d</code>：后台运行（detached）。</li>
+构建成功后，运行 <code>docker images</code> 可以看到名为 <code>my-node-app</code> 的镜像。
+
+<h3>5.2 运行容器</h3>
+
+<pre><code class="language-bash">docker run -d -p 8080:3000 --name my-app my-node-app</code></pre>
+
+<ul><li><code>-d</code>：后台运行（detached）。</li>
 <li><code>-p 8080:3000</code>：将宿主机的 8080 端口映射到容器内的 3000 端口。</li>
 <li><code>--name my-app</code>：给容器起个名字。</li>
 </ul>
-现在访问 <code>http://localhost:8080</code>，你应该能看到 "Hello, Docker!"。</p><p><h3>5.3 常用容器操作</h3></p><p><pre><code class="language-bash"># 查看运行中的容器
-docker ps</p><p><h1>查看所有容器（包括停止的）</h1>
-docker ps -a</p><p><h1>停止容器</h1>
-docker stop my-app</p><p><h1>启动已停止的容器</h1>
-docker start my-app</p><p><h1>查看容器日志</h1>
-docker logs my-app</p><p><h1>删除容器（需先停止）</h1>
-docker rm my-app</p><p><h1>删除镜像</h1>
-docker rmi my-node-app</code></pre></p><p><h2>6. 实际场景：为什么这样写才是最佳实践？</h2></p><p>你可能会问：为什么要把 <code>package.json</code> 和源代码分开两次 <code>COPY</code>？这背后是 Docker 构建缓存的优化策略。</p><p>Docker 构建镜像时，每一行指令都会产生一个缓存层。当修改了源代码（<code>app.js</code>），但 <code>package.json</code> 没变时，Docker 会复用 <code>COPY package.json .</code> 和 <code>RUN npm install</code> 的缓存，只重新执行后续步骤。这能大幅缩短构建时间，尤其是在项目依赖较多时。</p><p><strong>反例</strong>：如果写成 <code>COPY . .</code> 放在 <code>RUN npm install</code> 前面，那么每次修改任何文件都会导致整个安装依赖的步骤重新执行。</p><p><h2>总结</h2></p><p>通过本文，你完成了 Docker 的第一次实战：
-<li>理解容器化解决环境一致性问题。</li>
-<li>编写了一个简单的 Node.js 应用。</li>
-<li>用 <code>Dockerfile</code> 描述应用如何打包。</li>
-<li>构建镜像并运行容器，验证服务正常。</li></p><p>接下来你可以尝试：将同一个镜像部署到另一台机器（只需安装 Docker），或者使用 <code>docker-compose</code> 编排多个容器（如 Web + 数据库）。容器化的世界，才刚刚开始。</p>
+现在访问 <code>http://localhost:8080</code>，你应该能看到 "Hello, Docker!"。
+
+<h3>5.3 常用容器操作</h3>
+
+<pre><code class="language-bash"># 查看运行中的容器
+docker ps
+
+<h1>查看所有容器（包括停止的）</h1>
+docker ps -a
+
+<h1>停止容器</h1>
+docker stop my-app
+
+<h1>启动已停止的容器</h1>
+docker start my-app
+
+<h1>查看容器日志</h1>
+docker logs my-app
+
+<h1>删除容器（需先停止）</h1>
+docker rm my-app
+
+<h1>删除镜像</h1>
+docker rmi my-node-app</code></pre>
+
+<h2>6. 实际场景：为什么这样写才是最佳实践？</h2>
+
+<p>你可能会问：为什么要把 <code>package.json</code> 和源代码分开两次 <code>COPY</code>？这背后是 Docker 构建缓存的优化策略。</p>
+
+<p>Docker 构建镜像时，每一行指令都会产生一个缓存层。当修改了源代码（<code>app.js</code>），但 <code>package.json</code> 没变时，Docker 会复用 <code>COPY package.json .</code> 和 <code>RUN npm install</code> 的缓存，只重新执行后续步骤。这能大幅缩短构建时间，尤其是在项目依赖较多时。</p>
+
+<p><strong>反例</strong>：如果写成 <code>COPY . .</code> 放在 <code>RUN npm install</code> 前面，那么每次修改任何文件都会导致整个安装依赖的步骤重新执行。</p>
+
+<h2>总结</h2>
+
+<p>通过本文，你完成了 Docker 的第一次实战：<br><li>理解容器化解决环境一致性问题。</li><br><li>编写了一个简单的 Node.js 应用。</li><br><li>用 <code>Dockerfile</code> 描述应用如何打包。</li><br><li>构建镜像并运行容器，验证服务正常。</li></p>
+
+<p>接下来你可以尝试：将同一个镜像部署到另一台机器（只需安装 Docker），或者使用 <code>docker-compose</code> 编排多个容器（如 Web + 数据库）。容器化的世界，才刚刚开始。</p>
       </div>
       
   <div class="related-posts">
