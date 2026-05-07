@@ -8,13 +8,19 @@
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+
+  <div id="reading-progress"></div>
+
   <header class="header">
     <div class="container">
       <a href="." class="logo">AI 编程实验室</a>
-      <nav>
-        <a href="." class="active">首页</a>
-        <a href="products.html">教程产品</a>
-      </nav>
+      <div class="header-actions">
+        <nav>
+          <a href="." class="active">首页</a>
+          <a href="products.html">教程产品</a>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" aria-label="切换深色/浅色模式">🌙</button>
+      </div>
     </div>
   </header>
 
@@ -24,6 +30,8 @@
       <p>每日更新 AI 教程、编程实战、工具评测 — 全部由 AI 自动生成。</p>
       <p class="post-count">目前已发布 15 篇文章</p>
     </section>
+
+    <h2 class="section-title">最新文章</h2>
 
     <section class="posts-list">
       
@@ -130,9 +138,12 @@ GPT4 的回复：...</p>
       <p>AI 编程实验室 &copy; 2026 | 用 ❤️ 和 AI 生成</p>
     </div>
   </footer>
+
+  <button id="back-to-top" aria-label="回到顶部">↑</button>
   
   <!-- Adsense 占位 -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-你的广告ID"
      crossorigin="anonymous"></script>
+  <script src="assets/app.js"></script>
 </body>
 </html>

@@ -3,155 +3,140 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Agent 入门：智能体是什么？ - AI 编程实验室</title>
-  <meta name="description" content="深入浅出讲解 AI Agent 的概念、原理与实战应用">
+  <title>AI Agent 鍏ラ棬锛氭櫤鑳戒綋鏄粈涔堬紵 - AI 缂栫▼瀹為獙瀹?/title>
+  <meta name="description" content="娣卞叆娴呭嚭璁茶В AI Agent 鐨勬蹇点€佸師鐞嗕笌瀹炴垬搴旂敤">
   <link rel="stylesheet" href="/assets/style.css">
 </head>
+
 <body>
+  <div id="reading-progress"></div>
   <header class="header">
     <div class="container">
-      <a href="/" class="logo">AI 编程实验室</a>
+      <a href="/" class="logo">AI 缂栫▼瀹為獙瀹?/a>
       <nav>
-        <a href="/">首页</a>
-        <a href="/products.html">教程产品</a>
+        <a href="/">棣栭〉</a>
+        <a href="/products.html">鏁欑▼浜у搧</a>
       </nav>
+        <button id="theme-toggle" class="theme-toggle" aria-label="切换深色/浅色模式">🌙</button>
+      </div>
     </div>
   </header>
 
   <main class="container">
     <article class="post-full">
       <header class="post-header">
-        <h1>AI Agent 入门：智能体是什么？</h1>
+        <h1>AI Agent 鍏ラ棬锛氭櫤鑳戒綋鏄粈涔堬紵</h1>
         <div class="post-meta">
-          <span class="date">📅 2026-05-06</span>
-          <span class="category">📂 AI入门教程</span>
-          <div class="tags"><span class="tag">AI入门教程</span> <span class="tag">AI</span> <span class="tag">大模型</span> <span class="tag">Agent</span></div>
+          <span class="date">馃搮 2026-05-06</span>
+          <span class="category">馃搨 AI鍏ラ棬鏁欑▼</span>
+          <div class="tags"><span class="tag">AI鍏ラ棬鏁欑▼</span> <span class="tag">AI</span> <span class="tag">澶фā鍨?/span> <span class="tag">Agent</span></div>
         </div>
       </header>
       <div class="post-content">
-        <p><h2>为什么 Agent 是 AI 的下一个风口？</h2></p><p>2025 年以来，AI 领域最热的关键词已经不是「大模型」本身，而是 <strong>AI Agent（智能体）</strong>。</p><p>简单来说，大模型像是一个<strong>聪明的大脑</strong>——它能理解问题、生成回答，但它不会主动做事。而 Agent 就是给这个大脑装上了<strong>手和脚</strong>，让它能主动规划、调用工具、执行任务。</p><p><h2>什么是 AI Agent？</h2></p><p>AI Agent 是一个<strong>能自主感知环境、做出决策并执行行动的智能系统</strong>。它不仅仅是被动回答问题，而是：</p><p><ul><li><strong>理解目标</strong>：知道你要达成什么</li>
-<li><strong>制定计划</strong>：把大目标拆成小步骤</li>
-<li><strong>调用工具</strong>：搜索、计算、写代码、操作应用</li>
-<li><strong>迭代改进</strong>：根据结果自我修正</li>
+        <p><h2>涓轰粈涔?Agent 鏄?AI 鐨勪笅涓€涓鍙ｏ紵</h2></p><p>2025 骞翠互鏉ワ紝AI 棰嗗煙鏈€鐑殑鍏抽敭璇嶅凡缁忎笉鏄€屽ぇ妯″瀷銆嶆湰韬紝鑰屾槸 <strong>AI Agent锛堟櫤鑳戒綋锛?/strong>銆?/p><p>绠€鍗曟潵璇达紝澶фā鍨嬪儚鏄竴涓?strong>鑱槑鐨勫ぇ鑴?/strong>鈥斺€斿畠鑳界悊瑙ｉ棶棰樸€佺敓鎴愬洖绛旓紝浣嗗畠涓嶄細涓诲姩鍋氫簨銆傝€?Agent 灏辨槸缁欒繖涓ぇ鑴戣涓婁簡<strong>鎵嬪拰鑴?/strong>锛岃瀹冭兘涓诲姩瑙勫垝銆佽皟鐢ㄥ伐鍏枫€佹墽琛屼换鍔°€?/p><p><h2>浠€涔堟槸 AI Agent锛?/h2></p><p>AI Agent 鏄竴涓?strong>鑳借嚜涓绘劅鐭ョ幆澧冦€佸仛鍑哄喅绛栧苟鎵ц琛屽姩鐨勬櫤鑳界郴缁?/strong>銆傚畠涓嶄粎浠呮槸琚姩鍥炵瓟闂锛岃€屾槸锛?/p><p><ul><li><strong>鐞嗚В鐩爣</strong>锛氱煡閬撲綘瑕佽揪鎴愪粈涔?/li>
+<li><strong>鍒跺畾璁″垝</strong>锛氭妸澶х洰鏍囨媶鎴愬皬姝ラ</li>
+<li><strong>璋冪敤宸ュ叿</strong>锛氭悳绱€佽绠椼€佸啓浠ｇ爜銆佹搷浣滃簲鐢?/li>
+<li><strong>杩唬鏀硅繘</strong>锛氭牴鎹粨鏋滆嚜鎴戜慨姝?/li>
 </ul>
-<h3>一个类比</h3></p><p>传统 ChatGPT 像一个<strong>知识渊博的顾问</strong>——你问他问题，他给出答案。</p><p>AI Agent 像一个<strong>靠谱的实习生</strong>——你交给他一个任务，他会自己想办法完成，遇到问题还会回来问你。</p><p><h2>Agent 的四大核心能力</h2></p><p><pre><code class="language-">┌─────────────┐    ┌─────────────┐
-│  感知能力    │    │  规划能力   │
-│  (Perception)│    │ (Planning)  │
-└──────┬──────┘    └──────┬──────┘
-       │                  │
-       ▼                  ▼
-┌─────────────────────────────┐
-│        记忆系统             │
-│    (短期记忆 + 长期记忆)    │
-└─────────────────────────────┘
-       │                  │
-       ▼                  ▼
-┌─────────────┐    ┌─────────────┐
-│  工具调用    │    │  行动执行   │
-│  (Tool Use) │    │ (Execution) │
-└─────────────┘    └─────────────┘</code></pre></p><p><h3>1. 感知能力</h3></p><p>Agent 能「看到」和「听到」周围的环境。这可以是：
-<ul><li>读取你上传的文件</li>
-<li>解析网页内容</li>
-<li>理解对话上下文</li>
-<li>查看数据库记录</li>
+<h3>涓€涓被姣?/h3></p><p>浼犵粺 ChatGPT 鍍忎竴涓?strong>鐭ヨ瘑娓婂崥鐨勯【闂?/strong>鈥斺€斾綘闂粬闂锛屼粬缁欏嚭绛旀銆?/p><p>AI Agent 鍍忎竴涓?strong>闈犺氨鐨勫疄涔犵敓</strong>鈥斺€斾綘浜ょ粰浠栦竴涓换鍔★紝浠栦細鑷繁鎯冲姙娉曞畬鎴愶紝閬囧埌闂杩樹細鍥炴潵闂綘銆?/p><p><h2>Agent 鐨勫洓澶ф牳蹇冭兘鍔?/h2></p><p><pre><code class="language-">鈹屸攢鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹?   鈹屸攢鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹?鈹? 鎰熺煡鑳藉姏    鈹?   鈹? 瑙勫垝鑳藉姏   鈹?鈹? (Perception)鈹?   鈹?(Planning)  鈹?鈹斺攢鈹€鈹€鈹€鈹€鈹€鈹攢鈹€鈹€鈹€鈹€鈹€鈹?   鈹斺攢鈹€鈹€鈹€鈹€鈹€鈹攢鈹€鈹€鈹€鈹€鈹€鈹?       鈹?                 鈹?       鈻?                 鈻?鈹屸攢鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹?鈹?       璁板繂绯荤粺             鈹?鈹?   (鐭湡璁板繂 + 闀挎湡璁板繂)    鈹?鈹斺攢鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹?       鈹?                 鈹?       鈻?                 鈻?鈹屸攢鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹?   鈹屸攢鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹?鈹? 宸ュ叿璋冪敤    鈹?   鈹? 琛屽姩鎵ц   鈹?鈹? (Tool Use) 鈹?   鈹?(Execution) 鈹?鈹斺攢鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹?   鈹斺攢鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹?/code></pre></p><p><h3>1. 鎰熺煡鑳藉姏</h3></p><p>Agent 鑳姐€岀湅鍒般€嶅拰銆屽惉鍒般€嶅懆鍥寸殑鐜銆傝繖鍙互鏄細
+<ul><li>璇诲彇浣犱笂浼犵殑鏂囦欢</li>
+<li>瑙ｆ瀽缃戦〉鍐呭</li>
+<li>鐞嗚В瀵硅瘽涓婁笅鏂?/li>
+<li>鏌ョ湅鏁版嵁搴撹褰?/li>
 </ul>
-<h3>2. 规划能力</h3></p><p>这是 Agent 最核心的能力。给定一个目标，它会：</p><p><pre><code class="language-python"># 简化版 Agent 规划示例
-task = "调研2025年最好的AI编程工具并写一份报告"</p><p>plan = [
-    {"step": 1, "action": "搜索", "target": "2025 AI编程工具排行榜"},
-    {"step": 2, "action": "分析", "target": "对比各工具的优缺点"},
-    {"step": 3, "action": "写作", "target": "生成对比报告"},
-]</p><p><h1>Agent 会按步骤执行，每步完成后自动判断下一步</code></pre></h1></p><p><h3>3. 工具调用</h3></p><p>Agent 可以调用各种工具来完成任务：</p><p><pre><code class="language-python">class AgentTools:
+<h3>2. 瑙勫垝鑳藉姏</h3></p><p>杩欐槸 Agent 鏈€鏍稿績鐨勮兘鍔涖€傜粰瀹氫竴涓洰鏍囷紝瀹冧細锛?/p><p><pre><code class="language-python"># 绠€鍖栫増 Agent 瑙勫垝绀轰緥
+task = "璋冪爺2025骞存渶濂界殑AI缂栫▼宸ュ叿骞跺啓涓€浠芥姤鍛?</p><p>plan = [
+    {"step": 1, "action": "鎼滅储", "target": "2025 AI缂栫▼宸ュ叿鎺掕姒?},
+    {"step": 2, "action": "鍒嗘瀽", "target": "瀵规瘮鍚勫伐鍏风殑浼樼己鐐?},
+    {"step": 3, "action": "鍐欎綔", "target": "鐢熸垚瀵规瘮鎶ュ憡"},
+]</p><p><h1>Agent 浼氭寜姝ラ鎵ц锛屾瘡姝ュ畬鎴愬悗鑷姩鍒ゆ柇涓嬩竴姝?/code></pre></h1></p><p><h3>3. 宸ュ叿璋冪敤</h3></p><p>Agent 鍙互璋冪敤鍚勭宸ュ叿鏉ュ畬鎴愪换鍔★細</p><p><pre><code class="language-python">class AgentTools:
     def search_web(self, query: str) -&gt; list:
-        """搜索网络信息"""
+        """鎼滅储缃戠粶淇℃伅"""
         pass
     
     def execute_code(self, code: str) -&gt; str:
-        """运行代码并返回结果"""
+        """杩愯浠ｇ爜骞惰繑鍥炵粨鏋?""
         pass
     
     def read_file(self, path: str) -&gt; str:
-        """读取文件内容"""
+        """璇诲彇鏂囦欢鍐呭"""
         pass
     
     def call_api(self, url: str, params: dict) -&gt; dict:
-        """调用外部 API"""
-        pass</code></pre></p><p><h3>4. 记忆系统</h3></p><p>Agent 需要记住三件事：
-<ul><li><strong>短期记忆</strong>：当前对话中的上下文</li>
-<li><strong>长期记忆</strong>：跨会话的知识积累</li>
-<li><strong>工作记忆</strong>：当前正在处理的任务状态</li>
+        """璋冪敤澶栭儴 API"""
+        pass</code></pre></p><p><h3>4. 璁板繂绯荤粺</h3></p><p>Agent 闇€瑕佽浣忎笁浠朵簨锛?<ul><li><strong>鐭湡璁板繂</strong>锛氬綋鍓嶅璇濅腑鐨勪笂涓嬫枃</li>
+<li><strong>闀挎湡璁板繂</strong>锛氳法浼氳瘽鐨勭煡璇嗙Н绱?/li>
+<li><strong>宸ヤ綔璁板繂</strong>锛氬綋鍓嶆鍦ㄥ鐞嗙殑浠诲姟鐘舵€?/li>
 </ul>
-<h2>实战：用 Python 写一个简单 Agent</h2></p><p>下面是一个最简单的 Agent 实现，它能搜索并总结信息：</p><p><pre><code class="language-python">import json
+<h2>瀹炴垬锛氱敤 Python 鍐欎竴涓畝鍗?Agent</h2></p><p>涓嬮潰鏄竴涓渶绠€鍗曠殑 Agent 瀹炵幇锛屽畠鑳芥悳绱㈠苟鎬荤粨淇℃伅锛?/p><p><pre><code class="language-python">import json
 from typing import List, Dict</p><p>class SimpleAgent:
     def __init__(self, name: str):
         self.name = name
         self.memory = []
     
     def think(self, task: str) -&gt; List[Dict]:
-        """根据任务制定计划"""
-        print(f"🤔 {self.name} 正在思考如何: {task}")
+        """鏍规嵁浠诲姟鍒跺畾璁″垝"""
+        print(f"馃 {self.name} 姝ｅ湪鎬濊€冨浣? {task}")
         
-        # 简单规则引擎
-        if "搜索" in task or "调研" in task:
+        # 绠€鍗曡鍒欏紩鎿?        if "鎼滅储" in task or "璋冪爺" in task:
             return [
                 {"action": "search", "params": task},
-                {"action": "analyze", "params": "整理结果"},
-                {"action": "summarize", "params": "生成报告"}
+                {"action": "analyze", "params": "鏁寸悊缁撴灉"},
+                {"action": "summarize", "params": "鐢熸垚鎶ュ憡"}
             ]
-        elif "代码" in task or "编程" in task:
+        elif "浠ｇ爜" in task or "缂栫▼" in task:
             return [
                 {"action": "write_code", "params": task},
-                {"action": "test", "params": "验证代码"},
-                {"action": "fix_bugs", "params": "修复问题"}
+                {"action": "test", "params": "楠岃瘉浠ｇ爜"},
+                {"action": "fix_bugs", "params": "淇闂"}
             ]
         else:
-            return [{"action": "ask_user", "params": "我不确定怎么处理这个任务"}]
+            return [{"action": "ask_user", "params": "鎴戜笉纭畾鎬庝箞澶勭悊杩欎釜浠诲姟"}]
     
     def execute(self, plan: List[Dict]) -&gt; str:
-        """执行计划"""
+        """鎵ц璁″垝"""
         results = []
         for step in plan:
-            print(f"  → 执行: {step['action']}")
-            # 模拟执行
-            result = f"已完成 {step['action']} 操作"
+            print(f"  鈫?鎵ц: {step['action']}")
+            # 妯℃嫙鎵ц
+            result = f"宸插畬鎴?{step['action']} 鎿嶄綔"
             results.append(result)
             self.memory.append(result)
         return "\n".join(results)
     
     def run(self, task: str):
-        """主入口"""
-        print(f"\n🚀 Agent {self.name} 开始工作")
+        """涓诲叆鍙?""
+        print(f"\n馃殌 Agent {self.name} 寮€濮嬪伐浣?)
         plan = self.think(task)
         result = self.execute(plan)
-        print(f"✅ 完成！\n{result}")
+        print(f"鉁?瀹屾垚锛乗n{result}")
         
-        return result</p><p><h1>使用示例</h1>
-agent = SimpleAgent("助手小A")
-agent.run("搜索近期AI编程工具的新动态")</code></pre></p><p>运行结果：
-<pre><code class="language-">🚀 Agent 助手小A 开始工作
-🤔 助手小A 正在思考如何: 搜索近期AI编程工具的新动态
-  → 执行: search
-  → 执行: analyze  
-  → 执行: summarize
-✅ 完成！
-已完成 search 操作
-已完成 analyze 操作
-已完成 summarize 操作</code></pre></p><p><h2>Agent 框架推荐</h2></p><p>如果你想真正上手开发 Agent，推荐这些框架：</p><p>| 框架 | 特点 | 适合场景 |
+        return result</p><p><h1>浣跨敤绀轰緥</h1>
+agent = SimpleAgent("鍔╂墜灏廇")
+agent.run("鎼滅储杩戞湡AI缂栫▼宸ュ叿鐨勬柊鍔ㄦ€?)</code></pre></p><p>杩愯缁撴灉锛?<pre><code class="language-">馃殌 Agent 鍔╂墜灏廇 寮€濮嬪伐浣?馃 鍔╂墜灏廇 姝ｅ湪鎬濊€冨浣? 鎼滅储杩戞湡AI缂栫▼宸ュ叿鐨勬柊鍔ㄦ€?  鈫?鎵ц: search
+  鈫?鎵ц: analyze  
+  鈫?鎵ц: summarize
+鉁?瀹屾垚锛?宸插畬鎴?search 鎿嶄綔
+宸插畬鎴?analyze 鎿嶄綔
+宸插畬鎴?summarize 鎿嶄綔</code></pre></p><p><h2>Agent 妗嗘灦鎺ㄨ崘</h2></p><p>濡傛灉浣犳兂鐪熸涓婃墜寮€鍙?Agent锛屾帹鑽愯繖浜涙鏋讹細</p><p>| 妗嗘灦 | 鐗圭偣 | 閫傚悎鍦烘櫙 |
 |------|------|---------|
-| <strong>LangChain</strong> | 生态最丰富，文档完善 | 通用 Agent 开发 |
-| <strong>AutoGPT</strong> | 自主性最强，全自动 | 复杂任务自动化 |
-| <strong>CrewAI</strong> | 多 Agent 协作 | 团队式任务 |
-| <strong>OpenAI Assistants</strong> | 官方支持，稳定 | 快速原型 |</p><p><h2>总结</h2></p><p>AI Agent 正在从概念走向普及。理解 Agent 的四个核心能力——<strong>感知、规划、工具调用、记忆</strong>——是掌握这项技术的关键。</p><p>下一步建议：
-<li>动手用 Python 实现一个简单的 Agent</li>
-<li>尝试接入搜索 API，让 Agent 能获取实时信息</li>
-<li>探索 LangChain 等框架，构建更复杂的 Agent 系统</li></p><p>记住：Agent 不是要取代人类，而是要成为你的<strong>得力助手</strong>。善用 Agent，你的效率会翻倍。</p>
+| <strong>LangChain</strong> | 鐢熸€佹渶涓板瘜锛屾枃妗ｅ畬鍠?| 閫氱敤 Agent 寮€鍙?|
+| <strong>AutoGPT</strong> | 鑷富鎬ф渶寮猴紝鍏ㄨ嚜鍔?| 澶嶆潅浠诲姟鑷姩鍖?|
+| <strong>CrewAI</strong> | 澶?Agent 鍗忎綔 | 鍥㈤槦寮忎换鍔?|
+| <strong>OpenAI Assistants</strong> | 瀹樻柟鏀寔锛岀ǔ瀹?| 蹇€熷師鍨?|</p><p><h2>鎬荤粨</h2></p><p>AI Agent 姝ｅ湪浠庢蹇佃蛋鍚戞櫘鍙娿€傜悊瑙?Agent 鐨勫洓涓牳蹇冭兘鍔涒€斺€?strong>鎰熺煡銆佽鍒掋€佸伐鍏疯皟鐢ㄣ€佽蹇?/strong>鈥斺€旀槸鎺屾彙杩欓」鎶€鏈殑鍏抽敭銆?/p><p>涓嬩竴姝ュ缓璁細
+<li>鍔ㄦ墜鐢?Python 瀹炵幇涓€涓畝鍗曠殑 Agent</li>
+<li>灏濊瘯鎺ュ叆鎼滅储 API锛岃 Agent 鑳借幏鍙栧疄鏃朵俊鎭?/li>
+<li>鎺㈢储 LangChain 绛夋鏋讹紝鏋勫缓鏇村鏉傜殑 Agent 绯荤粺</li></p><p>璁颁綇锛欰gent 涓嶆槸瑕佸彇浠ｄ汉绫伙紝鑰屾槸瑕佹垚涓轰綘鐨?strong>寰楀姏鍔╂墜</strong>銆傚杽鐢?Agent锛屼綘鐨勬晥鐜囦細缈诲€嶃€?/p>
       </div>
     </article>
   </main>
 
   <footer class="footer">
     <div class="container">
-      <p>AI 编程实验室 &copy; 2026 | 用 ❤️ 和 AI 生成</p>
+      <p>AI 缂栫▼瀹為獙瀹?&copy; 2026 | 鐢?鉂わ笍 鍜?AI 鐢熸垚</p>
     </div>
   </footer>
+  <button id="back-to-top" aria-label="回到顶部">↑</button>
+  <script src="../assets/app.js"></script>
 </body>
 </html>

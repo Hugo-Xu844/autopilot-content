@@ -3,60 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Python列表推导式：一行代码的魔法 - AI 编程实验室</title>
-  <meta name="description" content="Python列表推导式：一行代码的魔法 - 详细教程与实战指南">
+  <title>Python鍒楄〃鎺ㄥ寮忥細涓€琛屼唬鐮佺殑榄旀硶 - AI 缂栫▼瀹為獙瀹?/title>
+  <meta name="description" content="Python鍒楄〃鎺ㄥ寮忥細涓€琛屼唬鐮佺殑榄旀硶 - 璇︾粏鏁欑▼涓庡疄鎴樻寚鍗?>
   <link rel="stylesheet" href="/assets/style.css">
 </head>
+
 <body>
+  <div id="reading-progress"></div>
   <header class="header">
     <div class="container">
-      <a href="/" class="logo">AI 编程实验室</a>
+      <a href="/" class="logo">AI 缂栫▼瀹為獙瀹?/a>
       <nav>
-        <a href="/">首页</a>
-        <a href="/products.html">教程产品</a>
+        <a href="/">棣栭〉</a>
+        <a href="/products.html">鏁欑▼浜у搧</a>
       </nav>
+        <button id="theme-toggle" class="theme-toggle" aria-label="切换深色/浅色模式">🌙</button>
+      </div>
     </div>
   </header>
 
   <main class="container">
     <article class="post-full">
       <header class="post-header">
-        <h1>Python列表推导式：一行代码的魔法</h1>
+        <h1>Python鍒楄〃鎺ㄥ寮忥細涓€琛屼唬鐮佺殑榄旀硶</h1>
         <div class="post-meta">
-          <span class="date">📅 2026-05-06</span>
-          <span class="category">📂 Python编程</span>
-          <div class="tags"><span class="tag">Python编程</span> <span class="tag">Python</span></div>
+          <span class="date">馃搮 2026-05-06</span>
+          <span class="category">馃搨 Python缂栫▼</span>
+          <div class="tags"><span class="tag">Python缂栫▼</span> <span class="tag">Python</span></div>
         </div>
       </header>
       <div class="post-content">
-        <p><h1>Python列表推导式：一行代码的魔法</h1></p><p>在Python开发中，高效处理数据是关键。列表推导式作为一种简洁的语法，能用一行代码完成复杂列表操作，让代码更优雅、可读性更高。本文将带你深入实践，掌握这一高效工具在真实场景中的应用。</p><p><h2>一、列表推导式的本质：从冗长循环到优雅表达</h2></p><p>列表推导式是Python中一种通过<code>for</code>循环和条件判断直接生成列表的语法结构。它本质上将传统<code>for</code>循环和<code>if</code>条件的组合压缩成一行代码，避免了中间变量和临时列表的冗余操作。对于熟悉Python的开发者，理解其核心是“用表达式代替循环体”。</p><p><pre><code class="language-python"># 传统方式：生成1-10的平方列表
-squares = []
+        <p><h1>Python鍒楄〃鎺ㄥ寮忥細涓€琛屼唬鐮佺殑榄旀硶</h1></p><p>鍦≒ython寮€鍙戜腑锛岄珮鏁堝鐞嗘暟鎹槸鍏抽敭銆傚垪琛ㄦ帹瀵煎紡浣滀负涓€绉嶇畝娲佺殑璇硶锛岃兘鐢ㄤ竴琛屼唬鐮佸畬鎴愬鏉傚垪琛ㄦ搷浣滐紝璁╀唬鐮佹洿浼橀泤銆佸彲璇绘€ф洿楂樸€傛湰鏂囧皢甯︿綘娣卞叆瀹炶返锛屾帉鎻¤繖涓€楂樻晥宸ュ叿鍦ㄧ湡瀹炲満鏅腑鐨勫簲鐢ㄣ€?/p><p><h2>涓€銆佸垪琛ㄦ帹瀵煎紡鐨勬湰璐細浠庡啑闀垮惊鐜埌浼橀泤琛ㄨ揪</h2></p><p>鍒楄〃鎺ㄥ寮忔槸Python涓竴绉嶉€氳繃<code>for</code>寰幆鍜屾潯浠跺垽鏂洿鎺ョ敓鎴愬垪琛ㄧ殑璇硶缁撴瀯銆傚畠鏈川涓婂皢浼犵粺<code>for</code>寰幆鍜?code>if</code>鏉′欢鐨勭粍鍚堝帇缂╂垚涓€琛屼唬鐮侊紝閬垮厤浜嗕腑闂村彉閲忓拰涓存椂鍒楄〃鐨勫啑浣欐搷浣溿€傚浜庣啛鎮塒ython鐨勫紑鍙戣€咃紝鐞嗚В鍏舵牳蹇冩槸鈥滅敤琛ㄨ揪寮忎唬鏇垮惊鐜綋鈥濄€?/p><p><pre><code class="language-python"># 浼犵粺鏂瑰紡锛氱敓鎴?-10鐨勫钩鏂瑰垪琛?squares = []
 for x in range(1, 11):
-    squares.append(x ** 2)</p><p><h1>列表推导式：一行代码</h1>
-squares = [x ** 2 for x in range(1, 11)]</code></pre></p><p><strong>应用场景</strong>：在数据预处理中，快速生成数值序列。例如，对传感器采集的原始数据进行平方变换，用于后续统计分析。运行上述代码可直接得到<code>[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]</code>。</p><p><h2>二、基础语法实战：过滤与映射的无缝融合</h2></p><p>列表推导式支持在单行中同时完成数据过滤和转换。核心语法结构为<code>[表达式 for 变量 in 可迭代对象 if 条件]</code>。通过<code>if</code>条件实现筛选，<code>表达式</code>定义输出值，这种组合能高效处理数据清洗任务。</p><p><pre><code class="language-python"># 传统方式：从1-10中筛选偶数并乘以2
+    squares.append(x ** 2)</p><p><h1>鍒楄〃鎺ㄥ寮忥細涓€琛屼唬鐮?/h1>
+squares = [x ** 2 for x in range(1, 11)]</code></pre></p><p><strong>搴旂敤鍦烘櫙</strong>锛氬湪鏁版嵁棰勫鐞嗕腑锛屽揩閫熺敓鎴愭暟鍊煎簭鍒椼€備緥濡傦紝瀵逛紶鎰熷櫒閲囬泦鐨勫師濮嬫暟鎹繘琛屽钩鏂瑰彉鎹紝鐢ㄤ簬鍚庣画缁熻鍒嗘瀽銆傝繍琛屼笂杩颁唬鐮佸彲鐩存帴寰楀埌<code>[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]</code>銆?/p><p><h2>浜屻€佸熀纭€璇硶瀹炴垬锛氳繃婊や笌鏄犲皠鐨勬棤缂濊瀺鍚?/h2></p><p>鍒楄〃鎺ㄥ寮忔敮鎸佸湪鍗曡涓悓鏃跺畬鎴愭暟鎹繃婊ゅ拰杞崲銆傛牳蹇冭娉曠粨鏋勪负<code>[琛ㄨ揪寮?for 鍙橀噺 in 鍙凯浠ｅ璞?if 鏉′欢]</code>銆傞€氳繃<code>if</code>鏉′欢瀹炵幇绛涢€夛紝<code>琛ㄨ揪寮?/code>瀹氫箟杈撳嚭鍊硷紝杩欑缁勫悎鑳介珮鏁堝鐞嗘暟鎹竻娲椾换鍔°€?/p><p><pre><code class="language-python"># 浼犵粺鏂瑰紡锛氫粠1-10涓瓫閫夊伓鏁板苟涔樹互2
 even_doubled = []
 for x in range(1, 11):
     if x % 2 == 0:
-        even_doubled.append(x * 2)</p><p><h1>列表推导式：一行代码</h1>
-even_doubled = [x * 2 for x in range(1, 11) if x % 2 == 0]</code></pre></p><p><strong>应用场景</strong>：电商系统中处理用户订单。假设从API获取的订单列表中，需快速过滤出金额大于100元且状态为“已支付”的订单，并计算折扣价（如原价×0.9）。此推导式可直接嵌入业务逻辑，提升响应速度。</p><p><h2>三、进阶技巧：嵌套循环与多条件处理</h2></p><p>当数据结构复杂时，列表推导式支持嵌套循环和多级条件判断。例如，处理二维数据时，通过两层循环实现筛选，避免多层<code>for</code>循环的冗余。关键在于保持逻辑清晰，避免过度嵌套。</p><p><pre><code class="language-python"># 2D数据示例：订单列表（订单ID、金额、状态）
+        even_doubled.append(x * 2)</p><p><h1>鍒楄〃鎺ㄥ寮忥細涓€琛屼唬鐮?/h1>
+even_doubled = [x * 2 for x in range(1, 11) if x % 2 == 0]</code></pre></p><p><strong>搴旂敤鍦烘櫙</strong>锛氱數鍟嗙郴缁熶腑澶勭悊鐢ㄦ埛璁㈠崟銆傚亣璁句粠API鑾峰彇鐨勮鍗曞垪琛ㄤ腑锛岄渶蹇€熻繃婊ゅ嚭閲戦澶т簬100鍏冧笖鐘舵€佷负鈥滃凡鏀粯鈥濈殑璁㈠崟锛屽苟璁＄畻鎶樻墸浠凤紙濡傚師浠访?.9锛夈€傛鎺ㄥ寮忓彲鐩存帴宓屽叆涓氬姟閫昏緫锛屾彁鍗囧搷搴旈€熷害銆?/p><p><h2>涓夈€佽繘闃舵妧宸э細宓屽寰幆涓庡鏉′欢澶勭悊</h2></p><p>褰撴暟鎹粨鏋勫鏉傛椂锛屽垪琛ㄦ帹瀵煎紡鏀寔宓屽寰幆鍜屽绾ф潯浠跺垽鏂€備緥濡傦紝澶勭悊浜岀淮鏁版嵁鏃讹紝閫氳繃涓ゅ眰寰幆瀹炵幇绛涢€夛紝閬垮厤澶氬眰<code>for</code>寰幆鐨勫啑浣欍€傚叧閿湪浜庝繚鎸侀€昏緫娓呮櫚锛岄伩鍏嶈繃搴﹀祵濂椼€?/p><p><pre><code class="language-python"># 2D鏁版嵁绀轰緥锛氳鍗曞垪琛紙璁㈠崟ID銆侀噾棰濄€佺姸鎬侊級
 orders = [
     {"id": 1, "amount": 80, "status": "paid"},
     {"id": 2, "amount": 120, "status": "pending"},
     {"id": 3, "amount": 50, "status": "paid"}
-]</p><p><h1>传统方式：多层循环筛选</h1>
+]</p><p><h1>浼犵粺鏂瑰紡锛氬灞傚惊鐜瓫閫?/h1>
 filtered_orders = []
 for order in orders:
     if order["status"] == "paid" and order["amount"] &gt; 100:
-        filtered_orders.append(order["amount"] * 0.9)</p><p><h1>列表推导式：一行代码</h1>
-filtered_orders = [order["amount"] * 0.9 for order in orders if order["status"] == "paid" and order["amount"] &gt; 100]</code></pre></p><p><strong>应用场景</strong>：金融风控系统中，实时分析用户交易记录。当需要从数万条交易数据中快速提取高风险订单（金额>100元且状态已支付）时，此推导式可将处理时间从毫秒级降至微秒级，显著提升系统吞吐量。</p><p><h2>四、实战：从文件读取到数据清洗的全链路</h2></p><p>列表推导式在真实项目中价值最高。以处理CSV文件为例：读取文件、过滤无效行、转换数据类型，全部可在一行推导式中完成。这避免</p>
+        filtered_orders.append(order["amount"] * 0.9)</p><p><h1>鍒楄〃鎺ㄥ寮忥細涓€琛屼唬鐮?/h1>
+filtered_orders = [order["amount"] * 0.9 for order in orders if order["status"] == "paid" and order["amount"] &gt; 100]</code></pre></p><p><strong>搴旂敤鍦烘櫙</strong>锛氶噾铻嶉鎺х郴缁熶腑锛屽疄鏃跺垎鏋愮敤鎴蜂氦鏄撹褰曘€傚綋闇€瑕佷粠鏁颁竾鏉′氦鏄撴暟鎹腑蹇€熸彁鍙栭珮椋庨櫓璁㈠崟锛堥噾棰?100鍏冧笖鐘舵€佸凡鏀粯锛夋椂锛屾鎺ㄥ寮忓彲灏嗗鐞嗘椂闂翠粠姣绾ч檷鑷冲井绉掔骇锛屾樉钁楁彁鍗囩郴缁熷悶鍚愰噺銆?/p><p><h2>鍥涖€佸疄鎴橈細浠庢枃浠惰鍙栧埌鏁版嵁娓呮礂鐨勫叏閾捐矾</h2></p><p>鍒楄〃鎺ㄥ寮忓湪鐪熷疄椤圭洰涓环鍊兼渶楂樸€備互澶勭悊CSV鏂囦欢涓轰緥锛氳鍙栨枃浠躲€佽繃婊ゆ棤鏁堣銆佽浆鎹㈡暟鎹被鍨嬶紝鍏ㄩ儴鍙湪涓€琛屾帹瀵煎紡涓畬鎴愩€傝繖閬垮厤</p>
       </div>
     </article>
   </main>
 
   <footer class="footer">
     <div class="container">
-      <p>AI 编程实验室 &copy; 2026 | 用 ❤️ 和 AI 生成</p>
+      <p>AI 缂栫▼瀹為獙瀹?&copy; 2026 | 鐢?鉂わ笍 鍜?AI 鐢熸垚</p>
     </div>
   </footer>
+  <button id="back-to-top" aria-label="回到顶部">↑</button>
+  <script src="../assets/app.js"></script>
 </body>
 </html>

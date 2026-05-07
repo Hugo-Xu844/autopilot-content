@@ -3,77 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>本地部署大模型指南：Ollama + OpenWebUI - AI 编程实验室</title>
-  <meta name="description" content="本地部署大模型指南：Ollama + OpenWebUI - 详细教程与实战指南">
+  <title>鏈湴閮ㄧ讲澶фā鍨嬫寚鍗楋細Ollama + OpenWebUI - AI 缂栫▼瀹為獙瀹?/title>
+  <meta name="description" content="鏈湴閮ㄧ讲澶фā鍨嬫寚鍗楋細Ollama + OpenWebUI - 璇︾粏鏁欑▼涓庡疄鎴樻寚鍗?>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
+
 <body>
+  <div id="reading-progress"></div>
   <header class="header">
     <div class="container">
-      <a href="../" class="logo">AI 编程实验室</a>
+      <a href="../" class="logo">AI 缂栫▼瀹為獙瀹?/a>
       <nav>
-        <a href="../">首页</a>
-        <a href="../products.html">教程产品</a>
+        <a href="../">棣栭〉</a>
+        <a href="../products.html">鏁欑▼浜у搧</a>
       </nav>
+        <button id="theme-toggle" class="theme-toggle" aria-label="切换深色/浅色模式">🌙</button>
+      </div>
     </div>
   </header>
 
   <main class="container">
     <article class="post-full">
       <header class="post-header">
-        <h1>本地部署大模型指南：Ollama + OpenWebUI</h1>
+        <h1>鏈湴閮ㄧ讲澶фā鍨嬫寚鍗楋細Ollama + OpenWebUI</h1>
         <div class="post-meta">
-          <span class="date">📅 2026-05-06</span>
-          <span class="category">📂 AI工具评测</span>
-          <div class="tags"><span class="tag">AI工具评测</span></div>
+          <span class="date">馃搮 2026-05-06</span>
+          <span class="category">馃搨 AI宸ュ叿璇勬祴</span>
+          <div class="tags"><span class="tag">AI宸ュ叿璇勬祴</span></div>
         </div>
       </header>
       <div class="post-content">
-        <p><h1>本地部署大模型指南：Ollama + OpenWebUI</h1></p><p>还在为调用GPT API的延迟和费用头疼？又担心数据隐私？本文将带你用Ollama和OpenWebUI，在本地部署一套堪比ChatGPT的AI对话系统——完全免费、离线可用、数据100%私有。</p><p><h2>一、Ollama：一键运行本地大模型</h2></p><p>Ollama是最流行的本地模型运行工具，支持Llama、Mistral、Qwen等主流模型。它的核心优势是“开箱即用”——无需配置GPU驱动、Python环境，一条命令就能跑起大模型。</p><p><h3>安装Ollama</h3></p><p><strong>macOS/Linux：</strong>
-<pre><code class="language-bash">curl -fsSL https://ollama.com/install.sh | sh</code></pre></p><p><strong>Windows：</strong> 从官网下载安装包，双击安装。</p><p>验证安装：
-<pre><code class="language-bash">ollama --version</code></pre></p><p><h3>下载并运行模型</h3></p><p>以阿里Qwen2.5（7B参数，中文优秀）为例：
-<pre><code class="language-bash"># 下载模型（首次运行自动下载）
-ollama run qwen2.5:7b</p><p><h1>或使用轻量版（适合8GB内存）</h1>
-ollama run qwen2.5:3b</code></pre></p><p>稍等片刻，终端就会出现对话界面。输入问题即可获得回答——完全离线，响应速度取决于你的显卡。</p><p><strong>常用模型推荐：</strong>
-<ul><li><code>llama3.2:3b</code> — 英文通用，轻量级</li>
-<li><code>qwen2.5:7b</code> — 中文最强，推荐首选</li>
-<li><code>mistral:7b</code> — 平衡性能与资源</li>
+        <p><h1>鏈湴閮ㄧ讲澶фā鍨嬫寚鍗楋細Ollama + OpenWebUI</h1></p><p>杩樺湪涓鸿皟鐢℅PT API鐨勫欢杩熷拰璐圭敤澶寸柤锛熷張鎷呭績鏁版嵁闅愮锛熸湰鏂囧皢甯︿綘鐢∣llama鍜孫penWebUI锛屽湪鏈湴閮ㄧ讲涓€濂楀牚姣擟hatGPT鐨凙I瀵硅瘽绯荤粺鈥斺€斿畬鍏ㄥ厤璐广€佺绾垮彲鐢ㄣ€佹暟鎹?00%绉佹湁銆?/p><p><h2>涓€銆丱llama锛氫竴閿繍琛屾湰鍦板ぇ妯″瀷</h2></p><p>Ollama鏄渶娴佽鐨勬湰鍦版ā鍨嬭繍琛屽伐鍏凤紝鏀寔Llama銆丮istral銆丵wen绛変富娴佹ā鍨嬨€傚畠鐨勬牳蹇冧紭鍔挎槸鈥滃紑绠卞嵆鐢ㄢ€濃€斺€旀棤闇€閰嶇疆GPU椹卞姩銆丳ython鐜锛屼竴鏉″懡浠ゅ氨鑳借窇璧峰ぇ妯″瀷銆?/p><p><h3>瀹夎Ollama</h3></p><p><strong>macOS/Linux锛?/strong>
+<pre><code class="language-bash">curl -fsSL https://ollama.com/install.sh | sh</code></pre></p><p><strong>Windows锛?/strong> 浠庡畼缃戜笅杞藉畨瑁呭寘锛屽弻鍑诲畨瑁呫€?/p><p>楠岃瘉瀹夎锛?<pre><code class="language-bash">ollama --version</code></pre></p><p><h3>涓嬭浇骞惰繍琛屾ā鍨?/h3></p><p>浠ラ樋閲孮wen2.5锛?B鍙傛暟锛屼腑鏂囦紭绉€锛変负渚嬶細
+<pre><code class="language-bash"># 涓嬭浇妯″瀷锛堥娆¤繍琛岃嚜鍔ㄤ笅杞斤級
+ollama run qwen2.5:7b</p><p><h1>鎴栦娇鐢ㄨ交閲忕増锛堥€傚悎8GB鍐呭瓨锛?/h1>
+ollama run qwen2.5:3b</code></pre></p><p>绋嶇瓑鐗囧埢锛岀粓绔氨浼氬嚭鐜板璇濈晫闈€傝緭鍏ラ棶棰樺嵆鍙幏寰楀洖绛斺€斺€斿畬鍏ㄧ绾匡紝鍝嶅簲閫熷害鍙栧喅浜庝綘鐨勬樉鍗°€?/p><p><strong>甯哥敤妯″瀷鎺ㄨ崘锛?/strong>
+<ul><li><code>llama3.2:3b</code> 鈥?鑻辨枃閫氱敤锛岃交閲忕骇</li>
+<li><code>qwen2.5:7b</code> 鈥?涓枃鏈€寮猴紝鎺ㄨ崘棣栭€?/li>
+<li><code>mistral:7b</code> 鈥?骞宠　鎬ц兘涓庤祫婧?/li>
 </ul>
-<h2>二、OpenWebUI：打造类ChatGPT界面</h2></p><p>Ollama自带的终端交互体验较差。OpenWebUI提供了一个美观的Web界面，支持对话管理、Markdown渲染、文件上传等功能。</p><p><h3>一键部署</h3></p><p>确保已安装Docker，然后：
+<h2>浜屻€丱penWebUI锛氭墦閫犵被ChatGPT鐣岄潰</h2></p><p>Ollama鑷甫鐨勭粓绔氦浜掍綋楠岃緝宸€侽penWebUI鎻愪緵浜嗕竴涓編瑙傜殑Web鐣岄潰锛屾敮鎸佸璇濈鐞嗐€丮arkdown娓叉煋銆佹枃浠朵笂浼犵瓑鍔熻兘銆?/p><p><h3>涓€閿儴缃?/h3></p><p>纭繚宸插畨瑁匘ocker锛岀劧鍚庯細
 <pre><code class="language-bash">docker run -d -p 3000:8080 \
   -v open-webui:/app/backend/data \
   --name open-webui \
   --restart always \
-  ghcr.io/open-webui/open-webui:main</code></pre></p><p>打开浏览器访问 <code>http://localhost:3000</code>，注册一个本地账号即可进入。</p><p><h3>连接Ollama</h3></p><p>进入OpenWebUI后，需要配置模型后端：
-<li>点击右上角头像 → <strong>设置</strong> → <strong>管理员设置</strong></li>
-<li>在 <strong>连接</strong> 中填入Ollama地址：<code>http://host.docker.internal:11434</code>（Windows/Mac）或 <code>http://localhost:11434</code>（Linux）</li>
-<li>保存后，刷新页面即可在模型列表中看到已下载的模型</li></p><p><strong>小技巧：</strong> 如果连接失败，检查Ollama是否允许外部访问：
-<pre><code class="language-bash"># 设置环境变量
+  ghcr.io/open-webui/open-webui:main</code></pre></p><p>鎵撳紑娴忚鍣ㄨ闂?<code>http://localhost:3000</code>锛屾敞鍐屼竴涓湰鍦拌处鍙峰嵆鍙繘鍏ャ€?/p><p><h3>杩炴帴Ollama</h3></p><p>杩涘叆OpenWebUI鍚庯紝闇€瑕侀厤缃ā鍨嬪悗绔細
+<li>鐐瑰嚮鍙充笂瑙掑ご鍍?鈫?<strong>璁剧疆</strong> 鈫?<strong>绠＄悊鍛樿缃?/strong></li>
+<li>鍦?<strong>杩炴帴</strong> 涓～鍏llama鍦板潃锛?code>http://host.docker.internal:11434</code>锛圵indows/Mac锛夋垨 <code>http://localhost:11434</code>锛圠inux锛?/li>
+<li>淇濆瓨鍚庯紝鍒锋柊椤甸潰鍗冲彲鍦ㄦā鍨嬪垪琛ㄤ腑鐪嬪埌宸蹭笅杞界殑妯″瀷</li></p><p><strong>灏忔妧宸э細</strong> 濡傛灉杩炴帴澶辫触锛屾鏌llama鏄惁鍏佽澶栭儴璁块棶锛?<pre><code class="language-bash"># 璁剧疆鐜鍙橀噺
 export OLLAMA_HOST=0.0.0.0
-ollama serve</code></pre></p><p><h2>三、实际应用场景与优化</h2></p><p><h3>场景1：代码助手</h3></p><p>在OpenWebUI中选择qwen2.5模型，输入：
-<pre><code class="language-">用Python写一个爬虫，抓取Hacker News首页的标题和链接，要求使用requests和BeautifulSoup。</code></pre></p><p>模型会生成完整代码，并支持一键复制。对于代码调试、算法解释等场景，本地模型表现稳定。</p><p><h3>场景2：本地知识库</h3></p><p>OpenWebUI支持上传PDF、Word、TXT文件。上传技术文档后，模型能基于文档内容回答问题。</p><p><strong>性能调优建议：</strong></p><p>| 内存大小 | 推荐模型 | 启动参数 |
+ollama serve</code></pre></p><p><h2>涓夈€佸疄闄呭簲鐢ㄥ満鏅笌浼樺寲</h2></p><p><h3>鍦烘櫙1锛氫唬鐮佸姪鎵?/h3></p><p>鍦∣penWebUI涓€夋嫨qwen2.5妯″瀷锛岃緭鍏ワ細
+<pre><code class="language-">鐢≒ython鍐欎竴涓埇铏紝鎶撳彇Hacker News棣栭〉鐨勬爣棰樺拰閾炬帴锛岃姹備娇鐢╮equests鍜孊eautifulSoup銆?/code></pre></p><p>妯″瀷浼氱敓鎴愬畬鏁翠唬鐮侊紝骞舵敮鎸佷竴閿鍒躲€傚浜庝唬鐮佽皟璇曘€佺畻娉曡В閲婄瓑鍦烘櫙锛屾湰鍦版ā鍨嬭〃鐜扮ǔ瀹氥€?/p><p><h3>鍦烘櫙2锛氭湰鍦扮煡璇嗗簱</h3></p><p>OpenWebUI鏀寔涓婁紶PDF銆乄ord銆乀XT鏂囦欢銆備笂浼犳妧鏈枃妗ｅ悗锛屾ā鍨嬭兘鍩轰簬鏂囨。鍐呭鍥炵瓟闂銆?/p><p><strong>鎬ц兘璋冧紭寤鸿锛?/strong></p><p>| 鍐呭瓨澶у皬 | 鎺ㄨ崘妯″瀷 | 鍚姩鍙傛暟 |
 |---------|---------|---------|
-| 8GB | qwen2.5:3b | 默认 |
+| 8GB | qwen2.5:3b | 榛樿 |
 | 16GB | qwen2.5:7b | <code>OLLAMA_NUM_PARALLEL=1</code> |
-| 32GB+ | llama3.1:8b | <code>OLLAMA_KEEP_ALIVE=24h</code> |</p><p><strong>加速技巧：</strong> 在启动Ollama前设置环境变量：
-<pre><code class="language-bash"># 使用GPU加速（NVIDIA）
-export OLLAMA_CUDA=1</p><p><h1>设置模型缓存时间</h1>
-export OLLAMA_KEEP_ALIVE=5m</code></pre></p><p><h2>四、常见问题排查</h2></p><p><strong>Q：模型回答速度很慢？</strong>
-A：检查是否使用CPU推理。建议NVIDIA显卡用户安装CUDA驱动，AMD用户可通过ROCm加速。</p><p><strong>Q：OpenWebUI无法连接Ollama？</strong>
-A：确保Ollama在运行，并检查防火墙是否放行11434端口。Docker用户注意网络模式。</p><p><strong>Q：显存不足怎么办？</strong>
-A：使用量化版本模型（如<code>qwen2.5:7b-q4_0</code>），或在Ollama启动时限制GPU层数：
-<pre><code class="language-bash">ollama run qwen2.5:7b --num-gpu-layers 20</code></pre></p><p><h2>总结</h2></p><p>通过Ollama + OpenWebUI，你可以在本地快速搭建一个功能完整的AI对话系统。���个过程只需三步：
-<li>安装Ollama并下载模型</li>
-<li>用Docker部署OpenWebUI</li>
-<li>配置连接，开始使用</li></p><p>这套方案适合对数据隐私有要求的团队、需要离线办公的场景，或是希望深度定制AI助手的开发者。虽然模型能力不及GPT-4，但对于日常编程辅助、文档分析、内容生成等任务，本地模型已经足够胜任。现在就去试试吧！</p>
+| 32GB+ | llama3.1:8b | <code>OLLAMA_KEEP_ALIVE=24h</code> |</p><p><strong>鍔犻€熸妧宸э細</strong> 鍦ㄥ惎鍔∣llama鍓嶈缃幆澧冨彉閲忥細
+<pre><code class="language-bash"># 浣跨敤GPU鍔犻€燂紙NVIDIA锛?export OLLAMA_CUDA=1</p><p><h1>璁剧疆妯″瀷缂撳瓨鏃堕棿</h1>
+export OLLAMA_KEEP_ALIVE=5m</code></pre></p><p><h2>鍥涖€佸父瑙侀棶棰樻帓鏌?/h2></p><p><strong>Q锛氭ā鍨嬪洖绛旈€熷害寰堟參锛?/strong>
+A锛氭鏌ユ槸鍚︿娇鐢–PU鎺ㄧ悊銆傚缓璁甆VIDIA鏄惧崱鐢ㄦ埛瀹夎CUDA椹卞姩锛孉MD鐢ㄦ埛鍙€氳繃ROCm鍔犻€熴€?/p><p><strong>Q锛歄penWebUI鏃犳硶杩炴帴Ollama锛?/strong>
+A锛氱‘淇漁llama鍦ㄨ繍琛岋紝骞舵鏌ラ槻鐏鏄惁鏀捐11434绔彛銆侱ocker鐢ㄦ埛娉ㄦ剰缃戠粶妯″紡銆?/p><p><strong>Q锛氭樉瀛樹笉瓒虫€庝箞鍔烇紵</strong>
+A锛氫娇鐢ㄩ噺鍖栫増鏈ā鍨嬶紙濡?code>qwen2.5:7b-q4_0</code>锛夛紝鎴栧湪Ollama鍚姩鏃堕檺鍒禛PU灞傛暟锛?<pre><code class="language-bash">ollama run qwen2.5:7b --num-gpu-layers 20</code></pre></p><p><h2>鎬荤粨</h2></p><p>閫氳繃Ollama + OpenWebUI锛屼綘鍙互鍦ㄦ湰鍦板揩閫熸惌寤轰竴涓姛鑳藉畬鏁寸殑AI瀵硅瘽绯荤粺銆傦拷锟斤拷涓繃绋嬪彧闇€涓夋锛?<li>瀹夎Ollama骞朵笅杞芥ā鍨?/li>
+<li>鐢―ocker閮ㄧ讲OpenWebUI</li>
+<li>閰嶇疆杩炴帴锛屽紑濮嬩娇鐢?/li></p><p>杩欏鏂规閫傚悎瀵规暟鎹殣绉佹湁瑕佹眰鐨勫洟闃熴€侀渶瑕佺绾垮姙鍏殑鍦烘櫙锛屾垨鏄笇鏈涙繁搴﹀畾鍒禔I鍔╂墜鐨勫紑鍙戣€呫€傝櫧鐒舵ā鍨嬭兘鍔涗笉鍙奊PT-4锛屼絾瀵逛簬鏃ュ父缂栫▼杈呭姪銆佹枃妗ｅ垎鏋愩€佸唴瀹圭敓鎴愮瓑浠诲姟锛屾湰鍦版ā鍨嬪凡缁忚冻澶熻儨浠汇€傜幇鍦ㄥ氨鍘昏瘯璇曞惂锛?/p>
       </div>
     </article>
   </main>
 
   <footer class="footer">
     <div class="container">
-      <p>AI 编程实验室 &copy; 2026 | 用 ❤️ 和 AI 生成</p>
+      <p>AI 缂栫▼瀹為獙瀹?&copy; 2026 | 鐢?鉂わ笍 鍜?AI 鐢熸垚</p>
     </div>
   </footer>
+  <button id="back-to-top" aria-label="回到顶部">↑</button>
+  <script src="../assets/app.js"></script>
 </body>
 </html>

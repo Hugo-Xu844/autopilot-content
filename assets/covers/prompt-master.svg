@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1536" width="1024" height="1536">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1c0a1a"/>
+      <stop offset="50%" stop-color="#2d1b2e"/>
+      <stop offset="100%" stop-color="#1a0f2e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  <rect width="1024" height="1536" fill="url(#bg)"/>
+  <circle cx="512" cy="300" r="380" fill="#fbbf24" opacity="0.08"/>
+  <g opacity="0.12" fill="none" stroke="#f59e0b" stroke-width="1.5">
+    <path d="M140,250 C140,220 170,200 200,200 L350,200 C380,200 410,220 410,250 L410,320 C410,350 380,370 350,370 L250,370 L200,420 L210,370 L200,370 C170,370 140,350 140,320 Z"/>
+    <path d="M700,280 C700,250 730,230 760,230 L910,230 C940,230 970,250 970,280 L970,350 C970,380 940,400 910,400 L810,400 L760,450 L770,400 L760,400 C730,400 700,380 700,350 Z"/>
+  </g>
+  <g transform="translate(512, 580)">
+    <rect x="-80" y="-112" width="160" height="56" rx="28" fill="#f59e0b" opacity="0.15"/>
+    <text x="0" y="-78" text-anchor="middle" fill="#f59e0b" font-family="Arial,sans-serif" font-size="22" font-weight="bold">Prompt</text>
+    <text x="0" y="10" text-anchor="middle" fill="#ffffff" font-family="PingFang SC,Microsoft YaHei,sans-serif" font-size="66" font-weight="900" filter="url(#shadow)">Prompt 工程大师课</text>
+    <text x="0" y="80" text-anchor="middle" fill="#94a3b8" font-family="PingFang SC,Microsoft YaHei,sans-serif" font-size="28">系统掌握 AI 提示词设计</text>
+  </g>
+  <line x1="312" y1="700" x2="712" y2="700" stroke="url(#accent)" stroke-width="2" opacity="0.6"/>
+  <g transform="translate(512, 780)" font-family="PingFang SC,Microsoft YaHei,sans-serif" font-size="22" fill="#cbd5e1" text-anchor="middle">
+    <text x="0" y="0">- Prompt 设计模式 让 AI 输出更精准</text>
+    <text x="0" y="45">- 系统提示词设计 定制 AI 助手行为</text>
+    <text x="0" y="90">- 10+ 实用 Prompt 模板与技巧</text>
+  </g>
+  <g transform="translate(512, 1380)" font-family="PingFang SC,Microsoft YaHei,sans-serif" text-anchor="middle">
+    <rect x="-100" y="-18" width="200" height="36" rx="18" fill="url(#accent)" opacity="0.9"/>
+    <text x="0" y="6" fill="#ffffff" font-size="20" font-weight="bold">2 篇核心指南</text>
+  </g>
+  <rect x="40" y="40" width="80" height="3" rx="1.5" fill="#f59e0b" opacity="0.5"/>
+  <rect x="40" y="40" width="3" height="80" rx="1.5" fill="#f59e0b" opacity="0.5"/>
+  <rect x="904" y="40" width="80" height="3" rx="1.5" fill="#f59e0b" opacity="0.5"/>
+  <rect x="981" y="40" width="3" height="80" rx="1.5" fill="#f59e0b" opacity="0.5"/>
+  <rect x="40" y="1456" width="80" height="3" rx="1.5" fill="#f59e0b" opacity="0.5"/>
+  <rect x="40" y="1413" width="3" height="80" rx="1.5" fill="#f59e0b" opacity="0.5"/>
+</svg>
