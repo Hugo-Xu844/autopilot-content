@@ -103,13 +103,135 @@
           <li>面试前想巩固 Python 高阶知识点的同学</li>
           <li>想写出更高效 Python 代码的工程师</li>
         </ul>
-        <button onclick="document.getElementById('payModal').classList.add('active')" class="product-btn" style="margin-top:32px;padding:14px 32px;font-size:1.05rem;border:none;cursor:pointer">立即购买 ¥19.9</button>
+        <button onclick="startOrder('python-basics')" class="product-btn" style="margin-top:32px;padding:14px 32px;font-size:1.05rem;border:none;cursor:pointer">立即购买 ¥19.9</button>
       </div>
     </div>
   </main>
+  <!-- Payment Modal -->
+  <div id="payModal" class="modal-overlay">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <h2>Python 编程入门到精通</h2>
+      <div class="price-tag">¥19.9</div>
+      
+      <div id="payStepQR" class="pay-step">
+        <p class="pay-hint">请用微信扫描下方二维码付款</p>
+        <div id="payQRCode">
+          <div class="spinner"></div>
+          <p style="margin-top:8px;color:var(--text-light)">正在生成收款码...</p>
+        </div>
+        <div id="payStatus" class="pay-status waiting">⏳ 等待扫码支付...</div>
+      </div>
+
+      <div id="payStepDone" class="download-section">
+        <div class="pay-status success">✅ 支付成功！</div>
+        <p style="color:var(--text-secondary);margin:12px 0;font-size:0.92rem">点击下方按钮下载你的电子书</p>
+        <a id="downloadLink" href="#" class="download-btn" download>📥 下载 PDF</a>
+        <p style="color:var(--text-light);font-size:0.78rem;margin-top:8px">下载链接 24 小时内有效</p>
+      </div>
+
+      <div id="payStepError" class="download-section">
+        <div class="pay-status" style="background:#fee2e2;color:#991b1b">❌ 订单创建失败</div>
+        <p style="color:var(--text-secondary);margin:12px 0;font-size:0.92rem">请稍后重试，或联系 Wain021106</p>
+      </div>
+    </div>
+  </div>
+
   <footer class="footer"><div class="container"><p>AI 编程实验室 &copy; 2026 | 用 ❤️ 和 AI 生成</p></div></footer>
   <button id="back-to-top" aria-label="回到顶部">↑</button>
-  <script src="../assets/app.js"></script>
+  <script>// === 配置 ===
+    // 部署云函数后改成实际地址
+    const API_BASE = 'https://你的云函数地址';
+
+    let pollTimer = null;
+    let currentOrderId = null;
+
+    // === 下单流程 ===
+    async function startOrder(productId) {
+      document.getElementById('payStepQR').style.display = 'block';
+      document.getElementById('payStepDone').classList.remove('active');
+      document.getElementById('payStepError').classList.remove('active');
+      document.getElementById('payModal').classList.add('active');
+      document.getElementById('payQRCode').innerHTML = '<div class="spinner"></div><p style="margin-top:8px;color:var(--text-light)">正在生成收款码...</p>';
+      document.getElementById('payStatus').className = 'pay-status waiting';
+      document.getElementById('payStatus').textContent = '⏳ 正在创建订单...';
+
+      try {
+        const res = await fetch(API_BASE + '/api/create-order', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ productId })
+        });
+        const data = await res.json();
+
+        if (data.qrcode) {
+          currentOrderId = data.orderId;
+          document.getElementById('payQRCode').innerHTML = '<img src="' + data.qrcode + '" alt="收款码">';
+          document.getElementById('payStatus').textContent = '⏳ 等待扫码支付...';
+          startPolling(data.orderId);
+        } else {
+          throw new Error(data.error || '创建订单失败');
+        }
+      } catch (err) {
+        document.getElementById('payStepQR').style.display = 'none';
+        document.getElementById('payStepError').classList.add('active');
+      }
+    }
+
+    // === 轮询支付状态 ===
+    function startPolling(orderId) {
+      if (pollTimer) clearInterval(pollTimer);
+
+      pollTimer = setInterval(async () => {
+        try {
+          const res = await fetch(API_BASE + '/api/check-order', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ orderId })
+          });
+          const data = await res.json();
+
+          if (data.paid) {
+            clearInterval(pollTimer);
+            pollTimer = null;
+            
+            document.getElementById('payStepQR').style.display = 'none';
+            document.getElementById('payStepDone').classList.add('active');
+            document.getElementById('downloadLink').href = data.downloadUrl;
+            
+            // 自动开始下载
+            setTimeout(() => {
+              window.open(data.downloadUrl, '_blank');
+            }, 500);
+          }
+        } catch (e) {
+          // 轮询失败，继续尝试
+        }
+      }, 2000); // 每 2 秒查一次
+
+      // 5 分钟后超时
+      setTimeout(() => {
+        if (pollTimer) {
+          clearInterval(pollTimer);
+          pollTimer = null;
+          document.getElementById('payStatus').textContent = '⏰ 二维码已过期，请重新下单';
+        }
+      }, 300000);
+    }
+
+    function closeModal() {
+      if (pollTimer) {
+        clearInterval(pollTimer);
+        pollTimer = null;
+      }
+      document.getElementById('payModal').classList.remove('active');
+    }
+
+    document.getElementById('payModal').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+  </script>
+  </script><script src="../assets/app.js"></script>
 
   <!-- Payment Modal -->
   <div id="payModal" class="modal-overlay">
