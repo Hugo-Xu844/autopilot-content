@@ -145,32 +145,67 @@ function getAllPosts() {
 function mdToHtml(md) {
   let html = md;
   
+  // Code blocks (preserve first)
   html = html.replace(/```(\w*)\n([\s\S]*?)```/g, (_, lang, code) => {
     const escaped = code.trim()
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;');
-    return `<pre><code class="language-${lang}">${escaped}</code></pre>`;
+    return `__CODEBLOCK_START__<pre><code class="language-${lang}">${escaped}</code></pre>__CODEBLOCK_END__`;
   });
   
+  // Inline code
   html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
-  html = html.replace(/^### (.+)$/gm, '<h3>$1</h3>');
-  html = html.replace(/^## (.+)$/gm, '<h2>$1</h2>');
-  html = html.replace(/^# (.+)$/gm, '<h1>$1</h1>');
+  
+  // Emphasis
+  html = html.replace(/\*\*(.+?)\b\*\*/g, '<strong>$1</strong>');
+  html = html.replace(/\b\*(.+?)\*\b/g, '<em>$1</em>');
   html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
   html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
-  html = html.replace(/^- (.+)$/gm, '<li>$1</li>');
   
-  // Wrap consecutive <li> in <ul>
+  // Links
+  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>');
+  
+  // Headings (at start of line, after removing list markers)
+  html = html.replace(/^# (.+)$/gm, '<h1>$1</h1>');
+  html = html.replace(/^## (.+)$/gm, '<h2>$1</h2>');
+  html = html.replace(/^### (.+)$/gm, '<h3>$1</h3>');
+  
+  // Unordered list items
+  html = html.replace(/^- (.+)$/gm, '<li>$1</li>');
   html = html.replace(/((?:<li>.*<\/li>\n?)+)/g, '<ul>$1</ul>');
   
+  // Ordered list items
   html = html.replace(/^\d+\. (.+)$/gm, '<li>$1</li>');
   
-  html = html.replace(/\n\n/g, '</p><p>');
-  html = '<p>' + html + '</p>';
+  // Split by blank lines and wrap paragraphs
+  // But skip blocks that already contain block-level elements
+  const blocks = html.split(/\n\n+/);
+  html = blocks.map(block => {
+    const trimmed = block.trim();
+    if (!trimmed) return '';
+    // Skip blocks that start with a block-level element
+    if (/^<(h[1-6]|ul|ol|li|pre|table|blockquote|div)/.test(trimmed)) {
+      return trimmed;
+    }
+    // Skip code blocks
+    if (trimmed.startsWith('__CODEBLOCK_START__') || trimmed.includes('__CODEBLOCK_END__')) {
+      return trimmed;
+    }
+    // Wrap in paragraph
+    // But not if it looks like it contains block elements already
+    if (/<\/(h[1-6]|ul|ol|pre|table|blockquote)>/.test(trimmed)) {
+      return trimmed;
+    }
+    return '<p>' + trimmed.replace(/\n/g, '<br>') + '</p>';
+  }).join('\n\n');
+  
+  // Restore code block markers
+  html = html.replace(/__CODEBLOCK_START__/g, '').replace(/__CODEBLOCK_END__/g, '');
+  
+  // Clean up empty paragraphs
   html = html.replace(/<p>\s*<\/p>/g, '');
   html = html.replace(/<p><\/p>/g, '');
-  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>');
   
   return html;
 }

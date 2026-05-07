@@ -34,41 +34,99 @@
         </div>
       </header>
       <div class="post-content">
-        <p><h1>一文搞懂：监督学习、无监督学习、强化学习</h1></p><p>机器学习三大流派常让初学者困惑：它们到底有什么区别？各自适合什么场景？本文用代码和实战案例，帮你彻底理清这三个核心概念。</p><p><h2>1. 监督学习：有老师带，学打分</h2></p><p><strong>核心逻辑</strong>：给模型“标准答案”（标签），让它学会从输入到输出的映射。</p><p>想象一个阅卷老师：你给TA一堆试卷（输入）和对应的分数（标签），TA学会后，新来的试卷就能自动打分。</p><p><h3>实战：用Scikit-learn预测房价</h3></p><p><pre><code class="language-python">from sklearn.linear_model import LinearRegression
+        <h1>一文搞懂：监督学习、无监督学习、强化学习</h1>
+
+<p>机器学习三大流派常让初学者困惑：它们到底有什么区别？各自适合什么场景？本文用代码和实战案例，帮你彻底理清这三个核心概念。</p>
+
+<h2>1. 监督学习：有老师带，学打分</h2>
+
+<p><strong>核心逻辑</strong>：给模型“标准答案”（标签），让它学会从输入到输出的映射。</p>
+
+<p>想象一个阅卷老师：你给TA一堆试卷（输入）和对应的分数（标签），TA学会后，新来的试卷就能自动打分。</p>
+
+<h3>实战：用Scikit-learn预测房价</h3>
+
+<pre><code class="language-python">from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
-import numpy as np</p><p><h1>模拟数据：房屋面积（平方米）和价格（万元）</h1>
+import numpy as np
+
+<h1>模拟数据：房屋面积（平方米）和价格（万元）</h1>
 X = np.array([[50], [80], [100], [120], [150]])
-y = np.array([150, 240, 300, 360, 450])</p><p><h1>分割训练集和测试集</h1>
+y = np.array([150, 240, 300, 360, 450])
+
+<h1>分割训练集和测试集</h1>
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42
-)</p><p><h1>训练模型</h1>
+)
+
+<h1>训练模型</h1>
 model = LinearRegression()
-model.fit(X_train, y_train)</p><p><h1>预测新房子价格</h1>
+model.fit(X_train, y_train)
+
+<h1>预测新房子价格</h1>
 new_house = np.array([[95]])
 predicted_price = model.predict(new_house)
-print(f"95平米房子���测价格：{predicted_price[0]:.1f}万元")</code></pre></p><p><strong>典型应用</strong>：垃圾邮件分类（标签：是/否）、图像识别（标签：猫/狗）、股票涨跌预测。</p><p><h2>2. 无监督学习：自学成才，找规律</h2></p><p><strong>核心逻辑</strong>：只有输入数据，没有标签。模型自己发现数据中的隐藏结构。</p><p>就像给你一堆形状各异的积木，没人告诉你分类标准，但你会自然地把相似的放在一起。</p><p><h3>实战：用K-Means做客户分群</h3></p><p><pre><code class="language-python">from sklearn.cluster import KMeans
-import numpy as np</p><p><h1>模拟用户数据：每周购物次数、平均消费金额（元）</h1>
+print(f"95平米房子���测价格：{predicted_price[0]:.1f}万元")</code></pre>
+
+<p><strong>典型应用</strong>：垃圾邮件分类（标签：是/否）、图像识别（标签：猫/狗）、股票涨跌预测。</p>
+
+<h2>2. 无监督学习：自学成才，找规律</h2>
+
+<p><strong>核心逻辑</strong>：只有输入数据，没有标签。模型自己发现数据中的隐藏结构。</p>
+
+<p>就像给你一堆形状各异的积木，没人告诉你分类标准，但你会自然地把相似的放在一起。</p>
+
+<h3>实战：用K-Means做客户分群</h3>
+
+<pre><code class="language-python">from sklearn.cluster import KMeans
+import numpy as np
+
+<h1>模拟用户数据：每周购物次数、平均消费金额（元）</h1>
 user_data = np.array([
     [3, 200], [1, 50], [5, 500], 
     [2, 100], [4, 400], [1, 30],
     [6, 600], [2, 80], [3, 300]
-])</p><p><h1>分成3个客户群体</h1>
+])
+
+<h1>分成3个客户群体</h1>
 kmeans = KMeans(n_clusters=3, random_state=42)
-kmeans.fit(user_data)</p><p><h1>查看每个用户的所属群体</h1>
+kmeans.fit(user_data)
+
+<h1>查看每个用户的所属群体</h1>
 for i, label in enumerate(kmeans.labels_):
-    print(f"用户{i+1}：群体{label}")</p><p><h1>获取群体中心点</h1>
+    print(f"用户{i+1}：群体{label}")
+
+<h1>获取群体中心点</h1>
 centers = kmeans.cluster_centers_
-print(f"\n群体中心点：\n{centers}")</code></pre></p><p><strong>典型应用</strong>：用户画像分群、异常检测（找出离群点）、新闻主题聚类。</p><p><h2>3. 强化学习：试错中进化</h2></p><p><strong>核心逻辑</strong>：智能体（Agent）在环境（Environment）中行动，通过奖励（Reward）信号学习最优策略。</p><p>就像训练一只小狗���做对动作给零食（正奖励），做错就无视（负奖励），慢慢它就学会坐下、趴下。</p><p><h3>实战：用Q-Learning走迷宫</h3></p><p><pre><code class="language-python">import numpy as np</p><p><h1>简单迷宫：0-终点，1-障碍，2-起点</h1>
+print(f"\n群体中心点：\n{centers}")</code></pre>
+
+<p><strong>典型应用</strong>：用户画像分群、异常检测（找出离群点）、新闻主题聚类。</p>
+
+<h2>3. 强化学习：试错中进化</h2>
+
+<p><strong>核心逻辑</strong>：智能体（Agent）在环境（Environment）中行动，通过奖励（Reward）信号学习最优策略。</p>
+
+<p>就像训练一只小狗���做对动作给零食（正奖励），做错就无视（负奖励），慢慢它就学会坐下、趴下。</p>
+
+<h3>实战：用Q-Learning走迷宫</h3>
+
+<pre><code class="language-python">import numpy as np
+
+<h1>简单迷宫：0-终点，1-障碍，2-起点</h1>
 maze = np.array([
     [2, 0, 0, 0],
     [1, 1, 0, 1],
     [0, 0, 0, 0],
     [0, 1, 1, 0]
-])</p><p><h1>Q表：状态(位置) x 动作(上右下左)</h1>
+])
+
+<h1>Q表：状态(位置) x 动作(上右下左)</h1>
 Q = np.zeros((16, 4))
 learning_rate = 0.8
 discount = 0.95
-episodes = 1000</p><p><h1>训练</h1>
+episodes = 1000
+
+<h1>训练</h1>
 for _ in range(episodes):
     state = 0  # 起点位置
     while state != 3:  # 未到达终点
@@ -85,20 +143,31 @@ for _ in range(episodes):
         # 更新Q值
         Q[state, action] = (1 - learning_rate) * Q[state, action] + \
                           learning_rate <em> (reward + discount </em> np.max(Q[next_state]))
-        state = next_state</p><p>print("训练完成！Q表已收敛")</code></pre></p><p><strong>典型应用</strong>：游戏AI（AlphaGo）、机器人控制、自动驾驶决策。</p><p><h2>4. 三者的核心区别对比</h2></p><p>| 维度 | 监督学习 | 无监督学习 | 强化学习 |
-|------|---------|-----------|---------|
-| 数据需求 | 需要标签 | 无需标签 | 需要环境反馈 |
-| 目标 | 预测/分类 | 发现结构 | 最大化累积奖励 |
-| 反馈方式 | 即时（标签） | 无反馈 | 延迟（奖励） |
-| 典型算法 | 决策树、SVM、神经网络 | K-Means、PCA、DBSCAN | Q-Learning、DQN、PPO |</p><p><h2>5. 如何选择适合的方法？</h2></p><p><ul><li><strong>有大量标注数据？</strong> → 监督学习（分类或回归）</li>
+        state = next_state
+
+print("训练完成！Q表已收敛")</code></pre>
+
+<p><strong>典型应用</strong>：游戏AI（AlphaGo）、机器人控制、自动驾驶决策。</p>
+
+<h2>4. 三者的核心区别对比</h2>
+
+<p>| 维度 | 监督学习 | 无监督学习 | 强化学习 |<br>|------|---------|-----------|---------|<br>| 数据需求 | 需要标签 | 无需标签 | 需要环境反馈 |<br>| 目标 | 预测/分类 | 发现结构 | 最大化累积奖励 |<br>| 反馈方式 | 即时（标签） | 无反馈 | 延迟（奖励） |<br>| 典型算法 | 决策树、SVM、神经网络 | K-Means、PCA、DBSCAN | Q-Learning、DQN、PPO |</p>
+
+<h2>5. 如何选择适合的方法？</h2>
+
+<ul><li><strong>有大量标注数据？</strong> → 监督学习（分类或回归）</li>
 <li><strong>数据无标签，想探索规律？</strong> → 无监督学习（聚类或降维）</li>
 <li><strong>需要做序列决策，有环境交互？</strong> → 强化学习（游戏、机器人）</li>
 </ul>
-<strong>混合使用更强大</strong>：比如先用无监督学习做客户分群，再对每个群体用监督学习做流失预测。</p><p><h2>总结</h2></p><p><ul><li><strong>监督学习</strong>：有标准答案，适合预测和分类</li>
+<strong>混合使用更强大</strong>：比如先用无监督学习做客户分群，再对每个群体用监督学习做流失预测。
+
+<h2>总结</h2>
+
+<ul><li><strong>监督学习</strong>：有标准答案，适合预测和分类</li>
 <li><strong>无监督学习</strong>：无答案，适合探索数据内在结构</li>
 <li><strong>强化学习</strong>：通过试错学习，适合决策和控制任务</li>
 </ul>
-掌握这三类方法，你就拥有了解决绝大多数机器学习问题的工具箱。实际项目中，往往是多种方法组合使用，关键是根据业务场景选择最合适的工具。</p>
+掌握这三类方法，你就拥有了解决绝大多数机器学习问题的工具箱。实际项目中，往往是多种方法组合使用，关键是根据业务场景选择最合适的工具。
       </div>
       
   <div class="related-posts">

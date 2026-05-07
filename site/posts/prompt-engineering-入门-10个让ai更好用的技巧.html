@@ -34,17 +34,34 @@
         </div>
       </header>
       <div class="post-content">
-        <p><h1>Prompt Engineering 入门：10个让AI更好用的技巧</h1></p><p>你费尽心思写了一个prompt，AI却答非所问？这不是AI笨，而是你没有掌握正确的提问方式。Prompt Engineering（提示工程）就是教你如何用精准的语言，让AI输出你想要的结果。本文分享10个经过实战验证的技巧，帮你从"AI对话小白"变成"提示词高手"。</p><p><h2>一、基础结构：让AI听懂你的指令</h2></p><p><h3>1. 明确角色 + 任务 + 输出格式</h3>
-最基础的prompt结构包含三个要素：你是谁、要做什么、结果长什么样。</p><p><strong>错误示例：</strong>
-<pre><code class="language-">帮我写一段代码。</code></pre></p><p><strong>正确示例：</strong>
-<pre><code class="language-markdown">你是一位资深Python开发者。请编写一个函数，读取CSV文件并统计每列的平均值。输出格式为：函数定义 + 注释说明 + 使用示例。</code></pre></p><p><strong>技巧2：使用分隔符明确边界</strong>
-当prompt包含多段内容时，用分隔符让AI清晰区分指令和材料。</p><p><pre><code class="language-">请分析以下销售数据（用</code></pre>括起来的部分），生成一份周报摘要：
+        <h1>Prompt Engineering 入门：10个让AI更好用的技巧</h1>
+
+<p>你费尽心思写了一个prompt，AI却答非所问？这不是AI笨，而是你没有掌握正确的提问方式。Prompt Engineering（提示工程）就是教你如何用精准的语言，让AI输出你想要的结果。本文分享10个经过实战验证的技巧，帮你从"AI对话小白"变成"提示词高手"。</p>
+
+<h2>一、基础结构：让AI听懂你的指令</h2>
+
+<h3>1. 明确角色 + 任务 + 输出格式</h3>
+最基础的prompt结构包含三个要素：你是谁、要做什么、结果长什么样。
+
+<strong>错误示例：</strong>
+<pre><code class="language-">帮我写一段代码。</code></pre>
+
+<strong>正确示例：</strong>
+<pre><code class="language-markdown">你是一位资深Python开发者。请编写一个函数，读取CSV文件并统计每列的平均值。输出格式为：函数定义 + 注释说明 + 使用示例。</code></pre>
+
+<p><strong>技巧2：使用分隔符明确边界</strong><br>当prompt包含多段内容时，用分隔符让AI清晰区分指令和材料。</p>
+
+<pre><code class="language-">请分析以下销售数据（用</code></pre>括起来的部分），生成一份周报摘要：
 <pre><code class="language-">日期,销售额,新客户数
 2024-01-01,50000,12
 2024-01-02,62000,15</code></pre>
 要求：用三句话总结趋势，突出增长点和风险点。
-<pre><code class="language-">## 二、进阶技巧：控制AI的思考过程</p><p><h3>3. 分步指令（Chain-of-Thought）</h3>
-复杂任务让AI"先思考再回答"，能显著提升准确性。</p><p><strong>不好的prompt：</strong></code></pre>
+<pre><code class="language-">## 二、进阶技巧：控制AI的思考过程
+
+<h3>3. 分步指令（Chain-of-Thought）</h3>
+复杂任务让AI"先思考再回答"，能显著提升准确性。
+
+<strong>不好的prompt：</strong></code></pre>
 计算 15 * 8 + 32 / 4 的结果。
 <pre><code class="language-"><strong>好的prompt：</strong></code></pre>
 逐步计算以下表达式，每一步都写出中间结果：
@@ -55,11 +72,13 @@
 最终答案：128
 <pre><code class="language-">### 4. 少样本学习（Few-shot Learning）
 给AI提供2-3个示例，让它模仿你的模式。</code></pre>
-请将以下中文句子翻译成英文，并保留原句的情感色彩。</p><p>示例1：
-中文：这个产品太棒了，我超级喜欢！
-英文：This product is amazing, I absolutely love it!</p><p>示例2：
-中文：天气糟透了，让人心情低落。
-英文：The weather is terrible, it's bringing me down.</p><p>现在翻译：
+请将以下中文句子翻译成英文，并保留原句的情感色彩。
+
+<p>示例1：<br>中文：这个产品太棒了，我超级喜欢！<br>英文：This product is amazing, I absolutely love it!</p>
+
+<p>示例2：<br>中文：天气糟透了，让人心情低落。<br>英文：The weather is terrible, it's bringing me down.</p>
+
+现在翻译：
 中文：你做得不错，但还有提升空间。
 英文：
 <pre><code class="language-">### 5. 设定约束条件
@@ -70,19 +89,22 @@
 <li>必须包含代码示例</li>
 <li>难度为中级</li>
 <li>不涉及类装饰器</li>
-</ul><pre><code class="language-">## 三、实战场景：解决真实问题</p><p><h3>6. 代码调试助手</code></pre></h3>
+</ul><pre><code class="language-">## 三、实战场景：解决真实问题
+
+<h3>6. 代码调试助手</code></pre></h3>
 你是一位经验丰富的后端工程师。以下代码在运行时报错：TypeError: 'int' object is not iterable
 请：
 <li>指出错误原因</li>
 <li>给出修复后的代码</li>
-<li>解释两种常见的触发场景</li></p><p>代码：
-def calculate_sum(numbers):
-    total = 0
-    for num in numbers:
-        total += num
-    return total</p><p>result = calculate_sum(5)
+<li>解释两种常见的触发场景</li>
+
+<p>代码：<br>def calculate_sum(numbers):<br>    total = 0<br>    for num in numbers:<br>        total += num<br>    return total</p>
+
+result = calculate_sum(5)
 <pre><code class="language-">### 7. 文档生成器</code></pre>
-请根据以下API接口定义，生成完整的API文档（Markdown格式）：</p><p>接口：POST /api/users
+请根据以下API接口定义，生成完整的API文档（Markdown格式）：
+
+接口：POST /api/users
 参数：
 <ul><li>name (string, 必填): 用户名</li>
 <li>email (string, 必填): 邮箱</li>
@@ -94,24 +116,28 @@ def calculate_sum(numbers):
 <li>包含错误码说明</li>
 <li>语言风格：简洁专业</li>
 </ul><pre><code class="language-">### 8. 代码审查员</code></pre>
-请审查以下Python代码，按优先级列出3个改进点：</p><p>def get_data(id):
-    db = connect()
-    data = db.query("SELECT * FROM users WHERE id="+id)
-    return data</p><p>改进点格式：[严重程度] 问题描述 -> 建议修改
+请审查以下Python代码，按优先级列出3个改进点：
+
+<p>def get_data(id):<br>    db = connect()<br>    data = db.query("SELECT * FROM users WHERE id="+id)<br>    return data</p>
+
+改进点格式：[严重程度] 问题描述 -> 建议修改
 <pre><code class="language-">### 9. 测试用例生成器</code></pre>
-为以下函数生成单元测试用例（pytest风格），覆盖正常输入、边界值和异常情况：</p><p>def divide(a, b):
+为以下函数生成单元测试用例（pytest风格），覆盖正常输入、边界值和异常情况：
+
+def divide(a, b):
     if b == 0:
         raise ValueError("��数不能为0")
     return a / b
 <pre><code class="language-">### 10. 代码解释器</code></pre>
-用通俗易懂的语言解释以下代码的功能，假设读者懂基础编程但没接触过机器学习：</p><p>from sklearn.ensemble import RandomForestClassifier
-model = RandomForestClassifier(n_estimators=100)
-model.fit(X_train, y_train)
-predictions = model.predict(X_test)
-```</p><p><h2>总结</h2></p><p>Prompt Engineering的核心不是"魔法咒语"，而是<strong>清晰的沟通</strong>。记住三个原则：
-<li><strong>结构化</strong>：用角色、任务、格式三要素搭建框架</li>
-<li><strong>示例化</strong>：用少样本学习让AI理解你的意图</li>
-<li><strong>约束化</strong>：用限制条件控制输出质量</li></p><p>下次写prompt时，先问自己三个问题：AI知道它扮演什么角色吗？任务描述是否足够具体？输出格式是否明确？按照这个思路，你会发现AI突然变得"聪明"了。</p>
+用通俗易懂的语言解释以下代码的功能，假设读者懂基础编程但没接触过机器学习：
+
+<p>from sklearn.ensemble import RandomForestClassifier<br>model = RandomForestClassifier(n_estimators=100)<br>model.fit(X_train, y_train)<br>predictions = model.predict(X_test)<br>```</p>
+
+<h2>总结</h2>
+
+<p>Prompt Engineering的核心不是"魔法咒语"，而是<strong>清晰的沟通</strong>。记住三个原则：<br><li><strong>结构化</strong>：用角色、任务、格式三要素搭建框架</li><br><li><strong>示例化</strong>：用少样本学习让AI理解你的意图</li><br><li><strong>约束化</strong>：用限制条件控制输出质量</li></p>
+
+<p>下次写prompt时，先问自己三个问题：AI知道它扮演什么角色吗？任务描述是否足够具体？输出格式是否明确？按照这个思路，你会发现AI突然变得"聪明"了。</p>
       </div>
       
   <div class="related-posts">
