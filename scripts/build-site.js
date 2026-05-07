@@ -21,7 +21,15 @@ const HEAD_START = `<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>`;
 
-const HEAD_END = `  <link rel="stylesheet" href="assets/style.css">
+const CSS_PATH = 'assets/style.css';
+const CSS_PATH_POST = '../assets/style.css';
+
+const HEAD_END = `  <link rel="stylesheet" href="${CSS_PATH}">
+</head>
+<body>
+  <div id="reading-progress"></div>`;
+
+const HEAD_END_POST = `  <link rel="stylesheet" href="${CSS_PATH_POST}">
 </head>
 <body>
   <div id="reading-progress"></div>`;
@@ -242,7 +250,7 @@ function buildPostPage(post) {
 
   return `${HEAD_START}${title} - ${config.site.title}</title>
   <meta name="description" content="${description}">
-${HEAD_END}
+${HEAD_END_POST}
 ${HEADER_POST}
   <main class="container">
     <article class="post-full">
@@ -416,7 +424,7 @@ function buildCategoryListPage(category, posts) {
 
   return `${HEAD_START}${category} - ${config.site.title}</title>
   <meta name="description" content="${category} - 共 ${posts.length} 篇文章">
-${HEAD_END}
+${HEAD_END_POST}
 ${HEADER_POST.replace(/href="\.\.\/"/g, 'href=".."').replace(/\.\.\/categories/g, '../categories').replace(/\.\.\/products/g, '../products')}
   <main class="container">
     <h1 class="page-title">📂 ${category}</h1>
