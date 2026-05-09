@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>页面未找到 - AI 编程实验室</title>
+  <meta name="description" content="页面未找到，返回首页">
+  <meta property="og:title" content="404 - 页面未找到">
+  <meta property="og:description" content="页面未找到，返回首页">
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    .error-page {
+      text-align: center;
+      padding: 100px 24px 60px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .error-page .code {
+      font-size: 6rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+    .error-page h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .error-page p {
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    .error-actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .error-actions a {
+      padding: 12px 28px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .error-actions .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+    .error-actions .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+    .error-actions .btn-secondary {
+      border: 2px solid var(--border);
+      color: var(--text-secondary);
+    }
+    .error-actions .btn-secondary:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: var(--primary-light);
+    }
+    @media (max-width: 768px) {
+      .error-page { padding: 60px 16px 40px; }
+      .error-page .code { font-size: 4rem; }
+    }
+  </style>
+</head>
+<body>
+  <div id="reading-progress"></div>
+  <header class="header">
+    <div class="container">
+      <a href="." class="logo">AI 编程实验室</a>
+      <div class="header-actions">
+        <nav>
+          <a href=".">首页</a>
+          <a href="categories.html">分类</a>
+          <a href="products.html">教程产品</a>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" aria-label="切换深色/浅色模式">&#127769;</button>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+    <div class="error-page">
+      <div class="code">404</div>
+      <h1>页面走丢了 🧭</h1>
+      <p>可能是链接有误，或者页面已被移动。<br>试试从首页重新开始吧。</p>
+      <div class="error-actions">
+        <a href="." class="btn-primary">← 返回首页</a>
+        <a href="categories.html" class="btn-secondary">浏览分类</a>
+        <a href="products.html" class="btn-secondary">查看产品</a>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href=".">首页</a>
+        <a href="categories.html">分类</a>
+        <a href="products.html">教程产品</a>
+        <a href="about.html">关于</a>
+      </div>
+      <p>AI 编程实验室 &copy; 2026 | 用 &#10084;&#65039; 和 AI 生成</p>
+    </div>
+  </footer>
+  <button id="back-to-top" aria-label="回到顶部">&uarr;</button>
+  <script src="assets/app.js"></script>
+</body>
+</html>

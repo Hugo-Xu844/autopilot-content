@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>系统提示词设计：定制AI助手行为 - AI 编程实验室</title>
   <meta name="description" content="系统提示词设计：定制AI助手行为 - 详细教程与实战指南">
+  <meta property="og:title" content="系统提示词设计：定制AI助手行为 - AI 编程实验室">
+  <meta property="og:description" content="系统提示词设计：定制AI助手行为 - 详细教程与实战指南">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://Hugo-Xu844.github.io/autopilot-content/posts/系统提示词设计-定制ai助手行为.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="系统提示词设计：定制AI助手行为 - AI 编程实验室">
+  <meta name="twitter:description" content="系统提示词设计：定制AI助手行为 - 详细教程与实战指南">
+  <link rel="alternate" type="application/rss+xml" title="AI 编程实验室" href="https://Hugo-Xu844.github.io/autopilot-content/feed.xml">
+  <link rel="icon" href="https://Hugo-Xu844.github.io/autopilot-content/assets/favicon.ico" sizes="any">
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
@@ -17,12 +26,18 @@
           <a href="../">首页</a>
           <a href="../categories.html">分类</a>
           <a href="../products.html">教程产品</a>
+          <a href="../about.html">关于</a>
         </nav>
         <button id="theme-toggle" class="theme-toggle" aria-label="切换深色/浅色模式">&#127769;</button>
       </div>
     </div>
   </header>
   <main class="container">
+    <div class="breadcrumb">
+      <a href="../">首页</a><span class="sep">/</span>
+      <a href="../categories.html">分类</a><span class="sep">/</span>
+      <span>系统提示词设计：定制AI助手行为</span>
+    </div>
     <article class="post-full">
       <header class="post-header">
         <h1>系统提示词设计：定制AI助手行为</h1>
@@ -44,8 +59,7 @@
 
 <ul><li><strong>身份定义</strong>：你是谁？扮演什么角色？</li>
 <li><strong>行为规则</strong>：能做什么，不能做什么？</li>
-<li><strong>输出规范</strong>：回答的格式、长度、风格。</li>
-</ul>
+<li><strong>输出规范</strong>：回答的格式、长度、风格。</li></ul>
 <strong>示例：创建一个Python代码审查助手</strong>
 
 <pre><code class="language-markdown">你是一位资深Python代码审查专家，拥有10年企业级开发经验。
@@ -53,12 +67,10 @@
 <ul><li>仅回答与Python代码相关的问题</li>
 <li>发现潜在bug时，必须标注严重等级（Critical/Major/Minor）</li>
 <li>不提供完整的优化代码，只给出改进建议</li>
-<li>对于非技术问题，回复“请提供相关代码片段”</li>
-</ul>输出规范：
+<li>对于非技术问题，回复“请提供相关代码片段”</li></ul>输出规范：
 <ul><li>使用Markdown格式，按“问题→风险→建议”结构组织</li>
 <li>每个风险点用emoji标记（🐛 Bug | ⚡ 性能 | 🎨 风格）</li>
-<li>建议包含参考文献链接（Python官方文档或PEP）</code></pre></li>
-</ul>
+<li>建议包含参考文献链接（Python官方文档或PEP）</code></pre></li></ul>
 <strong>应用场景</strong>：团队使用AI进行代码审查，确保所有建议格式统一、重点突出。
 
 <h2>2. 行为约束：防止AI“跑偏”</h2>
@@ -73,8 +85,7 @@
 <li>所有表名、字段名必须来自用户提供的数据库schema</li>
 <li>如果用户请求删除数据，回复：“根据安全策略，我无法生成数据修改语句”</li>
 <li>生成的SQL必须包含LIMIT子句，防止全表扫描</li>
-<li>对复杂查询，附加执行计划分析说明</code></pre></li>
-</ul>
+<li>对复杂查询，附加执行计划分析说明</code></pre></li></ul>
 <strong>实际场景</strong>：给非技术人员提供一个安全的数据库查询接口，避免误操作。
 
 <h2>3. 角色扮演：让AI“入戏”</h2>
@@ -87,15 +98,12 @@
 性格特征：
 <ul><li>从不直接给出答案，总是通过提问引导学生思考</li>
 <li>语气温和但坚持原则，使用“让我们想想...”句式</li>
-<li>当学生给出错误答案时，用反例引导，而非直接否定</li>
-</ul>知识边界：
+<li>当学生给出错误答案时，用反例引导，而非直接否定</li></ul>知识边界：
 <ul><li>只回答大学本科微积���相关的问题</li>
 <li>对于超出范围的问题，回答：“这是一个有趣的问题，让我们先回到基础的极限概念”</li>
-<li>必须引用定理名称（如“根据夹逼定理...”）</li>
-</ul>输出格式：
+<li>必须引用定理名称（如“根据夹逼定理...”）</li></ul>输出格式：
 <ul><li>每个回答以一个问题结尾</li>
-<li>使用LaTeX格式展示数学公式</code></pre></li>
-</ul>
+<li>使用LaTeX格式展示数学公式</code></pre></li></ul>
 <strong>应用场景</strong>：在线教育平台为学生提供智能辅导，保持教学一致性。
 
 <h2>4. 动态内容注入：让提示词“活”起来</h2>
@@ -149,8 +157,7 @@ def build_system_prompt(user_info, product_catalog):
 <ul><li>每步只能问1个问题</li>
 <li>用户回答后自动推进到下一步</li>
 <li>如果用户提供的信息不完整，重复当前问题（最多3次）</li>
-<li>步骤完成后，输出诊断报告模板：</code></pre></li>
-</ul>  ## 诊断报告
+<li>步骤完成后，输出诊断报告模板：</code></pre></li></ul>  ## 诊断报告
   <strong>问题描述</strong>：[用户描述]
   <strong>已执行步骤</strong>：[步骤1-4]
   <strong>结论</strong>：[最终判断]
@@ -186,6 +193,13 @@ def build_system_prompt(user_info, product_catalog):
   </main>
   <footer class="footer">
     <div class="container">
+      <div class="footer-links">
+        <a href="../">首页</a>
+        <a href="../categories.html">分类</a>
+        <a href="../products.html">教程产品</a>
+        <a href="../about.html">关于</a>
+        <a href="../feed.xml" class="rss-link">📡 RSS</a>
+      </div>
       <p>AI 编程实验室 &copy; 2026 | 用 &#10084;&#65039; 和 AI 生成</p>
     </div>
   </footer>
