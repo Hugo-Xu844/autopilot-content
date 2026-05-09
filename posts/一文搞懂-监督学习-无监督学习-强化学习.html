@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>一文搞懂：监督学习、无监督学习、强化学习 - AI 编程实验室</title>
   <meta name="description" content="一文搞懂：监督学习、无监督学习、强化学习 - 详细教程与实战指南">
+  <meta property="og:title" content="一文搞懂：监督学习、无监督学习、强化学习 - AI 编程实验室">
+  <meta property="og:description" content="一文搞懂：监督学习、无监督学习、强化学习 - 详细教程与实战指南">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://Hugo-Xu844.github.io/autopilot-content/posts/一文搞懂-监督学习-无监督学习-强化学习.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="一文搞懂：监督学习、无监督学习、强化学习 - AI 编程实验室">
+  <meta name="twitter:description" content="一文搞懂：监督学习、无监督学习、强化学习 - 详细教程与实战指南">
+  <link rel="alternate" type="application/rss+xml" title="AI 编程实验室" href="https://Hugo-Xu844.github.io/autopilot-content/feed.xml">
+  <link rel="icon" href="https://Hugo-Xu844.github.io/autopilot-content/assets/favicon.ico" sizes="any">
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
@@ -17,12 +26,18 @@
           <a href="../">首页</a>
           <a href="../categories.html">分类</a>
           <a href="../products.html">教程产品</a>
+          <a href="../about.html">关于</a>
         </nav>
         <button id="theme-toggle" class="theme-toggle" aria-label="切换深色/浅色模式">&#127769;</button>
       </div>
     </div>
   </header>
   <main class="container">
+    <div class="breadcrumb">
+      <a href="../">首页</a><span class="sep">/</span>
+      <a href="../categories.html">分类</a><span class="sep">/</span>
+      <span>一文搞懂：监督学习、无监督学习、强化学习</span>
+    </div>
     <article class="post-full">
       <header class="post-header">
         <h1>一文搞懂：监督学习、无监督学习、强化学习</h1>
@@ -151,22 +166,29 @@ print("训练完成！Q表已收敛")</code></pre>
 
 <h2>4. 三者的核心区别对比</h2>
 
-<p>| 维度 | 监督学习 | 无监督学习 | 强化学习 |<br>|------|---------|-----------|---------|<br>| 数据需求 | 需要标签 | 无需标签 | 需要环境反馈 |<br>| 目标 | 预测/分类 | 发现结构 | 最大化累积奖励 |<br>| 反馈方式 | 即时（标签） | 无反馈 | 延迟（奖励） |<br>| 典型算法 | 决策树、SVM、神经网络 | K-Means、PCA、DBSCAN | Q-Learning、DQN、PPO |</p>
-
+<table>
+<thead>
+<tr><th>维度</th><th>监督学习</th><th>无监督学习</th><th>强化学习</th></tr>
+</thead>
+<tbody>
+<tr><td>数据需求</td><td>需要标签</td><td>无需标签</td><td>需要环境反馈</td></tr>
+<tr><td>目标</td><td>预测/分类</td><td>发现结构</td><td>最大化累积奖励</td></tr>
+<tr><td>反馈方式</td><td>即时（标签）</td><td>无反馈</td><td>延迟（奖励）</td></tr>
+<tr><td>典型算法</td><td>决策树、SVM、神经网络</td><td>K-Means、PCA、DBSCAN</td><td>Q-Learning、DQN、PPO</td></tr>
+</tbody>
+</table>
 <h2>5. 如何选择适合的方法？</h2>
 
 <ul><li><strong>有大量标注数据？</strong> → 监督学习（分类或回归）</li>
 <li><strong>数据无标签，想探索规律？</strong> → 无监督学习（聚类或降维）</li>
-<li><strong>需要做序列决策，有环境交互？</strong> → 强化学习（游戏、机器人）</li>
-</ul>
+<li><strong>需要做序列决策，有环境交互？</strong> → 强化学习（游戏、机器人）</li></ul>
 <strong>混合使用更强大</strong>：比如先用无监督学习做客户分群，再对每个群体用监督学习做流失预测。
 
 <h2>总结</h2>
 
 <ul><li><strong>监督学习</strong>：有标准答案，适合预测和分类</li>
 <li><strong>无监督学习</strong>：无答案，适合探索数据内在结构</li>
-<li><strong>强化学习</strong>：通过试错学习，适合决策和控制任务</li>
-</ul>
+<li><strong>强化学习</strong>：通过试错学习，适合决策和控制任务</li></ul>
 掌握这三类方法，你就拥有了解决绝大多数机器学习问题的工具箱。实际项目中，往往是多种方法组合使用，关键是根据业务场景选择最合适的工具。
       </div>
       
@@ -189,6 +211,13 @@ print("训练完成！Q表已收敛")</code></pre>
   </main>
   <footer class="footer">
     <div class="container">
+      <div class="footer-links">
+        <a href="../">首页</a>
+        <a href="../categories.html">分类</a>
+        <a href="../products.html">教程产品</a>
+        <a href="../about.html">关于</a>
+        <a href="../feed.xml" class="rss-link">📡 RSS</a>
+      </div>
       <p>AI 编程实验室 &copy; 2026 | 用 &#10084;&#65039; 和 AI 生成</p>
     </div>
   </footer>

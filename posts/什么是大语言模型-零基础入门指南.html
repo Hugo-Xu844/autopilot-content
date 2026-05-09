@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>什么是大语言模型？零基础入门指南 - AI 编程实验室</title>
   <meta name="description" content="什么是大语言模型？零基础入门指南 - 详细教程与实战指南">
+  <meta property="og:title" content="什么是大语言模型？零基础入门指南 - AI 编程实验室">
+  <meta property="og:description" content="什么是大语言模型？零基础入门指南 - 详细教程与实战指南">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://Hugo-Xu844.github.io/autopilot-content/posts/什么是大语言模型-零基础入门指南.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="什么是大语言模型？零基础入门指南 - AI 编程实验室">
+  <meta name="twitter:description" content="什么是大语言模型？零基础入门指南 - 详细教程与实战指南">
+  <link rel="alternate" type="application/rss+xml" title="AI 编程实验室" href="https://Hugo-Xu844.github.io/autopilot-content/feed.xml">
+  <link rel="icon" href="https://Hugo-Xu844.github.io/autopilot-content/assets/favicon.ico" sizes="any">
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
@@ -17,12 +26,18 @@
           <a href="../">首页</a>
           <a href="../categories.html">分类</a>
           <a href="../products.html">教程产品</a>
+          <a href="../about.html">关于</a>
         </nav>
         <button id="theme-toggle" class="theme-toggle" aria-label="切换深色/浅色模式">&#127769;</button>
       </div>
     </div>
   </header>
   <main class="container">
+    <div class="breadcrumb">
+      <a href="../">首页</a><span class="sep">/</span>
+      <a href="../categories.html">分类</a><span class="sep">/</span>
+      <span>什么是大语言模型？零基础入门指南</span>
+    </div>
     <article class="post-full">
       <header class="post-header">
         <h1>什么是大语言模型？零基础入门指南</h1>
@@ -42,8 +57,17 @@
 
 <p>传统语言模型的任务是预测下一个词。比如输入“今天天气真”，模型会预测“好”、“不错”等词。大语言模型在此基础上做了两件事：<strong>规模扩大</strong>（百亿级参数）和<strong>能力涌现</strong>（推理、翻译、编程等）。</p>
 
-<p><strong>核心区别：</strong><br>| 传统模型 | 大语言模型 |<br>|---------|-----------|<br>| 参数量百万级 | 参数量百亿级 |<br>| 单任务专用 | 多任务通用 |<br>| 需要微调 | 可零样本推理 |</p>
-
+<strong>核心区别：</strong>
+<table>
+<thead>
+<tr><th>传统模型</th><th>大语言模型</th></tr>
+</thead>
+<tbody>
+<tr><td>参数量百万级</td><td>参数量百亿级</td></tr>
+<tr><td>单任务专用</td><td>多任务通用</td></tr>
+<tr><td>需要微调</td><td>可零样本推理</td></tr>
+</tbody>
+</table>
 <h2>2. 用代码感受LLM的“思考”过程</h2>
 
 <p>虽然我们无法直接运行GPT-4，但可以用Hugging Face的<code>transformers</code>库体验小型LLM的工作方式。</p>
@@ -120,8 +144,17 @@ reversed_string = input_string[::-1]</code></pre>
 
 <h2>实战建议：如何选择LLM</h2>
 
-<p>| 场景 | 推荐模型 | 原因 |<br>|-----|---------|------|<br>| 代码生成 | GPT-4、Claude 3 | 代码质量高 |<br>| 本地部署 | Llama 3、Mistral | 开源可定制 |<br>| 中文任务 | Qwen、Yi | 中文理解强 |<br>| 成本敏感 | GPT-3.5、Claude Haiku | 性价比高 |</p>
-
+<table>
+<thead>
+<tr><th>场景</th><th>推荐模型</th><th>原因</th></tr>
+</thead>
+<tbody>
+<tr><td>代码生成</td><td>GPT-4、Claude 3</td><td>代码质量高</td></tr>
+<tr><td>本地部署</td><td>Llama 3、Mistral</td><td>开源可定制</td></tr>
+<tr><td>中文任务</td><td>Qwen、Yi</td><td>中文理解强</td></tr>
+<tr><td>成本敏感</td><td>GPT-3.5、Claude Haiku</td><td>性价比高</td></tr>
+</tbody>
+</table>
 <h2>总结</h2>
 
 <p>大语言模型本质上是<strong>基于海量文本训练的、能预测下一个词的巨型神经网络</strong>。它通过注意力机制理解上下文，通过自回归生成连贯文本。作为开发者，你不需要理解所有数学原理，但需要掌握：</p>
@@ -152,6 +185,13 @@ reversed_string = input_string[::-1]</code></pre>
   </main>
   <footer class="footer">
     <div class="container">
+      <div class="footer-links">
+        <a href="../">首页</a>
+        <a href="../categories.html">分类</a>
+        <a href="../products.html">教程产品</a>
+        <a href="../about.html">关于</a>
+        <a href="../feed.xml" class="rss-link">📡 RSS</a>
+      </div>
       <p>AI 编程实验室 &copy; 2026 | 用 &#10084;&#65039; 和 AI 生成</p>
     </div>
   </footer>

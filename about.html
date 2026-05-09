@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于 - AI 编程实验室</title>
+  <meta name="description" content="AI 编程实验室 — 用 AI 赋能编程学习，每日更新技术教程、编程实战与工具评测。">
+  <meta property="og:title" content="关于 - AI 编程实验室">
+  <meta property="og:description" content="用 AI 赋能编程学习，每日更新技术教程、编程实战与工具评测。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://Hugo-Xu844.github.io/autopilot-content/about.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="关于 - AI 编程实验室">
+  <meta name="twitter:description" content="用 AI 赋能编程学习，每日更新技术教程、编程实战与工具评测。">
+  <link rel="alternate" type="application/rss+xml" title="AI 编程实验室" href="https://Hugo-Xu844.github.io/autopilot-content/feed.xml">
+  <link rel="icon" href="https://Hugo-Xu844.github.io/autopilot-content/assets/favicon.ico" sizes="any">
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    .about-section { max-width: 780px; margin: 40px auto; }
+    .about-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 48px; margin-bottom: 24px; transition: background 0.3s, border-color 0.3s; }
+    .about-card h2 { font-size: 1.4rem; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+    .about-card p { color: var(--text-secondary); line-height: 1.8; margin-bottom: 14px; font-size: 0.95rem; }
+    .about-card ul { color: var(--text-secondary); margin-left: 20px; margin-bottom: 14px; line-height: 1.8; }
+    .about-card li { margin-bottom: 6px; }
+    .about-card li::marker { color: var(--primary); }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; margin: 24px 0; }
+    .stat-item { text-align: center; padding: 24px 16px; background: var(--primary-light); border-radius: var(--radius-sm); border: 1px solid var(--border); }
+    .stat-item .number { font-size: 2rem; font-weight: 800; color: var(--primary); display: block; }
+    .stat-item .label { font-size: 0.85rem; color: var(--text-secondary); margin-top: 4px; }
+    .stack-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .stack-list span { display: inline-block; padding: 6px 14px; background: var(--primary-light); color: var(--primary); border-radius: 8px; font-size: 0.85rem; font-weight: 500; }
+    @media (max-width: 768px) { .about-card { padding: 28px 20px; } .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+  </style>
+</head>
+<body>
+  <div id="reading-progress"></div>
+  <header class="header">
+    <div class="container">
+      <a href="." class="logo">AI 编程实验室</a>
+      <div class="header-actions">
+        <nav>
+          <a href=".">首页</a>
+          <a href="categories.html">分类</a>
+          <a href="products.html">教程产品</a>
+          <a href="about.html" class="active">关于</a>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" aria-label="切换深色/浅色模式">&#127769;</button>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+    <div class="about-section">
+      <h1 class="page-title">✨ 关于 AI 编程实验室</h1>
+      <p class="page-subtitle">用 AI 赋能编程学习，让技术知识触手可及。</p>
+      <div class="stats-grid">
+        <div class="stat-item"><span class="number">15</span><span class="label">已发布文章</span></div>
+        <div class="stat-item"><span class="number">6</span><span class="label">专题分类</span></div>
+        <div class="stat-item"><span class="number">5</span><span class="label">教程产品</span></div>
+        <div class="stat-item"><span class="number">100%</span><span class="label">AI 驱动</span></div>
+      </div>
+      <div class="about-card">
+        <h2>🎯 这个网站是做什么的？</h2>
+        <p><strong>AI 编程实验室</strong> 是一个由 AI 驱动的技术博客，专注于为开发者提供高质量的编程教程、AI 工具评测和效率提升技巧。</p>
+        <p>我们的内容由大语言模型自动生成，覆盖从 AI 入门到编程实战的完整学习路径。每天更新，让你随时随地获取最新技术知识。</p>
+        <div class="stack-list"><span>🤖 AI 自动生成</span><span>🐍 Python</span><span>📦 Docker</span><span>⚡ 效率工具</span><span>🕹️ Prompt 工程</span></div>
+      </div>
+      <div class="about-card">
+        <h2>📚 内容分类</h2>
+        <p>目前开设 6 个专题栏目：</p>
+        <ul>
+          <li><strong>AI入门教程</strong> — 大语言模型、机器学习基础，零基础也能轻松上手</li>
+          <li><strong>Python编程</strong> — 从基础语法到高级特性，系统性提升 Python 技能</li>
+          <li><strong>AI工具评测</strong> — 实测对比市面上最热门的 AI 工具，帮你选出最适合的</li>
+          <li><strong>编程实战</strong> — 从零到一完成项目，在实践中掌握真技术</li>
+          <li><strong>Prompt工程</strong> — 掌握让 AI 输出更精准的提示词设计技巧</li>
+          <li><strong>效率工具</strong> — 发掘那些你不知道的宝藏工具和技巧</li>
+        </ul>
+      </div>
+      <div class="about-card">
+        <h2>🛠️ 技术栈</h2>
+        <p>这个网站完全由开源工具构建：</p>
+        <ul>
+          <li><strong>AI 生成</strong> — DeepSeek API / Ollama（Qwen 模型）</li>
+          <li><strong>静态站点</strong> — 纯静态 HTML + CSS + JavaScript</li>
+          <li><strong>样式</strong> — 现代极简设计，支持深色/浅色模式</li>
+          <li><strong>部署</strong> — GitHub Pages，完全免费托管</li>
+          <li><strong>产品</strong> — Markdown 转 PDF，可上架 Gumroad/爱发电</li>
+        </ul>
+      </div>
+      <div class="about-card">
+        <h2>🤝 联系与支持</h2>
+        <p>如果你有任何问题、建议或合作意向，欢迎联系：</p>
+        <p>📧 邮箱：<a href="mailto:wainxu0211@gmail.com">wainxu0211@gmail.com</a><br>🐙 GitHub：<a href="https://github.com/Hugo-Xu844" target="_blank" rel="noopener">Hugo-Xu844</a></p>
+        <p style="margin-top:16px;font-size:0.85rem;color:var(--text-light);">觉得内容有帮助？给 <a href="https://github.com/Hugo-Xu844/autopilot-content" target="_blank" rel="noopener">GitHub 仓库</a> 点个 ⭐</p>
+      </div>
+    </div>
+  </main>
+    <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="./">首页</a>
+        <a href="./categories.html">分类</a>
+        <a href="./products.html">教程产品</a>
+        <a href="./about.html">关于</a>
+        <a href="./feed.xml" class="rss-link">📡 RSS</a>
+      </div>
+      <p>AI 编程实验室 &copy; 2026 | 用 &#10084;&#65039; 和 AI 生成</p>
+    </div>
+  </footer>
+
+  <button id="back-to-top" aria-label="回到顶部">&uarr;</button>
+
+  <script src="./assets/app.js"></script>
+</body>
+</html>
+</body>
+</html>

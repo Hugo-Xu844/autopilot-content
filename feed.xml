@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI 编程实验室</title>
+    <link>https://Hugo-Xu844.github.io/autopilot-content/</link>
+    <description>AI 技术教程、编程实战、工具分享</description>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 09 May 2026 06:56:55 GMT</lastBuildDate>
+    <atom:link href="https://Hugo-Xu844.github.io/autopilot-content/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>终端美化指南：Windows Terminal + Oh My Posh</title>
+      <link>https://Hugo-Xu844.github.io/autopilot-content/posts/%E7%BB%88%E7%AB%AF%E7%BE%8E%E5%8C%96%E6%8C%87%E5%8D%97-windows-terminal-%2B-oh-my-posh.html</link>
+      <guid>https://Hugo-Xu844.github.io/autopilot-content/posts/%E7%BB%88%E7%AB%AF%E7%BE%8E%E5%8C%96%E6%8C%87%E5%8D%97-windows-terminal-%2B-oh-my-posh.html</guid>
+      <pubDate>Wed, 06 May 2026 00:00:00 GMT</pubDate>
+      <category>效率工具</category>
+      <description>终端美化指南：Windows Terminal + Oh My Posh 每天面对黑底白字的默认终端，你是否也感到审美疲劳？一个美观且信息丰富的终端不仅能提升编码心情，还能让 Git 状态、命令执行时间等关键信息一目了然。本文将带你一步步把 Windows 终端打造成既好看又实用的开发利器。 1. 安装 Windows...</description>
+    </item>
+    <item>
+      <title>系统提示词设计：定制AI助手行为</title>
+      <link>https://Hugo-Xu844.github.io/autopilot-content/posts/%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E8%AE%BE%E8%AE%A1-%E5%AE%9A%E5%88%B6ai%E5%8A%A9%E6%89%8B%E8%A1%8C%E4%B8%BA.html</link>
+      <guid>https://Hugo-Xu844.github.io/autopilot-content/posts/%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E8%AE%BE%E8%AE%A1-%E5%AE%9A%E5%88%B6ai%E5%8A%A9%E6%89%8B%E8%A1%8C%E4%B8%BA.html</guid>
+      <pubDate>Wed, 06 May 2026 00:00:00 GMT</pubDate>
+      <category>Prompt工程</category>
+      <description>系统提示词设计：定制AI助手行为 想让AI助手按你的规则行事，而不是天马行空？系统提示词就是你的“遥控器”。本文教你如何通过系统提示词，精准控制AI的角色、行为边界和输出格式。 1. 系统提示词的核心结构 系统提示词是放在用户消息之前的“隐性指令”，它定义了AI助手的全局行为。一个标准的系统提示词包含三个层次： - 身...</description>
+    </item>
+    <item>
+      <title>用Python写一个命令行工具：argparse实战</title>
+      <link>https://Hugo-Xu844.github.io/autopilot-content/posts/%E7%94%A8python%E5%86%99%E4%B8%80%E4%B8%AA%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7-argparse%E5%AE%9E%E6%88%98.html</link>
+      <guid>https://Hugo-Xu844.github.io/autopilot-content/posts/%E7%94%A8python%E5%86%99%E4%B8%80%E4%B8%AA%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7-argparse%E5%AE%9E%E6%88%98.html</guid>
+      <pubDate>Wed, 06 May 2026 00:00:00 GMT</pubDate>
+      <category>编程实战</category>
+      <description>用Python写一个命令行工具：argparse实战 你是否写过这样的脚本：每次运行都要手动修改代码里的文件路径、参数数值？或者想给同事提供一个易用的工具，却不知道怎么处理命令行参数？Python标准库中的argparse模块正是解决这些问题的利器。本文将通过三个实战场景，带你掌握argparse的核心用法。 基础入门...</description>
+    </item>
+    <item>
+      <title>本地部署大模型指南：Ollama + OpenWebUI</title>
+      <link>https://Hugo-Xu844.github.io/autopilot-content/posts/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%8C%87%E5%8D%97-ollama-%2B-openwebui.html</link>
+      <guid>https://Hugo-Xu844.github.io/autopilot-content/posts/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%8C%87%E5%8D%97-ollama-%2B-openwebui.html</guid>
+      <pubDate>Wed, 06 May 2026 00:00:00 GMT</pubDate>
+      <category>AI工具评测</category>
+      <description>本地部署大模型指南：Ollama + OpenWebUI 还在为调用GPT API的延迟和费用头疼？又担心数据隐私？本文将带你用Ollama和OpenWebUI，在本地部署一套堪比ChatGPT的AI对话系统——完全免费、离线可用、数据100%私有。 一、Ollama：一键运行本地大模型 Ollama是最流行的本地模型...</description>
+    </item>
+    <item>
+      <title>什么是大语言模型？零基础入门指南</title>
+      <link>https://Hugo-Xu844.github.io/autopilot-content/posts/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B-%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.html</link>
+      <guid>https://Hugo-Xu844.github.io/autopilot-content/posts/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B-%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.html</guid>
+      <pubDate>Wed, 06 May 2026 00:00:00 GMT</pubDate>
+      <category>AI入门教程</category>
+      <description>什么是大语言模型？零基础入门指南 大语言模型（LLM）正在改变我们与代码和文本交互的方式。本文将从开发者的视角，用代码和实例带你快速理解LLM的核心概念。 1. 从“语言模型”到“大语言模型” 传统语言模型的任务是预测下一个词。比如输入“今天天气真”，模型会预测“好”、“不错”等词。大语言模型在此基础上做了两件事：规模...</description>
+    </item>
+    <item>
+      <title>一文搞懂：监督学习、无监督学习、强化学习</title>
+      <link>https://Hugo-Xu844.github.io/autopilot-content/posts/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82-%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0-%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0-%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0.html</link>
+      <guid>https://Hugo-Xu844.github.io/autopilot-content/posts/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82-%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0-%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0-%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0.html</guid>
+      <pubDate>Wed, 06 May 2026 00:00:00 GMT</pubDate>
+      <category>AI入门教程</category>
+      <description>一文搞懂：监督学习、无监督学习、强化学习 机器学习三大流派常让初学者困惑：它们到底有什么区别？各自适合什么场景？本文用代码和实战案例，帮你彻底理清这三个核心概念。 1. 监督学习：有老师带，学打分 核心逻辑：给模型“标准答案”（标签），让它学会从输入到输出的映射。 想象一个阅卷老师：你给TA一堆试卷（输入）和对应的分数...</description>
+    </item>
+    <item>
+      <title>VS Code 20个必装插件，开发效率翻倍</title>
+      <link>https://Hugo-Xu844.github.io/autopilot-content/posts/vs-code-20%E4%B8%AA%E5%BF%85%E8%A3%85%E6%8F%92%E4%BB%B6-%E5%BC%80%E5%8F%91%E6%95%88%E7%8E%87%E7%BF%BB%E5%80%8D.html</link>
+      <guid>https://Hugo-Xu844.github.io/autopilot-content/posts/vs-code-20%E4%B8%AA%E5%BF%85%E8%A3%85%E6%8F%92%E4%BB%B6-%E5%BC%80%E5%8F%91%E6%95%88%E7%8E%87%E7%BF%BB%E5%80%8D.html</guid>
+      <pubDate>Wed, 06 May 2026 00:00:00 GMT</pubDate>
+      <category>效率工具</category>
+      <description>VS Code 20个必装插件，开发效率翻倍 写代码时频繁切换窗口、手动格式化代码、调试时反复加console.log？这些痛点是时候终结了。本文精选20款VS Code插件，覆盖编码、调试、协作和界面优化四大场景，帮你把开发效率拉满。 一、编码加速器：让写代码像开挂 1. Prettier - Code format...</description>
+    </item>
+    <item>
+      <title>Python装饰器从入门到进阶</title>
+      <link>https://Hugo-Xu844.github.io/autopilot-content/posts/python%E8%A3%85%E9%A5%B0%E5%99%A8%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6.html</link>
+      <guid>https://Hugo-Xu844.github.io/autopilot-content/posts/python%E8%A3%85%E9%A5%B0%E5%99%A8%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6.html</guid>
+      <pubDate>Wed, 06 May 2026 00:00:00 GMT</pubDate>
+      <category>Python编程</category>
+      <description>Python装饰器从入门到进阶 装饰器是Python中一个强大而优雅的特性，它允许你在不修改原函数代码的情况下，动态地给函数添加新的功能。本文将带你从基础语法到高级应用，彻底掌握装饰器的使用。 一、理解装饰器的核心概念 装饰器本质上是一个接收函数作为参数并返回新函数的高阶函数。让我们从最简单的例子开始： 输出： @my...</description>
+    </item>
+    <item>
+      <title>Python生成器与迭代器：高效处理大数据</title>
+      <link>https://Hugo-Xu844.github.io/autopilot-content/posts/python%E7%94%9F%E6%88%90%E5%99%A8%E4%B8%8E%E8%BF%AD%E4%BB%A3%E5%99%A8-%E9%AB%98%E6%95%88%E5%A4%84%E7%90%86%E5%A4%A7%E6%95%B0%E6%8D%AE.html</link>
+      <guid>https://Hugo-Xu844.github.io/autopilot-content/posts/python%E7%94%9F%E6%88%90%E5%99%A8%E4%B8%8E%E8%BF%AD%E4%BB%A3%E5%99%A8-%E9%AB%98%E6%95%88%E5%A4%84%E7%90%86%E5%A4%A7%E6%95%B0%E6%8D%AE.html</guid>
+      <pubDate>Wed, 06 May 2026 00:00:00 GMT</pubDate>
+      <category>Python编程</category>
+      <description>Python生成器与迭代器：高效处理大数据 当你的Python程序需要处理数百万行日志、超大CSV文件或无限数据流时，直接使用列表存储所有数据往往会耗尽内存，甚至导致程序崩溃。生成器与迭代器正是解决这类问题的利器——它们通过惰性计算方式，只在需要时生成数据，从而大幅降低内存占用。 一、迭代器：数据流的生产者 任何实现了...</description>
+    </item>
+    <item>
+      <title>Python异步编程：asyncio实战</title>
+      <link>https://Hugo-Xu844.github.io/autopilot-content/posts/python%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B-asyncio%E5%AE%9E%E6%88%98.html</link>
+      <guid>https://Hugo-Xu844.github.io/autopilot-content/posts/python%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B-asyncio%E5%AE%9E%E6%88%98.html</guid>
+      <pubDate>Wed, 06 May 2026 00:00:00 GMT</pubDate>
+      <category>Python编程</category>
+      <description>Python异步编程：asyncio实战 在开发网络爬虫、Web服务或需要处理大量I/O操作的应用时，你是否遇到过程序卡在等待响应上，导致整体性能低下？Python的asyncio库正是解决这类问题的利器。本文将带你从零掌握asyncio的核心用法，并通过实战案例提升代码执行效率。 1. 理解异步编程的核心：协程与事件...</description>
+    </item>
+    <item>
+      <title>Prompt设计模式：让AI输出更精准</title>
+      <link>https://Hugo-Xu844.github.io/autopilot-content/posts/prompt%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%A9ai%E8%BE%93%E5%87%BA%E6%9B%B4%E7%B2%BE%E5%87%86.html</link>
+      <guid>https://Hugo-Xu844.github.io/autopilot-content/posts/prompt%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%A9ai%E8%BE%93%E5%87%BA%E6%9B%B4%E7%B2%BE%E5%87%86.html</guid>
+      <pubDate>Wed, 06 May 2026 00:00:00 GMT</pubDate>
+      <category>Prompt工程</category>
+      <description>Prompt设计模式：让AI输出更精准 每次和AI对话，最让人抓狂的莫过于“答非所问”。其实，问题往往出在提示词（Prompt）的设计上。本文将分享几种实用的Prompt设计模式，帮助开发者用结构化、可复用的方式，让AI输出更符合预期。 1. 角色扮演模式：给AI一个身份 让AI扮演特定角色，能极大改善输出质量。角色提...</description>
+    </item>
+    <item>
+      <title>Prompt Engineering 入门：10个让AI更好用的技巧</title>
+      <link>https://Hugo-Xu844.github.io/autopilot-content/posts/prompt-engineering-%E5%85%A5%E9%97%A8-10%E4%B8%AA%E8%AE%A9ai%E6%9B%B4%E5%A5%BD%E7%94%A8%E7%9A%84%E6%8A%80%E5%B7%A7.html</link>
+      <guid>https://Hugo-Xu844.github.io/autopilot-content/posts/prompt-engineering-%E5%85%A5%E9%97%A8-10%E4%B8%AA%E8%AE%A9ai%E6%9B%B4%E5%A5%BD%E7%94%A8%E7%9A%84%E6%8A%80%E5%B7%A7.html</guid>
+      <pubDate>Wed, 06 May 2026 00:00:00 GMT</pubDate>
+      <category>AI入门教程</category>
+      <description>Prompt Engineering 入门：10个让AI更好用的技巧 你费尽心思写了一个prompt，AI却答非所问？这不是AI笨，而是你没有掌握正确的提问方式。Prompt Engineering（提示工程）就是教你如何用精准的语言，让AI输出你想要的结果。本文分享10个经过实战验证的技巧，帮你从&quot;AI对话小白&quot;变成...</description>
+    </item>
+    <item>
+      <title>Obsidian：打造你的第二大脑</title>
+      <link>https://Hugo-Xu844.github.io/autopilot-content/posts/obsidian-%E6%89%93%E9%80%A0%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%BA%8C%E5%A4%A7%E8%84%91.html</link>
+      <guid>https://Hugo-Xu844.github.io/autopilot-content/posts/obsidian-%E6%89%93%E9%80%A0%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%BA%8C%E5%A4%A7%E8%84%91.html</guid>
+      <pubDate>Wed, 06 May 2026 00:00:00 GMT</pubDate>
+      <category>效率工具</category>
+      <description>Obsidian：打造你的第二大脑 你是否经历过这样的场景：读了一堆技术文档，写了不少笔记，可真正需要时却怎么也想不起来关键信息？Obsidian 能帮你解决这个问题——它不只是一款笔记软件，更是一个构建个人知识体系的工具。本文将带你从零开始，用 Obsidian 搭建属于你的“第二大脑”。 双向链接：让知识不再孤立...</description>
+    </item>
+    <item>
+      <title>Docker入门：容器化你的第一个应用</title>
+      <link>https://Hugo-Xu844.github.io/autopilot-content/posts/docker%E5%85%A5%E9%97%A8-%E5%AE%B9%E5%99%A8%E5%8C%96%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%BA%94%E7%94%A8.html</link>
+      <guid>https://Hugo-Xu844.github.io/autopilot-content/posts/docker%E5%85%A5%E9%97%A8-%E5%AE%B9%E5%99%A8%E5%8C%96%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%BA%94%E7%94%A8.html</guid>
+      <pubDate>Wed, 06 May 2026 00:00:00 GMT</pubDate>
+      <category>编程实战</category>
+      <description>Docker入门：容器化你的第一个应用 当你新加入一个团队，或者换了一台开发机器，最头疼的事莫过于“在我电脑上明明能跑”——环境不一致、依赖缺失、系统版本差异……Docker 正是为了解决这个痛点而生。本文将通过一个简单的 Node.js Web 应用，带你从零开始体验容器化的完整流程。 1. 为什么需要 Docker...</description>
+    </item>
+    <item>
+      <title>Claude vs GPT-4：谁更适合写代码？</title>
+      <link>https://Hugo-Xu844.github.io/autopilot-content/posts/claude-vs-gpt-4-%E8%B0%81%E6%9B%B4%E9%80%82%E5%90%88%E5%86%99%E4%BB%A3%E7%A0%81.html</link>
+      <guid>https://Hugo-Xu844.github.io/autopilot-content/posts/claude-vs-gpt-4-%E8%B0%81%E6%9B%B4%E9%80%82%E5%90%88%E5%86%99%E4%BB%A3%E7%A0%81.html</guid>
+      <pubDate>Wed, 06 May 2026 00:00:00 GMT</pubDate>
+      <category>AI工具评测</category>
+      <description>Claude vs GPT-4：谁更适合写代码？ 在日常开发中，AI 编程助手已经成为不可或缺的工具。Claude 和 GPT-4 是目前最受关注的两大模型，但它们在代码生成、调试和架构设计上的表现到底谁更胜一筹？本文将通过实际代码示例和场景对比，帮你找到最适合自己的编程搭档。 一、代码生成能力：谁更“懂”需求？ 场景...</description>
+    </item>
+  </channel>
+</rss>

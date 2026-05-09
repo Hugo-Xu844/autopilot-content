@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Python生成器与迭代器：高效处理大数据 - AI 编程实验室</title>
   <meta name="description" content="Python生成器与迭代器：高效处理大数据 - 详细教程与实战指南">
+  <meta property="og:title" content="Python生成器与迭代器：高效处理大数据 - AI 编程实验室">
+  <meta property="og:description" content="Python生成器与迭代器：高效处理大数据 - 详细教程与实战指南">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://Hugo-Xu844.github.io/autopilot-content/posts/python生成器与迭代器-高效处理大数据.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Python生成器与迭代器：高效处理大数据 - AI 编程实验室">
+  <meta name="twitter:description" content="Python生成器与迭代器：高效处理大数据 - 详细教程与实战指南">
+  <link rel="alternate" type="application/rss+xml" title="AI 编程实验室" href="https://Hugo-Xu844.github.io/autopilot-content/feed.xml">
+  <link rel="icon" href="https://Hugo-Xu844.github.io/autopilot-content/assets/favicon.ico" sizes="any">
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
@@ -17,12 +26,18 @@
           <a href="../">首页</a>
           <a href="../categories.html">分类</a>
           <a href="../products.html">教程产品</a>
+          <a href="../about.html">关于</a>
         </nav>
         <button id="theme-toggle" class="theme-toggle" aria-label="切换深色/浅色模式">&#127769;</button>
       </div>
     </div>
   </header>
   <main class="container">
+    <div class="breadcrumb">
+      <a href="../">首页</a><span class="sep">/</span>
+      <a href="../categories.html">分类</a><span class="sep">/</span>
+      <span>Python生成器与迭代器：高效处理大数据</span>
+    </div>
     <article class="post-full">
       <header class="post-header">
         <h1>Python生成器与迭代器：高效处理大数据</h1>
@@ -174,9 +189,19 @@ print(list(combined))  # [1, 2, 3, 'a', 'b', 'c', 4, 5]</code></pre>
 
 <h2>五、性能对比与选择建议</h2>
 
-<p>| 场景 | 推荐方式 | 原因 |<br>|------|---------|------|<br>| 数据量 < 1000条 | 列表 | 简单直观，访问速度快 |<br>| 数据量 > 10000条 | 生成器/迭代器 | 内存占用低，避免OOM |<br>| 需要多次遍历 | 列表/重新创建生成器 | 生成器只能遍历一次 |<br>| 无限数据流 | 生成器 | 无法用列表表示无限序列 |</p>
-
-<p><strong>测试代码</strong>：比较列表和生成器的性能<br><pre><code class="language-python">import time</p>
+<table>
+<thead>
+<tr><th>场景</th><th>推荐方式</th><th>原因</th></tr>
+</thead>
+<tbody>
+<tr><td>数据量 < 1000条</td><td>列表</td><td>简单直观，访问速度快</td></tr>
+<tr><td>数据量 > 10000条</td><td>生成器/迭代器</td><td>内存占用低，避免OOM</td></tr>
+<tr><td>需要多次遍历</td><td>列表/重新创建生成器</td><td>生成器只能遍历一次</td></tr>
+<tr><td>无限数据流</td><td>生成器</td><td>无法用列表表示无限序列</td></tr>
+</tbody>
+</table>
+<strong>测试代码</strong>：比较列表和生成器的性能
+<pre><code class="language-python">import time
 
 <h1>列表方式</h1>
 start = time.time()
@@ -195,8 +220,7 @@ print(f"生成器耗时: {time.time() - start:.2f}s")
 <li><strong>生成器</strong>是用<code>yield</code>创建的迭代器，更简洁易用</li>
 <li>处理大文件、无限序列时，优先使用生成器</li>
 <li>生成器表达式是列表推导式的内存友好版本</li>
-<li>通过<code>yield from</code>可以轻松构建数据管道</li>
-</ul>
+<li>通过<code>yield from</code>可以轻松构建数据管道</li></ul>
 掌握生成器和迭代器，你的Python程序就能以极低的内存开销处理海量数据——这正是Python在数据处理领域广受欢迎的重要原因之一。
       </div>
       
@@ -219,6 +243,13 @@ print(f"生成器耗时: {time.time() - start:.2f}s")
   </main>
   <footer class="footer">
     <div class="container">
+      <div class="footer-links">
+        <a href="../">首页</a>
+        <a href="../categories.html">分类</a>
+        <a href="../products.html">教程产品</a>
+        <a href="../about.html">关于</a>
+        <a href="../feed.xml" class="rss-link">📡 RSS</a>
+      </div>
       <p>AI 编程实验室 &copy; 2026 | 用 &#10084;&#65039; 和 AI 生成</p>
     </div>
   </footer>

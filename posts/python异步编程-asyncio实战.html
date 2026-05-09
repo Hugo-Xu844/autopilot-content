@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Python异步编程：asyncio实战 - AI 编程实验室</title>
   <meta name="description" content="Python异步编程：asyncio实战 - 详细教程与实战指南">
+  <meta property="og:title" content="Python异步编程：asyncio实战 - AI 编程实验室">
+  <meta property="og:description" content="Python异步编程：asyncio实战 - 详细教程与实战指南">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://Hugo-Xu844.github.io/autopilot-content/posts/python异步编程-asyncio实战.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Python异步编程：asyncio实战 - AI 编程实验室">
+  <meta name="twitter:description" content="Python异步编程：asyncio实战 - 详细教程与实战指南">
+  <link rel="alternate" type="application/rss+xml" title="AI 编程实验室" href="https://Hugo-Xu844.github.io/autopilot-content/feed.xml">
+  <link rel="icon" href="https://Hugo-Xu844.github.io/autopilot-content/assets/favicon.ico" sizes="any">
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
@@ -17,12 +26,18 @@
           <a href="../">首页</a>
           <a href="../categories.html">分类</a>
           <a href="../products.html">教程产品</a>
+          <a href="../about.html">关于</a>
         </nav>
         <button id="theme-toggle" class="theme-toggle" aria-label="切换深色/浅色模式">&#127769;</button>
       </div>
     </div>
   </header>
   <main class="container">
+    <div class="breadcrumb">
+      <a href="../">首页</a><span class="sep">/</span>
+      <a href="../categories.html">分类</a><span class="sep">/</span>
+      <span>Python异步编程：asyncio实战</span>
+    </div>
     <article class="post-full">
       <header class="post-header">
         <h1>Python异步编程：asyncio实战</h1>
@@ -56,8 +71,7 @@ asyncio.run(main())</code></pre>
 <strong>关键点</strong>：
 <ul><li><code>async def</code> 定义协程函数</li>
 <li><code>await</code> 挂起当前协程，等待另一个协程完成</li>
-<li><code>asyncio.run()</code> 是Python 3.7+推荐的启动入口</li>
-</ul>
+<li><code>asyncio.run()</code> 是Python 3.7+推荐的启动入口</li></ul>
 运行上述代码，你会看到两个问候语几乎同时输出，而不是顺序执行——这就是异步的魅力。
 
 <h2>2. 实际场景：异步HTTP请求</h2>
@@ -164,6 +178,13 @@ asyncio.run(main())</code></pre>
   </main>
   <footer class="footer">
     <div class="container">
+      <div class="footer-links">
+        <a href="../">首页</a>
+        <a href="../categories.html">分类</a>
+        <a href="../products.html">教程产品</a>
+        <a href="../about.html">关于</a>
+        <a href="../feed.xml" class="rss-link">📡 RSS</a>
+      </div>
       <p>AI 编程实验室 &copy; 2026 | 用 &#10084;&#65039; 和 AI 生成</p>
     </div>
   </footer>
