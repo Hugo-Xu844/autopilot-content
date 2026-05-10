@@ -5,7 +5,7 @@
     <link>https://Hugo-Xu844.github.io/autopilot-content/</link>
     <description>AI 技术教程、编程实战、工具分享</description>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 09 May 2026 08:33:52 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 10 May 2026 00:48:44 GMT</lastBuildDate>
     <atom:link href="https://Hugo-Xu844.github.io/autopilot-content/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>终端美化指南：Windows Terminal + Oh My Posh</title>
@@ -64,6 +64,14 @@
       <description>VS Code 20个必装插件，开发效率翻倍 写代码时频繁切换窗口、手动格式化代码、调试时反复加console.log？这些痛点是时候终结了。本文精选20款VS Code插件，覆盖编码、调试、协作和界面优化四大场景，帮你把开发效率拉满。 一、编码加速器：让写代码像开挂 1. Prettier - Code format...</description>
     </item>
     <item>
+      <title>RAG是什么？检索增强生成技术入门</title>
+      <link>https://Hugo-Xu844.github.io/autopilot-content/posts/rag%E6%98%AF%E4%BB%80%E4%B9%88-%E6%A3%80%E7%B4%A2%E5%A2%9E%E5%BC%BA%E7%94%9F%E6%88%90%E6%8A%80%E6%9C%AF%E5%85%A5%E9%97%A8.html</link>
+      <guid>https://Hugo-Xu844.github.io/autopilot-content/posts/rag%E6%98%AF%E4%BB%80%E4%B9%88-%E6%A3%80%E7%B4%A2%E5%A2%9E%E5%BC%BA%E7%94%9F%E6%88%90%E6%8A%80%E6%9C%AF%E5%85%A5%E9%97%A8.html</guid>
+      <pubDate>Sun, 10 May 2026 00:00:00 GMT</pubDate>
+      <category>AI入门教程</category>
+      <description>RAG是什么？检索增强生成技术入门 大语言模型虽然强大，但它的知识截止于训练数据，无法回答最新的信息，也无法引用可靠来源。RAG（检索增强生成）正是为解决这个问题而生的技术——让模型在生成回答前，先从外部知识库中检索相关信息，从而给出更准确、可溯源的结果。 1. RAG的核心流程：检索 + 生成 RAG的全称是Retr...</description>
+    </item>
+    <item>
       <title>Python装饰器从入门到进阶</title>
       <link>https://Hugo-Xu844.github.io/autopilot-content/posts/python%E8%A3%85%E9%A5%B0%E5%99%A8%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6.html</link>
       <guid>https://Hugo-Xu844.github.io/autopilot-content/posts/python%E8%A3%85%E9%A5%B0%E5%99%A8%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6.html</guid>
@@ -86,6 +94,14 @@
       <pubDate>Wed, 06 May 2026 00:00:00 GMT</pubDate>
       <category>Python编程</category>
       <description>Python异步编程：asyncio实战 在开发网络爬虫、Web服务或需要处理大量I/O操作的应用时，你是否遇到过程序卡在等待响应上，导致整体性能低下？Python的asyncio库正是解决这类问题的利器。本文将带你从零掌握asyncio的核心用法，并通过实战案例提升代码执行效率。 1. 理解异步编程的核心：协程与事件...</description>
+    </item>
+    <item>
+      <title>Python单元测试入门：unittest与pytest</title>
+      <link>https://Hugo-Xu844.github.io/autopilot-content/posts/python%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E5%85%A5%E9%97%A8-unittest%E4%B8%8Epytest.html</link>
+      <guid>https://Hugo-Xu844.github.io/autopilot-content/posts/python%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E5%85%A5%E9%97%A8-unittest%E4%B8%8Epytest.html</guid>
+      <pubDate>Sun, 10 May 2026 00:00:00 GMT</pubDate>
+      <category>Python编程</category>
+      <description>Python单元测试入门：unittest与pytest 编写代码时，如何确保函数或模块在修改后依然能正常工作？单元测试就是解决这个问题的利器。本文将带你快速掌握Python中最常用的两个测试框架：内置的unittest和第三方库pytest，并通过实际案例让你立刻上手。 为什么需要单元测试？ 假设你写了一个计算折扣的...</description>
     </item>
     <item>
       <title>Prompt设计模式：让AI输出更精准</title>
