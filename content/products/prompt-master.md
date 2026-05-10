@@ -2,7 +2,7 @@
 title: "Prompt 工程大师课"
 description: "系统学习 Prompt 设计，让 AI 输出你想要的结果。"
 price: "¥14.9"
-date: "2026-05-06"
+date: "2026-05-10"
 productId: "prompt-master"
 articleCount: 2
 ---
@@ -20,8 +20,10 @@ articleCount: 2
 
 ---
 
+**版权声明：** 版权所有，未经授权禁止转载。
 
 ---
+
 
 
 ============================================================
@@ -338,5 +340,8 @@ def build_system_prompt(user_info, product_catalog):
 
 ## 📌 关于本产品
 
+- 更多教程：https://hugo-xu844.github.io/autopilot-content/
 - 文章数：2 篇
-- 生成时间：2026-05-06T05:47:06.495Z
+- 生成时间：2026-05-10T00:48:46.741Z
+
+*如果觉得有帮助，欢迎分享给需要的朋友！*
