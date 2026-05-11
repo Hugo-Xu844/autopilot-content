@@ -2,7 +2,7 @@
 title: "AI 入门完全指南"
 description: "大语言模型、机器学习、Prompt工程 — AI 时代必备知识手册。"
 price: "¥19.9"
-date: "2026-05-10"
+date: "2026-05-11"
 productId: "ai-beginners"
 articleCount: 6
 ---
@@ -935,6 +935,6 @@ def build_system_prompt(user_info, product_catalog):
 
 - 更多教程：https://hugo-xu844.github.io/autopilot-content/
 - 文章数：6 篇
-- 生成时间：2026-05-10T00:48:46.732Z
+- 生成时间：2026-05-11T01:40:12.588Z
 
 *如果觉得有帮助，欢迎分享给需要的朋友！*

@@ -2,7 +2,7 @@
 title: "2025 AI 工具评测大全"
 description: "最实用的 AI 工具评测与对比，帮你选出最适合的工具。"
 price: "¥9.9"
-date: "2026-05-10"
+date: "2026-05-11"
 productId: "ai-tools"
 articleCount: 2
 ---
@@ -354,6 +354,6 @@ ollama run qwen2.5:7b --num-gpu-layers 20
 
 - 更多教程：https://hugo-xu844.github.io/autopilot-content/
 - 文章数：2 篇
-- 生成时间：2026-05-10T00:48:46.734Z
+- 生成时间：2026-05-11T01:40:12.594Z
 
 *如果觉得有帮助，欢迎分享给需要的朋友！*
