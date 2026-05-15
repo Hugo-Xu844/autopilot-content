@@ -5,7 +5,7 @@
     <link>https://Hugo-Xu844.github.io/autopilot-content/</link>
     <description>AI 技术教程、编程实战、工具分享</description>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 11 May 2026 01:40:12 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 15 May 2026 03:33:19 GMT</lastBuildDate>
     <atom:link href="https://Hugo-Xu844.github.io/autopilot-content/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>终端美化指南：Windows Terminal + Oh My Posh</title>
@@ -30,6 +30,14 @@
       <pubDate>Wed, 06 May 2026 00:00:00 GMT</pubDate>
       <category>编程实战</category>
       <description>用Python写一个命令行工具：argparse实战 你是否写过这样的脚本：每次运行都要手动修改代码里的文件路径、参数数值？或者想给同事提供一个易用的工具，却不知道怎么处理命令行参数？Python标准库中的argparse模块正是解决这些问题的利器。本文将通过三个实战场景，带你掌握argparse的核心用法。 基础入门...</description>
+    </item>
+    <item>
+      <title>机器学习 vs 深度学习：区别与联系</title>
+      <link>https://Hugo-Xu844.github.io/autopilot-content/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-vs-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E5%8C%BA%E5%88%AB%E4%B8%8E%E8%81%94%E7%B3%BB.html</link>
+      <guid>https://Hugo-Xu844.github.io/autopilot-content/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-vs-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E5%8C%BA%E5%88%AB%E4%B8%8E%E8%81%94%E7%B3%BB.html</guid>
+      <pubDate>Fri, 15 May 2026 00:00:00 GMT</pubDate>
+      <category>AI入门教程</category>
+      <description>机器学习 vs 深度学习：区别与联系 当你在AI领域听到“机器学习”和“深度学习”这两个词时，可能会困惑它们到底有何不同。本文将从原理、实现和应用三个角度，帮你理清两者的关系，并通过代码让你直观感受差异。 1. 从“学习方式”看本质区别 机器学习和深度学习都是让计算机从数据中学习规律，但它们的特征提取方式截然不同。 机...</description>
     </item>
     <item>
       <title>本地部署大模型指南：Ollama + OpenWebUI</title>
@@ -102,6 +110,14 @@
       <pubDate>Sun, 10 May 2026 00:00:00 GMT</pubDate>
       <category>Python编程</category>
       <description>Python单元测试入门：unittest与pytest 编写代码时，如何确保函数或模块在修改后依然能正常工作？单元测试就是解决这个问题的利器。本文将带你快速掌握Python中最常用的两个测试框架：内置的unittest和第三方库pytest，并通过实际案例让你立刻上手。 为什么需要单元测试？ 假设你写了一个计算折扣的...</description>
+    </item>
+    <item>
+      <title>Python列表推导式：一行代码的魔法</title>
+      <link>https://Hugo-Xu844.github.io/autopilot-content/posts/python%E5%88%97%E8%A1%A8%E6%8E%A8%E5%AF%BC%E5%BC%8F-%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81%E7%9A%84%E9%AD%94%E6%B3%95.html</link>
+      <guid>https://Hugo-Xu844.github.io/autopilot-content/posts/python%E5%88%97%E8%A1%A8%E6%8E%A8%E5%AF%BC%E5%BC%8F-%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81%E7%9A%84%E9%AD%94%E6%B3%95.html</guid>
+      <pubDate>Fri, 15 May 2026 00:00:00 GMT</pubDate>
+      <category>Python编程</category>
+      <description>Python列表推导式：一行代码的魔法 你还在用 for 循环创建列表吗？列表推导式能让你用一行代码完成同样的工作，代码更简洁、运行更快。本文将带你彻底掌握这个 Python 核心技巧。 1. 从循环到推导式：基础语法 先看一个经典场景：生成 1 到 10 的平方数列表。 传统写法： 列表推导式写法： 核心语法：[表达...</description>
     </item>
     <item>
       <title>Prompt设计模式：让AI输出更精准</title>
